@@ -1,0 +1,34 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/imobiliaria",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    {
+      "name": "desktop-busca",
+      "path": "/imoveis?finalidade=venda",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.setItem('ax-horizonte-demo', JSON.stringify({ version: 1, codes: ['HZ-0163'] })); window.dispatchEvent(new StorageEvent('storage', { key: 'ax-horizonte-demo' }));",
+        "document.querySelectorAll('input[name=bedrooms]')[3].click(); window.scrollTo(0, 150);"
+      ]
+    },
+    {
+      "name": "mobile-imovel",
+      "path": "/imoveis/HZ-0184",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": ["window.scrollTo(0, 150);"]
+    },
+    {
+      "name": "desktop-imovel",
+      "path": "/imoveis/HZ-0232",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": ["[...document.querySelectorAll('[role=group] button')][1].click(); window.scrollTo(0, 120);"]
+    }
+  ]
+}
