@@ -1,0 +1,33 @@
+# Dependências
+node_modules/
+
+# Saídas de build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Variáveis de ambiente locais (nunca versionar)
+.env
+.env.*
+!.env.example
+
+# Logs e sistema
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Testes
+coverage/
+
+# Configuração local de ferramentas de IA (prévia do app)
+.claude/

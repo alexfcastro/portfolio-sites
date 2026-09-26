@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0c3a41"/><stop offset="1" stop-color="#17656a"/>
+</linearGradient>
+<clipPath id="browser-clip"><rect x="70" y="80" width="1160" height="800" rx="18" fill="#000" /></clipPath>
+<clipPath id="phone-clip"><rect x="1212" y="242" width="306" height="656" rx="38" fill="#000" /></clipPath>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<rect x="1280" y="-60" width="400" height="400" rx="60" fill="#f5c542" opacity="0.18" transform="rotate(20 1480 140)"/><circle cx="120" cy="940" r="160" fill="#f5c542" opacity="0.12"/>
+<rect x="56" y="108" width="1188" height="814" rx="32" fill="#000" opacity="0.05"/><rect x="61" y="98" width="1178" height="809" rx="27" fill="#000" opacity="0.06"/><rect x="65" y="90" width="1170" height="805" rx="23" fill="#000" opacity="0.07"/><rect x="68" y="84" width="1164" height="802" rx="20" fill="#000" opacity="0.08"/>
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#ffffff" />
+<g clip-path="url(#browser-clip)">
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#ffffff" />
+<rect x="70" y="80" width="1160" height="44" rx="0" fill="#eef4f4" />
+<circle cx="94" cy="102" r="6" fill="#c6d6d8" /><circle cx="114" cy="102" r="6" fill="#c6d6d8" /><circle cx="134" cy="102" r="6" fill="#c6d6d8" />
+<rect x="480" y="91" width="340" height="22" rx="11" fill="#ffffff" />
+<text x="650" y="107" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#5b7075" text-anchor="middle">prévia conceitual</text>
+<g transform="translate(70 124)">
+<rect x="0" y="0" width="1160" height="756" rx="0" fill="#ffffff" />
+<rect x="60" y="44" width="36" height="36" rx="10" fill="#0f4c55" /><path d="M70 62 l6 6 l12 -14" stroke="#f5c542" stroke-width="4" fill="none" stroke-linecap="round"/>
+<text x="108" y="70" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#0f2d33" text-anchor="start">Resolve Serviços</text>
+<text x="1100" y="66" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="400" fill="#5b7075" text-anchor="end">Serviços   Trabalhos   Região   Contato</text>
+<text x="60" y="170" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f2d33" text-anchor="start">Que serviço você precisa?</text>
+<text x="60" y="208" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="400" fill="#5b7075" text-anchor="start">Escolha o tipo, confirme a região e descreva o problema.</text>
+<rect x="60" y="250" width="190" height="150" rx="16" fill="#fff" stroke="#dbe6e7" stroke-width="1"/><circle cx="110" cy="300" r="28" fill="#eef5f5" /><path d="M114 286 l-12 16 h10 l-6 14 l14 -18 h-10 z" fill="#0f4c55"/><text x="84" y="370" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Elétrica</text><rect x="266" y="250" width="190" height="150" rx="16" fill="#fff" stroke="#dbe6e7" stroke-width="1"/><circle cx="316" cy="300" r="28" fill="#eef5f5" /><rect x="304" y="286" width="18" height="24" rx="3" fill="#0f4c55" /><rect x="322" y="294" width="8" height="20" rx="2" fill="#f5c542" /><text x="290" y="370" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Pintura</text><rect x="472" y="250" width="190" height="150" rx="16" fill="#fff" stroke="#dbe6e7" stroke-width="1"/><circle cx="522" cy="300" r="28" fill="#eef5f5" /><circle cx="522" cy="300" r="12" fill="none" stroke="#0f4c55" stroke-width="5" stroke-dasharray="7 4"/><text x="496" y="370" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Manutenção</text><rect x="678" y="250" width="190" height="150" rx="16" fill="#fff8e1" stroke="#f5c542" stroke-width="3"/><circle cx="728" cy="300" r="28" fill="#f5c542" /><path d="M714 294 h28 M714 302 h28 M714 310 h28" stroke="#0f4c55" stroke-width="4" stroke-linecap="round"/><text x="702" y="370" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Ar-condicionado</text><rect x="884" y="250" width="190" height="150" rx="16" fill="#fff" stroke="#dbe6e7" stroke-width="1"/><circle cx="934" cy="300" r="28" fill="#eef5f5" /><path d="M920 312 l14 -26 l14 26 z" fill="none" stroke="#0f4c55" stroke-width="4" stroke-linejoin="round"/><text x="908" y="370" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Instalação</text>
+<rect x="60" y="450" width="560" height="240" rx="16" fill="#e4eeee" />
+<g stroke="#c8d8d9" stroke-width="10" fill="none" stroke-linecap="round">
+<path d="M60 540 Q220 500 320 560 T620 520"/><path d="M200 450 Q240 580 190 690"/><path d="M430 450 Q470 560 520 690"/>
+</g>
+<path d="M150 480 Q300 450 420 500 Q560 540 540 630 Q420 690 260 660 Q120 630 150 480 z" fill="#0f4c55" opacity="0.14" stroke="#0f4c55" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="80" y="482" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f4c55" text-anchor="start">Área atendida (ilustrativa)</text>
+<circle cx="340" cy="575" r="12" fill="#f5c542" stroke="#0f4c55" stroke-width="4"/>
+<rect x="660" y="450" width="440" height="240" rx="16" fill="#eef5f5" />
+<text x="684" y="490" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2d33" text-anchor="start">Seu endereço está na área atendida?</text>
+<rect x="684" y="510" width="392" height="50" rx="10" fill="#fff" stroke="#dbe6e7"/><text x="704" y="541" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="400" fill="#98a8ab" text-anchor="start">Bairro ou CEP</text>
+<rect x="684" y="578" width="392" height="44" rx="10" fill="#e3f3ea" /><text x="704" y="606" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#1b7a4b" text-anchor="start">✓ Atendemos esta região</text>
+<rect x="684" y="634" width="392" height="44" rx="10" fill="#0f4c55" /><text x="880" y="661.4" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Descrever o problema</text>
+</g>
+</g>
+<rect x="1186" y="258" width="358" height="694" rx="62" fill="#000" opacity="0.05"/><rect x="1191" y="248" width="348" height="689" rx="57" fill="#000" opacity="0.06"/><rect x="1195" y="240" width="340" height="685" rx="53" fill="#000" opacity="0.07"/><rect x="1198" y="234" width="334" height="682" rx="50" fill="#000" opacity="0.08"/>
+<rect x="1200" y="230" width="330" height="680" rx="48" fill="#072a2f" />
+<rect x="1212" y="242" width="306" height="656" rx="38" fill="#ffffff" />
+<g clip-path="url(#phone-clip)"><g transform="translate(1212 242)">
+<rect x="0" y="0" width="306" height="656" rx="0" fill="#ffffff" />
+<rect x="0" y="0" width="306" height="120" rx="0" fill="#0f4c55" />
+<text x="24" y="90" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="800" fill="#fff" text-anchor="start">Resolve Serviços</text>
+<text x="24" y="160" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="21" font-weight="800" fill="#0f2d33" text-anchor="start">Ar-condicionado</text>
+<text x="24" y="186" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#5b7075" text-anchor="start">Conte o que está acontecendo</text>
+<rect x="24" y="206" width="90" height="36" rx="18" fill="#eef5f5" /><text x="69" y="228.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Não gela</text><rect x="156" y="206" width="127" height="36" rx="18" fill="#0f4c55" /><text x="219.5" y="228.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Pingando água</text><rect x="24" y="254" width="83" height="36" rx="18" fill="#eef5f5" /><text x="65.5" y="276.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Barulho</text><rect x="156" y="254" width="105" height="36" rx="18" fill="#eef5f5" /><text x="208.5" y="276.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Instalação</text>
+<rect x="24" y="316" width="258" height="110" rx="12" fill="#fff" stroke="#dbe6e7"/>
+<rect x="40" y="342" width="190" height="9" rx="4.5" fill="#e2eaeb" /><rect x="40" y="362" width="150" height="9" rx="4.5" fill="#e2eaeb" /><rect x="40" y="382" width="110" height="9" rx="4.5" fill="#e2eaeb" />
+<text x="24" y="458" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f2d33" text-anchor="start">Melhor período para visita</text>
+<rect x="24" y="472" width="68" height="34" rx="17" fill="#f5c542" /><text x="58" y="493.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Manhã</text><rect x="112" y="472" width="68" height="34" rx="17" fill="#fff" stroke="#dbe6e7" stroke-width="1.5"/><text x="146" y="493.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Tarde</text><rect x="200" y="472" width="76" height="34" rx="17" fill="#fff" stroke="#dbe6e7" stroke-width="1.5"/><text x="238" y="493.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f2d33" text-anchor="middle">Sábado</text>
+<rect x="24" y="574" width="258" height="54" rx="12" fill="#0f4c55" /><text x="153" y="606.76" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">Enviar solicitação</text>
+</g></g>
+<rect x="1315" y="252" width="100" height="24" rx="12" fill="#072a2f" />
+</svg>

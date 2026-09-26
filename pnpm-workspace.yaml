@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+
+# O pnpm bloqueia scripts de instalação por padrão. O unrs-resolver
+# (usado pelo lint) já recebe o binário pronto via dependência opcional.
+allowBuilds:
+  unrs-resolver: false

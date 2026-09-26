@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#efe6d6"/><stop offset="1" stop-color="#dccbb0"/>
+</linearGradient>
+<clipPath id="browser-clip"><rect x="70" y="80" width="1160" height="800" rx="18" fill="#000" /></clipPath>
+<clipPath id="phone-clip"><rect x="1212" y="242" width="306" height="656" rx="38" fill="#000" /></clipPath>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<g stroke="#23201c" stroke-width="2" fill="none" opacity="0.12">
+<path d="M1300 0 v1000"/><path d="M1330 0 v1000"/><path d="M1360 0 v1000"/><path d="M1390 0 v1000"/><path d="M1420 0 v1000"/><path d="M1450 0 v1000"/><path d="M1480 0 v1000"/><path d="M1510 0 v1000"/><path d="M1540 0 v1000"/>
+</g>
+<circle cx="140" cy="900" r="220" fill="#b5563a" opacity="0.12"/>
+<rect x="56" y="108" width="1188" height="814" rx="32" fill="#000" opacity="0.05"/><rect x="61" y="98" width="1178" height="809" rx="27" fill="#000" opacity="0.06"/><rect x="65" y="90" width="1170" height="805" rx="23" fill="#000" opacity="0.07"/><rect x="68" y="84" width="1164" height="802" rx="20" fill="#000" opacity="0.08"/>
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#ffffff" />
+<g clip-path="url(#browser-clip)">
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#fbf8f2" />
+<rect x="70" y="80" width="1160" height="44" rx="0" fill="#f4eee3" />
+<circle cx="94" cy="102" r="6" fill="#ddd1bd" /><circle cx="114" cy="102" r="6" fill="#ddd1bd" /><circle cx="134" cy="102" r="6" fill="#ddd1bd" />
+<rect x="480" y="91" width="340" height="22" rx="11" fill="#fbf8f2" />
+<text x="650" y="107" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#6f675c" text-anchor="middle">prévia conceitual</text>
+<g transform="translate(70 124)">
+<rect x="0" y="0" width="1160" height="756" rx="0" fill="#fbf8f2" />
+<text x="60" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="800" fill="#23201c" text-anchor="start">Linha Direta</text>
+<text x="238" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#b5563a" text-anchor="start">Profissional</text>
+<text x="1100" y="66" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="400" fill="#6f675c" text-anchor="end">Sobre   Serviços   Portfólio   Proposta</text>
+<circle cx="170" cy="250" r="90" fill="#efe6d6" /><circle cx="170" cy="228" r="34" fill="#c9b79a" /><path d="M110 312 q60 -70 120 0" fill="#c9b79a"/>
+<text x="300" y="206" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#b5563a" text-anchor="start" letter-spacing="2">Fotografia de produto</text>
+<text x="300" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#23201c" text-anchor="start">Imagens que ajudam</text>
+<text x="300" y="294" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#23201c" text-anchor="start">pequenas marcas a vender.</text>
+<text x="300" y="334" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="400" fill="#6f675c" text-anchor="start">Atendimento individual, do planejamento à entrega.</text>
+<rect x="60" y="380" width="71" height="34" rx="17" fill="#23201c" /><text x="95.5" y="402.04" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Todos</text><rect x="150" y="380" width="103" height="34" rx="17" fill="#fff" stroke="#e7dfd1" stroke-width="1.5"/><text x="201.5" y="402.04" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#23201c" text-anchor="middle">Alimentos</text><rect x="276" y="380" width="63" height="34" rx="17" fill="#fff" stroke="#e7dfd1" stroke-width="1.5"/><text x="307.5" y="402.04" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#23201c" text-anchor="middle">Moda</text><rect x="366" y="380" width="110" height="34" rx="17" fill="#fff" stroke="#e7dfd1" stroke-width="1.5"/><text x="421" y="402.04" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#23201c" text-anchor="middle">Cosméticos</text>
+<rect x="60" y="440" width="250" height="250" rx="12" fill="#d9c6a5" /><circle cx="215" cy="545" r="65" fill="#b5563a" /><rect x="60" y="615" width="250" height="75" rx="0" fill="#23201c" opacity="0.85"/><rect x="326" y="440" width="250" height="250" rx="12" fill="#c9d3c0" /><path d="M326 690 L426 527.5 L488.5 615 L526 565 L576 690 Z" fill="#5f7a5b"/><rect x="592" y="440" width="250" height="250" rx="12" fill="#e6d0c4" /><rect x="642" y="490" width="87.5" height="150" rx="4" fill="#23201c" /><rect x="704.5" y="527.5" width="87.5" height="112.5" rx="4" fill="#b5563a" opacity="0.8"/>
+<rect x="870" y="190" width="230" height="500" rx="16" fill="#fff" stroke="#e7dfd1"/>
+<text x="894" y="230" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="800" fill="#23201c" text-anchor="start">Pedir proposta</text>
+<text x="894" y="274" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#6f675c" text-anchor="start">Tipo de trabalho</text><rect x="894" y="284" width="182" height="40" rx="8" fill="#fbf8f2" stroke="#e7dfd1"/><text x="894" y="358" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#6f675c" text-anchor="start">Quantidade de fotos</text><rect x="894" y="368" width="182" height="40" rx="8" fill="#fbf8f2" stroke="#e7dfd1"/><text x="894" y="442" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#6f675c" text-anchor="start">Prazo desejado</text><rect x="894" y="452" width="182" height="40" rx="8" fill="#fbf8f2" stroke="#e7dfd1"/><text x="894" y="526" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#6f675c" text-anchor="start">Faixa de investimento</text><rect x="894" y="536" width="182" height="40" rx="8" fill="#fbf8f2" stroke="#e7dfd1"/>
+<rect x="894" y="624" width="182" height="46" rx="23" fill="#b5563a" /><text x="985" y="652.4" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Solicitar</text>
+</g>
+</g>
+<rect x="1186" y="258" width="358" height="694" rx="62" fill="#000" opacity="0.05"/><rect x="1191" y="248" width="348" height="689" rx="57" fill="#000" opacity="0.06"/><rect x="1195" y="240" width="340" height="685" rx="53" fill="#000" opacity="0.07"/><rect x="1198" y="234" width="334" height="682" rx="50" fill="#000" opacity="0.08"/>
+<rect x="1200" y="230" width="330" height="680" rx="48" fill="#23201c" />
+<rect x="1212" y="242" width="306" height="656" rx="38" fill="#fbf8f2" />
+<g clip-path="url(#phone-clip)"><g transform="translate(1212 242)">
+<rect x="0" y="0" width="306" height="656" rx="0" fill="#fbf8f2" />
+<text x="24" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="800" fill="#23201c" text-anchor="start">Linha Direta</text>
+<circle cx="62" cy="138" r="38" fill="#efe6d6" /><circle cx="62" cy="128" r="14" fill="#c9b79a" /><path d="M38 164 q24 -30 48 0" fill="#c9b79a"/>
+<text x="116" y="132" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#23201c" text-anchor="start">Fotografia</text>
+<text x="116" y="154" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#23201c" text-anchor="start">de produto</text>
+<rect x="24" y="196" width="124" height="124" rx="12" fill="#d2d6de" /><circle cx="67.4" cy="258" r="27.28" fill="#3d4a63" /><circle cx="98.39999999999999" cy="258" r="27.28" fill="#e0b66b" opacity="0.85"/><rect x="158" y="196" width="124" height="124" rx="12" fill="#d9c6a5" /><circle cx="234.88" cy="248.07999999999998" r="32.24" fill="#b5563a" /><rect x="158" y="282.8" width="124" height="37.199999999999996" rx="0" fill="#23201c" opacity="0.85"/><rect x="24" y="330" width="124" height="124" rx="12" fill="#c9d3c0" /><path d="M24 454 L73.6 373.4 L104.60000000000001 416.8 L123.2 392 L148 454 Z" fill="#5f7a5b"/><rect x="158" y="330" width="124" height="124" rx="12" fill="#e6d0c4" /><rect x="182.8" y="354.8" width="43.4" height="74.39999999999999" rx="4" fill="#23201c" /><rect x="213.8" y="373.4" width="43.4" height="55.800000000000004" rx="4" fill="#b5563a" opacity="0.8"/>
+<text x="24" y="494" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#23201c" text-anchor="start">Como funciona</text>
+<rect x="24" y="510" width="230" height="9" rx="4.5" fill="#e7dfd1" /><rect x="24" y="528" width="180" height="9" rx="4.5" fill="#e7dfd1" />
+<rect x="24" y="574" width="258" height="54" rx="27" fill="#b5563a" /><text x="153" y="606.76" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">Pedir proposta</text>
+</g></g>
+<rect x="1315" y="252" width="100" height="24" rx="12" fill="#23201c" />
+</svg>

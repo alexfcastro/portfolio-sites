@@ -1,0 +1,17 @@
+{
+  "name": "alex-castro-portfolio",
+  "private": true,
+  "description": "Monorepo do portfólio de Alex Castro (AX) e de suas futuras aplicações demonstrativas.",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev:portfolio": "pnpm --filter @ax/portfolio dev",
+    "build:portfolio": "pnpm --filter @ax/portfolio build",
+    "build": "pnpm --recursive --filter \"./apps/**\" build",
+    "lint": "pnpm --recursive --filter \"./apps/**\" lint",
+    "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",
+    "test": "pnpm --recursive --filter \"./apps/**\" test"
+  }
+}

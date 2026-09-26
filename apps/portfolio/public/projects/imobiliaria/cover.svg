@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#d6e6f8"/><stop offset="1" stop-color="#a9c9ee"/>
+</linearGradient>
+<clipPath id="browser-clip"><rect x="70" y="80" width="1160" height="800" rx="18" fill="#000" /></clipPath>
+<clipPath id="phone-clip"><rect x="1212" y="242" width="306" height="656" rx="38" fill="#000" /></clipPath>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<circle cx="1470" cy="150" r="220" fill="#ffffff" opacity="0.4"/><path d="M0 900 Q400 820 800 900 T1600 880 V1000 H0 Z" fill="#ffffff" opacity="0.35"/>
+<rect x="56" y="108" width="1188" height="814" rx="32" fill="#000" opacity="0.05"/><rect x="61" y="98" width="1178" height="809" rx="27" fill="#000" opacity="0.06"/><rect x="65" y="90" width="1170" height="805" rx="23" fill="#000" opacity="0.07"/><rect x="68" y="84" width="1164" height="802" rx="20" fill="#000" opacity="0.08"/>
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#ffffff" />
+<g clip-path="url(#browser-clip)">
+<rect x="70" y="80" width="1160" height="800" rx="18" fill="#ffffff" />
+<rect x="70" y="80" width="1160" height="44" rx="0" fill="#eef3fa" />
+<circle cx="94" cy="102" r="6" fill="#cad6e6" /><circle cx="114" cy="102" r="6" fill="#cad6e6" /><circle cx="134" cy="102" r="6" fill="#cad6e6" />
+<rect x="480" y="91" width="340" height="22" rx="11" fill="#ffffff" />
+<text x="650" y="107" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#5a6b82" text-anchor="middle">prévia conceitual</text>
+<g transform="translate(70 124)">
+<rect x="0" y="0" width="1160" height="756" rx="0" fill="#ffffff" />
+<path d="M60 76 l20 -26 l20 26 z" fill="#1f5fbf"/><rect x="64" y="72" width="32" height="8" rx="2" fill="#1f5fbf" />
+<text x="112" y="76" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#10233f" text-anchor="start">Horizonte Imóveis</text>
+<text x="1100" y="70" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="400" fill="#5a6b82" text-anchor="end">Comprar   Alugar   Anunciar   Corretores</text>
+<rect x="60" y="130" width="1040" height="80" rx="16" fill="#eef3fa" />
+<rect x="80" y="146" width="700" height="48" rx="10" fill="#fff" /><text x="104" y="176" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#98a6b8" text-anchor="start">Bairro, cidade ou código do imóvel</text>
+<rect x="800" y="146" width="280" height="48" rx="10" fill="#1f5fbf" /><text x="940" y="175.76" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">Buscar imóveis</text>
+<rect x="60" y="250" width="290" height="440" rx="14" fill="#eef3fa" />
+<text x="84" y="290" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="18" font-weight="800" fill="#10233f" text-anchor="start">Filtros</text>
+<rect x="84" y="308" width="242" height="40" rx="20" fill="#fff" /><rect x="88" y="312" width="118" height="32" rx="16" fill="#1f5fbf" /><text x="147" y="333" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Comprar</text><text x="266" y="333" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#5a6b82" text-anchor="middle">Alugar</text>
+<text x="84" y="384" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#5a6b82" text-anchor="start">Tipo</text>
+<rect x="84" y="394" width="61" height="30" rx="15" fill="#10233f" /><text x="114.5" y="413.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Casa</text><rect x="162" y="394" width="112" height="30" rx="15" fill="#fff" /><text x="218" y="413.68" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#10233f" text-anchor="middle">Apartamento</text>
+<text x="84" y="456" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#5a6b82" text-anchor="start">Faixa de preço</text>
+<rect x="84" y="474" width="242" height="6" rx="3" fill="#cfdbeb" /><rect x="124" y="474" width="140" height="6" rx="3" fill="#1f5fbf" /><circle cx="124" cy="477" r="10" fill="#fff" stroke="#1f5fbf" stroke-width="3"/><circle cx="264" cy="477" r="10" fill="#fff" stroke="#1f5fbf" stroke-width="3"/>
+<text x="84" y="530" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#5a6b82" text-anchor="start">Quartos</text>
+<rect x="84" y="542" width="52" height="38" rx="8" fill="#fff" /><text x="110" y="566" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#10233f" text-anchor="middle">1+</text><rect x="144" y="542" width="52" height="38" rx="8" fill="#fff" /><text x="170" y="566" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#10233f" text-anchor="middle">2+</text><rect x="204" y="542" width="52" height="38" rx="8" fill="#1f5fbf" /><text x="230" y="566" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3+</text><rect x="264" y="542" width="52" height="38" rx="8" fill="#fff" /><text x="290" y="566" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#10233f" text-anchor="middle">4+</text>
+<text x="84" y="640" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#10233f" text-anchor="start">28 imóveis encontrados</text>
+<rect x="380" y="250" width="234" height="330" rx="14" fill="#fff" stroke="#dde5f0"/>
+<defs><linearGradient id="sky0380" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd6f5"/><stop offset="1" stop-color="#e8f1fc"/></linearGradient></defs>
+<rect x="380" y="250" width="234" height="160" rx="12" fill="url(#sky0380)" />
+<rect x="380" y="381.2" width="234" height="28.799999999999997" rx="0" fill="#9fc38a" />
+<rect x="431.48" y="317.2" width="131.04000000000002" height="67.2" rx="2" fill="#f4f1ea" />
+<path d="M417.44 320.4 L497 275.6 L576.56 320.4 Z" fill="#2d4a73"/>
+<rect x="450.2" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" /><rect x="515.72" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" />
+<rect x="485.3" y="352.4" width="23.400000000000002" height="32" rx="2" fill="#2d4a73" /><circle cx="586" cy="278" r="16" fill="#ffffff" opacity="0.95"/><path d="M586 287 l-8 -8 a5 5 0 0 1 8 -6 a5 5 0 0 1 8 6 z" fill="#e0455b" stroke="#e0455b" stroke-width="2"/><text x="398" y="444" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="800" fill="#10233f" text-anchor="start">R$ 640.000</text><text x="398" y="470" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#10233f" text-anchor="start">Casa · 3 quartos</text><text x="398" y="494" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#5a6b82" text-anchor="start">Jardim das Flores</text><rect x="398" y="516" width="198" height="1" rx="0" fill="#dde5f0" /><text x="398" y="548" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f5fbf" text-anchor="start">Ver detalhes →</text><rect x="630" y="250" width="234" height="330" rx="14" fill="#fff" stroke="#dde5f0"/>
+<defs><linearGradient id="sky1630" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d6b8"/><stop offset="1" stop-color="#fcefe3"/></linearGradient></defs>
+<rect x="630" y="250" width="234" height="160" rx="12" fill="url(#sky1630)" />
+<rect x="630" y="381.2" width="234" height="28.799999999999997" rx="0" fill="#9fc38a" />
+<rect x="681.48" y="317.2" width="131.04000000000002" height="67.2" rx="2" fill="#fbfaf7" />
+<path d="M667.44 320.4 L747 275.6 L826.56 320.4 Z" fill="#b0553a"/>
+<rect x="700.2" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" /><rect x="765.72" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" />
+<rect x="735.3" y="352.4" width="23.400000000000002" height="32" rx="2" fill="#b0553a" /><circle cx="836" cy="278" r="16" fill="#ffffff" opacity="0.95"/><path d="M836 287 l-8 -8 a5 5 0 0 1 8 -6 a5 5 0 0 1 8 6 z" fill="none" stroke="#e0455b" stroke-width="2"/><text x="648" y="444" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="800" fill="#10233f" text-anchor="start">R$ 2.300/mês</text><text x="648" y="470" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#10233f" text-anchor="start">Casa · 2 quartos</text><text x="648" y="494" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#5a6b82" text-anchor="start">Vila Nova</text><rect x="648" y="516" width="198" height="1" rx="0" fill="#dde5f0" /><text x="648" y="548" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f5fbf" text-anchor="start">Ver detalhes →</text><rect x="880" y="250" width="234" height="330" rx="14" fill="#fff" stroke="#dde5f0"/>
+<defs><linearGradient id="sky2880" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe5d4"/><stop offset="1" stop-color="#eef7f0"/></linearGradient></defs>
+<rect x="880" y="250" width="234" height="160" rx="12" fill="url(#sky2880)" />
+<rect x="880" y="381.2" width="234" height="28.799999999999997" rx="0" fill="#9fc38a" />
+<rect x="931.48" y="317.2" width="131.04000000000002" height="67.2" rx="2" fill="#ece8df" />
+<path d="M917.44 320.4 L997 275.6 L1076.56 320.4 Z" fill="#4f6b4a"/>
+<rect x="950.2" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" /><rect x="1015.72" y="333.2" width="28.08" height="16" rx="2" fill="#8fb3dc" />
+<rect x="985.3" y="352.4" width="23.400000000000002" height="32" rx="2" fill="#4f6b4a" /><circle cx="1086" cy="278" r="16" fill="#ffffff" opacity="0.95"/><path d="M1086 287 l-8 -8 a5 5 0 0 1 8 -6 a5 5 0 0 1 8 6 z" fill="none" stroke="#e0455b" stroke-width="2"/><text x="898" y="444" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="800" fill="#10233f" text-anchor="start">R$ 890.000</text><text x="898" y="470" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#10233f" text-anchor="start">Casa · 4 quartos</text><text x="898" y="494" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#5a6b82" text-anchor="start">Parque do Lago</text><rect x="898" y="516" width="198" height="1" rx="0" fill="#dde5f0" /><text x="898" y="548" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f5fbf" text-anchor="start">Ver detalhes →</text>
+<rect x="380" y="600" width="734" height="90" rx="14" fill="#eef3fa" />
+<text x="404" y="640" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="800" fill="#10233f" text-anchor="start">Gostou de um imóvel?</text>
+<text x="404" y="666" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#5a6b82" text-anchor="start">O formulário de interesse já leva o código do imóvel.</text>
+</g>
+</g>
+<rect x="1186" y="258" width="358" height="694" rx="62" fill="#000" opacity="0.05"/><rect x="1191" y="248" width="348" height="689" rx="57" fill="#000" opacity="0.06"/><rect x="1195" y="240" width="340" height="685" rx="53" fill="#000" opacity="0.07"/><rect x="1198" y="234" width="334" height="682" rx="50" fill="#000" opacity="0.08"/>
+<rect x="1200" y="230" width="330" height="680" rx="48" fill="#10233f" />
+<rect x="1212" y="242" width="306" height="656" rx="38" fill="#ffffff" />
+<g clip-path="url(#phone-clip)"><g transform="translate(1212 242)">
+<rect x="0" y="0" width="306" height="656" rx="0" fill="#ffffff" />
+<defs><linearGradient id="sky00" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd6f5"/><stop offset="1" stop-color="#e8f1fc"/></linearGradient></defs>
+<rect x="0" y="0" width="306" height="260" rx="12" fill="url(#sky00)" />
+<rect x="0" y="213.2" width="306" height="46.8" rx="0" fill="#9fc38a" />
+<rect x="67.32000000000001" y="109.2" width="171.36" height="109.2" rx="2" fill="#f4f1ea" />
+<path d="M48.96 114.4 L153 41.6 L257.03999999999996 114.4 Z" fill="#2d4a73"/>
+<rect x="91.8" y="135.20000000000002" width="36.72" height="26" rx="2" fill="#8fb3dc" /><rect x="177.48" y="135.20000000000002" width="36.72" height="26" rx="2" fill="#8fb3dc" />
+<rect x="137.70000000000002" y="166.4" width="30.6" height="52" rx="2" fill="#2d4a73" />
+<rect x="20" y="60" width="113" height="28" rx="14" fill="#ffffff" /><text x="76.5" y="78.32" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#10233f" text-anchor="middle">Cód. HZ-0142</text>
+<text x="24" y="300" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#10233f" text-anchor="start">R$ 640.000</text>
+<text x="24" y="326" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="400" fill="#5a6b82" text-anchor="start">Casa · Jardim das Flores</text>
+<rect x="24" y="346" width="84" height="30" rx="15" fill="#eef3fa" /><text x="66" y="365.32" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#10233f" text-anchor="middle">3 quartos</text><rect x="114" y="346" width="71" height="30" rx="15" fill="#eef3fa" /><text x="149.5" y="365.32" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#10233f" text-anchor="middle">2 vagas</text><rect x="204" y="346" width="64" height="30" rx="15" fill="#eef3fa" /><text x="236" y="365.32" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#10233f" text-anchor="middle">180 m²</text>
+<text x="24" y="416" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#5a6b82" text-anchor="start">Localização ilustrativa</text>
+<rect x="24" y="428" width="258" height="120" rx="12" fill="#e7eef7" /><path d="M24 490 Q120 470 180 500 T282 480" stroke="#cdd9ea" stroke-width="10" fill="none"/><circle cx="150" cy="488" r="10" fill="#1f5fbf" stroke="#fff" stroke-width="4"/>
+<rect x="24" y="574" width="258" height="54" rx="12" fill="#1f5fbf" /><text x="153" y="606.76" font-family="Inter, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">Tenho interesse</text>
+</g></g>
+<rect x="1315" y="252" width="100" height="24" rx="12" fill="#10233f" />
+</svg>
