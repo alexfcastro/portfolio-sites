@@ -1,0 +1,49 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/academia",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "mobile-reserva",
+      "path": "/aulas?modalidade=funcional",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "[...document.querySelectorAll('main li button')].find(b => b.textContent.includes('Reservar')).click();",
+        "const i = document.querySelector('dialog input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Jô'); i.dispatchEvent(new Event('input', { bubbles: true })); document.activeElement.blur();"
+      ]
+    },
+    {
+      "name": "desktop-grade",
+      "path": "/aulas",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('[aria-label=Período] button')].find(b => b.textContent === 'Noite').click();",
+        "[...document.querySelectorAll('main li button')].filter(b => b.textContent.includes('Reservar'))[1].click();",
+        "const i = document.querySelector('dialog input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Jô'); i.dispatchEvent(new Event('input', { bubbles: true }));",
+        "document.querySelector('dialog button[type=submit]').click();",
+        "document.activeElement.blur(); window.scrollTo(0, 220);"
+      ]
+    },
+    {
+      "name": "desktop-painel",
+      "path": "/admin",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelectorAll('[aria-label=Dia] button')[1].click();",
+        "window.scrollTo(0, 250);"
+      ]
+    }
+  ]
+}
