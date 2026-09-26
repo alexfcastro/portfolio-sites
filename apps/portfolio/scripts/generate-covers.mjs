@@ -849,7 +849,7 @@ const covers = {
 };
 
 // Demos implementadas usam capturas reais: suas capas conceituais não são mais geradas.
-const withRealScreenshots = new Set(["clinica", "restaurante", "oficina", "servicos"]);
+const withRealScreenshots = new Set(["clinica", "restaurante", "oficina", "servicos", "autonomo"]);
 
 for (const [slug, draw] of Object.entries(covers)) {
   if (withRealScreenshots.has(slug)) continue;

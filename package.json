@@ -22,6 +22,8 @@
     "dev:oficina": "pnpm --filter @ax/oficina dev",
     "build:oficina": "pnpm --filter @ax/oficina build",
     "dev:servicos": "pnpm --filter @ax/servicos dev",
-    "build:servicos": "pnpm --filter @ax/servicos build"
+    "build:servicos": "pnpm --filter @ax/servicos build",
+    "dev:autonomo": "pnpm --filter @ax/autonomo dev",
+    "build:autonomo": "pnpm --filter @ax/autonomo build"
   }
 }

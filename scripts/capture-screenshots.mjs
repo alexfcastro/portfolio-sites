@@ -101,6 +101,12 @@ try {
     await send("Page.navigate", { url: new URL(shot.path, baseUrl).toString() }, sessionId);
     await loaded;
     await sleep(1200);
+    // Rolagem suave (CSS) faria a captura sair no meio do caminho.
+    await send(
+      "Runtime.evaluate",
+      { expression: "document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important')" },
+      sessionId,
+    );
 
     for (const step of shot.steps ?? []) {
       const result = await send(

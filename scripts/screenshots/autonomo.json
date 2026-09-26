@@ -1,0 +1,37 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/autonomo",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    {
+      "name": "desktop-portfolio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": ["document.getElementById('portfolio').scrollIntoView(); window.scrollBy(0, -80);"]
+    },
+    {
+      "name": "mobile-proposta",
+      "path": "/proposta",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "const setV = (el, v) => { const p = el.tagName === 'SELECT' ? HTMLSelectElement.prototype : el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype; Object.getOwnPropertyDescriptor(p, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })); }; const f = document.querySelector('main form'); const s = f.querySelectorAll('select'); setV(s[0], 'cardapio'); setV(f.querySelector('input[type=number]'), '18'); setV(s[1], 'Até 1 mês'); setV(s[2], 'R$ 1.000 a R$ 3.000'); setV(f.querySelector('textarea'), 'Cardápio digital de uma doceria com 18 itens.');",
+        "document.querySelector('main form label').scrollIntoView();"
+      ]
+    },
+    {
+      "name": "desktop-proposta",
+      "path": "/proposta",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "const setV = (el, v) => { const p = el.tagName === 'SELECT' ? HTMLSelectElement.prototype : el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype; Object.getOwnPropertyDescriptor(p, 'value').set.call(el, v); el.dispatchEvent(new Event(el.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true })); }; const f = document.querySelector('main form'); const s = f.querySelectorAll('select'); setV(s[0], 'ecommerce'); setV(f.querySelector('input[type=number]'), '12'); setV(s[1], 'Até 2 semanas'); setV(s[2], 'R$ 1.000 a R$ 3.000'); setV(f.querySelector('textarea'), 'Linha de 12 cafés especiais, fotos em fundo claro para a loja on-line.');",
+        "window.scrollTo(0, 250);"
+      ]
+    }
+  ]
+}
