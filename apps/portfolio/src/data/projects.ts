@@ -1,15 +1,33 @@
 import type { Project, ProjectFeature, ProjectMedia } from "@/types/project";
 
 /*
- * Matriz única dos projetos conceituais.
- * Todos os negócios são fictícios. Nenhuma demo está implementada na Fase 1:
- * todas começam como `planned` e todos os recursos como `planned` (“previstos”).
+ * Matriz única dos projetos conceituais. Todos os negócios são fictícios.
+ * Demos implementadas: barbearia (Fase 2). As demais estão `planned`, com
+ * recursos “previstos” e prévias conceituais.
  * Para adicionar um case: inclua um item aqui e a capa em public/projects/<slug>/.
  */
 
 function planned(title: string, description: string): ProjectFeature {
   return { title, description, status: "planned" };
 }
+
+function implemented(title: string, description: string): ProjectFeature {
+  return { title, description, status: "implemented" };
+}
+
+/** Captura real de uma demo implementada (gerada por scripts/capture-screenshots.mjs). */
+function screenshot(
+  slug: string,
+  file: string,
+  size: { width: number; height: number },
+  alt: string,
+  caption: string,
+): ProjectMedia {
+  return { src: `/projects/${slug}/${file}`, alt, ...size, kind: "screenshot", caption };
+}
+
+const DESKTOP = { width: 1440, height: 900 };
+const MOBILE = { width: 780, height: 1688 };
 
 function conceptCover(slug: string, name: string, description: string): ProjectMedia {
   return {
@@ -41,22 +59,60 @@ export const projects: Project[] = [
       { title: "Horário", description: "A agenda mostra somente horários livres para a duração escolhida." },
       { title: "Resumo", description: "Serviço, profissional, data e valor são revisados antes de confirmar." },
     ],
-    demoStatus: "planned",
+    demoStatus: "available",
     featuredOrder: 1,
     features: [
-      planned("Agendamento em etapas", "Serviço, profissional, data e horário em um fluxo curto."),
-      planned("Serviços com duração e preço", "Tabela clara para o cliente decidir antes de marcar."),
-      planned("Equipe e galeria", "Apresentação dos profissionais e dos estilos de corte."),
-      planned("Painel demonstrativo", "Visualização e alteração dos agendamentos simulados."),
-      planned("Avaliações de exemplo", "Depoimentos identificados individualmente como fictícios."),
-      planned("Contato pelo WhatsApp", "Na demo, gera apenas uma prévia local da mensagem."),
+      implemented(
+        "Agendamento em etapas",
+        "Serviço, profissional, data e horário, com o horário revalidado no momento de confirmar.",
+      ),
+      implemented(
+        "Agenda sem conflitos",
+        "Bloqueia horários passados, pausa de almoço, fechamento e sobreposição para o mesmo profissional.",
+      ),
+      implemented("Serviços com duração e preço", "Valores em centavos e duração visíveis antes de escolher."),
+      implemented(
+        "Painel demonstrativo",
+        "Filtros por período, profissional e situação; concluir, cancelar, reativar e restaurar a agenda.",
+      ),
+      implemented("Equipe, galeria e avaliações", "Profissionais fictícios, estilos ilustrados e avaliações marcadas como fictícias."),
+      implemented("Prévia de mensagem no WhatsApp", "Mostra a mensagem de confirmação sem enviar nada nem ter destinatário real."),
     ],
-    media: [conceptCover("barbearia", "Bravus Barbearia", "lista de serviços e grade de horários em tons escuros e dourados, com versão de celular.")],
-    technologies: [],
+    media: [
+      screenshot(
+        "barbearia",
+        "desktop-inicio.png",
+        DESKTOP,
+        "Página inicial da demo Bravus Barbearia no computador: título “Seu horário, sem espera”, botão Agendar horário e faixa de projeto demonstrativo no topo.",
+        "Página inicial da demonstração (computador).",
+      ),
+      screenshot(
+        "barbearia",
+        "desktop-agendamento.png",
+        DESKTOP,
+        "Etapa de data e horário no computador: faixa de datas com dias lotados e fechados e grade de horários livres, com um horário selecionado.",
+        "Escolha de data e horário: só aparecem horários livres para a duração do serviço.",
+      ),
+      screenshot(
+        "barbearia",
+        "mobile-agendamento.png",
+        MOBILE,
+        "Etapa de data e horário no celular: datas roláveis na horizontal, horários livres e botão Continuar.",
+        "O mesmo fluxo no celular.",
+      ),
+      screenshot(
+        "barbearia",
+        "desktop-painel.png",
+        DESKTOP,
+        "Painel demonstrativo com totais, filtros por período, profissional e situação e a lista de agendamentos fictícios.",
+        "Painel demonstrativo: público, sem login, com dados deste navegador.",
+      ),
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     seo: {
-      title: "Bravus Barbearia — case conceitual de agendamento on-line",
+      title: "Bravus Barbearia — case e demo de agendamento on-line",
       description:
-        "Projeto conceitual de site para barbearia com agendamento por serviço, profissional e horário. Negócio fictício, demo em breve.",
+        "Case de site para barbearia com agendamento por serviço, profissional e horário e painel demonstrativo. Negócio fictício, demo com dados de exemplo.",
     },
   },
   {

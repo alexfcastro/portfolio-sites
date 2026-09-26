@@ -45,3 +45,17 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 ## Arquivos gerados pelo Next
 
 - `apps/portfolio/AGENTS.md` e `CLAUDE.md` são criados pelo `next dev` 16.3 e apontam agentes de IA para a documentação da versão instalada (`node_modules/next/dist/docs`). Foram mantidos porque ajudam quem continuar o projeto com Codex ou Claude Code.
+
+## Fase 2 — demos
+
+- **Um app Next.js por demo** (`apps/<slug>`), com dependências próprias, identidade própria e nenhum import entre apps. A demo conhece o portfólio só por `NEXT_PUBLIC_PORTFOLIO_URL`.
+- **Validação de URL duplicada, não compartilhada.** A barbearia tem sua própria função pequena de validação da URL do portfólio. Criar `packages/*` para ~20 linhas exigiria configurar transpilação e deixaria as publicações acopladas; será reavaliado quando houver mais código em comum.
+- **Portas:** barbearia em **3101** (as portas 3000/3001 desta máquina estão ocupadas por outro projeto). Próximas demos: 3102, 3103…
+- **Estado no `localStorage`** com chave própria (`ax-bravus-demo`), versão e reset: permite ver no painel, em outra aba do mesmo navegador, o agendamento feito. Só guarda dados fictícios. Em outro dia, a agenda de exemplo é recriada (e os agendamentos de teste somem), para nunca mostrar datas vencidas.
+- **Datas como texto no fuso do negócio** (`America/Sao_Paulo`) e horários em minutos, calculados via `Intl`: o fuso do visitante não altera a agenda.
+- **Agenda de exemplo determinística** (gerador pseudoaleatório com semente = data + profissional), mais cheia no início da semana e com vaga garantida para o serviço mais longo de cada profissional.
+- **Identidade de cliente fixa** ("Cliente de demonstração"): a demo não pede nome, telefone nem e-mail.
+- **WhatsApp na demo = prévia local** em `<dialog>`, sem link externo. O único contato real é "Solicitar um site como este", que leva ao portfólio.
+- **Painel sem login falso**, com aviso explícito de que é público e sem segurança de produção.
+- **Estado exibido "Publicação em breve"**: dado `available` + nenhuma URL válida no ambiente. O briefing define "disponível" como validado **e** com URL; a demo existe e foi testada, mas não pode ser chamada de disponível nem ganhar botão enquanto não estiver publicada.
+- **Capturas reais via DevTools Protocol** (`scripts/capture-screenshots.mjs`), usando o WebSocket nativo do Node, sem Puppeteer/Playwright: emula celular de verdade e executa passos (cliques) antes de capturar.

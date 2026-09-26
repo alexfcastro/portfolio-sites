@@ -59,14 +59,18 @@ export function Hero() {
                   preload={index === 0}
                   // Estão na primeira dobra: não esperam o carregamento sob demanda.
                   loading={index === 0 ? undefined : "eager"}
-                  unoptimized
+                  unoptimized={cover.media.src.endsWith(".svg")}
                   className="h-auto w-full"
                 />
               </div>
             ))}
           </div>
           <figcaption className="mt-5 text-center text-sm text-muted lg:text-right">
-            Prévias conceituais de três dos doze projetos: {covers.map((cover) => cover.name).join(", ")}.
+            Três dos doze projetos:{" "}
+            {covers
+              .map((cover) => `${cover.name} (${cover.media.kind === "screenshot" ? "captura da demonstração" : "prévia conceitual"})`)
+              .join(", ")}
+            .
           </figcaption>
         </figure>
       </div>

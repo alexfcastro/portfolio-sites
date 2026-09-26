@@ -1,8 +1,12 @@
-# Validação — Fase 1
+# Validação
+
+Registro por fase. As fases mais recentes ficam no fim.
+
+## Fase 1 — Portfólio
 
 Data: 26/09/2026 · Máquina: Windows 11, Node 24.19.0, pnpm 12.6.0 · Build de produção local (`next build` + `next start`).
 
-## Automatizado
+### Automatizado
 
 | Verificação | Comando | Resultado |
 |---|---|---|
@@ -19,7 +23,7 @@ O que os testes cobrem (`src/**/*.test.ts`):
 - **URLs:** ambiente padrão seguro, normalização, credenciais em URL rejeitadas, perfis só HTTPS.
 - **Contato:** normalização do WhatsApp (com código do país; sem o 55 é rejeitado), codificação da mensagem (acentos, `&`, `?`, `%`, quebras de linha), nenhum link sem destinatário, `mailto` codificado, validação de obrigatórios, limites (100/150/2.000), e-mail/telefone só quando preenchidos, opções fora da lista, slug pré-selecionado só se reconhecido, mensagem sem campos vazios.
 
-## Verificação HTTP (build de produção, sem variáveis configuradas)
+### Verificação HTTP (build de produção, sem variáveis configuradas)
 
 - As 18 rotas públicas (Home, listagem, 12 cases, Sobre, Contato, Contato com `?projeto=`, Privacidade) retornam **200**.
 - `/projetos/inexistente` e `/pagina-que-nao-existe` retornam **404 real**.
@@ -28,7 +32,7 @@ O que os testes cobrem (`src/**/*.test.ts`):
 - Headers presentes: `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options`, CSP mínima. `X-Powered-By` ausente.
 - `/og-image.png`, `/icon.svg` e os SVGs da marca: 200.
 
-## Navegador (navegador embutido do app, Chromium)
+### Navegador (navegador embutido do app, Chromium)
 
 Fluxos executados por cliques e inspeção do DOM:
 
@@ -44,7 +48,7 @@ Fluxos executados por cliques e inspeção do DOM:
 - **Reflow:** sem rolagem horizontal em Home, listagem, cases, Sobre, Contato, Privacidade e 404 a **320 px**; Home, case e Contato também a 768 e 1440 px; Home a 375/412/1024/1280 px. (360 e 390 px não foram medidos separadamente; ficam entre 320 e 412, ambos sem rolagem.)
 - **Revisão visual:** Home (desktop e mobile), listagem, case, Sobre (768 px), Privacidade (1024 px), 404 (1440 px), as 12 capas e a imagem Open Graph. Nas capas foram corrigidas sobreposições de texto e incoerências internas (dia da semana, categoria, tipo de imóvel).
 
-### Achados corrigidos durante a validação
+#### Achados corrigidos durante a validação
 
 1. **Dados pessoais na URL:** um envio antes da hidratação fazia GET nativo com todos os campos. Corrigido desabilitando o envio até a hidratação.
 2. **`localhost` na meta `og:image`** sem URL configurada. Corrigido: imagem OG só anunciada com URL pública.
@@ -54,7 +58,7 @@ Fluxos executados por cliques e inspeção do DOM:
 6. **Capas secundárias do hero carregadas sob demanda** mesmo estando na primeira dobra. Agora carregam imediatamente.
 7. **Foco perdido ao limpar filtros** pelo estado vazio. Agora vai para o resumo de resultados.
 
-## Desempenho (Lighthouse 12, perfil mobile simulado)
+### Desempenho (Lighthouse 12, perfil mobile simulado)
 
 Condições: `next start` local, Chrome headless, 4G lento simulado (150 ms RTT, ~1,6 Mbps) e CPU 4× mais lenta. **Os valores de LCP são simulados, não medidos em campo.**
 
@@ -69,7 +73,7 @@ Condições: `next start` local, Chrome headless, 4G lento simulado (150 ms RTT,
 - O LCP simulado fica um pouco acima de 2,5 s. Na Home, o LCP é a capa principal do hero (SVG). Já foi removido o filtro de desfoque, que causava o maior atraso. Próximas otimizações possíveis, se necessárias: servir o hero em WebP/AVIF rasterizado ou exibir só uma capa no mobile.
 - Core Web Vitals de campo exigem visitantes reais; não há dados de campo.
 
-## Não verificado (limitações)
+### Não verificado (limitações)
 
 - **Firefox e Safari/WebKit:** não estão instalados nesta máquina. Só foram usados navegadores Chromium (navegador embutido e Chrome). **Nenhum suporte a Safari/Firefox foi comprovado.**
 - **Aparelhos reais:** não testados; mobile verificado por emulação de viewport.
@@ -77,3 +81,51 @@ Condições: `next start` local, Chrome headless, 4G lento simulado (150 ms RTT,
 - **Abertura efetiva do WhatsApp/e-mail:** intencionalmente não executada.
 - **Deploy:** nenhum. Não há URL pública, HTTPS nem verificação em host.
 - **Captura de tela do navegador embutido:** instável com a janela do app em segundo plano; parte da revisão visual foi feita por inspeção do DOM.
+
+## Fase 2 — Bravus Barbearia (`apps/barbearia`)
+
+Data: 26/09/2026 · build de produção local (`next start`, porta 3101) · portfólio em 3100.
+
+### Automatizado (`pnpm --filter @ax/barbearia test`: 28/28)
+
+- **Fuso e datas:** instante convertido para `America/Sao_Paulo` independentemente do fuso da máquina; aritmética de datas atravessando meses e anos; janela de 14 dias.
+- **Dados:** preços inteiros em centavos, profissionais existentes; formatação e soma sem erro de arredondamento.
+- **Disponibilidade:** domingo fechado; sábado até 16:00; horários passados e antecedência mínima de 30 min bloqueados; sem atravessar almoço nem fechamento; grade de 20 min; sem sobreposição para o mesmo profissional (mas permitida entre profissionais); cancelado libera o horário; profissional incompatível sem horários.
+- **Confirmação:** revalidação de serviço, profissional, data fora da janela, horário passado, fora do funcionamento, fora da grade e ocupado.
+- **Agenda de exemplo:** relativa a hoje, 7 dias, determinística, sem sobreposição; "concluído" só para horários de hoje já terminados; **em 60 datas diferentes, todo dia futuro aberto mantém vaga para o serviço mais longo de cada profissional**.
+- **Estado:** criação com identidade fictícia, recusa de horário duplicado, transições permitidas (concluir/cancelar/reativar), reativação recusada se o horário foi reocupado, estado salvo rejeitado se for de outro dia, outra versão, corrompido ou mal formado.
+- **URL do portfólio:** HTTPS público aceito; `localhost` só em desenvolvimento; HTTP público, exemplo e `javascript:` rejeitados.
+
+Portfólio (`pnpm --filter @ax/portfolio test`: 37/37): além dos testes da Fase 1, a Bravus tem recursos implementados, stack definida, só capturas reais e ao menos uma desktop e uma mobile; demo `available` sem URL válida aparece como "Publicação em breve", nunca "disponível".
+
+### Build independente
+
+- `pnpm build:barbearia` gera 7 rotas estáticas sem depender do portfólio.
+- `pnpm build` gera os dois apps.
+
+### Navegador (navegador embutido, Chromium)
+
+- **Fluxo completo:** `?servico=combo` abre direto em "Profissional"; continuar sem escolher mostra erro; só aparecem Rafa e Leo; o foco vai para o título de cada etapa; datas fechadas/lotadas desabilitadas; revisão com valores corretos (16:40–17:50, R$ 70,00); confirmação "Agendamento de demonstração confirmado" com código `BRV-1001`; estado salvo em `localStorage` com chave `ax-bravus-demo`, versão 1.
+- **Painel:** o agendamento feito em outra página aparece em "Só os meus"; cancelar → reativar funcionam com feedback anunciado; o diálogo de restauração abre com foco em "Manter como está"; restaurar apaga os agendamentos de teste.
+- **Prévia de WhatsApp:** diálogo modal, foco interno, fecha e devolve o foco ao botão; nenhum link `wa.me` em toda a demo.
+- **Ida e volta:** com `NEXT_PUBLIC_DEMO_URL_BARBEARIA=http://localhost:3101` (desenvolvimento), o case mostra "Abrir demonstração" (nova aba, `noopener`); a demo aponta "Voltar ao portfólio", "Ver case" e "Solicitar um site como este" (`/contato?projeto=barbearia`, que pré-seleciona o projeto).
+- **Sem URL** (cenário de produção atual): o case mostra "Publicação em breve", sem botão e sem `localhost` no HTML.
+- **Indexação:** `noindex, nofollow` na meta tag e no header `X-Robots-Tag`; sem sitemap nem dados estruturados.
+- **Reflow:** sem rolagem horizontal a 320 px em início, agendamento (todas as etapas) e painel.
+
+#### Achados corrigidos
+
+1. **Agenda de exemplo cheia demais:** segunda a quinta ficavam "lotados" para o combo. Agora a ocupação cai ao longo da semana e há garantia de vaga (testada).
+2. **Header estourando no celular:** "Painel" saiu do header abaixo de 640 px (continua no rodapé e na confirmação).
+3. **`<fieldset>` da faixa de datas alargava a página** (1468 px numa tela de 1280): corrigido com `min-w-0`.
+4. **Anel de foco em títulos focados por script** (portfólio e demo): removido só para `tabindex="-1"`.
+
+### Capturas para o case
+
+Geradas por `scripts/capture-screenshots.mjs` (Chrome via DevTools Protocol, emulação real de celular 390×844 @2x): início e agendamento no desktop, agendamento no celular e painel. O Chrome em linha de comando não serve para capturas de celular: ele impõe largura mínima de janela e corta a página.
+
+### Não verificado
+
+- Firefox, Safari e aparelhos reais; leitor de tela real.
+- Publicação (não há URL pública).
+- Tecla Escape física no diálogo (o fechamento foi verificado pela API; Escape é o comportamento nativo do `<dialog>` modal).

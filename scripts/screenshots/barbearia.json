@@ -1,0 +1,45 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/barbearia",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "desktop-agendamento",
+      "path": "/agendar?servico=combo",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelector('input[name=professional][value=leo]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelectorAll('input[name=time]')[2].click(); window.scrollTo(0, 330);"
+      ]
+    },
+    {
+      "name": "mobile-agendamento",
+      "path": "/agendar?servico=degrade",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "document.querySelector('input[name=professional][value=davi]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelectorAll('input[name=time]')[1].click(); document.querySelector('main h2').scrollIntoView();"
+      ]
+    },
+    {
+      "name": "desktop-painel",
+      "path": "/admin",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": ["window.scrollTo(0, 420);"]
+    }
+  ]
+}

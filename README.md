@@ -2,13 +2,14 @@
 
 Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e, nas próximas fases, das aplicações demonstrativas de cada segmento.
 
-**Estado atual:** Fase 1 implementada e validada localmente (prévia). Nenhuma demo completa existe ainda. Veja [`docs/status.md`](docs/status.md).
+**Estado atual:** Fases 1 e 2 implementadas e validadas localmente: portfólio + demo Bravus Barbearia. Nada publicado. Veja [`docs/status.md`](docs/status.md).
 
 ## Arquitetura
 
 ```text
 apps/
-  portfolio/            Portfólio (Next.js). Único app existente.
+  barbearia/            Demo Bravus Barbearia (Next.js, porta 3101): agendamento simulado + painel /admin
+  portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/
     src/config/         site.ts (configuração pública central) · demos.ts (URLs das demos)
@@ -17,6 +18,7 @@ apps/
     public/brand/       Marca AX em SVG
     public/projects/    Capas conceituais (geradas por scripts/generate-covers.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
+scripts/                capture-screenshots.mjs + screenshots/<slug>.json (capturas reais das demos)
 ```
 
 - Cada app em `apps/<slug>` terá suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
@@ -46,8 +48,12 @@ pnpm lint               # ESLint (config do Next)
 pnpm typecheck          # next typegen + tsc --noEmit
 pnpm test               # Vitest: dados, estado das demos, URLs, link do WhatsApp, formulário
 pnpm build:portfolio    # build de produção do portfólio
-pnpm build              # build de todos os apps existentes (hoje, só o portfólio)
+pnpm dev:barbearia      # demo Bravus em http://localhost:3101
+pnpm build:barbearia    # build de produção da demo (independente do portfólio)
+pnpm build              # build de todos os apps existentes
 ```
+
+`lint`, `typecheck` e `test` rodam em todos os apps.
 
 Porta ocupada? Rode em outra porta:
 
@@ -77,6 +83,23 @@ Tudo é **opcional**: sem variáveis, o site roda em modo prévia, com `noindex`
 - Todas são públicas (embutidas no JavaScript do navegador). **Nunca coloque segredos** nelas.
 - Os valores são fixados **no build**: alterar qualquer um exige novo build/deploy.
 - Valores ausentes ou inválidos viram `null` e os links correspondentes somem (nada de `mailto:null` ou `wa.me/undefined`).
+
+### Variáveis da demo Bravus (`apps/barbearia/.env.local`)
+
+| Variável | Uso |
+|---|---|
+| `NEXT_PUBLIC_DEPLOY_ENV` | Como no portfólio. A demo é **sempre** `noindex`. |
+| `NEXT_PUBLIC_PORTFOLIO_URL` | URL do portfólio para "Voltar ao portfólio", "Ver case" e "Solicitar um site como este". Em `next dev`, sem valor, usa `http://localhost:3000`; em build, sem valor, esses links somem. |
+
+Para testar ida e volta localmente com builds de produção:
+
+```bash
+set NEXT_PUBLIC_DEMO_URL_BARBEARIA=http://localhost:3101&& pnpm build:portfolio
+```
+
+```bash
+set NEXT_PUBLIC_PORTFOLIO_URL=http://localhost:3000&& pnpm build:barbearia
+```
 
 ## Contato: o que conta como envio
 
@@ -110,8 +133,16 @@ Nenhuma página nova é necessária: `/projetos/[slug]` é gerada a partir dos d
 1. Crie `apps/<slug>` com seu próprio `package.json` (nome `@ax/<slug>`), dependências, dados e estilos. Não importe nada de `apps/portfolio`.
 2. Adicione na raiz os scripts `dev:<slug>` e `build:<slug>` e escolha uma porta própria (ex.: 3001).
 3. Ao começar, mude o `demoStatus` do projeto para `in_progress` (o card mostra "Em desenvolvimento", sem link).
-4. Depois de validar o fluxo: capture telas reais (desktop e mobile) em `public/projects/<slug>/`, troque `media.kind` para `"screenshot"`, marque os recursos implementados, defina `technologies`, configure `NEXT_PUBLIC_DEMO_URL_<SLUG>` e só então use `demoStatus: "available"`.
-5. O botão "Abrir demonstração" só aparece com `available` **e** URL válida para o ambiente (em produção: HTTPS, sem `localhost`).
+4. Depois de validar o fluxo, gere capturas reais (desktop e mobile) com o script, a partir de um JSON como [`scripts/screenshots/barbearia.json`](scripts/screenshots/barbearia.json):
+
+   ```bash
+   node scripts/capture-screenshots.mjs scripts/screenshots/barbearia.json http://localhost:3101
+   ```
+
+   Depois, nos dados: use `media` com `kind: "screenshot"`, marque os recursos implementados, defina `technologies` e mude para `demoStatus: "available"`. Acrescente o slug em `IMPLEMENTED_DEMOS` no teste do portfólio. (Usa o Chrome instalado; outro caminho via `CHROME_PATH`.)
+5. Sem URL válida no ambiente, o portfólio exibe "Publicação em breve". O botão "Abrir demonstração" só aparece com `available` **e** URL válida (em produção: HTTPS, sem `localhost`).
+
+Referência completa: `apps/barbearia` (fuso `America/Sao_Paulo`, estado em `localStorage` com chave própria, versão e reset, barra de demonstração, `noindex`).
 
 ## Publicação
 
@@ -122,7 +153,8 @@ Para o portfólio:
 - **Root Directory:** `apps/portfolio` · **Install:** `pnpm install` (o host detecta o workspace pelo lockfile da raiz) · **Build:** `pnpm build`.
 - Variáveis: `NEXT_PUBLIC_DEPLOY_ENV=production`, `NEXT_PUBLIC_SITE_URL=<URL real>` e os contatos reais.
 - Em previews do host, use `NEXT_PUBLIC_DEPLOY_ENV=preview` (continua `noindex`).
-- Cada demo futura será outro projeto no host, apontando para `apps/<slug>`.
+- Cada demo é outro projeto no host, apontando para `apps/<slug>` (ex.: `apps/barbearia`, com `NEXT_PUBLIC_DEPLOY_ENV=production` e `NEXT_PUBLIC_PORTFOLIO_URL`). Depois de publicada, configure `NEXT_PUBLIC_DEMO_URL_<SLUG>` no portfólio e republique-o.
+- Alterações só em uma demo não exigem republicar o portfólio, exceto quando mudam as capturas ou os dados do case.
 
 Depois de publicar, verifique na URL real: HTTPS, assets, refresh direto em `/projetos/<slug>`, 404, contato, metadata e indexação. Build local bem-sucedido não comprova o deploy.
 

@@ -8,9 +8,8 @@ import { getConfiguredDemoUrl } from "@/config/demos";
 import { siteConfig } from "@/config/site";
 import { getCategoryLabel } from "@/data/categories";
 import { getCaseUrl, getProjectBySlug, projects } from "@/data/projects";
-import { resolveDemoLink } from "@/lib/demo";
+import { demoStatusDescriptions, resolveDemoPresentation } from "@/lib/demo";
 import { pageMetadata } from "@/lib/metadata";
-import type { DemoStatus } from "@/types/project";
 
 export const dynamicParams = false;
 
@@ -25,15 +24,6 @@ export async function generateMetadata({ params }: PageProps<"/projetos/[slug]">
   return pageMetadata({ title: project.seo.title, description: project.seo.description, path: getCaseUrl(slug) });
 }
 
-const demoStatusText: Record<DemoStatus, string> = {
-  planned:
-    "A demonstração navegável deste projeto ainda não foi iniciada. Por enquanto, este case apresenta a proposta e uma prévia conceitual.",
-  in_progress:
-    "A demonstração navegável está em desenvolvimento. O link será publicado depois que o fluxo for testado.",
-  available: "A demonstração navegável está publicada. Ela usa dados fictícios e não cria pedidos ou reservas reais.",
-  unavailable: "A demonstração está temporariamente fora do ar. A proposta continua descrita nesta página.",
-};
-
 export default async function ProjectCasePage({ params }: PageProps<"/projetos/[slug]">) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -42,9 +32,10 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
   const index = projects.findIndex((item) => item.slug === project.slug);
   const previous = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
-  const demoUrl = resolveDemoLink(project.demoStatus, getConfiguredDemoUrl(project.slug), siteConfig.deployEnv);
+  const demo = resolveDemoPresentation(project.demoStatus, getConfiguredDemoUrl(project.slug), siteConfig.deployEnv);
+  const hasImplemented = project.features.some((feature) => feature.status === "implemented");
   const allPlanned = project.features.every((feature) => feature.status === "planned");
-  const cover = project.media[0];
+  const [cover, ...screens] = project.media;
 
   return (
     <article>
@@ -70,7 +61,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           <h1 className="mt-3 text-4xl leading-[1.08] font-extrabold sm:text-5xl">{project.name}</h1>
           <div className="mt-4 flex flex-wrap gap-2">
             <ConceptBadge />
-            <DemoStatusBadge status={project.demoStatus} />
+            <DemoStatusBadge status={demo.state} />
           </div>
           <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">{project.summary}</p>
           <p className="mt-4 text-sm text-muted">
@@ -109,7 +100,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           </section>
           <section aria-labelledby="solucao">
             <h2 id="solucao" className="text-2xl font-extrabold sm:text-3xl">
-              Solução proposta
+              {hasImplemented ? "Solução desenvolvida na demonstração" : "Solução proposta"}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">{project.solution}</p>
           </section>
@@ -133,6 +124,30 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           ))}
         </ol>
       </section>
+
+      {screens.length > 0 && (
+        <section aria-labelledby="telas" className="container-page pb-16">
+          <h2 id="telas" className="text-2xl font-extrabold sm:text-3xl">
+            Telas da demonstração
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted">Capturas reais da demo, com a agenda e os dados fictícios dela.</p>
+          <div className="mt-8 grid items-start gap-6 md:grid-cols-[1fr_16rem] lg:grid-cols-[1fr_18rem]">
+            {screens.map((media) => {
+              const portrait = media.height > media.width;
+              return (
+                <figure key={media.src} className={portrait ? "mx-auto w-full max-w-72 md:row-span-2" : ""}>
+                  <ProjectCover
+                    media={media}
+                    sizes={portrait ? "288px" : "(min-width: 1024px) 800px, 100vw"}
+                    className={`border border-line shadow-card ${portrait ? "rounded-[1.75rem]" : "rounded-card"}`}
+                  />
+                  <figcaption className="mt-3 text-sm text-muted">{media.caption}</figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       <section aria-labelledby="funcionalidades" className="border-y border-line bg-sand/60">
         <div className="container-page py-16">
@@ -173,12 +188,18 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
               Demonstração
             </h2>
             <div className="mt-3">
-              <DemoStatusBadge status={project.demoStatus} />
+              <DemoStatusBadge status={demo.state} />
             </div>
-            <p className="mt-4 leading-relaxed text-muted">{demoStatusText[project.demoStatus]}</p>
-            {demoUrl && (
+            <p className="mt-4 leading-relaxed text-muted">{demoStatusDescriptions[demo.state]}</p>
+            {project.technologies.length > 0 && (
+              <p className="mt-3 text-sm text-muted">
+                <span className="font-semibold text-ink">Feita com: </span>
+                {project.technologies.join(", ")}
+              </p>
+            )}
+            {demo.link && (
               <a
-                href={demoUrl}
+                href={demo.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary mt-6"

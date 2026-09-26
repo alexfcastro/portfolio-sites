@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { demoUrlSlugs, getConfiguredDemoUrl } from "@/config/demos";
 import { categories, solutionTypes } from "@/data/categories";
 import { getFeaturedProjects, projects } from "@/data/projects";
-import { resolveDemoLink } from "@/lib/demo";
+import { resolveDemoLink, resolveDemoPresentation } from "@/lib/demo";
 
 const publicDir = join(__dirname, "..", "..", "public");
 
@@ -87,9 +87,30 @@ describe("matriz de projetos", () => {
   });
 });
 
-describe("estado das demos na Fase 1", () => {
-  it("mantém as 12 demos planejadas, com recursos previstos e prévias conceituais", () => {
-    for (const project of projects) {
+/** Demos implementadas e validadas até agora (Fase 2: barbearia). */
+const IMPLEMENTED_DEMOS = ["barbearia"];
+
+describe("demos implementadas", () => {
+  for (const slug of IMPLEMENTED_DEMOS) {
+    const project = projects.find((item) => item.slug === slug)!;
+
+    it(`${slug}: tem recursos implementados, stack definida e só capturas reais`, () => {
+      expect(project.demoStatus).toBe("available");
+      expect(project.features.some((feature) => feature.status === "implemented")).toBe(true);
+      expect(project.technologies.length).toBeGreaterThan(0);
+      expect(project.media.every((media) => media.kind === "screenshot")).toBe(true);
+    });
+
+    it(`${slug}: tem ao menos uma captura desktop e uma mobile`, () => {
+      expect(project.media.some((media) => media.width > media.height)).toBe(true);
+      expect(project.media.some((media) => media.height > media.width)).toBe(true);
+    });
+  }
+});
+
+describe("estado das demos ainda não implementadas", () => {
+  it("mantém as demais demos planejadas, com recursos previstos e prévias conceituais", () => {
+    for (const project of projects.filter((item) => !IMPLEMENTED_DEMOS.includes(item.slug))) {
       expect(project.demoStatus, project.slug).toBe("planned");
       expect(project.technologies, project.slug).toEqual([]);
       for (const feature of project.features) {
@@ -105,10 +126,20 @@ describe("estado das demos na Fase 1", () => {
     expect([...demoUrlSlugs].sort()).toEqual(projects.map((project) => project.slug).sort());
   });
 
-  it("não gera link de abertura para nenhuma demo planejada", () => {
+  it("não gera link de abertura para nenhuma demo sem URL configurada", () => {
     for (const project of projects) {
       expect(resolveDemoLink(project.demoStatus, getConfiguredDemoUrl(project.slug), "production")).toBeNull();
     }
+  });
+
+  it("mostra demo validada sem URL como 'Publicação em breve', nunca como disponível", () => {
+    expect(resolveDemoPresentation("available", null, "production")).toEqual({ state: "unpublished", link: null });
+    expect(resolveDemoPresentation("available", "http://localhost:3101", "production")).toEqual({ state: "unpublished", link: null });
+    expect(resolveDemoPresentation("available", "https://bravus.vercel.app", "production")).toEqual({
+      state: "available",
+      link: "https://bravus.vercel.app",
+    });
+    expect(resolveDemoPresentation("planned", "https://bravus.vercel.app", "production")).toEqual({ state: "planned", link: null });
   });
 
   it("só libera o link com estado disponível e URL válida", () => {

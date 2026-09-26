@@ -92,6 +92,12 @@ p {
   border-radius: 4px;
 }
 
+/* Títulos e regiões focados por script (tabindex="-1") não são controles: sem anel visual. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 .on-dark :focus-visible {
   outline-color: var(--color-accent-on-dark);
 }

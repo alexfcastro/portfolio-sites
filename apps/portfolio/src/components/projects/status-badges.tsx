@@ -1,23 +1,25 @@
-import { Clock3, FlaskConical, Hammer, MonitorPlay, PauseCircle } from "lucide-react";
-import { demoStatusLabels } from "@/lib/demo";
-import type { DemoStatus } from "@/types/project";
+import { CalendarClock, Clock3, FlaskConical, Hammer, MonitorPlay, PauseCircle } from "lucide-react";
+import { demoStatusLabels, type PublicDemoState } from "@/lib/demo";
 
 const statusIcons = {
   planned: Clock3,
   in_progress: Hammer,
   available: MonitorPlay,
+  unpublished: CalendarClock,
   unavailable: PauseCircle,
 } as const;
 
 const badgeBase =
   "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold leading-none whitespace-nowrap";
 
-export function DemoStatusBadge({ status }: { status: DemoStatus }) {
+export function DemoStatusBadge({ status }: { status: PublicDemoState }) {
   const Icon = statusIcons[status];
   const tone =
     status === "available"
       ? "border-success/30 bg-success/10 text-success"
-      : "border-line bg-paper text-muted";
+      : status === "unpublished"
+        ? "border-ink/20 bg-paper text-ink"
+        : "border-line bg-paper text-muted";
 
   return (
     <span className={`${badgeBase} ${tone}`}>

@@ -6,7 +6,7 @@ import { getConfiguredDemoUrl } from "@/config/demos";
 import { siteConfig } from "@/config/site";
 import { getCategoryLabel } from "@/data/categories";
 import { getCaseUrl } from "@/data/projects";
-import { resolveDemoLink } from "@/lib/demo";
+import { resolveDemoPresentation } from "@/lib/demo";
 import type { Project } from "@/types/project";
 
 interface ProjectCardProps {
@@ -17,7 +17,11 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, headingLevel: Heading = "h3", priority = false }: ProjectCardProps) {
   const cover = project.media[0];
-  const demoUrl = resolveDemoLink(project.demoStatus, getConfiguredDemoUrl(project.slug), siteConfig.deployEnv);
+  const { state: demoState, link: demoUrl } = resolveDemoPresentation(
+    project.demoStatus,
+    getConfiguredDemoUrl(project.slug),
+    siteConfig.deployEnv,
+  );
   const hasImplemented = project.features.some((feature) => feature.status === "implemented");
 
   return (
@@ -38,7 +42,7 @@ export function ProjectCard({ project, headingLevel: Heading = "h3", priority = 
 
         <div className="mt-3 flex flex-wrap gap-2">
           <ConceptBadge />
-          <DemoStatusBadge status={project.demoStatus} />
+          <DemoStatusBadge status={demoState} />
         </div>
 
         <p className="mt-4 leading-relaxed text-muted">{project.summary}</p>

@@ -9,6 +9,8 @@
   "scripts": {
     "dev:portfolio": "pnpm --filter @ax/portfolio dev",
     "build:portfolio": "pnpm --filter @ax/portfolio build",
+    "dev:barbearia": "pnpm --filter @ax/barbearia dev",
+    "build:barbearia": "pnpm --filter @ax/barbearia build",
     "build": "pnpm --recursive --filter \"./apps/**\" build",
     "lint": "pnpm --recursive --filter \"./apps/**\" lint",
     "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",

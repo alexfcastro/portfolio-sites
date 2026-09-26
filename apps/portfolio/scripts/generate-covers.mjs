@@ -1,4 +1,5 @@
-// Gera as capas conceituais (SVG) dos 12 projetos em public/projects/<slug>/cover.svg.
+// Gera as capas conceituais (SVG) dos projetos sem demo em public/projects/<slug>/cover.svg.
+// Projetos com demo implementada usam capturas reais (scripts/capture-screenshots.mjs na raiz).
 // Composições originais: nenhuma foto, marca ou dado de empresa real.
 // Uso: pnpm --filter @ax/portfolio covers
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -96,94 +97,6 @@ function svgDoc({ bg, decor = "", browserBox, phoneBox, desktop, mobile }) {
 
 const BROWSER = [70, 80, 1160, 800];
 const PHONE = [1200, 230];
-
-// ---------- 1. Barbearia ----------
-function barbearia() {
-  const c = { bg: "#15120f", panel: "#201b16", line: "#342c23", gold: "#c9a45c", text: "#f3ece0", muted: "#a89a86" };
-  const services = [
-    ["Corte clássico", "40 min", "R$ 45"],
-    ["Barba completa", "30 min", "R$ 35"],
-    ["Corte + barba", "70 min", "R$ 70"],
-    ["Acabamento", "20 min", "R$ 25"],
-  ];
-  const svc = services
-    .map(([name, dur, price], i) => {
-      const y = 190 + i * 92;
-      const active = i === 2;
-      return (
-        rect(60, y, 470, 76, 12, active ? "#2a2219" : c.panel, `stroke="${active ? c.gold : c.line}" stroke-width="${active ? 2 : 1}"`) +
-        text(84, y + 33, name, 20, c.text, { weight: 700 }) +
-        text(84, y + 57, dur, 15, c.muted) +
-        text(506, y + 45, price, 20, c.gold, { weight: 700, anchor: "end" })
-      );
-    })
-    .join("");
-  const barbers = ["Rafa", "Leo", "Davi"]
-    .map((n, i) => {
-      const x = 590 + i * 150;
-      const active = i === 1;
-      return (
-        circle(x + 50, 240, 40, active ? c.gold : "#3a3129") +
-        circle(x + 50, 228, 15, active ? "#15120f" : "#5a4d3f") +
-        `<path d="M${x + 24} 266 q26 -26 52 0" fill="${active ? "#15120f" : "#5a4d3f"}"/>` +
-        text(x + 50, 310, n, 17, active ? c.gold : c.text, { weight: 600, anchor: "middle" })
-      );
-    })
-    .join("");
-  const slots = ["09:00", "09:40", "10:20", "11:00", "14:00", "14:40", "15:20", "16:00"]
-    .map((t, i) => {
-      const x = 590 + (i % 4) * 118;
-      const y = 400 + Math.floor(i / 4) * 62;
-      const busy = i === 1 || i === 5;
-      const active = i === 4;
-      return (
-        rect(x, y, 104, 48, 10, active ? c.gold : c.panel, `stroke="${active ? c.gold : c.line}"`) +
-        text(x + 52, y + 31, t, 17, active ? "#15120f" : busy ? "#5f5448" : c.text, { weight: 600, anchor: "middle" })
-      );
-    })
-    .join("");
-  const desktop = `
-    ${rect(0, 0, 1160, 756, 0, c.bg)}
-    ${text(60, 70, "BRAVUS", 30, c.gold, { weight: 800, spacing: 8 })}
-    ${text(262, 70, "BARBEARIA", 14, c.muted, { weight: 600, spacing: 5 })}
-    ${text(1100, 66, "Serviços    Equipe    Galeria", 15, c.muted, { anchor: "end" })}
-    ${rect(0, 104, 1160, 1, 0, c.line)}
-    ${text(60, 160, "1. Escolha o serviço", 22, c.text, { weight: 700 })}
-    ${svc}
-    ${text(590, 160, "2. Profissional", 22, c.text, { weight: 700 })}
-    ${barbers}
-    ${text(590, 376, "3. Horário — sexta, 14 de março", 22, c.text, { weight: 700 })}
-    ${slots}
-    ${rect(590, 560, 460, 120, 14, c.panel, `stroke="${c.line}"`)}
-    ${text(614, 598, "Corte + barba com Leo", 18, c.text, { weight: 700 })}
-    ${text(614, 626, "Sex, 14/03 · 14:00 · 70 min", 15, c.muted)}
-    ${button(846, 598, 180, 52, "Confirmar", c.gold, "#15120f", 17)}
-  `;
-  const mobile = `
-    ${rect(0, 0, 306, 656, 0, c.bg)}
-    ${text(24, 84, "BRAVUS", 22, c.gold, { weight: 800, spacing: 6 })}
-    ${text(24, 130, "Escolha um horário", 20, c.text, { weight: 700 })}
-    ${text(24, 154, "Corte + barba · Leo", 14, c.muted)}
-    ${["Qui 13", "Sex 14", "Sáb 15"].map((d, i) => rect(24 + i * 88, 176, 80, 58, 10, i === 1 ? c.gold : c.panel) + text(64 + i * 88, 211, d, 14, i === 1 ? "#15120f" : c.text, { weight: 600, anchor: "middle" })).join("")}
-    ${["14:00", "14:40", "15:20", "16:00", "16:40", "17:20"].map((t, i) => rect(24 + (i % 2) * 132, 256 + Math.floor(i / 2) * 60, 124, 48, 10, i === 0 ? "#2a2219" : c.panel, `stroke="${i === 0 ? c.gold : c.line}"`) + text(86 + (i % 2) * 132, 287 + Math.floor(i / 2) * 60, t, 16, c.text, { weight: 600, anchor: "middle" })).join("")}
-    ${rect(24, 460, 258, 86, 12, c.panel)}
-    ${text(40, 492, "Resumo", 13, c.muted, { weight: 600 })}
-    ${text(40, 520, "Sex 14/03 · 14:00 · R$ 70", 15, c.text, { weight: 700 })}
-    ${button(24, 568, 258, 54, "Confirmar agendamento", c.gold, "#15120f", 15, 12)}
-  `;
-  const decor = `
-    <g opacity="0.08" stroke="#c9a45c" stroke-width="2" fill="none">
-      ${Array.from({ length: 14 }, (_, i) => `<path d="M${-200 + i * 140} 1000 L${200 + i * 140} 0"/>`).join("")}
-    </g>`;
-  return svgDoc({
-    bg: ["#0f0d0b", "#2b241c"],
-    decor,
-    browserBox: BROWSER,
-    phoneBox: PHONE,
-    desktop: { frame: "#0b0a09", bar: "#1d1915", dots: ["#5a4d3f", "#5a4d3f", "#5a4d3f"], url: "#2a241e", urlFg: "#a89a86", body: c.bg, content: desktop },
-    mobile: { frame: "#0b0a09", screen: c.bg, content: mobile },
-  });
-}
 
 // ---------- 2. Clínica ----------
 function clinica() {
@@ -922,7 +835,6 @@ function floricultura() {
 }
 
 const covers = {
-  barbearia,
   clinica,
   restaurante,
   oficina,

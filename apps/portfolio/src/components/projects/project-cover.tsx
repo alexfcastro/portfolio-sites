@@ -25,11 +25,9 @@ export function ProjectCover({ media, preload = false, sizes, className, decorat
         unoptimized={media.src.endsWith(".svg")}
         className="h-auto w-full"
       />
-      {media.kind === "concept" && (
-        <span className="absolute top-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-canvas backdrop-blur-sm">
-          Prévia conceitual
-        </span>
-      )}
+      <span className="absolute top-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-canvas backdrop-blur-sm">
+        {media.kind === "concept" ? "Prévia conceitual" : "Captura da demonstração"}
+      </span>
     </div>
   );
 }
