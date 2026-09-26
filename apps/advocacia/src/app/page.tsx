@@ -1,0 +1,89 @@
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { areas, articles, getArea, team } from "@/data/firm";
+
+export default function HomePage() {
+  return (
+    <>
+      <section aria-labelledby="hero-title" className="bg-navy text-white">
+        <div className="wrap py-16 sm:py-24">
+          <p className="kicker !text-brass">Escritório de advocacia</p>
+          <h1 id="hero-title" className="mt-5 max-w-3xl text-4xl leading-tight font-medium sm:text-6xl">
+            Orientação jurídica clara, com atenção a cada caso.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-white/80">
+            Explicamos as possibilidades de forma direta, para que você decida com informação. O primeiro passo é uma
+            conversa inicial.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/contato" className="btn bg-brass text-navy hover:bg-white">
+              Agendar conversa inicial
+            </Link>
+            <Link href="#areas" className="btn border border-white/40 hover:border-white">
+              Áreas de atuação
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="areas" aria-labelledby="areas-title" className="wrap py-16 sm:py-20">
+        <p className="kicker">Atuação</p>
+        <h2 id="areas-title" className="mt-3 text-4xl">
+          Áreas de atuação
+        </h2>
+        <ul className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+          {areas.map((area) => (
+            <li key={area.slug} className="bg-paper">
+              <Link href={`/areas/${area.slug}`} className="group flex h-full flex-col border-l-2 border-transparent p-6 hover:border-brass">
+                <h3 className="text-2xl">{area.name}</h3>
+                <p className="mt-2 flex-1 text-muted">{area.summary}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brass-text">
+                  Saiba mais <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="equipe" aria-labelledby="equipe-title" className="border-y border-line bg-paper py-16 sm:py-20">
+        <div className="wrap">
+          <p className="kicker">Equipe</p>
+          <h2 id="equipe-title" className="mt-3 text-4xl">
+            Quem atende
+          </h2>
+          <p className="mt-3 text-muted">Profissionais fictícios; registros profissionais não são exibidos.</p>
+          <ul className="mt-10 grid gap-8 md:grid-cols-3">
+            {team.map((member) => (
+              <li key={member.name} className="border-t border-brass pt-5">
+                <h3 className="text-2xl">{member.name}</h3>
+                <p className="text-sm font-semibold tracking-wider text-brass-text uppercase">{member.role}</p>
+                <p className="mt-3 text-muted">{member.bio}</p>
+                <p className="mt-3 text-sm">{member.areas.map((slug) => getArea(slug)?.name).join(" · ")}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="artigos" aria-labelledby="artigos-title" className="wrap py-16 sm:py-20">
+        <p className="kicker">Conteúdo</p>
+        <h2 id="artigos-title" className="mt-3 text-4xl">
+          Artigos informativos
+        </h2>
+        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          {articles.map((article) => (
+            <li key={article.slug}>
+              <Link href={`/artigos/${article.slug}`} className="group block h-full border border-line bg-paper p-6 hover:border-navy">
+                <p className="kicker">{getArea(article.areaSlug)?.name}</p>
+                <h3 className="mt-3 text-2xl group-hover:underline">{article.title}</h3>
+                <p className="mt-2 text-muted">{article.summary}</p>
+                <p className="mt-4 text-sm text-muted">{article.readingMinutes} min de leitura</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
+  );
+}

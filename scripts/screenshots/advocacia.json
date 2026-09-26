@@ -1,0 +1,19 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/advocacia",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    { "name": "desktop-area", "path": "/areas/sucessoes", "width": 1440, "height": 900, "scale": 1 },
+    { "name": "mobile-artigo", "path": "/artigos/inventario-em-cartorio", "width": 390, "height": 844, "scale": 2, "mobile": true },
+    {
+      "name": "desktop-contato",
+      "path": "/contato?area=familia",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelector('input[name=subject]').click(); const s = document.querySelectorAll('main select')[1]; Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(s, 'Manhã'); s.dispatchEvent(new Event('change', { bubbles: true }));",
+        "window.scrollTo(0, 200);"
+      ]
+    }
+  ]
+}
