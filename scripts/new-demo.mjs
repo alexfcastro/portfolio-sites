@@ -6,7 +6,7 @@
 // Uso: node scripts/new-demo.mjs <slug> "<Nome do negócio>" <porta>
 // Ex.:  node scripts/new-demo.mjs clinica "Vita Clínica" 3102
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import fs, { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -108,6 +108,9 @@ copy("src/config/site.ts", (text) =>
 );
 
 copy("src/lib/money.ts");
+
+// Utilitário genérico de estado local (chave, versão, validação); referência em apps/oficina.
+fs.copyFileSync(join(root, "apps", "oficina", "src", "lib", "local-store.ts"), join(target, "src", "lib", "local-store.ts"));
 copy("src/lib/time.ts", (text) =>
   text
     .replace('import { business } from "@/data/business";', 'export const TIME_ZONE = "America/Sao_Paulo";')
