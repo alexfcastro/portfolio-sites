@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Faixa de demonstração e prévia de mensagem: neutras, separadas da identidade do negócio */
+  --color-demo-bg: #f6f5f1;
+  --color-demo-ink: #14161a;
+  --color-demo-muted: #555962;
+  --color-wa-head: #1f3b33;
+  --color-wa-subtle: #cfe3dc;
+  --color-wa-chat: #0f1a17;
+  --color-wa-bubble: #1e5c4b;
+
+  /* Identidade PetVille (fictícia): coral e creme */
+  --color-cream: #fff6ec;
+  --color-paper: #ffffff;
+  --color-ink: #3a2420;
+  --color-muted: #6e5650;
+  --color-line: #f0dccb;
+  --color-coral: #c8452f;
+  --color-coral-dark: #a8371f;
+  --color-coral-soft: #fde5dc;
+  --color-sun: #f6b73c;
+  --color-leaf: #2f7a5b;
+  --color-alert: #b42318;
+
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
+
+  --radius-card: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Títulos focados por script e o próprio <dialog> não são controles: sem anel visual. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible,
+dialog:focus,
+dialog:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  .kicker {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-coral);
+  }
+
+  .btn {
+    display: inline-flex;
+    min-height: 2.875rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.625rem 1.375rem;
+    font-weight: 800;
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .btn-primary {
+    background: var(--color-coral);
+    color: #fff;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-coral-dark);
+  }
+
+  .btn-secondary {
+    border: 2px solid var(--color-line);
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    border-color: var(--color-coral);
+  }
+
+  .field {
+    margin-top: 0.375rem;
+    display: block;
+    width: 100%;
+    border-radius: 0.875rem;
+    border: 2px solid var(--color-line);
+    background: var(--color-paper);
+    padding: 0.625rem 0.875rem;
+  }
+
+  .field:focus {
+    border-color: var(--color-coral);
+    outline: none;
+  }
+
+  .field[aria-invalid="true"] {
+    border-color: var(--color-alert);
+  }
+
+  /* Opção selecionável (rádio escondido + cartão) */
+  .choice {
+    display: block;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid var(--color-line);
+    background: var(--color-paper);
+    padding: 0.875rem 1rem;
+  }
+
+  .choice:hover {
+    border-color: var(--color-coral);
+  }
+
+  .choice:has(input:checked) {
+    border-color: var(--color-coral);
+    background: var(--color-coral-soft);
+  }
+
+  .choice:has(input:focus-visible) {
+    outline: 3px solid var(--color-coral);
+    outline-offset: 3px;
+  }
+}

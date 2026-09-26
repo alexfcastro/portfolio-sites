@@ -1,0 +1,56 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/petshop",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "desktop-servico",
+      "path": "/agendar",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "const i = document.querySelector('main input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Tobias'); i.dispatchEvent(new Event('input', { bubbles: true })); document.querySelector('input[value=cao]').click(); document.querySelector('input[value=medio]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelector('input[value=banho-tosa]').click(); document.querySelector('input[value=bia]').click(); window.scrollTo(0, 190);"
+      ]
+    },
+    {
+      "name": "mobile-horario",
+      "path": "/agendar",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "const i = document.querySelector('main input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Mel'); i.dispatchEvent(new Event('input', { bubbles: true })); document.querySelector('input[value=gato]').click(); document.querySelector('input[value=pequeno]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelector('input[value=banho]').click(); document.querySelector('input[value=tom]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelectorAll('[aria-label=\"Horários livres\"] button')[2].click(); document.querySelector('main h2').scrollIntoView();"
+      ]
+    },
+    {
+      "name": "desktop-confirmacao",
+      "path": "/agendar",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "const i = document.querySelector('main input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Pipoca'); i.dispatchEvent(new Event('input', { bubbles: true })); document.querySelector('input[value=cao]').click(); document.querySelector('input[value=pequeno]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelector('input[value=banho-higienica]').click(); document.querySelector('input[value=tom]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelectorAll('[aria-label=\"Horários livres\"] button')[1].click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Confirmar')).click();",
+        "window.scrollTo(0, 0);"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { MessageCircle, X } from "lucide-react";
-import { useRef } from "react";
+import { useId, useRef } from "react";
 
 interface WhatsAppPreviewProps {
   message: string;
@@ -19,6 +19,7 @@ export function WhatsAppPreview({
   triggerClassName = "btn btn-line",
 }: WhatsAppPreviewProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
 
   return (
     <>
@@ -29,7 +30,7 @@ export function WhatsAppPreview({
 
       <dialog
         ref={dialogRef}
-        aria-labelledby="wa-preview-title"
+        aria-labelledby={titleId}
         className="m-auto w-[min(26rem,calc(100vw-2rem))] rounded-2xl border border-edge bg-coal-2 p-0 text-cream backdrop:bg-black/70"
         onClick={(event) => {
           // Clique no fundo (fora do conteúdo) fecha.
@@ -38,7 +39,7 @@ export function WhatsAppPreview({
       >
         <div className="flex items-center justify-between gap-3 border-b border-edge bg-wa-head px-5 py-3">
           <div>
-            <h2 id="wa-preview-title" className="font-sans text-base font-semibold tracking-normal normal-case">
+            <h2 id={titleId} className="font-sans text-base font-semibold tracking-normal normal-case">
               Bravus Barbearia
             </h2>
             <p className="text-xs text-wa-subtle">Prévia local · contato fictício</p>

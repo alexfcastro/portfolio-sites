@@ -126,7 +126,7 @@ write(
   `"use client";
 
 import { MessageCircle, X } from "lucide-react";
-import { useRef } from "react";
+import { useId, useRef } from "react";
 
 interface MessagePreviewProps {
   businessName: string;
@@ -146,6 +146,7 @@ export function MessagePreview({
   triggerClassName = "btn btn-secondary",
 }: MessagePreviewProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
 
   return (
     <>
@@ -155,7 +156,7 @@ export function MessagePreview({
       </button>
       <dialog
         ref={dialogRef}
-        aria-labelledby="preview-title"
+        aria-labelledby={titleId}
         className="m-auto w-[min(26rem,calc(100vw-2rem))] overflow-hidden rounded-2xl bg-demo-bg p-0 text-demo-ink shadow-2xl backdrop:bg-black/60"
         onClick={(event) => {
           if (event.target === event.currentTarget) dialogRef.current?.close();
@@ -163,7 +164,7 @@ export function MessagePreview({
       >
         <div className="flex items-center justify-between gap-3 bg-wa-head px-5 py-3 text-white">
           <div>
-            <h2 id="preview-title" className="text-base font-semibold">
+            <h2 id={titleId} className="text-base font-semibold">
               {businessName}
             </h2>
             <p className="text-xs text-wa-subtle">Prévia local · contato fictício</p>

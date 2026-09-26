@@ -28,6 +28,8 @@
     "dev:advocacia": "pnpm --filter @ax/advocacia dev",
     "build:advocacia": "pnpm --filter @ax/advocacia build",
     "dev:imobiliaria": "pnpm --filter @ax/imobiliaria dev",
-    "build:imobiliaria": "pnpm --filter @ax/imobiliaria build"
+    "build:imobiliaria": "pnpm --filter @ax/imobiliaria build",
+    "dev:petshop": "pnpm --filter @ax/petshop dev",
+    "build:petshop": "pnpm --filter @ax/petshop build"
   }
 }
