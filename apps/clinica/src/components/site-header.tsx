@@ -32,7 +32,8 @@ export function SiteHeader() {
             Minhas solicitações
           </Link>
           <Link href="/solicitar" className="btn btn-primary ml-1 shrink-0 !px-4">
-            Solicitar horário
+            <span className="max-[379px]:hidden">Solicitar horário</span>
+            <span className="min-[380px]:hidden">Solicitar</span>
           </Link>
         </nav>
       </div>

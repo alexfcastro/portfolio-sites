@@ -129,3 +129,41 @@ Geradas por `scripts/capture-screenshots.mjs` (Chrome via DevTools Protocol, emu
 - Firefox, Safari e aparelhos reais; leitor de tela real.
 - Publicação (não há URL pública).
 - Tecla Escape física no diálogo (o fechamento foi verificado pela API; Escape é o comportamento nativo do `<dialog>` modal).
+## Fase 3 — Vita Clínica, Sabor & Brasa, Torque Auto Center, Resolve Serviços
+
+Data: 26/09/2026 · builds de produção locais (portas 3102–3105) · Chromium.
+
+### Automatizado
+
+| App | Testes | O que cobrem |
+|---|---|---|
+| `clinica` | 13 | Toda especialidade com profissional e agenda; sem domingos; dias/períodos só quando o profissional (ou algum da especialidade) atende; janela a partir de amanhã; validação da solicitação; confirmação simulada escolhe profissional disponível e horário dentro do período; cancelamento só de solicitações futuras e ativas; URL do portfólio. |
+| `restaurante` | 13 | Preços em centavos; adicionais obrigatórios, opcionais, repetidos, inexistentes, de outro item e acima do máximo; soma dos adicionais; mesma configuração agrupada em uma linha; limites de quantidade e observação; retirada sem taxa, entrega com taxa do bairro, bairro obrigatório, pedido mínimo e carrinho vazio; horário de funcionamento por turno e dia. |
+| `oficina` | 11 | Sintomas apontando para serviços existentes e faixas coerentes; validação do veículo (tipo, modelo, ano 1980…ano+1, km inteiro); problema e sintomas da própria categoria; serviços prováveis sem repetição e faixa somada; fotos só JPG/PNG/WebP até 5 MB e limite de 4; etapas do acompanhamento. |
+| `servicos` | 10 | Perguntas e portfólio consistentes; região atendida com taxa e recusa das não atendidas; respostas guiadas obrigatórias e válidas; dias a partir de amanhã sem domingo, sábado só manhã; até 3 preferências; mensagem montada. |
+
+Portfólio: 45 testes (inclui as 5 demos implementadas com recursos implementados, stack, só capturas reais e ao menos uma desktop e uma mobile).
+
+### Navegador
+
+- **Clínica:** `?especialidade=nutricao` abre em "Profissional"; erros por etapa; só a tarde disponível na segunda de Marina (agenda); protocolo `VTA-1001`; **nenhum campo de texto livre ou de arquivo** no fluxo; confirmação simulada (17:00 com Marina), cancelamento e restauração.
+- **Restaurante:** ponto obrigatório; o 4º extra fica desabilitado; `(89,90 + 6 + 4) × 2 = 199,80`; carrinho com retirada (206,80) e entrega (+8,90 = 215,70); bairro obrigatório; pedido mínimo; pedido `SB-1001` esvazia o carrinho; remoção leva ao carrinho vazio.
+- **Oficina:** erros de veículo nos campos, com foco no primeiro; fotos geradas no navegador viram prévias `blob:`, GIF recusado, remoção atualiza o contador; estimativa R$ 250–530 para os sintomas escolhidos; **o estado salvo guarda só a quantidade de fotos**; acompanhamento avança até "Pronto para retirada".
+- **Resolve:** região não atendida recusada; perguntas obrigatórias; limite de 3 preferências (as demais ficam desabilitadas); o navegador guarda **só o contador de protocolo**.
+
+#### Achados corrigidos
+
+1. **Contorno de foco no próprio `<dialog>`** ao abrir (todas as demos): removido só no elemento `dialog`.
+2. **Cabeçalhos mais largos que 320 px** (clínica, restaurante, oficina, Resolve). A emulação de celular *alarga o layout* em vez de mostrar rolagem, então a verificação passou a comparar `innerWidth` com 320. Botões principais ganharam versão compacta abaixo de 380 px. Todas as páginas principais das 5 demos ficam em 320 px.
+3. **Token de cor `base` colidindo com `text-base`** (Resolve): o nome da marca ficava quase invisível. Token renomeado para `canvas`.
+4. **Escrita em `ref` durante a renderização** (oficina), apontada pelo lint: movida para um efeito.
+
+### Capturas
+
+Geradas por `scripts/capture-screenshots.mjs` com os JSONs em `scripts/screenshots/` (4 por demo: desktop e celular 390×844 @2x), revisadas uma a uma.
+
+### Não verificado
+
+- Firefox, Safari, aparelhos reais e leitores de tela.
+- Ida e volta com o portfólio foi verificada na Fase 2 (barbearia); nas demais, os links "Voltar ao portfólio", "Ver case" e "Solicitar um site como este" usam a mesma configuração, sem teste de clique individual.
+- Publicação.

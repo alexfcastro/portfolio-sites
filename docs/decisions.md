@@ -59,3 +59,13 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 - **Painel sem login falso**, com aviso explícito de que é público e sem segurança de produção.
 - **Estado exibido "Publicação em breve"**: dado `available` + nenhuma URL válida no ambiente. O briefing define "disponível" como validado **e** com URL; a demo existe e foi testada, mas não pode ser chamada de disponível nem ganhar botão enquanto não estiver publicada.
 - **Capturas reais via DevTools Protocol** (`scripts/capture-screenshots.mjs`), usando o WebSocket nativo do Node, sem Puppeteer/Playwright: emula celular de verdade e executa passos (cliques) antes de capturar.
+
+## Fase 3
+
+- **Gerador de demos** (`scripts/new-demo.mjs`): cria a base comum a partir da barbearia e escreve 404/erro com classes semânticas (`.wrap`, `.kicker`, `.btn`, `.btn-primary`, `.btn-secondary`, cor `muted`) que cada identidade define. Código gerado é copiado (não compartilhado), mantendo cada app independente para publicar.
+- **`createLocalStore`**: utilitário único de estado local (chave, versão, validação, sincronização entre abas), copiado para cada demo nova. A barbearia mantém sua implementação original.
+- **Demos só guardam o mínimo**: clínica e oficina salvam as solicitações de demonstração (sem dados de saúde nem fotos); a Resolve salva só o contador de protocolo; o restaurante salva o carrinho.
+- **Clínica sem campo livre**: o fluxo não tem texto livre nem upload, para não induzir o envio de dados de saúde.
+- **Estimativa da oficina é uma faixa** somada a partir dos serviços prováveis, sempre rotulada como demonstrativa.
+- **Cabeçalhos com versão compacta abaixo de 380 px** e verificação de reflow por `innerWidth`, e não por `scrollWidth`, porque a emulação móvel alarga o layout.
+- **Nomes de tokens de cor não podem coincidir com utilitários do Tailwind** (`base`, `sm`, `lg`, `xl`…), senão `text-base` vira cor.

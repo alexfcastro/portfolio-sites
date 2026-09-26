@@ -10,7 +10,7 @@ export function CartLink() {
   return (
     <Link href="/carrinho" className="btn btn-primary shrink-0 !px-4">
       <ShoppingBag aria-hidden className="size-4" />
-      Carrinho
+      <span className="max-[379px]:sr-only">Carrinho</span>
       <span className="rounded-full bg-white/20 px-2 text-sm tabular-nums" aria-label={`${count} itens`}>
         {count}
       </span>

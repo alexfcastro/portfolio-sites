@@ -31,3 +31,14 @@ Todos os assets visuais do portfólio foram **criados para este projeto** (vetor
 | Fontes Barlow e Barlow Condensed | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Tipografia da demo |
 
 A capa conceitual da barbearia (`cover.svg`) foi removida quando a demo ganhou capturas reais.
+
+### Fase 3
+
+| Asset | Local | Origem | Uso |
+|---|---|---|---|
+| Capturas (4 PNG por demo) | `apps/portfolio/public/projects/{clinica,restaurante,oficina,servicos}/` | Capturas reais das demos, geradas por `scripts/capture-screenshots.mjs` | Cards e cases |
+| Marcas fictícias e favicons (folha, chama, "T", check) | `apps/*/src/components/*`, `apps/*/src/app/icon.svg` | Criação própria | Demos |
+| Ilustrações de pratos, mapas e trabalhos | `apps/restaurante/src/components/plate-art.tsx`, `apps/clinica/src/components/illustrations.tsx`, `apps/servicos/src/components/work-art.tsx` | Criação própria (SVG) | Demos |
+| Fontes Figtree, Fraunces, Work Sans, DM Serif Display, Archivo, Plus Jakarta Sans | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Demos |
+
+As capas conceituais de clínica, restaurante, oficina e serviços foram removidas ao ganharem capturas reais.

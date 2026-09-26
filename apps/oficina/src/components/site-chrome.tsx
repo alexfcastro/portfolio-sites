@@ -33,7 +33,8 @@ export function SiteHeader() {
             Acompanhamento
           </Link>
           <Link href="/orcamento" className="btn shrink-0 bg-orange !px-4 text-graphite hover:bg-white">
-            Pedir orçamento
+            <span className="max-[379px]:hidden">Pedir orçamento</span>
+            <span className="min-[380px]:hidden">Orçamento</span>
           </Link>
         </nav>
       </div>

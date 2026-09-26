@@ -20,6 +20,8 @@
     "dev:restaurante": "pnpm --filter @ax/restaurante dev",
     "build:restaurante": "pnpm --filter @ax/restaurante build",
     "dev:oficina": "pnpm --filter @ax/oficina dev",
-    "build:oficina": "pnpm --filter @ax/oficina build"
+    "build:oficina": "pnpm --filter @ax/oficina build",
+    "dev:servicos": "pnpm --filter @ax/servicos dev",
+    "build:servicos": "pnpm --filter @ax/servicos build"
   }
 }

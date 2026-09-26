@@ -2,13 +2,17 @@
 
 Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e, nas próximas fases, das aplicações demonstrativas de cada segmento.
 
-**Estado atual:** Fases 1 e 2 implementadas e validadas localmente: portfólio + demo Bravus Barbearia. Nada publicado. Veja [`docs/status.md`](docs/status.md).
+**Estado atual:** Fases 1 a 3 implementadas e validadas localmente: portfólio + 5 demos. Nada publicado. Veja [`docs/status.md`](docs/status.md).
 
 ## Arquitetura
 
 ```text
 apps/
-  barbearia/            Demo Bravus Barbearia (Next.js, porta 3101): agendamento simulado + painel /admin
+  barbearia/            Demo Bravus Barbearia (porta 3101): agendamento simulado + painel /admin
+  clinica/              Demo Vita Clínica (3102): especialidades + solicitação de horário
+  restaurante/          Demo Sabor & Brasa (3103): cardápio, adicionais, carrinho, entrega
+  oficina/              Demo Torque Auto Center (3104): triagem de orçamento, fotos locais, acompanhamento
+  servicos/             Demo Resolve Serviços (3105): região, perguntas guiadas, disponibilidade
   portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/
@@ -18,7 +22,7 @@ apps/
     public/brand/       Marca AX em SVG
     public/projects/    Capas conceituais (geradas por scripts/generate-covers.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
-scripts/                capture-screenshots.mjs + screenshots/<slug>.json (capturas reais das demos)
+scripts/                new-demo.mjs (base de nova demo) · capture-screenshots.mjs + screenshots/<slug>.json
 ```
 
 - Cada app em `apps/<slug>` terá suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
@@ -48,8 +52,8 @@ pnpm lint               # ESLint (config do Next)
 pnpm typecheck          # next typegen + tsc --noEmit
 pnpm test               # Vitest: dados, estado das demos, URLs, link do WhatsApp, formulário
 pnpm build:portfolio    # build de produção do portfólio
-pnpm dev:barbearia      # demo Bravus em http://localhost:3101
-pnpm build:barbearia    # build de produção da demo (independente do portfólio)
+pnpm dev:<slug>         # demo em desenvolvimento (ex.: pnpm dev:clinica → porta 3102)
+pnpm build:<slug>       # build de produção de uma demo, independente do portfólio
 pnpm build              # build de todos os apps existentes
 ```
 
@@ -130,8 +134,8 @@ Nenhuma página nova é necessária: `/projetos/[slug]` é gerada a partir dos d
 
 ## Como iniciar uma nova demo (Fase 2 em diante)
 
-1. Crie `apps/<slug>` com seu próprio `package.json` (nome `@ax/<slug>`), dependências, dados e estilos. Não importe nada de `apps/portfolio`.
-2. Adicione na raiz os scripts `dev:<slug>` e `build:<slug>` e escolha uma porta própria (ex.: 3001).
+1. Gere a base: `node scripts/new-demo.mjs <slug> "<Nome>" <porta>` e rode `pnpm install`. O gerador cria configs, barra de demonstração, URL do portfólio, `noindex`, 404/erro, prévia de mensagem, `createLocalStore` e os scripts `dev:<slug>`/`build:<slug>`.
+2. Escreva a identidade (`globals.css`, definindo `.wrap`, `.kicker`, `.btn`, `.btn-primary`, `.btn-secondary` e a cor `muted`), o layout, os dados e as regras do segmento com testes. Não importe nada de outro app.
 3. Ao começar, mude o `demoStatus` do projeto para `in_progress` (o card mostra "Em desenvolvimento", sem link).
 4. Depois de validar o fluxo, gere capturas reais (desktop e mobile) com o script, a partir de um JSON como [`scripts/screenshots/barbearia.json`](scripts/screenshots/barbearia.json):
 

@@ -1,0 +1,41 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/servicos",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    {
+      "name": "desktop-regiao",
+      "path": "/solicitar?servico=ar-condicionado",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": ["document.querySelectorAll('input[name=region]')[2].click(); window.scrollTo(0, 300);"]
+    },
+    {
+      "name": "mobile-detalhes",
+      "path": "/solicitar?servico=hidraulica",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "document.querySelectorAll('input[name=region]')[0].click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelector('input[name=problema]').click(); document.querySelectorAll('input[name=local]')[1].click(); document.querySelector('main h2').scrollIntoView();"
+      ]
+    },
+    {
+      "name": "desktop-disponibilidade",
+      "path": "/solicitar?servico=eletrica",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelectorAll('input[name=region]')[0].click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "for (const n of ['problema', 'imovel', 'urgencia']) document.querySelector('input[name=' + n + ']').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "const b = document.querySelectorAll('main input[type=checkbox]'); b[1].click(); b[2].click(); b[6].click(); window.scrollTo(0, 280);"
+      ]
+    }
+  ]
+}
