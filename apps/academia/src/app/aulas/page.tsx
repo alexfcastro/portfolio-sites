@@ -15,7 +15,7 @@ export default async function ClassesPage({ searchParams }: PageProps<"/aulas">)
         Filtre as aulas e reserve uma aula experimental. As vagas são de exemplo e nada é enviado ao estúdio.
       </p>
       <div className="mt-8">
-        <ClassGrid initialModality={initialModality} />
+        <ClassGrid key={initialModality} initialModality={initialModality} />
       </div>
     </div>
   );

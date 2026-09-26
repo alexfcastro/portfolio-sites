@@ -32,6 +32,8 @@
     "dev:petshop": "pnpm --filter @ax/petshop dev",
     "build:petshop": "pnpm --filter @ax/petshop build",
     "dev:academia": "pnpm --filter @ax/academia dev",
-    "build:academia": "pnpm --filter @ax/academia build"
+    "build:academia": "pnpm --filter @ax/academia build",
+    "dev:produtos-naturais": "pnpm --filter @ax/produtos-naturais dev",
+    "build:produtos-naturais": "pnpm --filter @ax/produtos-naturais build"
   }
 }
