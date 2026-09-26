@@ -64,6 +64,12 @@ h3 {
   outline: none;
 }
 
+/* O <dialog> recebe foco ao abrir; o anel fica só nos controles dentro dele. */
+dialog:focus,
+dialog:focus-visible {
+  outline: none;
+}
+
 ::selection {
   background: var(--color-gold);
   color: var(--color-coal);

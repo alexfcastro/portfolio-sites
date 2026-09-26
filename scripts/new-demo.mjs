@@ -114,11 +114,7 @@ copy("src/lib/time.ts", (text) =>
     .replace("timeZone: business.timeZone", "timeZone: TIME_ZONE")
     .replace(
       'import type { BusinessNow } from "@/types/booking";',
-      "/** Momento atual no fuso do negócio. */
-export interface BusinessNow {
-  date: string;
-  minutes: number;
-}",
+      "/** Momento atual no fuso do negócio. */\nexport interface BusinessNow {\n  date: string;\n  minutes: number;\n}",
     ),
 );
 
@@ -208,6 +204,14 @@ write(
   --color-wa-subtle: #cfe3dc;
   --color-wa-chat: #0f1a17;
   --color-wa-bubble: #1e5c4b;
+}
+
+/* Títulos focados por script e o próprio <dialog> não são controles: sem anel visual. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible,
+dialog:focus,
+dialog:focus-visible {
+  outline: none;
 }
 `,
 );

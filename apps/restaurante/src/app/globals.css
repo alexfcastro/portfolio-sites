@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  /* Faixa de demonstração e prévia de mensagem: neutras, separadas da identidade do negócio */
+  --color-demo-bg: #f6f5f1;
+  --color-demo-ink: #14161a;
+  --color-demo-muted: #555962;
+  --color-wa-head: #1f3b33;
+  --color-wa-subtle: #cfe3dc;
+  --color-wa-chat: #0f1a17;
+  --color-wa-bubble: #1e5c4b;
+
+  /* Identidade Sabor & Brasa (fictícia): creme, brasa e carvão */
+  --color-cream: #fff8ef;
+  --color-paper: #ffffff;
+  --color-crust: #f7ead9;
+  --color-ink: #2a130c;
+  --color-muted: #6a4f44;
+  --color-line: #ecd9c3;
+  --color-brick: #b3361a;
+  --color-brick-dark: #8c2912;
+  --color-ember: #e2562c;
+  --color-coal: #1f120d;
+  --color-leaf: #2f6b3a;
+
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, "Times New Roman", serif;
+
+  --radius-card: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brick);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
+/* O <dialog> recebe foco ao abrir; o anel fica só nos controles dentro dele. */
+dialog:focus,
+dialog:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  .kicker {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brick);
+  }
+
+  .btn {
+    display: inline-flex;
+    min-height: 2.875rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.625rem 1.375rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+
+  .btn-primary {
+    background: var(--color-brick);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-brick-dark);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-brick);
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .option {
+    display: flex;
+    min-height: 3rem;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0.875rem;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    padding: 0.5rem 0.875rem;
+  }
+
+  .option:has(input:checked) {
+    border-color: var(--color-brick);
+    background: #fff1ea;
+  }
+
+  .option:has(input:disabled) {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .option:has(input:focus-visible) {
+    outline: 3px solid var(--color-brick);
+    outline-offset: 2px;
+  }
+}

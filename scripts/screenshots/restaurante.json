@@ -1,0 +1,40 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/restaurante",
+  "shots": [
+    { "name": "desktop-cardapio", "path": "/", "width": 1440, "height": 900, "scale": 1, "steps": ["window.scrollTo(0, 330);"] },
+    {
+      "name": "desktop-adicionais",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Picanha na brasa')).click();",
+        "const d = document.querySelector('dialog[open]'); d.querySelectorAll('input[name=\"picanha-ponto\"]')[1].click(); const x = d.querySelectorAll('input[type=checkbox]'); x[0].click(); x[1].click();"
+      ]
+    },
+    {
+      "name": "mobile-adicionais",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Suco natural')).click();",
+        "const d = document.querySelector('dialog[open]'); d.querySelectorAll('input[name=\"suco-sabor-suco\"]')[1].click(); d.querySelectorAll('input[name=\"suco-tamanho-suco\"]')[1].click();"
+      ]
+    },
+    {
+      "name": "desktop-carrinho",
+      "path": "/carrinho",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "const state = { version: 1, nextNumber: 1001, fulfillment: { type: 'entrega', areaId: 'jardim' }, lines: [ { key: 'a', itemId: 'picanha', addons: { ponto: ['ponto'], extras: ['farofa', 'vinagrete'] }, quantity: 1, note: '' }, { key: 'b', itemId: 'mandioca', addons: {}, quantity: 1, note: '' }, { key: 'c', itemId: 'suco', addons: { 'sabor-suco': ['maracuja'], 'tamanho-suco': ['500'] }, quantity: 2, note: 'sem gelo' } ] }; localStorage.setItem('ax-sabor-demo', JSON.stringify(state)); window.dispatchEvent(new StorageEvent('storage', { key: 'ax-sabor-demo' }));",
+        "window.scrollTo(0, 200);"
+      ]
+    }
+  ]
+}

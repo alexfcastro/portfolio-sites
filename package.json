@@ -16,6 +16,8 @@
     "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",
     "test": "pnpm --recursive --filter \"./apps/**\" test",
     "dev:clinica": "pnpm --filter @ax/clinica dev",
-    "build:clinica": "pnpm --filter @ax/clinica build"
+    "build:clinica": "pnpm --filter @ax/clinica build",
+    "dev:restaurante": "pnpm --filter @ax/restaurante dev",
+    "build:restaurante": "pnpm --filter @ax/restaurante build"
   }
 }
