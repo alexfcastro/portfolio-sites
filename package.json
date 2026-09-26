@@ -14,6 +14,8 @@
     "build": "pnpm --recursive --filter \"./apps/**\" build",
     "lint": "pnpm --recursive --filter \"./apps/**\" lint",
     "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",
-    "test": "pnpm --recursive --filter \"./apps/**\" test"
+    "test": "pnpm --recursive --filter \"./apps/**\" test",
+    "dev:clinica": "pnpm --filter @ax/clinica dev",
+    "build:clinica": "pnpm --filter @ax/clinica build"
   }
 }

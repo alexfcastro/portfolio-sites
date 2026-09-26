@@ -848,7 +848,11 @@ const covers = {
   floricultura,
 };
 
+// Demos implementadas usam capturas reais: suas capas conceituais não são mais geradas.
+const withRealScreenshots = new Set(["clinica"]);
+
 for (const [slug, draw] of Object.entries(covers)) {
+  if (withRealScreenshots.has(slug)) continue;
   const dir = join(root, slug);
   mkdirSync(dir, { recursive: true });
   const svg = draw().replace(/\n\s+/g, "\n").trim() + "\n";

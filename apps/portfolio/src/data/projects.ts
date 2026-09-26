@@ -2,7 +2,7 @@ import type { Project, ProjectFeature, ProjectMedia } from "@/types/project";
 
 /*
  * Matriz única dos projetos conceituais. Todos os negócios são fictícios.
- * Demos implementadas: barbearia (Fase 2). As demais estão `planned`, com
+ * Demos implementadas: barbearia (Fase 2) e as da Fase 3 conforme forem validadas. As demais estão `planned`, com
  * recursos “previstos” e prévias conceituais.
  * Para adicionar um case: inclua um item aqui e a capa em public/projects/<slug>/.
  */
@@ -28,6 +28,9 @@ function screenshot(
 
 const DESKTOP = { width: 1440, height: 900 };
 const MOBILE = { width: 780, height: 1688 };
+
+/** Stack comum das demos implementadas (cada uma é um app Next.js independente). */
+const DEMO_STACK = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
 
 function conceptCover(slug: string, name: string, description: string): ProjectMedia {
   return {
@@ -108,7 +111,7 @@ export const projects: Project[] = [
         "Painel demonstrativo: público, sem login, com dados deste navegador.",
       ),
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    technologies: DEMO_STACK,
     seo: {
       title: "Bravus Barbearia — case e demo de agendamento on-line",
       description:
@@ -132,22 +135,54 @@ export const projects: Project[] = [
       { title: "Profissional", description: "Perfis com formação e forma de atendimento, sem dados inventados." },
       { title: "Solicitação", description: "Preferência de período e contato, sem pedir sintomas ou documentos." },
     ],
-    demoStatus: "planned",
+    demoStatus: "available",
     featuredOrder: 5,
     features: [
-      planned("Páginas de especialidades", "Descrição do que cada área atende, em linguagem acessível."),
-      planned("Perfis dos profissionais", "Apresentação da equipe fictícia, identificada como exemplo."),
-      planned("Solicitação de horário", "Pedido de horário para a equipe confirmar, sem dados de saúde."),
-      planned("Informações de atendimento", "Preparação para a consulta, convênios e documentos."),
-      planned("Perguntas frequentes", "Respostas para as dúvidas que mais ocupam a recepção."),
-      planned("Localização ilustrativa", "Mapa estilizado, sem sugerir um endereço real."),
+      implemented("Páginas de especialidades", "Uma página por área: para quem é, como se preparar e quem atende."),
+      implemented("Perfis dos profissionais", "Equipe fictícia com abordagem e dias de atendimento, sem registros inventados."),
+      implemented(
+        "Solicitação de horário",
+        "Especialidade, profissional ou primeiro disponível, dia e período — só opções em que há atendimento.",
+      ),
+      implemented("Acompanhamento", "Solicitações do navegador com confirmação simulada da recepção e cancelamento."),
+      implemented("Informações de atendimento e dúvidas", "Como funciona, horários, particular ou convênio e perguntas frequentes."),
+      implemented("Sem dados de saúde", "Nenhum campo para sintomas, exames ou documentos; identidade de paciente de exemplo."),
     ],
-    media: [conceptCover("clinica", "Vita Clínica", "seleção de especialidades e profissionais em tons claros de verde-água, com versão de celular.")],
-    technologies: [],
+    media: [
+      screenshot(
+        "clinica",
+        "desktop-inicio.png",
+        DESKTOP,
+        "Página inicial da demo Vita Clínica no computador: título “Cuidado com hora marcada e informação clara” e botão Solicitar horário.",
+        "Página inicial da demonstração (computador).",
+      ),
+      screenshot(
+        "clinica",
+        "desktop-solicitacao.png",
+        DESKTOP,
+        "Etapa de preferência da solicitação: dias em que a dermatologista atende e escolha entre manhã e tarde.",
+        "Preferência de dia e período: só aparecem os dias em que o profissional atende.",
+      ),
+      screenshot(
+        "clinica",
+        "mobile-solicitacao.png",
+        MOBILE,
+        "Escolha de especialidade no celular, com Psicologia selecionada.",
+        "Escolha de especialidade no celular.",
+      ),
+      screenshot(
+        "clinica",
+        "desktop-especialidade.png",
+        DESKTOP,
+        "Página da especialidade Fisioterapia: para quem é, como se preparar e quem atende.",
+        "Página de especialidade com orientações de preparo.",
+      ),
+    ],
+    technologies: DEMO_STACK,
     seo: {
-      title: "Vita Clínica — case conceitual de site para clínica",
+      title: "Vita Clínica — case e demo de site para clínica",
       description:
-        "Projeto conceitual de site para clínica com especialidades, profissionais e solicitação de horário. Negócio fictício, demo em breve.",
+        "Case de site para clínica com páginas de especialidades, equipe e solicitação de horário sem dados de saúde. Negócio fictício, demo com dados de exemplo.",
     },
   },
   {

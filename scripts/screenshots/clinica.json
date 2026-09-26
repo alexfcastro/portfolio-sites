@@ -1,0 +1,29 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/clinica",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    {
+      "name": "desktop-solicitacao",
+      "path": "/solicitar?especialidade=dermatologia",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelector('input[name=professional][value]') ; document.querySelectorAll('input[name=professional]')[1].click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "document.querySelectorAll('input[name=date]')[1].click();",
+        "document.querySelector('input[name=period]').click(); window.scrollTo(0, 300);"
+      ]
+    },
+    {
+      "name": "mobile-solicitacao",
+      "path": "/solicitar",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": ["document.querySelectorAll('input[name=specialty]')[4].click(); window.scrollTo(0, 360);"]
+    },
+    { "name": "desktop-especialidade", "path": "/especialidades/fisioterapia", "width": 1440, "height": 900, "scale": 1 }
+  ]
+}
