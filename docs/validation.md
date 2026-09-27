@@ -72,6 +72,8 @@ Condições: `next start` local, Chrome headless, 4G lento simulado (150 ms RTT,
 - A única auditoria binária reprovada é `is-crawlable`, **esperada**: a prévia usa `noindex` de propósito.
 - O LCP simulado fica um pouco acima de 2,5 s. Na Home, o LCP é a capa principal do hero (SVG). Já foi removido o filtro de desfoque, que causava o maior atraso. Próximas otimizações possíveis, se necessárias: servir o hero em WebP/AVIF rasterizado ou exibir só uma capa no mobile.
 - Core Web Vitals de campo exigem visitantes reais; não há dados de campo.
+- **Nova medição (27/09/2026)**, com as capturas reais no lugar das capas SVG. Simulado (padrão do Lighthouse): `/` FCP 0,9 s · LCP 3,0 s · TBT 135 ms · nota 0,94; `/projetos` 0,9 · 2,9 s · 0,93; `/projetos/floricultura` 0,8 · 3,0 s · 0,94; `/contato` 0,8 · 2,6 s · 0,97; CLS 0 em todas. Com throttling aplicado de verdade (`--throttling-method=devtools`), LCP = FCP em todas (2,5–3,5 s), ou seja, o maior elemento já aparece na primeira pintura: não há imagem principal atrasada.
+- Diagnóstico: sem throttling, a primeira pintura sai em ~0,1–0,2 s e estilo + layout somam ~70 ms. Nas medições lentas, o tempo vem da latência do 4G simulado (o HTML chega em ~0,7 s; o CSS de 9 KB divide a banda com as fontes) e da CPU 4× mais lenta. Foram testados e **descartados** por ganho dentro da variação entre execuções: tirar `text-wrap: pretty` dos parágrafos e não pré-carregar a fonte Inter.
 
 ### Não verificado (limitações)
 
@@ -226,5 +228,8 @@ Portfólio: 59 testes (inclui as 12 demos implementadas, só com capturas reais 
 ### Não verificado
 
 - Firefox, Safari, aparelhos reais e leitores de tela.
-- Tecla Escape física nos diálogos (comportamento nativo do `<dialog>` modal).
 - Publicação.
+
+### Teclado (27/09/2026)
+
+- Teclas reais enviadas pelo navegador embutido: no diálogo de reserva da academia e na prévia de mensagem (componente usado por todas as demos), o foco entra no diálogo, **Tab** continua dentro dele, **Escape** fecha e o foco volta ao botão que o abriu.
