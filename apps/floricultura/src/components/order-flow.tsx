@@ -1,17 +1,15 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Copy, Info } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { MessagePreview } from "@/components/message-preview";
 import { addons, CARD_MAX_CHARS, getProduct, periods, regions, type Period } from "@/data/shop";
-import { flowerStore, takeOrderNumber } from "@/lib/demo-store";
+import { flowerActions, flowerStore } from "@/lib/demo-store";
 import { formatBRL } from "@/lib/money";
 import {
   addonAllowed,
   availableDates,
   availablePeriods,
-  buildOrderMessage,
   priceFor,
   totalsFor,
   validateDraft,
@@ -47,7 +45,8 @@ export function OrderFlow({ productId }: { productId: string }) {
     personName: "",
   });
   const [errors, setErrors] = useState<DraftErrors>({});
-  const [placed, setPlaced] = useState<{ code: string; message: string } | null>(null);
+  const [added, setAdded] = useState(false);
+  const [cartError, setCartError] = useState("");
   const headingRef = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(false);
 
@@ -58,7 +57,7 @@ export function OrderFlow({ productId }: { productId: string }) {
       return;
     }
     headingRef.current?.focus();
-  }, [step, placed]);
+  }, [step, added]);
 
   const update = (patch: Partial<OrderDraft>) => setDraft((current) => ({ ...current, ...patch }));
 
@@ -77,8 +76,12 @@ export function OrderFlow({ productId }: { productId: string }) {
       setStep(first === -1 ? 0 : first);
       return;
     }
-    const code = takeOrderNumber();
-    setPlaced({ code, message: buildOrderMessage(draft, code) });
+    const result = flowerActions.add(draft);
+    if (!result.ok) {
+      setCartError(result.error);
+      return;
+    }
+    setAdded(true);
   };
 
   if (!state) {
@@ -89,23 +92,33 @@ export function OrderFlow({ productId }: { productId: string }) {
     );
   }
 
-  if (placed) {
+  if (added) {
+    const count = state.cart.length;
     return (
       <section aria-labelledby="done-title" className="rounded-card border border-line bg-paper p-6">
         <CheckCircle2 aria-hidden className="size-9 text-sage" />
         <h2 id="done-title" ref={headingRef} tabIndex={-1} className="mt-3 text-3xl">
-          Pedido de demonstração {placed.code} revisado
+          {product.name} no carrinho
         </h2>
-        <p className="mt-2 text-muted">Nada foi enviado nem cobrado. Veja como a mensagem do pedido chegaria à floricultura.</p>
+        <p className="mt-2 text-muted">
+          {count === 1 ? "Seu carrinho tem 1 item." : `Seu carrinho tem ${count} itens.`} Você revisa tudo antes de finalizar; nada é
+          enviado nem cobrado.
+        </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <MessagePreview businessName="Flor & Afeto" message={placed.message} triggerLabel="Ver mensagem do pedido" triggerClassName="btn btn-primary" />
+          <Link href="/carrinho" className="btn btn-primary">
+            Ver carrinho
+          </Link>
           <Link href="/catalogo" className="btn btn-secondary">
-            Voltar ao catálogo
+            Escolher mais flores
           </Link>
         </div>
       </section>
     );
   }
+
+  // Atalho: repetir a entrega do último item do carrinho (mesmo destino e horário pagam uma taxa só).
+  const last = state.cart.at(-1);
+  const canReuse = last !== undefined && availablePeriods(last.date, now).includes(last.period as Period);
 
   const dates = availableDates(now);
   const periodsForDate = draft.date ? availablePeriods(draft.date, now) : [];
@@ -218,6 +231,19 @@ export function OrderFlow({ productId }: { productId: string }) {
 
         {step === 2 && (
           <>
+            {canReuse && (
+              <button
+                type="button"
+                className="btn btn-secondary w-full"
+                onClick={() => {
+                  update({ fulfillment: last.fulfillment, regionId: last.regionId, date: last.date, period: last.period, personName: last.personName });
+                  setErrors({});
+                }}
+              >
+                <Copy aria-hidden className="size-4" />
+                Usar a mesma entrega do item anterior
+              </button>
+            )}
             <fieldset className="min-w-0" aria-describedby={errorId("fulfillment")}>
               <legend className="font-medium">Como vai ser?</legend>
               <div className="mt-2 grid gap-2 sm:grid-cols-2">
@@ -340,6 +366,15 @@ export function OrderFlow({ productId }: { productId: string }) {
           </p>
         )}
 
+        {cartError && (
+          <p role="alert" className="flex items-start gap-2 text-sm text-alert">
+            <Info aria-hidden className="mt-0.5 size-4 shrink-0" />
+            {cartError}{" "}
+            <Link href="/carrinho" className="underline underline-offset-4">
+              Ver carrinho
+            </Link>
+          </p>
+        )}
         <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
           {step > 0 ? (
             <button type="button" className="btn btn-secondary" onClick={() => { setErrors({}); setStep((s) => s - 1); }}>
@@ -356,7 +391,7 @@ export function OrderFlow({ productId }: { productId: string }) {
                 <ArrowRight aria-hidden className="size-4" />
               </>
             ) : (
-              "Confirmar e ver a mensagem"
+              "Adicionar ao carrinho"
             )}
           </button>
         </div>

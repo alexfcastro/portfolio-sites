@@ -1,7 +1,7 @@
 {
   "name": "alex-castro-portfolio",
   "private": true,
-  "description": "Monorepo do portfólio de Alex Castro (AX) e de suas futuras aplicações demonstrativas.",
+  "description": "Monorepo do portfólio de Alex Castro (AX) e de suas aplicações demonstrativas.",
   "packageManager": "pnpm@12.6.0",
   "engines": {
     "node": ">=20.9.0"
@@ -14,6 +14,7 @@
     "build": "pnpm --recursive --filter \"./apps/**\" build",
     "lint": "pnpm --recursive --filter \"./apps/**\" lint",
     "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",
+    "check:reflow": "node scripts/check-reflow.mjs scripts/reflow/pages.json",
     "test": "pnpm --recursive --filter \"./apps/**\" test",
     "dev:clinica": "pnpm --filter @ax/clinica dev",
     "build:clinica": "pnpm --filter @ax/clinica build",

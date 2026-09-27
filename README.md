@@ -19,7 +19,7 @@ apps/
   petshop/              Demo PetVille (3109): pet → serviço → data → resumo, lembrete preparado
   academia/             Demo Pulse Studio (3110): grade filtrável, aula experimental com vagas, planos, painel
   produtos-naturais/    Demo Raiz & Grão (3111): catálogo, venda por peso, carrinho, retirada ou entrega
-  floricultura/         Demo Flor & Afeto (3112): ocasião, personalização, cartão, data e período, resumo
+  floricultura/         Demo Flor & Afeto (3112): ocasião, personalização, cartão, data e período, carrinho
   portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/
@@ -29,7 +29,7 @@ apps/
     public/brand/       Marca AX em SVG
     public/projects/    Capturas reais das demos (scripts/capture-screenshots.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
-scripts/                new-demo.mjs (base de nova demo) · capture-screenshots.mjs + screenshots/<slug>.json
+scripts/                new-demo.mjs (base de nova demo) · capture-screenshots.mjs + screenshots/<slug>.json · check-reflow.mjs + reflow/pages.json
 ```
 
 - Cada app em `apps/<slug>` tem suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
@@ -62,6 +62,7 @@ pnpm build:portfolio    # build de produção do portfólio
 pnpm dev:<slug>         # demo em desenvolvimento (ex.: pnpm dev:clinica → porta 3102)
 pnpm build:<slug>       # build de produção de uma demo, independente do portfólio
 pnpm build              # build de todos os apps existentes
+pnpm check:reflow       # reflow em 8 larguras, 49 páginas (servidores de produção nas portas 3100–3112)
 ```
 
 `lint`, `typecheck` e `test` rodam em todos os apps.

@@ -1,0 +1,72 @@
+{
+  "widths": [320, 360, 390, 412, 768, 1024, 1280, 1440],
+  "apps": [
+    { "base": "http://localhost:3100", "paths": ["/", "/projetos", "/projetos/floricultura", "/sobre", "/contato", "/privacidade", "/nao-existe"] },
+    { "base": "http://localhost:3101", "paths": ["/", "/agendar", "/admin"] },
+    { "base": "http://localhost:3102", "paths": ["/", "/especialidades/dermatologia", "/solicitar", "/minhas-solicitacoes"] },
+    { "base": "http://localhost:3103", "paths": ["/", "/carrinho"] },
+    { "base": "http://localhost:3104", "paths": ["/", "/orcamento", "/acompanhamento"] },
+    { "base": "http://localhost:3105", "paths": ["/", "/solicitar"] },
+    { "base": "http://localhost:3106", "paths": ["/", "/proposta"] },
+    { "base": "http://localhost:3107", "paths": ["/", "/areas/familia", "/artigos/inventario-em-cartorio", "/contato", "/avisos"] },
+    { "base": "http://localhost:3108", "paths": ["/", "/imoveis", "/imoveis/HZ-0142", "/favoritos", "/anunciar"] },
+    {
+      "base": "http://localhost:3109",
+      "paths": ["/", "/agendar", "/agendamentos"],
+      "storage": {
+        "ax-petville-demo": {
+          "version": 1,
+          "nextNumber": 1003,
+          "appointments": [
+            { "id": "PV-1001", "petName": "Tobias Bartolomeu", "species": "cao", "size": "grande", "serviceId": "banho-tosa", "groomerId": "bia", "date": "2026-10-02", "startMin": 780, "endMin": 915, "priceCents": 14500, "reminder": true, "status": "agendado", "origin": "visitor" },
+            { "id": "PV-1002", "petName": "Mel", "species": "gato", "size": "pequeno", "serviceId": "hidratacao", "groomerId": "tom", "date": "2026-10-03", "startMin": 600, "endMin": 660, "priceCents": 7000, "reminder": false, "status": "cancelado", "origin": "visitor" }
+          ]
+        }
+      }
+    },
+    {
+      "base": "http://localhost:3110",
+      "paths": ["/", "/aulas", "/planos", "/admin"],
+      "storage": {
+        "ax-pulse-demo": {
+          "version": 1,
+          "nextNumber": 1003,
+          "trials": [
+            { "id": "PS-1001", "occurrenceKey": "seg-1930-danca@2026-09-28", "nickname": "Jô", "level": "Nunca treinei", "status": "reservada" },
+            { "id": "PS-1002", "occurrenceKey": "ter-1800-hiit@2026-09-29", "nickname": "Maximiliano", "level": "Treino com frequência", "status": "cancelada" }
+          ]
+        }
+      }
+    },
+    {
+      "base": "http://localhost:3111",
+      "paths": ["/", "/produtos", "/produtos/canela-em-po", "/carrinho", "/favoritos"],
+      "storage": {
+        "ax-raiz-demo": {
+          "version": 1,
+          "nextNumber": 1001,
+          "cart": [
+            { "productId": "canela-em-po", "grams": 250, "quantity": 2 },
+            { "productId": "lentilha", "grams": 1000, "quantity": 12 },
+            { "productId": "kit-cafe-da-manha", "grams": null, "quantity": 1 }
+          ],
+          "favorites": ["quinoa", "mel-silvestre", "granola-sem-acucar"]
+        }
+      }
+    },
+    {
+      "base": "http://localhost:3112",
+      "paths": ["/", "/catalogo", "/produto/cesta-cafe", "/carrinho"],
+      "storage": {
+        "ax-flor-demo": {
+          "version": 2,
+          "nextNumber": 1001,
+          "cart": [
+            { "productId": "buque-rosas-vermelhas", "sizeId": "g", "addonIds": ["chocolates", "balao", "pelucia", "vaso-vidro"], "card": "Uma mensagem longa de exemplo para conferir a quebra de linha do cartão no carrinho em telas estreitas.", "fulfillment": "entrega", "regionId": "alto-da-colina", "date": "2026-10-01", "period": "tarde", "personName": "Maria Aparecida (exemplo)" },
+            { "productId": "orquidea", "sizeId": "p", "addonIds": [], "card": "", "fulfillment": "retirada", "regionId": "", "date": "2026-09-20", "period": "manha", "personName": "Bia" }
+          ]
+        }
+      }
+    }
+  ]
+}

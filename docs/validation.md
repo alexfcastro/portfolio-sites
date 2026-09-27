@@ -205,16 +205,16 @@ Data: 27/09/2026 · builds de produção locais (portas 3111–3112) · Chromium
 | App | Testes | O que cobrem |
 |---|---|---|
 | `produtos-naturais` | 12 | Dados (ids, categorias, preços inteiros, pesos permitidos, promoções); arredondamento explícito (meio centavo para cima), por exemplo 250 g a R$ 59,90/kg = R$ 14,98; promoção aplicada sobre a opção e arredondada; peso ou unidade válidos, quantidade inteira de 1 a 20, esgotado recusado; mesma opção soma quantidade; subtotal, economia, peso total, frete por bairro e frete grátis; validação e mensagem do pedido; busca sem acento, filtros e ordenação; **nenhuma alegação de saúde** em todos os textos. |
-| `floricultura` | 12 | Dados e preços crescentes por tamanho; adicionais incompatíveis por ocasião ou categoria (balão e pelúcia fora de condolências, vaso só em buquês), repetidos ou inexistentes; soma em centavos; cartão com até 200 caracteres e 6 linhas; sem domingo, e para hoje só à tarde e até as 11h; pedido completo e campos pendentes (bairro só na entrega); mensagem com produto, adicionais, cartão, entrega e total; filtros do catálogo. |
+| `floricultura` | 14 | Dados e preços crescentes por tamanho; adicionais incompatíveis por ocasião ou categoria (balão e pelúcia fora de condolências, vaso só em buquês), repetidos ou inexistentes; soma em centavos; cartão com até 200 caracteres e 6 linhas; sem domingo, e para hoje só à tarde e até as 11h; pedido completo e campos pendentes (bairro só na entrega); carrinho com uma entrega por bairro, dia, período e destinatário (nome sem diferença de caixa), limite de itens e datas vencidas apontadas por item; mensagem com todos os itens, entregas e total; filtros do catálogo. |
 
 Portfólio: 59 testes (inclui as 12 demos implementadas, só com capturas reais e com ao menos uma captura de desktop e uma de celular cada).
 
 ### Navegador
 
 - **Raiz & Grão:** opções de peso com preço (100 g R$ 5,99 · 250 g R$ 14,98 · 500 g R$ 29,95); total do item atualiza com a quantidade; produto esgotado com botão desativado; o carrinho pede retirada ou entrega e depois o bairro; resumo com frete, economia e quanto falta para a entrega grátis; o pedido `RG-1001` esvazia o carrinho e mostra a prévia com itens e total.
-- **Flor & Afeto:** adicionais incompatíveis desativados no arranjo de condolências; erro no cartão acima de 200 caracteres e prévia do cartão; domingo ausente das datas; erros por etapa (entrega, data, nome); resumo com total de R$ 252,70 (igual ao teste); pedido `FA-1001` com prévia da mensagem.
+- **Flor & Afeto:** adicionais incompatíveis desativados no arranjo de condolências; erro no cartão acima de 200 caracteres e prévia do cartão; domingo ausente das datas; erros por etapa (entrega, data, nome); resumo do item com total de R$ 252,70 (igual ao teste); dois presentes para o mesmo destino e horário (o segundo com "Usar a mesma entrega do item anterior") cobram uma entrega só; pedido `FA-1005` com prévia de todos os itens; item com data vencida marcado e finalização bloqueada; estado da versão anterior migrado sem perder a numeração.
 - **Reflow:** sem rolagem horizontal a 320 px nas páginas principais e em todas as etapas dos fluxos.
-- **Largura intermediária:** página inicial das 12 demos verificada também a 390 px, sem elementos além da largura.
+- **Larguras do briefing:** `pnpm check:reflow` (`scripts/check-reflow.mjs`) abre 49 páginas dos 13 apps em 320, 360, 390, 412, 768, 1024, 1280 e 1440 px (celular emulado abaixo de 768), incluindo carrinhos, agendamentos e reservas preenchidos: 392 verificações, nenhuma com rolagem horizontal ou elemento além da largura. O verificador foi conferido com uma página feita para falhar.
 
 #### Achados corrigidos
 

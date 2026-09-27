@@ -109,23 +109,74 @@ export function totalsFor(draft: OrderDraft) {
   return { base, extras, delivery, total: subtotal + delivery };
 }
 
-export function buildOrderMessage(draft: OrderDraft, code: string): string {
-  const product = getProduct(draft.productId)!;
-  const size = product.sizes.find((s) => s.id === draft.sizeId)!;
-  const extras = draft.addonIds.map((id) => addons.find((a) => a.id === id)!.name);
-  const totals = totalsFor(draft);
-  const when = `${formatDateLong(draft.date)}, ${periods[draft.period as Period].label.toLowerCase()}`;
-  const region = regions.find((r) => r.id === draft.regionId);
+/* ---------- Carrinho ---------- */
+
+/** Limite de itens por pedido na demonstração. */
+export const MAX_CART_ITEMS = 5;
+
+/**
+ * Entregas no mesmo bairro, dia, período e para a mesma pessoa saem juntas e pagam uma taxa só.
+ * Retiradas não pagam taxa.
+ */
+export function deliveryKey(item: OrderDraft): string | null {
+  if (item.fulfillment !== "entrega") return null;
+  return [item.regionId, item.date, item.period, item.personName.trim().toLowerCase()].join("|");
+}
+
+export function cartTotals(items: readonly OrderDraft[]) {
+  let products = 0;
+  let extras = 0;
+  const fees = new Map<string, number>();
+  for (const item of items) {
+    const { base, extras: itemExtras } = priceFor(getProduct(item.productId)!, item.sizeId as SizeId, item.addonIds);
+    products += base;
+    extras += itemExtras;
+    const key = deliveryKey(item);
+    if (key) fees.set(key, regions.find((r) => r.id === item.regionId)?.feeCents ?? 0);
+  }
+  const delivery = [...fees.values()].reduce((sum, fee) => sum + fee, 0);
+  return { products, extras, delivery, deliveries: fees.size, total: products + extras + delivery };
+}
+
+export function itemSubtotal(item: OrderDraft): number {
+  return priceFor(getProduct(item.productId)!, item.sizeId as SizeId, item.addonIds).subtotal;
+}
+
+/** Erros por item (vazio quando o item está válido). Datas vencidas aparecem aqui ao voltar outro dia. */
+export function validateCart(items: readonly OrderDraft[], now: BusinessNow): { cart: string | null; items: DraftErrors[] } {
+  const cart = items.length === 0 ? "Seu carrinho está vazio." : items.length > MAX_CART_ITEMS ? `No máximo ${MAX_CART_ITEMS} itens por pedido.` : null;
+  return { cart, items: items.map((item) => validateDraft(item, now)) };
+}
+
+export function describeWhen(item: OrderDraft): string {
+  return `${formatDateLong(item.date)}, ${periods[item.period as Period].label.toLowerCase()}`;
+}
+
+function itemLines(item: OrderDraft): string[] {
+  const product = getProduct(item.productId)!;
+  const size = product.sizes.find((s) => s.id === item.sizeId)!;
+  const extras = item.addonIds.map((id) => addons.find((a) => a.id === id)!.name);
+  const region = regions.find((r) => r.id === item.regionId);
   return [
-    `Olá, Flor & Afeto! Pedido de demonstração ${code}:`,
     `${product.name} — ${size.label.toLowerCase()} (${size.detail})`,
     extras.length ? `Adicionais: ${extras.join(", ")}` : "Sem adicionais",
-    draft.card.trim() ? `Cartão: "${draft.card.trim()}"` : "Cartão sem mensagem",
-    draft.fulfillment === "entrega"
-      ? `Entrega para ${draft.personName.trim()} em ${region?.name}: ${when}`
-      : `Retirada por ${draft.personName.trim()}: ${when}`,
-    `Total: ${formatBRL(totals.total)}`,
-  ].join("\n");
+    item.card.trim() ? `Cartão: "${item.card.trim()}"` : "Cartão sem mensagem",
+    item.fulfillment === "entrega"
+      ? `Entrega para ${item.personName.trim()} em ${region?.name}: ${describeWhen(item)}`
+      : `Retirada por ${item.personName.trim()}: ${describeWhen(item)}`,
+  ];
+}
+
+export function buildCartMessage(items: readonly OrderDraft[], code: string): string {
+  const totals = cartTotals(items);
+  const lines = [`Olá, Flor & Afeto! Pedido de demonstração ${code} (${items.length === 1 ? "1 item" : `${items.length} itens`}):`];
+  items.forEach((item, index) => {
+    const [first, ...rest] = itemLines(item);
+    lines.push(`${index + 1}. ${first}`, ...rest.map((line) => `   ${line}`));
+  });
+  if (totals.deliveries > 0) lines.push(`Entregas (${totals.deliveries}): ${formatBRL(totals.delivery)}`);
+  lines.push(`Total: ${formatBRL(totals.total)}`);
+  return lines.join("\n");
 }
 
 /* ---------- Catálogo ---------- */

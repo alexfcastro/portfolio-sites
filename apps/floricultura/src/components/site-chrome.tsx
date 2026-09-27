@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CartLink } from "@/components/cart-link";
 import { siteConfig } from "@/config/site";
 import { storeHours } from "@/data/shop";
 
@@ -15,7 +16,7 @@ export function Logo() {
         <circle cx="20" cy="8.5" r="4" fill="#c98590" />
         <circle cx="20" cy="13" r="3" fill="#86404c" />
       </svg>
-      <span className="font-display text-2xl font-semibold whitespace-nowrap">
+      <span className="font-display text-2xl font-semibold whitespace-nowrap max-[379px]:sr-only">
         Flor <span className="text-rose">&amp;</span> Afeto
       </span>
     </span>
@@ -45,6 +46,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <CartLink />
           <Link href="/catalogo" className="btn btn-primary shrink-0 !px-4">
             <span className="max-[379px]:hidden">Escolher flores</span>
             <span className="min-[380px]:hidden">Catálogo</span>

@@ -4,7 +4,11 @@ import {
   allowedAddons,
   availableDates,
   availablePeriods,
-  buildOrderMessage,
+  buildCartMessage,
+  cartTotals,
+  itemSubtotal,
+  MAX_CART_ITEMS,
+  validateCart,
   filterProducts,
   minPrice,
   priceFor,
@@ -98,16 +102,48 @@ describe("pedido", () => {
     expect(validateDraft({ ...draft, date: "2026-09-26", period: "manha" }, now).period).toBeDefined();
     expect(validateDraft({ ...draft, productId: "arranjo-branco-sereno", addonIds: ["balao"] }, now).addonIds).toBeDefined();
   });
+});
 
-  it("monta a mensagem com produto, adicionais, cartão, entrega e total", () => {
-    const message = buildOrderMessage(draft, "FA-1001");
-    expect(message).toContain("FA-1001");
-    expect(message).toContain("Buquê do campo — médio (12 hastes)");
-    expect(message).toContain("Adicionais: Caixa de chocolates, Vaso de vidro");
-    expect(message).toContain('Cartão: "Feliz aniversário!\nCom carinho."');
-    expect(message).toContain("Entrega para Ana (exemplo) em Vila das Rosas: segunda-feira, 28 de setembro, manhã (8h às 12h)");
-    expect(message).toMatch(/Total: R\$\s252,70/);
-    expect(buildOrderMessage({ ...draft, card: "  ", fulfillment: "retirada", addonIds: [] }, "FA-1002")).toMatch(/Sem adicionais\nCartão sem mensagem\nRetirada por Ana/);
+describe("carrinho", () => {
+  const second: OrderDraft = { ...draft, productId: "buque-girassois", sizeId: "p", addonIds: [], card: "" };
+
+  it("soma itens e cobra uma entrega por bairro, dia, período e destinatário", () => {
+    // Mesmo destino e horário (nome com outra caixa e espaços): uma taxa só.
+    expect(cartTotals([draft, { ...second, personName: " ana (EXEMPLO) " }])).toEqual({
+      products: 15990 + 10990,
+      extras: 7480,
+      delivery: 1800,
+      deliveries: 1,
+      total: 15990 + 10990 + 7480 + 1800,
+    });
+    // Outro período: duas entregas.
+    expect(cartTotals([draft, { ...second, period: "tarde" }])).toMatchObject({ delivery: 3600, deliveries: 2 });
+    // Retirada não paga.
+    expect(cartTotals([{ ...second, fulfillment: "retirada", regionId: "" }])).toMatchObject({ delivery: 0, deliveries: 0, total: 10990 });
+    expect(itemSubtotal(draft)).toBe(23470);
+  });
+
+  it("valida o carrinho e cada item, apontando datas que venceram", () => {
+    expect(validateCart([], now).cart).toMatch(/vazio/);
+    expect(validateCart(Array.from({ length: MAX_CART_ITEMS + 1 }, () => draft), now).cart).toMatch(/No máximo/);
+    const later = { date: "2026-09-29", minutes: 9 * 60 };
+    const result = validateCart([draft, { ...second, date: "2026-10-01" }], later);
+    expect(result.cart).toBeNull();
+    expect(result.items[0]!.date).toBeDefined(); // 28/09 já passou
+    expect(result.items[1]).toEqual({});
+  });
+
+  it("monta a mensagem com todos os itens, entregas e total", () => {
+    const message = buildCartMessage([draft, { ...second, fulfillment: "retirada", regionId: "", personName: "Bia" }], "FA-1001");
+    expect(message).toContain("Pedido de demonstração FA-1001 (2 itens)");
+    expect(message).toContain("1. Buquê do campo — médio (12 hastes)");
+    expect(message).toContain("   Adicionais: Caixa de chocolates, Vaso de vidro");
+    expect(message).toContain('   Cartão: "Feliz aniversário!\nCom carinho."');
+    expect(message).toContain("   Entrega para Ana (exemplo) em Vila das Rosas: segunda-feira, 28 de setembro, manhã (8h às 12h)");
+    expect(message).toContain("2. Buquê de girassóis — pequeno (6 hastes)");
+    expect(message).toContain("   Sem adicionais\n   Cartão sem mensagem\n   Retirada por Bia");
+    expect(message).toMatch(/Entregas \(1\): R\$\s18,00/);
+    expect(message).toMatch(/Total: R\$\s362,60/);
   });
 });
 

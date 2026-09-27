@@ -14,7 +14,9 @@
       "width": 1440,
       "height": 900,
       "scale": 1,
-      "steps": ["window.scrollTo(0, 150);"]
+      "steps": [
+        "window.scrollTo(0, 150);"
+      ]
     },
     {
       "name": "mobile-cartao",
@@ -31,24 +33,15 @@
       ]
     },
     {
-      "name": "desktop-resumo",
-      "path": "/produto/buque-campo",
+      "name": "desktop-carrinho",
+      "path": "/carrinho",
       "width": 1440,
       "height": 900,
       "scale": 1,
       "steps": [
-        "const b = [...document.querySelectorAll('main input[type=checkbox]')]; b[0].click(); b[3].click();",
-        "document.querySelector('main form button[type=submit]').click();",
-        "const t = document.querySelector('textarea'); Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set.call(t, ['Obrigada por tudo!', 'Com carinho.'].join(String.fromCharCode(10))); t.dispatchEvent(new Event('input', { bubbles: true }));",
-        "document.querySelector('main form button[type=submit]').click();",
-        "document.querySelector('input[value=entrega]').click();",
-        "const s = document.querySelector('main form select'); Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(s, 'jardim-primavera'); s.dispatchEvent(new Event('change', { bubbles: true }));",
-        "document.querySelectorAll('[aria-labelledby=data-label] button')[1].click();",
-        "document.querySelector('input[name=period][value=tarde]').click();",
-        "document.querySelector('main form button[type=submit]').click();",
-        "const i = document.querySelector('main form input:not([type])'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, 'Ana (exemplo)'); i.dispatchEvent(new Event('input', { bubbles: true }));",
-        "document.querySelector('main form button[type=submit]').click();",
-        "document.activeElement.blur(); window.scrollTo(0, 60);"
+        "localStorage.setItem('ax-flor-demo', \"{\\\"version\\\": 2, \\\"nextNumber\\\": 1001, \\\"cart\\\": [{\\\"productId\\\": \\\"buque-campo\\\", \\\"sizeId\\\": \\\"m\\\", \\\"addonIds\\\": [\\\"chocolates\\\", \\\"vaso-vidro\\\"], \\\"card\\\": \\\"Obrigada por tudo!\\\\nCom carinho.\\\", \\\"fulfillment\\\": \\\"entrega\\\", \\\"regionId\\\": \\\"jardim-primavera\\\", \\\"date\\\": \\\"2026-10-02\\\", \\\"period\\\": \\\"tarde\\\", \\\"personName\\\": \\\"Ana (exemplo)\\\"}, {\\\"productId\\\": \\\"cesta-cafe\\\", \\\"sizeId\\\": \\\"p\\\", \\\"addonIds\\\": [], \\\"card\\\": \\\"Bom dia, Ana!\\\", \\\"fulfillment\\\": \\\"entrega\\\", \\\"regionId\\\": \\\"jardim-primavera\\\", \\\"date\\\": \\\"2026-10-02\\\", \\\"period\\\": \\\"tarde\\\", \\\"personName\\\": \\\"Ana (exemplo)\\\"}]}\"); location.reload();",
+        "await new Promise((r) => setTimeout(r, 2500));",
+        "window.scrollTo(0, 60);"
       ]
     }
   ]

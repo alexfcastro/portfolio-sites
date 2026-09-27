@@ -43,11 +43,11 @@ Todas estão com `demoStatus: "available"` nos dados. O botão "Abrir demonstra�
 
 ## Pendências técnicas conhecidas
 
-- Testar em Firefox e Safari/iOS, em aparelhos reais e com leitor de tela.
+- Testar em Firefox e Safari/iOS, em aparelhos reais e com leitor de tela (só Chromium foi testado).
 - Considerar CSP completa após escolher o host.
 - LCP simulado do portfólio de 2,6–3,1 s em 4G lento (ver `validation.md`).
 - CI (`.github/workflows/ci.yml`) criado, mas não executado: o repositório não tem remoto no GitHub.
-- Flor & Afeto faz um pedido por produto (sem carrinho com vários buquês); ver `decisions.md`.
+- Firefox não está instalado nesta máquina; o segundo motor de navegador exigido pelo briefing ainda não foi testado.
 
 ## Próximo passo
 
