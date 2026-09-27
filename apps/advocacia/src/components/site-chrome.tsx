@@ -7,7 +7,9 @@ export function Wordmark({ tone = "dark" }: { tone?: "dark" | "light" }) {
       <span className={`block font-serif text-base font-semibold tracking-[0.1em] sm:text-lg sm:tracking-[0.18em] ${tone === "light" ? "text-white" : "text-navy"}`}>
         ALMEIDA &amp; PRADO
       </span>
-      <span className="block text-[0.625rem] font-semibold tracking-[0.3em] text-brass sm:tracking-[0.42em]">ADVOCACIA</span>
+      <span className={`block text-[0.625rem] font-semibold tracking-[0.3em] sm:tracking-[0.42em] ${tone === "light" ? "text-brass" : "text-brass-text"}`}>
+        ADVOCACIA
+      </span>
     </span>
   );
 }

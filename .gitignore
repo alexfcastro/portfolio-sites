@@ -31,3 +31,6 @@ coverage/
 
 # Configuração local de ferramentas de IA (prévia do app)
 .claude/
+
+# Capturas de verificação no Firefox
+scripts/firefox/out/

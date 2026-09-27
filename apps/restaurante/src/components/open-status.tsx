@@ -13,10 +13,10 @@ export function OpenStatus() {
   return (
     <span
       className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold ${
-        open ? "bg-leaf/10 text-leaf" : "bg-crust text-muted"
+        open ? "bg-leaf/25 text-leaf-light" : "bg-crust text-muted"
       }`}
     >
-      <span aria-hidden className={`size-2 rounded-full ${open ? "bg-leaf" : "bg-muted"}`} />
+      <span aria-hidden className={`size-2 rounded-full ${open ? "bg-leaf-light" : "bg-muted"}`} />
       {open ? "Aberto agora" : "Fechado agora — pedidos de demonstração continuam liberados"}
     </span>
   );

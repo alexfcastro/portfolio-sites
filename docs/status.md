@@ -43,11 +43,10 @@ Todas estão com `demoStatus: "available"` nos dados. O botão "Abrir demonstra�
 
 ## Pendências técnicas conhecidas
 
-- Testar em Firefox e Safari/iOS, em aparelhos reais e com leitor de tela (só Chromium foi testado).
+- Testar em Safari/iOS, em aparelhos reais e com leitor de tela (Chromium e Firefox foram testados).
 - Considerar CSP completa após escolher o host.
 - LCP de laboratório do portfólio de 2,6–3,0 s em 4G lento simulado (nota de desempenho 0,93–0,97; LCP = primeira pintura, sem imagem atrasada). Ver `validation.md`.
 - CI (`.github/workflows/ci.yml`) criado, mas não executado: o repositório não tem remoto no GitHub.
-- Firefox não está instalado nesta máquina; o segundo motor de navegador exigido pelo briefing ainda não foi testado.
 
 ## Próximo passo
 

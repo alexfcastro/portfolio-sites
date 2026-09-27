@@ -22,6 +22,8 @@
   --color-ember: #e2562c;
   --color-coal: #1f120d;
   --color-leaf: #2f6b3a;
+  /* Verde claro para texto sobre o fundo escuro (contraste ~9:1 sobre coal) */
+  --color-leaf-light: #8fd19e;
 
   --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
   --font-serif: var(--font-dm-serif), Georgia, "Times New Roman", serif;

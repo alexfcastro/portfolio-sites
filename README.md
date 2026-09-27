@@ -29,7 +29,8 @@ apps/
     public/brand/       Marca AX em SVG
     public/projects/    Capturas reais das demos (scripts/capture-screenshots.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
-scripts/                new-demo.mjs · local-preview.mjs · capture-screenshots.mjs + screenshots/<slug>.json · check-reflow.mjs + reflow/pages.json
+scripts/                new-demo.mjs · local-preview.mjs · capture-screenshots.mjs + screenshots/<slug>.json
+                        check-reflow.mjs + reflow/pages.json · check-contrast.mjs · firefox-check.mjs + firefox/flows.mjs
 ```
 
 - Cada app em `apps/<slug>` tem suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
@@ -75,6 +76,8 @@ pnpm build:<slug>       # build de produção de uma demo, independente do portf
 pnpm build              # build de todos os apps existentes
 pnpm preview:local      # builds interligados + portfólio (3100) e demos (3101–3112)
 pnpm check:reflow       # reflow em 8 larguras, 49 páginas (com a prévia local no ar)
+pnpm check:contrast     # contraste AA de todos os textos visíveis, 390 e 1280 px
+pnpm check:firefox      # reflow, fluxos, teclado e console no Firefox (WebDriver BiDi)
 ```
 
 `lint`, `typecheck` e `test` rodam em todos os apps.

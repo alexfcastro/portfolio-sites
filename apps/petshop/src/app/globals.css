@@ -93,7 +93,7 @@ dialog:focus-visible {
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-coral);
+    color: var(--color-coral-dark);
   }
 
   .btn {

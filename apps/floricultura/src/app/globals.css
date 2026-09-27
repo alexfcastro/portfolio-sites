@@ -173,9 +173,15 @@ dialog:focus-visible {
     box-shadow: inset 0 0 0 1px var(--color-rose);
   }
 
+  /* Indisponível: borda tracejada e fundo neutro, sem opacidade (o aviso continua legível). */
   .choice:has(input:disabled) {
     cursor: not-allowed;
-    opacity: 0.5;
+    border-style: dashed;
+    background: var(--color-blush);
+  }
+
+  .choice:has(input:disabled):hover {
+    border-color: var(--color-line);
   }
 
   .choice:has(input:focus-visible) {

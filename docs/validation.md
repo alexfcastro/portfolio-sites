@@ -238,3 +238,34 @@ Portfólio: 59 testes (inclui as 12 demos implementadas, só com capturas reais 
 
 - `pnpm preview:local` gerou os 13 builds e subiu os servidores (3100–3112). Na listagem do portfólio, os 12 cases mostram "Abrir demonstração" (nova aba, `noopener noreferrer`) com a porta certa de cada demo, e nenhum mostra "Publicação em breve".
 - Nas 12 demos, a página inicial tem "Ver case" apontando para o case correto, "Solicitar um site como este" para `/contato?projeto=<slug>` e `noindex`.
+
+## Firefox e contraste (27/09/2026)
+
+### Firefox 156 (motor Gecko)
+
+`pnpm check:firefox` (`scripts/firefox-check.mjs`) controla o Firefox pelo WebDriver BiDi, sem dependências extras:
+
+- **Reflow:** as mesmas 49 páginas em 8 larguras (392 verificações), com estados preenchidos: nenhuma rolagem horizontal nem elemento além da largura.
+- **Fluxos (17):** portfólio (listagem com as 12 demos, contato com projeto pré-selecionado) e o fluxo principal de cada demo até o resultado: códigos `BRV-`, `VTA-`, `SB-`, `OF-`, `RS-`, `PV-`, `PS-`, `FA-`, prévias de mensagem, carrinho do Raiz & Grão com R$ 29,96 + R$ 8,00 = R$ 37,96 e da Flor & Afeto com R$ 409,60 e uma entrega.
+- **Teclado com teclas reais:** Escape fecha a prévia e devolve o foco ao botão. No Firefox, o Tab a partir do único controle do diálogo sai para a interface do navegador (foco no `<body>`), nunca para o conteúdo atrás do diálogo modal, que é o comportamento nativo esperado.
+- **Console:** nenhum erro de JavaScript em todo o percurso.
+- **Capturas** (em `scripts/firefox/out/`, fora do Git) revisadas: portfólio, barbearia, restaurante, academia, Raiz & Grão, Flor & Afeto e PetVille em 390 e 1280 px. Diferença esperada: o Firefox mostra a barra de rolagem horizontal da faixa de dias.
+- Dois fluxos falharam na primeira execução por **erro do roteiro de teste**, não do site: na clínica faltava responder "forma de atendimento" (a página mostra o aviso em `role="alert"`), e na Resolve havia um "Continuar" a mais. Conferido no Chrome.
+
+### Contraste (WCAG AA)
+
+`pnpm check:contrast` (`scripts/check-contrast.mjs`) calcula, em 390 e 1280 px, a cor de cada texto visível contra o fundo efetivo (camadas semitransparentes e opacidade dos ancestrais) e exige 4,5:1, ou 3:1 para texto grande. Controles desativados são isentos.
+
+Primeira execução: 17 textos abaixo do mínimo, **corrigidos**:
+
+1. Restaurante, selo "Aberto agora": verde-escuro sobre o fundo escuro (2,86:1) → verde claro (~9:1).
+2. Restaurante, contador do carrinho sobre o botão (4,2:1) → fundo escurecido.
+3. Portfólio, selo "Demonstração disponível" (4,26:1) → verde de sucesso mais escuro.
+4. Oficina, rótulos em laranja (4,42:1) → laranja mais escuro.
+5. Advocacia, "ADVOCACIA" no logotipo (2,49:1): logotipos são isentos, mas passou a usar o tom de texto do dourado no fundo claro.
+6. PetVille, rótulo sobre fundo coral (4,01:1) → coral mais escuro; agendamentos cancelados usavam opacidade (3,35:1) → borda tracejada e texto riscado, sem opacidade.
+7. Flor & Afeto, adicionais indisponíveis a 50% de opacidade (2,19:1) → borda tracejada e fundo neutro, texto legível.
+
+Depois das correções: **7.510 textos verificados, nenhum abaixo do AA.** As capturas de restaurante, oficina, advocacia e PetVille foram refeitas.
+
+Limites: o verificador não avalia texto sobre imagem ou gradiente, estados de hover e foco, nem diálogos fechados.
