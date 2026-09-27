@@ -1,0 +1,4 @@
+# Finais de linha LF em todo o repositório (evita diffs de arquivo inteiro no Windows).
+* text=auto eol=lf
+*.png binary
+*.ico binary
