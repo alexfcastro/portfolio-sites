@@ -42,7 +42,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <Link href="/produtos" className="inline-flex min-h-11 items-center px-2 font-semibold text-muted hover:text-ink max-[379px]:hidden md:hidden">
+          <Link href="/produtos" className="inline-flex min-h-11 items-center px-2 font-semibold text-muted hover:text-ink max-[419px]:hidden md:hidden">
             Produtos
           </Link>
           <FavoritesLink />

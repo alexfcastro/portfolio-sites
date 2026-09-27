@@ -10,7 +10,7 @@ export function CartLink() {
   return (
     <Link href="/carrinho" className="btn btn-primary relative shrink-0 !px-3.5">
       <ShoppingBasket aria-hidden className="size-5" />
-      <span className="max-[379px]:sr-only">Carrinho</span>
+      <span className="max-sm:sr-only">Carrinho</span>
       {count > 0 && (
         <span className="absolute -top-1.5 -right-1.5 flex min-w-6 items-center justify-center rounded-full bg-terra px-1.5 text-xs font-bold text-white">
           {count}

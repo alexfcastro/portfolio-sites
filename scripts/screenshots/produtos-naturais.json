@@ -1,0 +1,51 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/produtos-naturais",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "desktop-catalogo",
+      "path": "/produtos",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('main label')].find(l => l.textContent.trim() === 'Sem glúten').querySelector('input').click();",
+        "const s = document.querySelectorAll('main select')[1]; Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(s, 'menor-preco'); s.dispatchEvent(new Event('change', { bubbles: true }));",
+        "window.scrollTo(0, 230);"
+      ]
+    },
+    {
+      "name": "mobile-produto",
+      "path": "/produtos/canela-em-po",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "document.querySelector('input[name=peso][value=\"250\"]').click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Aumentar')).click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Adicionar')).click();",
+        "const s = JSON.parse(localStorage.getItem('ax-raiz-demo')); s.cart.push({ productId: 'lentilha', grams: 1000, quantity: 1 }, { productId: 'mel-silvestre', grams: null, quantity: 1 }); localStorage.setItem('ax-raiz-demo', JSON.stringify(s));",
+        "const h = document.querySelector('main h1'); window.scrollTo(0, h.getBoundingClientRect().top + scrollY - 84);"
+      ]
+    },
+    {
+      "name": "desktop-carrinho",
+      "path": "/carrinho",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "document.querySelector('input[value=entrega]').click();",
+        "const s = document.querySelector('aside select'); Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(s, 'jardim-das-ervas'); s.dispatchEvent(new Event('change', { bubbles: true }));",
+        "window.scrollTo(0, 0);"
+      ]
+    }
+  ]
+}

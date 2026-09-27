@@ -19,7 +19,7 @@ export default function HomePage() {
         <div className="wrap grid items-center gap-10 py-12 md:grid-cols-[1.15fr_1fr] md:py-20">
           <div>
             <p className="kicker">Empório de produtos naturais</p>
-            <h1 className="mt-3 text-4xl leading-tight sm:text-6xl">Do jeito que você usa: 100 g, 250 g ou 1 kg</h1>
+            <h1 className="mt-3 text-4xl leading-tight sm:text-6xl">Do jeito que você usa: 100&nbsp;g, 250&nbsp;g ou 1&nbsp;kg</h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
               Grãos, castanhas, chás e temperos a granel. Escolha o peso, veja o preço na hora e monte um pedido só
               para retirar ou receber em casa.
