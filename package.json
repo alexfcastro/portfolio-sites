@@ -15,6 +15,7 @@
     "lint": "pnpm --recursive --filter \"./apps/**\" lint",
     "typecheck": "pnpm --recursive --filter \"./apps/**\" typecheck",
     "check:reflow": "node scripts/check-reflow.mjs scripts/reflow/pages.json",
+    "preview:local": "node scripts/local-preview.mjs",
     "test": "pnpm --recursive --filter \"./apps/**\" test",
     "dev:clinica": "pnpm --filter @ax/clinica dev",
     "build:clinica": "pnpm --filter @ax/clinica build",

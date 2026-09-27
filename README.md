@@ -29,7 +29,7 @@ apps/
     public/brand/       Marca AX em SVG
     public/projects/    Capturas reais das demos (scripts/capture-screenshots.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
-scripts/                new-demo.mjs (base de nova demo) · capture-screenshots.mjs + screenshots/<slug>.json · check-reflow.mjs + reflow/pages.json
+scripts/                new-demo.mjs · local-preview.mjs · capture-screenshots.mjs + screenshots/<slug>.json · check-reflow.mjs + reflow/pages.json
 ```
 
 - Cada app em `apps/<slug>` tem suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
@@ -50,6 +50,17 @@ Ative o pnpm pelo Corepack (sem administrador, instalando o atalho na pasta glob
 corepack enable --install-directory "%APPDATA%\npm" pnpm
 ```
 
+## Testar tudo localmente
+
+```bash
+pnpm install
+pnpm preview:local
+```
+
+Gera os builds de produção já interligados e sobe o portfólio em http://localhost:3100 e as 12 demos em http://localhost:3101 a 3112 (lista completa no terminal). O primeiro build leva alguns minutos; depois, `pnpm preview:local --skip-build` sobe os servidores direto. Ctrl+C encerra tudo.
+
+Nessa prévia, cada case mostra "Abrir demonstração", e cada demo tem "Voltar ao portfólio", "Ver case" e "Solicitar um site como este". Tudo continua `noindex`, e nenhuma demo envia mensagens ou pedidos. O contato do portfólio aparece como "Contato em configuração" até você informar WhatsApp ou e-mail (veja a seção de variáveis). Os dados que você cria nas demos (agendamentos, carrinhos, favoritos) ficam só no navegador; cada demo tem um botão para limpar.
+
 ## Comandos (todos verificados)
 
 ```bash
@@ -62,7 +73,8 @@ pnpm build:portfolio    # build de produção do portfólio
 pnpm dev:<slug>         # demo em desenvolvimento (ex.: pnpm dev:clinica → porta 3102)
 pnpm build:<slug>       # build de produção de uma demo, independente do portfólio
 pnpm build              # build de todos os apps existentes
-pnpm check:reflow       # reflow em 8 larguras, 49 páginas (servidores de produção nas portas 3100–3112)
+pnpm preview:local      # builds interligados + portfólio (3100) e demos (3101–3112)
+pnpm check:reflow       # reflow em 8 larguras, 49 páginas (com a prévia local no ar)
 ```
 
 `lint`, `typecheck` e `test` rodam em todos os apps.

@@ -233,3 +233,8 @@ Portfólio: 59 testes (inclui as 12 demos implementadas, só com capturas reais 
 ### Teclado (27/09/2026)
 
 - Teclas reais enviadas pelo navegador embutido: no diálogo de reserva da academia e na prévia de mensagem (componente usado por todas as demos), o foco entra no diálogo, **Tab** continua dentro dele, **Escape** fecha e o foco volta ao botão que o abriu.
+
+### Prévia local interligada (27/09/2026)
+
+- `pnpm preview:local` gerou os 13 builds e subiu os servidores (3100–3112). Na listagem do portfólio, os 12 cases mostram "Abrir demonstração" (nova aba, `noopener noreferrer`) com a porta certa de cada demo, e nenhum mostra "Publicação em breve".
+- Nas 12 demos, a página inicial tem "Ver case" apontando para o case correto, "Solicitar um site como este" para `/contato?projeto=<slug>` e `noindex`.
