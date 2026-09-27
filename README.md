@@ -53,10 +53,16 @@ corepack enable --install-directory "%APPDATA%\npm" pnpm
 
 ## Testar tudo localmente
 
+**Jeito mais fácil (Windows):** clique duas vezes em `iniciar-previa.cmd`, na raiz do projeto. Ele encontra o Node e o pnpm (mesmo que o terminal não os reconheça), instala as dependências e gera os builds se for a primeira vez, sobe tudo e abre o navegador em http://localhost:3100. Para encerrar, feche a janela.
+
+Pelo terminal:
+
 ```bash
 pnpm install
 pnpm preview:local
 ```
+
+Se o terminal disser que `pnpm` não é reconhecido, feche e abra o terminal de novo (ele foi aberto antes de o pnpm entrar no PATH) ou use o `iniciar-previa.cmd`.
 
 Gera os builds de produção já interligados e sobe o portfólio em http://localhost:3100 e as 12 demos em http://localhost:3101 a 3112 (lista completa no terminal). O primeiro build leva alguns minutos; depois, `pnpm preview:local --skip-build` sobe os servidores direto. Ctrl+C encerra tudo.
 
