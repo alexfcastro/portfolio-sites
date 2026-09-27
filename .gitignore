@@ -34,3 +34,6 @@ coverage/
 
 # Capturas de verificação no Firefox
 scripts/firefox/out/
+
+# Originais das fotos geradas por IA (as versões otimizadas ficam em apps/*/public)
+fotos-ia/
