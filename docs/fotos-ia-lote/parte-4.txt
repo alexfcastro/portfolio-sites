@@ -1,0 +1,67 @@
+# Lote de fotos das demos — parte 4 — itens 072 a 093 (22 imagens de 114)
+
+Você vai gerar imagens com o Nano Banana, uma por item, na ordem numerada, sem pular nenhuma.
+
+REGRAS PARA TODAS AS IMAGENS
+1. Gere exatamente uma imagem por item, na ordem dos números.
+2. Monte o prompt de cada imagem juntando: ESTILO DO GRUPO + DESCRIÇÃO DO ITEM + REGRAS DO GRUPO.
+3. Use a PROPORÇÃO indicada no grupo.
+4. Dê a cada imagem o NOME DE ARQUIVO indicado, exatamente como está (minúsculas, sem acentos, sem espaços). Se não for possível renomear, use o nome como título da imagem.
+5. Nenhuma imagem pode ter texto, letras, números, rótulos, logotipos, marcas ou marca d'água. Se aparecer, gere de novo antes de seguir.
+6. Consistência: dentro de cada grupo, use a primeira imagem aprovada como referência de estilo (mesma luz, fundo e paleta) para as seguintes.
+7. Fotografias realistas. Evite mãos, dedos e objetos deformados.
+8. Ao terminar, liste em ordem o número e o nome de arquivo de cada imagem gerada e indique qualquer item que não conseguiu gerar.
+
+
+GRUPO: Horizonte Imóveis — sala e quarto de cada imóvel  (prioridade B)
+PASTA: fotos-ia/imobiliaria/
+PROPORÇÃO: 16:9 (paisagem)
+ESTILO DO GRUPO: Fotografia imobiliária realista de um imóvel no Brasil, luz do dia, céu claro, lente grande-angular sem distorção exagerada, ambiente limpo e organizado.
+REGRAS DO GRUPO: Sem placas, sem número da casa, sem carros com placa visível. Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+
+072. hz-0142-sala.png — Casa com quintal — sala
+     Ambiente interno, sala: sala integrada à cozinha, sofá claro, piso de porcelanato, decoração neutra.
+073. hz-0142-quarto.png — Casa com quintal — quarto
+     Ambiente interno: quarto de casal simples e aconchegante, cama arrumada, decoração neutra.
+074. hz-0157-sala.png — Apartamento perto do metrô — sala
+     Ambiente interno, sala: sala pequena reformada com varanda, decoração neutra.
+075. hz-0157-quarto.png — Apartamento perto do metrô — quarto
+     Ambiente interno: quarto compacto e reformado, cama arrumada, decoração neutra.
+076. hz-0163-sala.png — Casa em condomínio — sala
+     Ambiente interno, sala: sala ampla com pé-direito alto e porta de vidro para o jardim, decoração neutra.
+077. hz-0163-quarto.png — Casa em condomínio — quarto
+     Ambiente interno: suíte master espaçosa, cama arrumada, decoração neutra.
+078. hz-0171-sala.png — Studio mobiliado — sala
+     Ambiente interno, sala: studio mobiliado com sofá-cama, bancada e pequena cozinha no mesmo ambiente, decoração neutra.
+079. hz-0171-quarto.png — Studio mobiliado — quarto
+     Ambiente interno: cama de casal no studio mobiliado, vista para a janela, cama arrumada, decoração neutra.
+080. hz-0178-sala.png — Sala comercial com recepção — interior
+     Ambiente interno: sala comercial com recepção e balcão, divisória de vidro para uma segunda sala, decoração neutra.
+081. hz-0184-sala.png — Apartamento com vista — sala
+     Ambiente interno, sala: sala para dois ambientes com janela ampla e vista aberta da cidade, decoração neutra.
+082. hz-0184-quarto.png — Apartamento com vista — quarto
+     Ambiente interno: suíte com janela ampla e vista da cidade, cama arrumada, decoração neutra.
+083. hz-0190-sala.png — Casa térrea reformada — sala
+     Ambiente interno, sala: sala pequena reformada, clara e simples, decoração neutra.
+084. hz-0190-quarto.png — Casa térrea reformada — quarto
+     Ambiente interno: quarto simples e claro, cama arrumada, decoração neutra.
+085. hz-0203-sala.png — Casa com piscina — sala
+     Ambiente interno, sala: sala ampla integrada à área gourmet, com vista para a piscina, decoração neutra.
+086. hz-0203-quarto.png — Casa com piscina — quarto
+     Ambiente interno: quarto amplo com porta para o jardim, cama arrumada, decoração neutra.
+087. hz-0211-sala.png — Apartamento familiar — sala
+     Ambiente interno, sala: sala de estar e jantar familiar, confortável, decoração neutra.
+088. hz-0211-quarto.png — Apartamento familiar — quarto
+     Ambiente interno: quarto infantil claro e organizado, cama arrumada, decoração neutra.
+089. hz-0219-sala.png — Apartamento compacto — sala
+     Ambiente interno, sala: sala compacta e bem iluminada, decoração neutra.
+090. hz-0219-quarto.png — Apartamento compacto — quarto
+     Ambiente interno: quarto compacto e bem iluminado, cama arrumada, decoração neutra.
+091. hz-0226-sala.png — Sala em centro empresarial — interior
+     Ambiente interno: sala comercial vazia e moderna com janela grande e piso vinílico, decoração neutra.
+092. hz-0232-sala.png — Sobrado com três suítes — sala
+     Ambiente interno, sala: sala de estar sofisticada com jardim de inverno ao lado, decoração neutra.
+093. hz-0232-quarto.png — Sobrado com três suítes — quarto
+     Ambiente interno: suíte ampla e elegante, cama arrumada, decoração neutra.
+
+FIM. Confira se foram geradas as 22 imagens (itens 072 a 093).

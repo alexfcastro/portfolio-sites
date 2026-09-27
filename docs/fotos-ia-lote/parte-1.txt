@@ -1,0 +1,70 @@
+# Lote de fotos das demos — parte 1 — itens 001 a 020 (20 imagens de 114)
+
+Você vai gerar imagens com o Nano Banana, uma por item, na ordem numerada, sem pular nenhuma.
+
+REGRAS PARA TODAS AS IMAGENS
+1. Gere exatamente uma imagem por item, na ordem dos números.
+2. Monte o prompt de cada imagem juntando: ESTILO DO GRUPO + DESCRIÇÃO DO ITEM + REGRAS DO GRUPO.
+3. Use a PROPORÇÃO indicada no grupo.
+4. Dê a cada imagem o NOME DE ARQUIVO indicado, exatamente como está (minúsculas, sem acentos, sem espaços). Se não for possível renomear, use o nome como título da imagem.
+5. Nenhuma imagem pode ter texto, letras, números, rótulos, logotipos, marcas ou marca d'água. Se aparecer, gere de novo antes de seguir.
+6. Consistência: dentro de cada grupo, use a primeira imagem aprovada como referência de estilo (mesma luz, fundo e paleta) para as seguintes.
+7. Fotografias realistas. Evite mãos, dedos e objetos deformados.
+8. Ao terminar, liste em ordem o número e o nome de arquivo de cada imagem gerada e indique qualquer item que não conseguiu gerar.
+
+
+GRUPO: Sabor & Brasa (restaurante)  (prioridade A)
+PASTA: fotos-ia/restaurante/
+PROPORÇÃO: 4:3 (paisagem)
+ESTILO DO GRUPO: Fotografia gastronômica de churrascaria brasileira. Prato servido sobre mesa de madeira escura, luz quente e suave vinda da lateral, fundo desfocado em tons de marrom e brasa, câmera em ângulo de 45 graus, prato centralizado com espaço livre ao redor, cores naturais e apetitosas, profundidade de campo rasa.
+REGRAS DO GRUPO: Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+
+001. picanha.png — Picanha na brasa
+     Prato: picanha fatiada ao ponto, suculenta, sobre tábua de madeira, com sal grosso por cima.
+002. costela.png — Costela assada
+     Prato: costela bovina assada lentamente, desmanchando, com casquinha dourada, numa travessa de barro.
+003. frango.png — Frango na brasa
+     Prato: meio frango assado na brasa, pele dourada e crocante, com ramos de ervas frescas.
+004. linguica.png — Linguiça artesanal
+     Prato: três gomos de linguiça artesanal grelhada com cebola dourada na chapa de ferro.
+005. arroz.png — Arroz biro-biro
+     Prato: arroz biro-biro com ovo mexido, pedaços de bacon e batata palha, numa travessa branca.
+006. farofa.png — Farofa da casa
+     Prato: farofa dourada com banana e cebola douradas, numa cumbuca de cerâmica.
+007. mandioca.png — Mandioca frita
+     Prato: porção de mandioca frita crocante em palitos grossos, numa cesta de metal forrada com papel manteiga.
+008. salada.png — Salada da estação
+     Prato: salada de folhas verdes, tomate e cebola roxa em rodelas, numa saladeira de vidro.
+009. refri.png — Refrigerante lata
+     Prato: lata de refrigerante genérica toda lisa, sem nenhuma estampa, com gotas de condensação, ao lado de um copo com gelo.
+010. suco.png — Suco natural
+     Prato: copo alto de suco natural de laranja com gelo, com meia laranja ao lado.
+011. agua.png — Água mineral
+     Prato: garrafa de água mineral de vidro transparente sem rótulo e um copo com água.
+012. pudim.png — Pudim de leite
+     Prato: fatia de pudim de leite com calda de caramelo brilhante escorrendo, num prato de sobremesa.
+013. brownie.png — Brownie
+     Prato: brownie de chocolate com calda de chocolate por cima, num prato pequeno.
+
+GRUPO: Flor & Afeto (floricultura)  (prioridade A)
+PASTA: fotos-ia/floricultura/
+PROPORÇÃO: 1:1 (quadrada)
+ESTILO DO GRUPO: Fotografia de floricultura delicada e elegante, visual emocional. Tons de rosa-antigo e verde-sálvia, luz suave e difusa, composição centralizada com espaço livre ao redor.
+REGRAS DO GRUPO: Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente. Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+
+014. buque-rosas-vermelhas.png — Buquê de rosas vermelhas — principal
+     Produto: buquê de rosas vermelhas com folhagens verdes, envolto em papel kraft com laço de fita de cetim.
+015. buque-campo.png — Buquê do campo — principal
+     Produto: buquê do campo com margaridas brancas, lisianthus lilás e flores miúdas claras, envolto em papel lilás claro.
+016. buque-girassois.png — Buquê de girassóis — principal
+     Produto: buquê de girassóis com folhagens verdes, envolto em papel creme.
+017. arranjo-rosa-antigo.png — Arranjo rosa-antigo — principal
+     Produto: arranjo de rosas e cravos em tons de rosa-antigo dentro de uma caixa rígida redonda de papelão claro.
+018. arranjo-branco-sereno.png — Arranjo branco sereno (condolências) — principal
+     Produto: arranjo sóbrio e sereno de lírios e rosas brancas com folhagens verdes, em recipiente baixo claro, clima respeitoso e calmo.
+019. cesta-cafe.png — Cesta café com flores — principal
+     Produto: cesta de vime com um mini buquê de flores rosa, um pote de geleia sem rótulo, biscoitos e uma caixinha de chá lisa.
+020. orquidea.png — Orquídea em vaso — principal
+     Produto: orquídea phalaenopsis lilás com hastes floridas num cachepô de cerâmica branca.
+
+FIM. Confira se foram geradas as 20 imagens (itens 001 a 020).

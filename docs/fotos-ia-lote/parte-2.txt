@@ -1,0 +1,69 @@
+# Lote de fotos das demos — parte 2 — itens 021 a 043 (23 imagens de 114)
+
+Você vai gerar imagens com o Nano Banana, uma por item, na ordem numerada, sem pular nenhuma.
+
+REGRAS PARA TODAS AS IMAGENS
+1. Gere exatamente uma imagem por item, na ordem dos números.
+2. Monte o prompt de cada imagem juntando: ESTILO DO GRUPO + DESCRIÇÃO DO ITEM + REGRAS DO GRUPO.
+3. Use a PROPORÇÃO indicada no grupo.
+4. Dê a cada imagem o NOME DE ARQUIVO indicado, exatamente como está (minúsculas, sem acentos, sem espaços). Se não for possível renomear, use o nome como título da imagem.
+5. Nenhuma imagem pode ter texto, letras, números, rótulos, logotipos, marcas ou marca d'água. Se aparecer, gere de novo antes de seguir.
+6. Consistência: dentro de cada grupo, use a primeira imagem aprovada como referência de estilo (mesma luz, fundo e paleta) para as seguintes.
+7. Fotografias realistas. Evite mãos, dedos e objetos deformados.
+8. Ao terminar, liste em ordem o número e o nome de arquivo de cada imagem gerada e indique qualquer item que não conseguiu gerar.
+
+
+GRUPO: Raiz & Grão (produtos naturais)  (prioridade A)
+PASTA: fotos-ia/produtos-naturais/
+PROPORÇÃO: 1:1 (quadrada)
+ESTILO DO GRUPO: Fotografia de produto para empório de produtos naturais. Vista de cima levemente inclinada (cerca de 30 graus). O produto está num pote de vidro aberto ou numa tigela de cerâmica clara, com uma colher de madeira e um pouco do produto espalhado sobre um pano de linho bege. Luz natural suave de janela, fundo em tons de bege e verde-oliva, visual acolhedor e fresco. Pote e embalagens sem rótulo.
+REGRAS DO GRUPO: Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+
+021. canela-em-po.png — Canela em pó
+     Produto: canela em pó marrom-avermelhada, com dois paus de canela ao lado.
+022. curcuma.png — Cúrcuma em pó
+     Produto: cúrcuma em pó amarelo-ouro intenso, com uma raiz de cúrcuma fresca cortada ao lado.
+023. paprica-defumada.png — Páprica defumada
+     Produto: páprica defumada em pó vermelho-escuro.
+024. camomila.png — Camomila (flores secas)
+     Produto: flores secas de camomila, pequenas e amareladas, e uma xícara de chá claro ao lado.
+025. hortela.png — Hortelã (folhas secas)
+     Produto: folhas secas de hortelã verde e alguns raminhos frescos ao lado.
+026. quinoa.png — Quinoa em grãos
+     Produto: grãos de quinoa clara crua.
+027. lentilha.png — Lentilha
+     Produto: lentilhas marrons cruas.
+028. aveia-flocos.png — Aveia em flocos
+     Produto: aveia em flocos.
+029. castanha-caju.png — Castanha de caju
+     Produto: castanhas de caju torradas inteiras.
+030. castanha-para.png — Castanha-do-pará
+     Produto: castanhas-do-pará sem casca.
+031. amendoas.png — Amêndoas
+     Produto: amêndoas inteiras com pele.
+032. damasco.png — Damasco seco
+     Produto: damascos secos alaranjados.
+033. uva-passa.png — Uva-passa escura
+     Produto: uvas-passas escuras.
+034. farinha-amendoas.png — Farinha de amêndoas
+     Produto: farinha de amêndoas fina e clara, com algumas amêndoas inteiras ao lado.
+035. farinha-integral.png — Farinha de trigo integral
+     Produto: farinha de trigo integral em tom caramelo claro, com alguns grãos de trigo ao lado.
+036. chia.png — Semente de chia
+     Produto: sementes de chia pequenas, pretas e cinzas.
+037. girassol.png — Semente de girassol
+     Produto: sementes de girassol descascadas.
+038. granola-tradicional.png — Granola tradicional
+     Produto: granola dourada em cachos, com uva-passa e castanha de caju.
+039. granola-sem-acucar.png — Granola sem açúcar
+     Produto: granola rústica com coco em flocos e sementes de girassol.
+040. mel-silvestre.png — Mel silvestre (pote de 500 g)
+     Produto: um pote de vidro fechado cheio de mel dourado, sem rótulo, com um pegador de mel de madeira ao lado e um fio de mel escorrendo.
+041. pasta-amendoim.png — Pasta de amendoim integral (pote de 450 g)
+     Produto: um pote de vidro aberto com pasta de amendoim cremosa, sem rótulo, com amendoins torrados ao lado.
+042. kit-cafe-da-manha.png — Kit café da manhã
+     Produto: uma caixa de papel kraft aberta com quatro potes de vidro sem rótulo: granola, aveia, uva-passa e pasta de amendoim, arrumados lado a lado.
+043. kit-chas.png — Kit chás da tarde
+     Produto: uma caixa de papel kraft aberta com três pequenos potes de vidro sem rótulo: flores de camomila, folhas de hortelã e canela em pó, com uma xícara de chá ao lado.
+
+FIM. Confira se foram geradas as 23 imagens (itens 021 a 043).
