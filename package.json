@@ -34,6 +34,8 @@
     "dev:academia": "pnpm --filter @ax/academia dev",
     "build:academia": "pnpm --filter @ax/academia build",
     "dev:produtos-naturais": "pnpm --filter @ax/produtos-naturais dev",
-    "build:produtos-naturais": "pnpm --filter @ax/produtos-naturais build"
+    "build:produtos-naturais": "pnpm --filter @ax/produtos-naturais build",
+    "dev:floricultura": "pnpm --filter @ax/floricultura dev",
+    "build:floricultura": "pnpm --filter @ax/floricultura build"
   }
 }

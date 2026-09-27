@@ -88,7 +88,7 @@ describe("matriz de projetos", () => {
 });
 
 /** Demos implementadas e validadas até agora (Fase 2: barbearia). */
-const IMPLEMENTED_DEMOS = ["barbearia", "clinica", "restaurante", "oficina", "servicos", "autonomo", "advocacia", "imobiliaria", "petshop", "academia", "produtos-naturais"];
+const IMPLEMENTED_DEMOS = ["barbearia", "clinica", "restaurante", "oficina", "servicos", "autonomo", "advocacia", "imobiliaria", "petshop", "academia", "produtos-naturais", "floricultura"];
 
 describe("demos implementadas", () => {
   for (const slug of IMPLEMENTED_DEMOS) {
