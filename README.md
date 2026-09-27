@@ -1,8 +1,8 @@
 # Alex Castro — portfólio e demonstrações (monorepo)
 
-Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e, nas próximas fases, das aplicações demonstrativas de cada segmento.
+Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e das 12 aplicações demonstrativas de cada segmento.
 
-**Estado atual:** Fases 1 a 3 implementadas e validadas localmente: portfólio + 5 demos. Nada publicado. Veja [`docs/status.md`](docs/status.md).
+**Estado atual:** Fases 1 a 5 implementadas e validadas localmente: portfólio + 12 demos. Nada publicado. Veja [`docs/status.md`](docs/status.md).
 
 ## Arquitetura
 
@@ -13,6 +13,13 @@ apps/
   restaurante/          Demo Sabor & Brasa (3103): cardápio, adicionais, carrinho, entrega
   oficina/              Demo Torque Auto Center (3104): triagem de orçamento, fotos locais, acompanhamento
   servicos/             Demo Resolve Serviços (3105): região, perguntas guiadas, disponibilidade
+  autonomo/             Demo Lia Torres · Linha Direta Profissional (3106): portfólio filtrável, pedido de proposta
+  advocacia/            Demo Almeida & Prado (3107): áreas, equipe, artigos, conversa inicial sem dados pessoais
+  imobiliaria/          Demo Horizonte Imóveis (3108): busca com filtros, imóvel, favoritos, interesse
+  petshop/              Demo PetVille (3109): pet → serviço → data → resumo, lembrete preparado
+  academia/             Demo Pulse Studio (3110): grade filtrável, aula experimental com vagas, planos, painel
+  produtos-naturais/    Demo Raiz & Grão (3111): catálogo, venda por peso, carrinho, retirada ou entrega
+  floricultura/         Demo Flor & Afeto (3112): ocasião, personalização, cartão, data e período, resumo
   portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/
@@ -20,12 +27,12 @@ apps/
     src/data/           Conteúdo: projects.ts (12 cases), home.ts, categories.ts, contact.ts, navigation.ts
     src/lib/            Regras testadas: URLs, estado das demos, contato, metadata, geometria da marca
     public/brand/       Marca AX em SVG
-    public/projects/    Capas conceituais (geradas por scripts/generate-covers.mjs)
+    public/projects/    Capturas reais das demos (scripts/capture-screenshots.mjs)
 docs/                   assets.md · decisions.md · validation.md · status.md
 scripts/                new-demo.mjs (base de nova demo) · capture-screenshots.mjs + screenshots/<slug>.json
 ```
 
-- Cada app em `apps/<slug>` terá suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
+- Cada app em `apps/<slug>` tem suas próprias dependências, dados, estilos e build. Nenhum app importa código de outro.
 - O portfólio conhece as demos apenas por metadata (`src/data/projects.ts`) e URL (`src/config/demos.ts`).
 - Não há pacotes compartilhados: `packages/*` só será criado quando houver código efetivamente compartilhado.
 
@@ -67,8 +74,6 @@ pnpm --filter @ax/portfolio exec next dev --port 3100
 
 Build de produção local: `pnpm build:portfolio` e depois `pnpm --filter @ax/portfolio exec next start --port 3100`.
 
-Regenerar as capas conceituais depois de editar o script: `pnpm --filter @ax/portfolio covers`.
-
 ## Configuração (variáveis de ambiente)
 
 Tudo é **opcional**: sem variáveis, o site roda em modo prévia, com `noindex`, sem links de contato e com "Contato em configuração". Copie `apps/portfolio/.env.example` para `apps/portfolio/.env.local` (o app **não** lê um `.env` da raiz).
@@ -88,7 +93,7 @@ Tudo é **opcional**: sem variáveis, o site roda em modo prévia, com `noindex`
 - Os valores são fixados **no build**: alterar qualquer um exige novo build/deploy.
 - Valores ausentes ou inválidos viram `null` e os links correspondentes somem (nada de `mailto:null` ou `wa.me/undefined`).
 
-### Variáveis da demo Bravus (`apps/barbearia/.env.local`)
+### Variáveis das demos (`apps/<slug>/.env.local`)
 
 | Variável | Uso |
 |---|---|
@@ -126,9 +131,9 @@ Nada é salvo no navegador nem enviado a servidores. Para um backend futuro, a v
 ### Adicionar um case
 
 1. Acrescente um item em `src/data/projects.ts` (slug em minúsculas com hífen, `demoStatus: "planned"`, recursos com `status: "planned"`, `technologies: []`).
-2. Coloque a capa em `public/projects/<slug>/cover.svg` (ou crie a função no gerador de capas).
+2. Coloque uma prévia conceitual em `public/projects/<slug>/` (mídia com `kind: "concept"`, rotulada como "Prévia conceitual").
 3. Acrescente a entrada `NEXT_PUBLIC_DEMO_URL_<SLUG>` em `src/config/demos.ts` e no `.env.example`.
-4. Rode `pnpm test`: os testes conferem slugs, categorias, imagens e estados. (Se o total mudar de 12, ajuste o teste de propósito.)
+4. Rode `pnpm test`: os testes conferem slugs, categorias, imagens e estados. (Se o total mudar de 12, ajuste o teste de propósito; o teste de estado hoje espera as 12 demos implementadas.)
 
 Nenhuma página nova é necessária: `/projetos/[slug]` é gerada a partir dos dados.
 

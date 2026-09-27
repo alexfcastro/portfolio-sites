@@ -69,3 +69,14 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 - **Estimativa da oficina é uma faixa** somada a partir dos serviços prováveis, sempre rotulada como demonstrativa.
 - **Cabeçalhos com versão compacta abaixo de 380 px** e verificação de reflow por `innerWidth`, e não por `scrollWidth`, porque a emulação móvel alarga o layout.
 - **Nomes de tokens de cor não podem coincidir com utilitários do Tailwind** (`base`, `sm`, `lg`, `xl`…), senão `text-base` vira cor.
+
+## Fases 4 e 5
+
+- **Conteúdo sensível verificado por teste.** Advocacia: varredura contra promessa de resultado, comparação e depoimentos, e contra números de registro profissional. Raiz & Grão: varredura contra alegações de saúde. Os testes leem todos os arquivos TS/TSX, não só os dados.
+- **Nenhum dado pessoal nas demos.** A academia pede só um apelido; o PetVille, o nome do pet; a Flor & Afeto, um nome fictício de quem recebe ou retira. Endereço, telefone e documentos nunca são pedidos; a entrega usa bairros fictícios.
+- **Lembrete do PetVille só como prévia.** O "lembrete preparado" mostra a mensagem e a data da véspera, sem agendar nem enviar nada.
+- **Aula experimental: uma por pessoa, com reserva até 30 min antes.** A regra fica em `validateTrial` e é conferida de novo no clique de confirmar.
+- **Venda por peso em inteiros.** Pesos em gramas e preços em centavos; o preço da opção é o preço do quilo × gramas ÷ 1000, arredondado para o centavo mais próximo (meio centavo para cima), e a promoção é aplicada depois, também arredondada. Por isso 2 × 250 g (R$ 29,96) pode diferir de 500 g (R$ 29,95): cada embalagem tem seu preço.
+- **A Flor & Afeto faz um pedido por produto**, sem carrinho com vários buquês. O fluxo do briefing (produto → tamanho → adicionais → cartão → entrega → data → destinatário → resumo → prévia) é por item, e cada item tem cartão, data e destinatário próprios. Um carrinho de vários presentes exigiria repetir esses dados por item; fica como evolução.
+- **Filtros iniciados pela URL são remontados quando a URL muda** (`key` com o parâmetro), para os links do menu funcionarem na mesma página.
+- **Gerador de capas conceituais removido.** Com as 12 demos implementadas, nenhuma capa conceitual é usada. O tipo `kind: "concept"` continua no contrato de dados para cases futuros.

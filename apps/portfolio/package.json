@@ -8,8 +8,7 @@
     "start": "next start --port 3000",
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "vitest run",
-    "covers": "node scripts/generate-covers.mjs"
+    "test": "vitest run"
   },
   "dependencies": {
     "lucide-react": "1.48.0",

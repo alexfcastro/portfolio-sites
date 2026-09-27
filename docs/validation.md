@@ -167,3 +167,64 @@ Geradas por `scripts/capture-screenshots.mjs` com os JSONs em `scripts/screensho
 - Firefox, Safari, aparelhos reais e leitores de tela.
 - Ida e volta com o portfólio foi verificada na Fase 2 (barbearia); nas demais, os links "Voltar ao portfólio", "Ver case" e "Solicitar um site como este" usam a mesma configuração, sem teste de clique individual.
 - Publicação.
+
+## Fase 4 — Linha Direta Profissional, Almeida & Prado, Horizonte Imóveis, PetVille, Pulse Studio
+
+Data: 26–27/09/2026 · builds de produção locais (portas 3106–3110) · Chromium (navegador embutido).
+
+### Automatizado
+
+| App | Testes | O que cobrem |
+|---|---|---|
+| `autonomo` | 9 | URL do portfólio; trabalhos em categorias existentes e ofertas em centavos; nenhuma rede social inventada; pedido de proposta completo e campos inválidos; pacote sugerido por volume com desconto progressivo em centavos; mensagem com o pacote. |
+| `advocacia` | 8 | URL do portfólio; slugs e referências consistentes; nenhum número de registro profissional inventado; varredura de todos os textos (TS/TSX) contra promessa de resultado, comparação, percentual de sucesso e depoimento; pedido de conversa sem dados pessoais. |
+| `imobiliaria` | 12 | URL do portfólio; códigos únicos, bairros conhecidos e preços inteiros; filtros combinados (finalidade, tipo, bairro, quartos, faixa de preço), ordenação e busca sem acento ou por código; aluguel por mês; favoritos; mensagem com o código do imóvel; formulário de anúncio sem dados pessoais. |
+| `petshop` | 13 | Preços por porte crescentes em centavos; validação do pet; gatos sem tosa; duração pelo porte em blocos de 15 min; agenda de exemplo só em dias abertos, sem sobreposição e com janela livre garantida para o serviço mais longo; horários só com a duração inteira livre e com 1 h de antecedência no dia; validação do agendamento; mensagens de resumo e de lembrete. |
+| `academia` | 11 | Aulas com modalidade e professor que a ministra; grade da semana sem domingo; filtros combinados; vagas de exemplo dentro da capacidade, com aulas lotadas; chave de aula inválida recusada; reserva válida; uma experimental ativa por vez; recusa de aula lotada, já iniciada ou a menos de 30 min; apelido obrigatório. |
+
+### Navegador
+
+- **PetVille:** erros por campo na etapa do pet; só serviços compatíveis com a espécie; preço e duração pelo porte; dias fechados desativados; confirmação `PV-1001` com lembrete preparado para a véspera; prévia do lembrete; cancelamento em "Meus agendamentos".
+- **Pulse Studio:** `?modalidade=bike` já filtra a grade; apelido obrigatório no diálogo; a reserva `PS-1001` fecha o diálogo, leva o foco ao destaque e bloqueia outras reservas; painel com ocupação por dia, presença e cancelamento.
+- **Linha Direta, Almeida & Prado, Horizonte:** fluxo principal de cada uma (proposta; conversa inicial; busca → imóvel → interesse e favoritos) e capturas revisadas.
+- **Reflow:** sem rolagem horizontal a 320 px nas páginas principais das cinco demos.
+
+#### Achados corrigidos
+
+1. **Agenda de exemplo do PetVille cheia demais** para serviços longos (terça a quinta sem horário para tosa de porte grande): agora cada profissional tem uma janela de 3 h livre por dia (testado).
+2. **Títulos de dia com cada palavra em maiúscula** (`capitalize`) na grade da academia: agora só a primeira letra.
+3. **Filtros que não acompanhavam a URL:** ir de `/aulas?modalidade=bike` para `/aulas` mantinha o filtro. O componente agora é remontado quando o parâmetro muda (mesma correção no catálogo do Raiz & Grão).
+4. **Título do diálogo de prévia com `id` fixo:** com duas prévias na mesma página, o `id` se repetia. Agora usa `useId` em todas as demos e no gerador.
+
+## Fase 5 — Raiz & Grão, Flor & Afeto
+
+Data: 27/09/2026 · builds de produção locais (portas 3111–3112) · Chromium.
+
+### Automatizado
+
+| App | Testes | O que cobrem |
+|---|---|---|
+| `produtos-naturais` | 12 | Dados (ids, categorias, preços inteiros, pesos permitidos, promoções); arredondamento explícito (meio centavo para cima), por exemplo 250 g a R$ 59,90/kg = R$ 14,98; promoção aplicada sobre a opção e arredondada; peso ou unidade válidos, quantidade inteira de 1 a 20, esgotado recusado; mesma opção soma quantidade; subtotal, economia, peso total, frete por bairro e frete grátis; validação e mensagem do pedido; busca sem acento, filtros e ordenação; **nenhuma alegação de saúde** em todos os textos. |
+| `floricultura` | 12 | Dados e preços crescentes por tamanho; adicionais incompatíveis por ocasião ou categoria (balão e pelúcia fora de condolências, vaso só em buquês), repetidos ou inexistentes; soma em centavos; cartão com até 200 caracteres e 6 linhas; sem domingo, e para hoje só à tarde e até as 11h; pedido completo e campos pendentes (bairro só na entrega); mensagem com produto, adicionais, cartão, entrega e total; filtros do catálogo. |
+
+Portfólio: 59 testes (inclui as 12 demos implementadas, só com capturas reais e com ao menos uma captura de desktop e uma de celular cada).
+
+### Navegador
+
+- **Raiz & Grão:** opções de peso com preço (100 g R$ 5,99 · 250 g R$ 14,98 · 500 g R$ 29,95); total do item atualiza com a quantidade; produto esgotado com botão desativado; o carrinho pede retirada ou entrega e depois o bairro; resumo com frete, economia e quanto falta para a entrega grátis; o pedido `RG-1001` esvazia o carrinho e mostra a prévia com itens e total.
+- **Flor & Afeto:** adicionais incompatíveis desativados no arranjo de condolências; erro no cartão acima de 200 caracteres e prévia do cartão; domingo ausente das datas; erros por etapa (entrega, data, nome); resumo com total de R$ 252,70 (igual ao teste); pedido `FA-1001` com prévia da mensagem.
+- **Reflow:** sem rolagem horizontal a 320 px nas páginas principais e em todas as etapas dos fluxos.
+- **Largura intermediária:** página inicial das 12 demos verificada também a 390 px, sem elementos além da largura.
+
+#### Achados corrigidos
+
+1. **Botão do carrinho cortado entre 380 e 420 px** (Raiz & Grão): a captura de celular mostrou o que a checagem só em 320 px não pegava. "Produtos" sai do cabeçalho abaixo de 420 px e o texto "Carrinho" fica só para leitores de tela abaixo de 640 px. A partir daí, a checagem a 390 px passou a ser feita em todas as demos.
+2. **Peso total exibido como "1500 g"**: agora "1,5 kg".
+3. **"Economia" com sinal de menos logo abaixo do subtotal** parecia um desconto aplicado duas vezes: virou uma nota ("Você economizou…").
+4. **Título quebrando entre número e unidade** ("100 / g"): espaços não separáveis.
+
+### Não verificado
+
+- Firefox, Safari, aparelhos reais e leitores de tela.
+- Tecla Escape física nos diálogos (comportamento nativo do `<dialog>` modal).
+- Publicação.

@@ -2,14 +2,9 @@ import type { Project, ProjectFeature, ProjectMedia } from "@/types/project";
 
 /*
  * Matriz única dos projetos conceituais. Todos os negócios são fictícios.
- * Demos implementadas: barbearia (Fase 2) e as da Fase 3 conforme forem validadas. As demais estão `planned`, com
- * recursos “previstos” e prévias conceituais.
- * Para adicionar um case: inclua um item aqui e a capa em public/projects/<slug>/.
+ * As 12 demos estão implementadas, com recursos implementados e capturas reais em public/projects/<slug>/.
+ * Um case novo começa como `planned`, com recursos `status: "planned"` e mídia `kind: "concept"`.
  */
-
-function planned(title: string, description: string): ProjectFeature {
-  return { title, description, status: "planned" };
-}
 
 function implemented(title: string, description: string): ProjectFeature {
   return { title, description, status: "implemented" };
@@ -31,17 +26,6 @@ const MOBILE = { width: 780, height: 1688 };
 
 /** Stack comum das demos implementadas (cada uma é um app Next.js independente). */
 const DEMO_STACK = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
-
-function conceptCover(slug: string, name: string, description: string): ProjectMedia {
-  return {
-    src: `/projects/${slug}/cover.svg`,
-    alt: `Prévia conceitual do site ${name}: ${description}`,
-    width: 1600,
-    height: 1000,
-    kind: "concept",
-    caption: "Prévia conceitual — composição ilustrativa, não é captura de um sistema em funcionamento.",
-  };
-}
 
 export const projects: Project[] = [
   {

@@ -9,17 +9,16 @@ Todos os assets visuais do portfólio foram **criados para este projeto** (vetor
 | Símbolo inline | `src/components/ui/ax-symbol.tsx` | Criação própria | Header, footer, Sobre, 404 |
 | Favicon | `apps/portfolio/src/app/icon.svg` | Derivado do símbolo | Aba do navegador |
 | Imagem Open Graph | `src/app/og-image.png/route.tsx` (gerada no build) | Criação própria | Compartilhamento (só anunciada com URL pública) |
-| 12 capas conceituais | `apps/portfolio/public/projects/<slug>/cover.svg` | Geradas por `scripts/generate-covers.mjs`, composições próprias | Cards, cases, hero |
+| Capturas das 12 demos (4 PNG cada) | `apps/portfolio/public/projects/<slug>/` | Capturas reais das demos, geradas por `scripts/capture-screenshots.mjs` | Cards, cases, hero |
 | Ícones de interface | pacote `lucide-react` | Lucide, licença ISC | Ícones de UI |
 | Fontes Inter e Manrope | via `next/font/google`, servidas pelo próprio site | Google Fonts, SIL Open Font License 1.1 | Tipografia |
 
 ## Observações e limitações
 
-- As capas são **prévias conceituais**: mostram como o site poderia ser, não capturas de software em funcionamento. O site as rotula assim ("Prévia conceitual") em todos os lugares onde aparecem.
-- Os negócios, nomes de pessoas, preços e textos das capas são fictícios. Nenhum dado foi extraído de empresa real.
+- As capas conceituais em SVG usadas no início foram todas substituídas por capturas reais; o gerador foi removido. Um case novo sem demo volta a precisar de uma prévia conceitual, rotulada como tal.
+- Os negócios, nomes de pessoas, preços e textos das demos são fictícios. Nenhum dado foi extraído de empresa real.
 - As assinaturas em SVG usam **texto vivo** ("Alex Castro"), não contornos. Onde a fonte Manrope não estiver instalada, a assinatura aparece com a fonte de fallback. Para uso em gráfica, converta o texto em curvas num editor vetorial.
 - A imagem Open Graph usa a fonte padrão do gerador de imagens do Next (sem negrito real). Se quiser a Manrope nela, é preciso incluir o arquivo da fonte na rota.
-- Quando as demos existirem, as capas serão substituídas por capturas reais (`media.kind: "screenshot"`), registradas aqui.
 
 ## Demos
 
@@ -42,3 +41,14 @@ A capa conceitual da barbearia (`cover.svg`) foi removida quando a demo ganhou c
 | Fontes Figtree, Fraunces, Work Sans, DM Serif Display, Archivo, Plus Jakarta Sans | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Demos |
 
 As capas conceituais de clínica, restaurante, oficina e serviços foram removidas ao ganharem capturas reais.
+
+### Fases 4 e 5
+
+| Asset | Local | Origem | Uso |
+|---|---|---|---|
+| Capturas (4 PNG por demo) | `apps/portfolio/public/projects/{autonomo,advocacia,imobiliaria,petshop,academia,produtos-naturais,floricultura}/` | Capturas reais das demos, geradas por `scripts/capture-screenshots.mjs` | Cards e cases |
+| Marcas fictícias e favicons | `apps/*/src/components/site-chrome.tsx`, `apps/*/src/app/icon.svg` | Criação própria | Demos |
+| Ilustrações de trabalhos, imóveis, pets, embalagens e flores | `apps/autonomo/src/components/work-art.tsx`, `apps/imobiliaria/src/components/property-art.tsx`, `apps/petshop/src/components/pet-art.tsx`, `apps/produtos-naturais/src/components/product-art.tsx`, `apps/floricultura/src/components/flower-art.tsx` | Criação própria (SVG). Rotuladas nas demos como ilustração, não foto | Demos |
+| Fontes Karla, Newsreader, Cormorant Garamond, Source Sans 3, Outfit, Nunito, Space Grotesk, DM Sans, Fraunces, Jost | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Demos |
+
+As capas conceituais dessas demos foram removidas ao ganharem capturas reais.

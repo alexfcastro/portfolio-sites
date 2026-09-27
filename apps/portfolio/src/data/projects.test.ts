@@ -108,17 +108,11 @@ describe("demos implementadas", () => {
   }
 });
 
-describe("estado das demos ainda não implementadas", () => {
-  it("mantém as demais demos planejadas, com recursos previstos e prévias conceituais", () => {
-    for (const project of projects.filter((item) => !IMPLEMENTED_DEMOS.includes(item.slug))) {
-      expect(project.demoStatus, project.slug).toBe("planned");
-      expect(project.technologies, project.slug).toEqual([]);
-      for (const feature of project.features) {
-        expect(feature.status, `${project.slug}: ${feature.title}`).toBe("planned");
-      }
-      for (const media of project.media) {
-        expect(media.kind, project.slug).toBe("concept");
-      }
+describe("estado das demos", () => {
+  it("todas as 12 demos estão implementadas, só com capturas reais", () => {
+    expect([...IMPLEMENTED_DEMOS].sort()).toEqual(projects.map((item) => item.slug).sort());
+    for (const project of projects) {
+      expect(project.media.every((media) => media.kind === "screenshot"), project.slug).toBe(true);
     }
   });
 
