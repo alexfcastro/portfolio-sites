@@ -52,3 +52,13 @@ As capas conceituais de clínica, restaurante, oficina e serviços foram removid
 | Fontes Karla, Newsreader, Cormorant Garamond, Source Sans 3, Outfit, Nunito, Space Grotesk, DM Sans, Fraunces, Jost | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Demos |
 
 As capas conceituais dessas demos foram removidas ao ganharem capturas reais.
+
+### Fotos geradas por IA
+
+As ilustrações das demos estão sendo substituídas por fotos **geradas por IA** (Nano Banana, no Google Flow), a partir dos prompts de `docs/fotos-ia.md`. Não são fotos de negócios, pratos, imóveis ou pessoas reais, e cada demo avisa isso no rodapé. Os originais ficam em `fotos-ia/` (fora do Git); `node scripts/importar-fotos.mjs <site>` gera as versões WebP (até 1200 px) em `apps/<site>/public/fotos/` e a lista `src/data/fotos.ts`. Onde não houver foto, a ilustração continua.
+
+| Demo | Fotos | Local | Gerador | Data |
+|---|---|---|---|---|
+| Sabor & Brasa (restaurante) | 13 pratos e bebidas | `apps/restaurante/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+
+Critérios de revisão de cada foto: correspondência com o item, nenhum texto, logotipo ou marca d'água, sem pessoas identificáveis (vultos desfocados ao fundo são aceitos), proporção compatível com o card.

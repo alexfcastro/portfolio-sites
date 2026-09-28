@@ -29,6 +29,8 @@ Para gerar com o agente do Flow (até 20 imagens por pedido), use os prompts pro
 
 A pasta `fotos-ia/` já existe e fica fora do Git (os originais são grandes). Só as versões otimizadas entram no projeto.
 
+**Nomes:** se o Flow salvar com nomes próprios (ex.: `Sliced_picanha_on_wooden_board_2026….jpg`), pode deixar assim. `node scripts/importar-fotos.mjs <site>` reconhece cada foto pelas palavras do nome e avisa se alguma ficar ambígua ou sem correspondência.
+
 ### Dica para manter as fotos de uma demo parecidas entre si
 
 Gere a primeira foto da demo, escolha a melhor e, nas seguintes, anexe essa foto como referência no Flow com a frase "mantenha o mesmo estilo de luz, fundo e cores desta imagem". Assim o catálogo fica coerente.

@@ -3,7 +3,7 @@
 import { Minus, Plus, ShoppingBag, X } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { PlateArt } from "@/components/plate-art";
+import { DishImage } from "@/components/dish-image";
 import { categories, getGroup, menu, type MenuItem } from "@/data/menu";
 import { MAX_QUANTITY, unitPriceCents, validateAddons, type AddonSelection } from "@/lib/cart";
 import { cartActions, useRestaurantState } from "@/lib/demo-store";
@@ -85,7 +85,7 @@ export function MenuBoard() {
                 .filter((entry) => entry.categoryId === category.id)
                 .map((entry) => (
                   <li key={entry.id} className="flex flex-col overflow-hidden rounded-card border border-line bg-paper">
-                    <PlateArt art={entry.art} className="h-auto w-full" />
+                    <DishImage art={entry.art} sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw" />
                     <div className="flex flex-1 flex-col p-5">
                       <div className="flex items-start justify-between gap-3">
                         <h3 className="text-xl">{entry.name}</h3>
