@@ -61,7 +61,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           <h1 className="mt-3 text-4xl leading-[1.08] font-extrabold sm:text-5xl">{project.name}</h1>
           <div className="mt-4 flex flex-wrap gap-2">
             <ConceptBadge />
-            <DemoStatusBadge status={demo.state} />
+            <DemoStatusBadge status={demo.state} href={demo.link} />
           </div>
           <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">{project.summary}</p>
           <p className="mt-4 text-sm text-muted">
@@ -79,12 +79,37 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
 
         {cover && (
           <figure>
-            <ProjectCover
-              media={cover}
-              preload
-              sizes="(min-width: 1024px) 600px, 100vw"
-              className="rounded-card border border-line shadow-raised"
-            />
+            {demo.link ? (
+              // Com a demo publicada, a captura principal também abre a demonstração.
+              <a
+                href={demo.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir a demonstração de ${project.name} (abre em nova aba)`}
+                className="group relative block rounded-card"
+              >
+                <ProjectCover
+                  media={cover}
+                  preload
+                  sizes="(min-width: 1024px) 600px, 100vw"
+                  className="rounded-card border border-line shadow-raised transition-shadow group-hover:shadow-lg group-hover:ring-2 group-hover:ring-accent/40"
+                />
+                <span
+                  aria-hidden
+                  className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-white shadow-raised transition-colors group-hover:bg-accent-strong"
+                >
+                  Abrir demonstração
+                  <ExternalIcon className="size-3.5" />
+                </span>
+              </a>
+            ) : (
+              <ProjectCover
+                media={cover}
+                preload
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="rounded-card border border-line shadow-raised"
+              />
+            )}
             <figcaption className="mt-3 text-sm text-muted">{cover.caption}</figcaption>
           </figure>
         )}
@@ -188,7 +213,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
               Demonstração
             </h2>
             <div className="mt-3">
-              <DemoStatusBadge status={demo.state} />
+              <DemoStatusBadge status={demo.state} href={demo.link} />
             </div>
             <p className="mt-4 leading-relaxed text-muted">{demoStatusDescriptions[demo.state]}</p>
             {project.technologies.length > 0 && (
