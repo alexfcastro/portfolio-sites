@@ -85,7 +85,7 @@ export function CartView() {
             const region = regions.find((r) => r.id === item.regionId);
             return (
               <li key={index} className="flex gap-4 rounded-card border border-line bg-paper p-4">
-                <FlowerArt art={product.art} className="size-16 shrink-0 rounded-xl sm:size-28" />
+                <FlowerArt art={product.art} id={product.id} sizes="112px" className="size-16 shrink-0 rounded-xl sm:size-28" />
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-start justify-between gap-x-3">
                     <h3 className="text-2xl">

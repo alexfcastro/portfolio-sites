@@ -133,7 +133,7 @@ export default function HomePage() {
         <h2 id="galeria-title" className="mt-3 text-4xl font-bold sm:text-5xl">
           Estilos
         </h2>
-        <p className="mt-3 text-smoke">Ilustrações de estilos de corte — não são fotos de clientes.</p>
+        <p className="mt-3 text-smoke">Fotos ilustrativas geradas por IA — não são clientes reais.</p>
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
           {galleryItems.map((item) => (
             <li key={item.id}>

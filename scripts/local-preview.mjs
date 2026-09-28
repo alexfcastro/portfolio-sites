@@ -10,6 +10,11 @@
 // Ctrl+C encerra todos os servidores.
 
 import { spawn } from "node:child_process";
+import { rmSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const PORTFOLIO_PORT = 3100;
 const DEMOS = [
@@ -52,7 +57,15 @@ const apps = ["portfolio", ...DEMOS];
 if (!skipBuild) {
   for (const app of apps) {
     process.stdout.write(`build ${app}… `);
-    await run(["--filter", `@ax/${app}`, "build"], envFor(app));
+    try {
+      await run(["--filter", `@ax/${app}`, "build"], envFor(app));
+    } catch {
+      // Um cache de build corrompido (ex.: build interrompido) às vezes faz o Turbopack falhar ao processar as
+      // fontes do Google. Apaga o cache do app e tenta de novo uma vez.
+      process.stdout.write("falhou; limpando o cache e tentando de novo… ");
+      rmSync(join(root, "apps", app, ".next"), { recursive: true, force: true });
+      await run(["--filter", `@ax/${app}`, "build"], envFor(app));
+    }
     console.log("ok");
   }
 }

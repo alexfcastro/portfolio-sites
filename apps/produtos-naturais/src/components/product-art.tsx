@@ -1,10 +1,22 @@
+import { Foto, temFoto } from "@/components/foto";
 import type { Product } from "@/data/catalog";
 
 /*
- * Ilustração do produto: saquinho de papel (granel) ou pote (unidade), nas cores
- * do produto. Não é foto real. Decorativa: o nome do produto aparece ao lado.
+ * Imagem do produto: a foto gerada por IA, quando existe, ou a ilustração (saquinho de papel para granel,
+ * pote para unidade, nas cores do produto). Decorativa: o nome do produto aparece ao lado.
  */
-export function ProductArt({ product, className }: { product: Product; className?: string }) {
+export function ProductArt({
+  product,
+  className,
+  sizes = "(min-width: 1024px) 300px, 50vw",
+  preload = false,
+}: {
+  product: Product;
+  className?: string;
+  sizes?: string;
+  preload?: boolean;
+}) {
+  if (temFoto(product.id)) return <Foto id={product.id} sizes={sizes} preload={preload} className={`aspect-square ${className ?? ""}`} />;
   const { color, accent } = product.art;
   const seed = [...product.id].reduce((total, char) => total + char.charCodeAt(0), 0);
   const grains = Array.from({ length: 14 }, (_, i) => ({

@@ -62,7 +62,7 @@ export function SiteFooter() {
           <p className="text-xl font-bold">Horizonte Imóveis</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75">
             A Horizonte é uma imobiliária fictícia. Este site é uma demonstração criada por Alex Castro: imóveis, bairros,
-            valores e corretores são exemplos, e nenhum contato é enviado.
+            valores e corretores são exemplos, e nenhum contato é enviado. As fotos são ilustrativas, geradas por IA.
           </p>
           <ul className="mt-3 flex flex-wrap gap-x-5 text-sm">
             <li>

@@ -7,7 +7,7 @@ import { minPrice } from "@/lib/order";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-paper">
-      <FlowerArt art={product.art} className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.03]" />
+      <FlowerArt art={product.art} id={product.id} className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.03]" />
       <div className="flex flex-1 flex-col p-4">
         <p className="text-xs tracking-wide text-muted uppercase">
           {product.occasionIds.map((id) => occasions.find((o) => o.id === id)?.name).join(" · ")}

@@ -42,7 +42,7 @@ export function AppointmentList() {
           const cancelled = item.status === "cancelado";
           return (
             <li key={item.id} className={`flex gap-4 rounded-card border-2 bg-paper p-5 ${cancelled ? "border-dashed border-line" : "border-line"}`}>
-              <PetArt kind={item.species} className="size-14 shrink-0 rounded-2xl sm:size-20" />
+              <PetArt kind={item.species} sizes="80px" className="size-14 shrink-0 rounded-2xl sm:size-20" />
               <div className="min-w-0 flex-1">
                 <p className="text-xs font-bold text-muted">
                   {item.id} · {cancelled ? "Cancelado" : "Agendado"}

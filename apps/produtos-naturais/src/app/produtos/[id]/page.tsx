@@ -56,8 +56,8 @@ export default async function ProductPage({ params }: PageProps<"/produtos/[id]"
 
       <div className="mt-4 grid gap-8 md:grid-cols-2 md:gap-12">
         <div className="relative self-start overflow-hidden rounded-card border border-line">
-          <ProductArt product={product} className="h-auto w-full" />
-          <p className="bg-paper px-4 py-2 text-xs text-muted">Ilustração, não é foto do produto.</p>
+          <ProductArt product={product} sizes="(min-width: 768px) 560px, 100vw" preload className="h-auto w-full" />
+          <p className="bg-paper px-4 py-2 text-xs text-muted">Foto ilustrativa gerada por IA, não é foto do produto vendido.</p>
           <div className="absolute top-3 left-3 flex flex-wrap gap-1">
             <ProductBadges product={product} />
           </div>

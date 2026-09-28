@@ -62,7 +62,7 @@ export const projects: Project[] = [
         "Painel demonstrativo",
         "Filtros por período, profissional e situação; concluir, cancelar, reativar e restaurar a agenda.",
       ),
-      implemented("Equipe, galeria e avaliações", "Profissionais fictícios, estilos ilustrados e avaliações marcadas como fictícias."),
+      implemented("Equipe, galeria e avaliações", "Profissionais fictícios, estilos em fotos geradas por IA e avaliações marcadas como fictícias."),
       implemented("Prévia de mensagem no WhatsApp", "Mostra a mensagem de confirmação sem enviar nada nem ter destinatário real."),
     ],
     media: [
@@ -273,7 +273,7 @@ export const projects: Project[] = [
       implemented("Catálogo de serviços", "Elétrica, pintura, manutenção, ar-condicionado e hidráulica, com o que cada um inclui."),
       implemented("Verificação de região", "Regiões atendidas com taxa de deslocamento; fora da área, o pedido não segue."),
       implemented("Descrição guiada", "Perguntas específicas de cada serviço e urgência, com detalhes opcionais."),
-      implemented("Portfólio de trabalhos", "Trabalhos ilustrativos por tipo de serviço, identificados como exemplos."),
+      implemented("Portfólio de trabalhos", "Fotos de trabalhos geradas por IA, por tipo de serviço, identificadas como exemplos."),
       implemented("Disponibilidade", "Até três opções de dia e período para a visita, sem domingos e só manhã aos sábados."),
       implemented("Solicitação sem dados pessoais", "Gera um protocolo e a prévia local da mensagem; o navegador guarda só o contador."),
     ],
@@ -311,13 +311,13 @@ export const projects: Project[] = [
     features: [
       implemented("Apresentação profissional", "Posicionamento claro, quem é a profissional e para quem trabalha."),
       implemented("Serviços descritos", "O que cada serviço inclui, com valor de referência demonstrativo."),
-      implemented("Portfólio organizado", "Trabalhos filtráveis por tipo, com contexto de cada um (composições ilustrativas)."),
+      implemented("Portfólio organizado", "Trabalhos filtráveis por tipo, com contexto de cada um (fotos ilustrativas geradas por IA)."),
       implemented("Pedido de proposta", "Escopo, quantidade, prazo e investimento, com validação e mensagem pronta."),
       implemented("Pacote sugerido", "Estimativa por volume com desconto progressivo, calculada em centavos."),
       implemented("Redes configuráveis e dúvidas", "Links de redes só quando informados (nenhum inventado) e perguntas frequentes."),
     ],
     media: [
-      screenshot("autonomo", "desktop-inicio.png", DESKTOP, "Página inicial da demo de profissional autônoma: título “Imagens que ajudam pequenas marcas a vender” e composições de produtos.", "Apresentação da profissional (computador)."),
+      screenshot("autonomo", "desktop-inicio.png", DESKTOP, "Página inicial da demo de profissional autônoma: título “Imagens que ajudam pequenas marcas a vender” e fotos de produtos.", "Apresentação da profissional (computador)."),
       screenshot("autonomo", "desktop-portfolio.png", DESKTOP, "Seção de portfólio com filtros por tipo de trabalho e cards de trabalhos com contexto.", "Portfólio filtrável por tipo de trabalho."),
       screenshot("autonomo", "mobile-proposta.png", MOBILE, "Formulário de pedido de proposta no celular, preenchido com tipo de trabalho, quantidade, prazo e investimento.", "Pedido de proposta no celular."),
       screenshot("autonomo", "desktop-proposta.png", DESKTOP, "Pedido de proposta com o pacote sugerido “Completo” e a faixa de valor ao lado.", "Pacote sugerido atualizado conforme o escopo."),
@@ -436,7 +436,7 @@ export const projects: Project[] = [
       implemented("Galeria e pacotes", "Ilustrações de exemplo e pacotes informativos, sem fotos de clientes."),
     ],
     media: [
-      screenshot("petshop", "desktop-inicio.png", DESKTOP, "Página inicial da demo PetVille com chamada para agendar banho e tosa e ilustrações de um cachorro e um gato.", "Página inicial (computador)."),
+      screenshot("petshop", "desktop-inicio.png", DESKTOP, "Página inicial da demo PetVille com chamada para agendar banho e tosa e fotos de um cachorro e de um gato.", "Página inicial (computador)."),
       screenshot("petshop", "desktop-servico.png", DESKTOP, "Etapa de serviço do agendamento para um cachorro de porte médio, com preço e tempo de cada serviço e a profissional Bia selecionada.", "Serviços com preço e tempo pelo porte."),
       screenshot("petshop", "mobile-horario.png", MOBILE, "Escolha de dia e horário no celular, com dias fechados desativados e horários livres em grade.", "Data e horário no celular."),
       screenshot("petshop", "desktop-confirmacao.png", DESKTOP, "Confirmação do agendamento de demonstração com código e lembrete preparado para a véspera.", "Confirmação com lembrete preparado."),
@@ -515,7 +515,7 @@ export const projects: Project[] = [
       implemented("Kits, promoções e favoritos", "Kits temáticos, preços promocionais, estoque demonstrativo e favoritos salvos só no navegador."),
     ],
     media: [
-      screenshot("produtos-naturais", "desktop-inicio.png", DESKTOP, "Página inicial da demo Raiz & Grão, em verde-oliva e linho, com a chamada para comprar por peso e ilustrações de um saquinho a granel e um pote de mel.", "Página inicial (computador)."),
+      screenshot("produtos-naturais", "desktop-inicio.png", DESKTOP, "Página inicial da demo Raiz & Grão, em verde-oliva e linho, com a chamada para comprar por peso e fotos de uma tigela de granola e de um pote de mel.", "Página inicial (computador)."),
       screenshot("produtos-naturais", "desktop-catalogo.png", DESKTOP, "Catálogo filtrado por produtos sem glúten e ordenado pelo menor preço, com a lentilha em promoção e preços por 100 g.", "Catálogo com filtros e ordenação."),
       screenshot("produtos-naturais", "mobile-produto.png", MOBILE, "Página da canela em pó no celular, com a opção de 250 g selecionada, quantidade 2 e total do item atualizado.", "Escolha de peso e quantidade no celular."),
       screenshot("produtos-naturais", "desktop-carrinho.png", DESKTOP, "Carrinho com três itens, entrega para um bairro fictício, subtotal, taxa de entrega, total e quanto falta para a entrega grátis.", "Carrinho com entrega por bairro."),
@@ -555,8 +555,8 @@ export const projects: Project[] = [
       implemented("Carrinho e resumo", "Vários presentes num pedido; mesmo destino e horário pagam uma entrega só; revisão completa antes da prévia da mensagem."),
     ],
     media: [
-      screenshot("floricultura", "desktop-inicio.png", DESKTOP, "Página inicial da demo Flor & Afeto, em rosa-antigo e verde-sálvia, com um buquê de rosas ilustrado em moldura arredondada.", "Página inicial (computador)."),
-      screenshot("floricultura", "desktop-catalogo.png", DESKTOP, "Catálogo filtrado pela ocasião aniversário, com buquês e arranjo ilustrados e preços a partir do menor tamanho.", "Catálogo por ocasião."),
+      screenshot("floricultura", "desktop-inicio.png", DESKTOP, "Página inicial da demo Flor & Afeto, em rosa-antigo e verde-sálvia, com a foto de um buquê de rosas em moldura arredondada.", "Página inicial (computador)."),
+      screenshot("floricultura", "desktop-catalogo.png", DESKTOP, "Catálogo filtrado pela ocasião aniversário, com fotos de buquês e de um arranjo e preços a partir do menor tamanho.", "Catálogo por ocasião."),
       screenshot("floricultura", "mobile-cartao.png", MOBILE, "Etapa de mensagem do cartão no celular, com contador de caracteres, prévia do cartão e valor parcial do pedido.", "Mensagem do cartão no celular."),
       screenshot("floricultura", "desktop-carrinho.png", DESKTOP, "Carrinho com dois presentes para a mesma pessoa, bairro, dia e período, cobrando uma única entrega, e o resumo com o total.", "Carrinho com entrega agrupada."),
     ],

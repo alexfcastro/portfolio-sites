@@ -60,5 +60,20 @@ As ilustrações das demos estão sendo substituídas por fotos **geradas por IA
 | Demo | Fotos | Local | Gerador | Data |
 |---|---|---|---|---|
 | Sabor & Brasa (restaurante) | 13 pratos e bebidas | `apps/restaurante/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Raiz & Grão (produtos naturais) | 23 produtos e kits | `apps/produtos-naturais/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Flor & Afeto (floricultura) | 21 (7 produtos × principal, sobre a mesa, detalhe) | `apps/floricultura/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Horizonte Imóveis (imobiliária) | 34 (fachada, sala e quarto dos 12 imóveis) | `apps/imobiliaria/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Lia Torres (autônomo) | 6 trabalhos do portfólio | `apps/autonomo/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| PetVille (pet shop) | 4 pets | `apps/petshop/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Resolve Serviços | 6 trabalhos concluídos | `apps/servicos/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Bravus Barbearia | 6 estilos de corte | `apps/barbearia/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Vita Clínica | 1 recepção (destaque da página inicial) | `apps/clinica/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
 
 Critérios de revisão de cada foto: correspondência com o item, nenhum texto, logotipo ou marca d'água, sem pessoas identificáveis (vultos desfocados ao fundo são aceitos), proporção compatível com o card.
+
+Observações da revisão (28/09/2026):
+
+- O Flow não usou os nomes de arquivo pedidos; `scripts/importar-fotos.mjs` guarda a correspondência entre cada arquivo e o item, definida olhando as fotos.
+- **Sobrado (HZ-0232):** a fachada gerada tinha o número "210"; a área foi desfocada na versão publicada (retoque registrado no importador). O original não foi alterado.
+- **Barbearia:** duas fotos mostram o cliente de perfil com o rosto visível e uma mostra o barbeiro trabalhando; são pessoas geradas por IA, não reais. Se preferir, gere de novo com o rosto em sombra e rode o importador.
+- Mapas e fotos de equipe continuam ilustrativos (sem foto), de propósito.

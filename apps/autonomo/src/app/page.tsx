@@ -27,9 +27,9 @@ export default function HomePage() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3" aria-hidden>
-          <WorkArt variant={0} className="col-span-2 h-auto w-full" />
-          <WorkArt variant={5} className="h-auto w-full" />
-          <WorkArt variant={1} className="h-auto w-full" />
+          <WorkArt variant={0} sizes="(min-width: 1024px) 520px, 100vw" preload className="col-span-2 h-auto w-full" />
+          <WorkArt variant={5} sizes="(min-width: 1024px) 260px, 50vw" className="h-auto w-full" />
+          <WorkArt variant={1} sizes="(min-width: 1024px) 260px, 50vw" className="h-auto w-full" />
         </div>
       </section>
 
@@ -65,7 +65,7 @@ export default function HomePage() {
         <h2 id="portfolio-title" className="mt-3 text-4xl">
           Trabalhos recentes
         </h2>
-        <p className="mt-3 mb-8 text-muted">Composições ilustrativas criadas para esta demonstração — não são fotos de clientes.</p>
+        <p className="mt-3 mb-8 text-muted">Fotos ilustrativas geradas por IA para esta demonstração — não são trabalhos para clientes reais.</p>
         <PortfolioGrid />
       </section>
 

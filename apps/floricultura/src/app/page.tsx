@@ -40,10 +40,10 @@ export default function HomePage() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-t-full rounded-b-[2rem] border-4 border-paper shadow-xl">
-              <FlowerArt art={hero.art} className="h-auto w-full" />
+              <FlowerArt art={hero.art} id={hero.id} sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
             </div>
             <div className="absolute -bottom-6 -left-6 w-36 overflow-hidden rounded-full border-4 border-paper shadow-lg sm:w-44">
-              <FlowerArt art={heroSmall.art} scene={1} className="h-auto w-full" />
+              <FlowerArt art={heroSmall.art} id={heroSmall.id} scene={1} sizes="176px" className="h-auto w-full" />
             </div>
           </div>
         </div>

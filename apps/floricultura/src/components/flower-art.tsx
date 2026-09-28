@@ -1,6 +1,11 @@
+import { Foto, temFoto } from "@/components/foto";
 import type { FlowerArt as Art } from "@/data/shop";
 
-/* Ilustração do produto (não é foto). Decorativa: o nome aparece ao lado. */
+/*
+ * Imagem do produto: a foto gerada por IA da vista pedida (principal, sobre a mesa ou detalhe), quando existe,
+ * ou a ilustração. Decorativa: o nome aparece ao lado.
+ */
+const sufixos = ["", "-mesa", "-detalhe"];
 
 function Flower({ x, y, r, petals, center }: { x: number; y: number; r: number; petals: string; center: string }) {
   return (
@@ -23,7 +28,24 @@ const cluster = [
   [100, 90, 16],
 ] as const;
 
-export function FlowerArt({ art, className, scene = 0 }: { art: Art; className?: string; scene?: number }) {
+export function FlowerArt({
+  art,
+  id,
+  className,
+  scene = 0,
+  sizes = "(min-width: 1024px) 300px, 50vw",
+  preload = false,
+}: {
+  art: Art;
+  /** Id do produto, para achar a foto. */
+  id?: string;
+  className?: string;
+  scene?: number;
+  sizes?: string;
+  preload?: boolean;
+}) {
+  const fotoId = id ? `${id}${sufixos[scene % 3]}` : "";
+  if (fotoId && temFoto(fotoId)) return <Foto id={fotoId} sizes={sizes} preload={preload} className={`aspect-square ${className ?? ""}`} />;
   const bg = ["#f6e9e6", "#eef1ea", "#f5efe4"][scene % 3];
   return (
     <svg viewBox={scene === 2 ? "40 18 120 120" : "0 0 200 200"} className={className} aria-hidden focusable="false">

@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
+import { Foto, temFoto } from "@/components/foto";
 
 /*
- * Ilustrações originais (SVG) para o portfólio de trabalhos. São representações
- * estilizadas, não fotos de trabalhos reais.
+ * Imagem de um trabalho do portfólio: a foto gerada por IA do trabalho, quando existe, ou a ilustração do tipo
+ * de serviço (SVG). Nenhuma é trabalho real.
  */
 
 const art: Record<string, ReactNode> = {
@@ -48,7 +49,10 @@ const art: Record<string, ReactNode> = {
   ),
 };
 
-export function WorkArt({ serviceId }: { serviceId: string }) {
+export function WorkArt({ serviceId, workId }: { serviceId: string; workId?: string }) {
+  if (workId && temFoto(workId)) {
+    return <Foto id={workId} sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full" />;
+  }
   return (
     <svg viewBox="0 0 200 150" className="h-auto w-full" aria-hidden focusable="false">
       <rect width="200" height="150" fill="#f5f8f8" />

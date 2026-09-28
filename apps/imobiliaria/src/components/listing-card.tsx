@@ -8,7 +8,7 @@ import { formatPrice } from "@/lib/search";
 export function ListingCard({ listing, headingLevel: Heading = "h3" }: { listing: Listing; headingLevel?: "h2" | "h3" }) {
   return (
     <article className="relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-paper">
-      <PropertyArt id={listing.code} variant={listing.art} building={listing.type !== "casa"} className="h-auto w-full" />
+      <PropertyArt id={listing.code} code={listing.code} variant={listing.art} building={listing.type !== "casa"} className="h-auto w-full" />
       <span className="absolute top-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-xs font-semibold text-white">
         {purposeLabels[listing.purpose]}
       </span>

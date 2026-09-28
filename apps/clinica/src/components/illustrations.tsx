@@ -1,3 +1,5 @@
+import { Foto, temFoto } from "@/components/foto";
+
 /** Mapa estilizado, sem endereço real. */
 export function IllustrativeMap() {
   return (
@@ -22,8 +24,11 @@ export function IllustrativeMap() {
   );
 }
 
-/** Composição do hero: formas orgânicas, sem fotos de pessoas. */
+/** Imagem do hero: foto da recepção gerada por IA (sem pessoas), quando existe, ou a composição de formas orgânicas. */
 export function HeroArt() {
+  if (temFoto("recepcao")) {
+    return <Foto id="recepcao" sizes="(min-width: 768px) 448px, 90vw" preload className="aspect-square h-auto w-full rounded-[2rem]" />;
+  }
   return (
     <svg viewBox="0 0 420 380" className="h-auto w-full" aria-hidden focusable="false">
       <circle cx="230" cy="190" r="160" fill="#e0f1ed" />

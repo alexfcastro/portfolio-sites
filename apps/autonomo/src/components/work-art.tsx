@@ -1,7 +1,12 @@
+import { Foto, temFoto } from "@/components/foto";
+
 /*
- * Composições originais (SVG) no estilo "foto de produto". Não são fotos reais:
- * servem para ilustrar o portfólio da profissional fictícia.
+ * Imagem de um trabalho do portfólio: a foto gerada por IA, quando existe, ou a composição original (SVG)
+ * no estilo "foto de produto". Nenhuma é trabalho real da profissional fictícia.
  */
+
+/** Foto de cada variante, na ordem de `works` (art 0 = café, 1 = sabonetes…). */
+const fotosPorVariante = ["cafe", "sabonetes", "tenis", "doces", "bolsas", "serum"];
 
 const palettes = [
   ["#d9c6a5", "#6b3f25", "#23201c"],
@@ -12,7 +17,19 @@ const palettes = [
   ["#dfe7ea", "#3d4a63", "#e0b66b"],
 ] as const;
 
-export function WorkArt({ variant, className }: { variant: number; className?: string }) {
+export function WorkArt({
+  variant,
+  className,
+  sizes = "(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw",
+  preload = false,
+}: {
+  variant: number;
+  className?: string;
+  sizes?: string;
+  preload?: boolean;
+}) {
+  const fotoId = fotosPorVariante[variant % fotosPorVariante.length]!;
+  if (temFoto(fotoId)) return <Foto id={fotoId} sizes={sizes} preload={preload} className={`aspect-[5/4] ${className ?? ""}`} />;
   const [bg, a, b] = palettes[variant % palettes.length]!;
   const shapes = [
     // café: pacote + xícara

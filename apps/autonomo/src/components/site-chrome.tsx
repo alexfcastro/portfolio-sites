@@ -45,7 +45,7 @@ export function SiteFooter() {
           <p className="font-serif text-2xl">{professional.name}</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
             Lia Torres é uma profissional fictícia. Este site é uma demonstração do modelo “Linha Direta Profissional”,
-            criada por Alex Castro: serviços, valores e trabalhos são exemplos, e nenhum pedido é enviado.
+            criada por Alex Castro: serviços, valores e trabalhos são exemplos, e nenhum pedido é enviado. As fotos são ilustrativas, geradas por IA.
           </p>
           {professional.social.length === 0 && (
             <p className="mt-3 text-sm text-muted">

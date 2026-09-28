@@ -30,7 +30,7 @@
       "steps": [
         "document.querySelector('input[name=professional][value=davi]').click();",
         "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
-        "document.querySelectorAll('input[name=time]')[1].click(); document.querySelector('main h2').scrollIntoView();"
+        "document.querySelectorAll('input[name=time]')[0].click(); document.querySelector('main h2').scrollIntoView();"
       ]
     },
     {

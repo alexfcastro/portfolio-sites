@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Foto, temFoto } from "@/components/foto";
 
 /*
  * Ilustrações originais (SVG) para a galeria e a localização.
@@ -71,6 +72,8 @@ export const galleryItems = [
 ] as const;
 
 export function StyleIllustration({ id }: { id: (typeof galleryItems)[number]["id"] }) {
+  // Foto gerada por IA do estilo, quando existe (ver docs/assets.md); senão, a ilustração.
+  if (temFoto(id)) return <Foto id={id} sizes="(min-width: 768px) 380px, 50vw" className="aspect-square h-auto w-full" />;
   return (
     <svg viewBox="0 0 200 200" className="h-auto w-full" aria-hidden focusable="false">
       <rect width="200" height="200" fill="#241e18" />

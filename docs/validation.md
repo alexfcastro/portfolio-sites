@@ -269,3 +269,11 @@ Primeira execução: 17 textos abaixo do mínimo, **corrigidos**:
 Depois das correções: **7.510 textos verificados, nenhum abaixo do AA.** As capturas de restaurante, oficina, advocacia e PetVille foram refeitas.
 
 Limites: o verificador não avalia texto sobre imagem ou gradiente, estados de hover e foco, nem diálogos fechados.
+
+## Fotos geradas por IA (28/09/2026)
+
+- 114 fotos revisadas uma a uma em folhas de contato: correspondência com o item, sem texto, logotipo ou marca d'água (lata, garrafa, tênis e ar-condicionado conferidos de perto), proporção compatível. Um número de casa inventado (sobrado) foi desfocado.
+- Importadas para 9 demos em WebP (até 1200 px, 55–130 KB), servidas pelo otimizador do Next; cada demo avisa no rodapé e nas legendas que as fotos são geradas por IA.
+- Depois da troca: `pnpm check:reflow` (392 verificações), `pnpm check:contrast` (7.622 textos) e `pnpm check:firefox` (reflow, 17 fluxos e console) sem problemas; capturas de todos os cases refeitas e revisadas.
+- Um build falhou com erro do Turbopack ao processar as fontes do Google por causa de um cache corrompido da advocacia; apagar `apps/advocacia/.next` resolveu, e `pnpm preview:local` passou a limpar o cache e tentar de novo automaticamente.
+

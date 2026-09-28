@@ -43,10 +43,10 @@ export default function HomePage() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-[2rem] border-4 border-paper shadow-xl">
-              <PetArt kind="cao" palette="caramelo" accessory="bandana" className="h-auto w-full" />
+              <PetArt kind="cao" palette="caramelo" accessory="bandana" sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
             </div>
             <div className="absolute -bottom-6 -left-4 w-36 overflow-hidden rounded-3xl border-4 border-paper shadow-lg sm:w-44">
-              <PetArt kind="gato" palette="cinza" accessory="laco" className="h-auto w-full" />
+              <PetArt kind="gato" palette="cinza" accessory="laco" sizes="176px" className="h-auto w-full" />
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
         <div className="wrap py-16">
           <p className="kicker">Galeria</p>
           <h2 id="galeria-title" className="mt-2 text-3xl">Depois do banho</h2>
-          <p className="mt-3 text-muted">Ilustrações de exemplo, não são fotos de clientes.</p>
+          <p className="mt-3 text-muted">Fotos ilustrativas geradas por IA, não são clientes reais.</p>
           <ul className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {gallery.map((item) => (
               <li key={item.caption}>

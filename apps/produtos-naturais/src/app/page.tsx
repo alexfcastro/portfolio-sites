@@ -35,10 +35,10 @@ export default function HomePage() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-[2rem] border-4 border-paper shadow-lg">
-              <ProductArt product={hero} className="h-auto w-full" />
+              <ProductArt product={hero} sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
             </div>
             <div className="absolute -bottom-6 -left-4 w-36 overflow-hidden rounded-3xl border-4 border-paper shadow-lg sm:w-44">
-              <ProductArt product={heroJar} className="h-auto w-full" />
+              <ProductArt product={heroJar} sizes="176px" className="h-auto w-full" />
             </div>
           </div>
         </div>

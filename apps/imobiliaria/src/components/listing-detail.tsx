@@ -18,9 +18,9 @@ export function Gallery({ listing }: { listing: Listing }) {
   return (
     <div>
       <figure className="overflow-hidden rounded-card border border-line bg-paper">
-        <PropertyArt id={listing.code} variant={listing.art} scene={scene} building={listing.type !== "casa"} className="h-auto w-full" />
+        <PropertyArt id={listing.code} code={listing.code} variant={listing.art} scene={scene} building={listing.type !== "casa"} sizes="(min-width: 1024px) 720px, 100vw" preload={scene === "fachada"} className="h-auto w-full" />
         <figcaption className="px-4 py-2 text-sm text-muted">
-          {available.find((s) => s.id === scene)?.label} — ilustração, não é foto do imóvel.
+          {available.find((s) => s.id === scene)?.label} — foto ilustrativa gerada por IA, não é foto do imóvel.
         </figcaption>
       </figure>
       <div role="group" aria-label="Escolher imagem" className="mt-3 grid grid-cols-3 gap-3">
@@ -32,7 +32,7 @@ export function Gallery({ listing }: { listing: Listing }) {
             onClick={() => setScene(item.id)}
             className="overflow-hidden rounded-lg border-2 border-transparent aria-pressed:border-blue"
           >
-            <PropertyArt id={`${listing.code}-t`} variant={listing.art} scene={item.id} building={listing.type !== "casa"} className="h-auto w-full" />
+            <PropertyArt id={`${listing.code}-t`} code={listing.code} variant={listing.art} scene={item.id} building={listing.type !== "casa"} sizes="(min-width: 1024px) 240px, 33vw" className="h-auto w-full" />
             <span className="sr-only">Ver {item.label.toLowerCase()}</span>
           </button>
         ))}

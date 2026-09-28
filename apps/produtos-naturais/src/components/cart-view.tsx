@@ -89,7 +89,7 @@ export function CartView() {
             const problem = validateLine(line);
             return (
               <li key={`${line.productId}-${line.grams}`} className="flex gap-3 p-4 sm:gap-4">
-                <ProductArt product={product} className="size-16 shrink-0 rounded-xl sm:size-20" />
+                <ProductArt product={product} sizes="80px" className="size-16 shrink-0 rounded-xl sm:size-20" />
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-start justify-between gap-x-3">
                     <p className="font-semibold">

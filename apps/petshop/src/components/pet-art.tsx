@@ -1,5 +1,7 @@
+import { Foto, temFoto } from "@/components/foto";
+
 /*
- * Ilustrações simples de pets (não são fotos de clientes). Vetores leves,
+ * Imagem do pet: a foto gerada por IA (não é cliente real), quando existe, ou uma ilustração simples. Vetores leves,
  * decorativos por padrão; quem usa decide o texto alternativo.
  */
 
@@ -20,9 +22,26 @@ interface PetArtProps {
   accessory?: "laco" | "bandana" | "nenhum";
   className?: string;
   label?: string;
+  sizes?: string;
+  preload?: boolean;
 }
 
-export function PetArt({ kind, palette = "caramelo", accessory = "nenhum", className, label }: PetArtProps) {
+/** Foto padrão de cada espécie, usada quando a combinação espécie + cor não tem foto própria. */
+const fotoPadrao: Record<PetKind, string> = { cao: "cao-caramelo", gato: "gato-cinza" };
+
+export function PetArt({
+  kind,
+  palette = "caramelo",
+  accessory = "nenhum",
+  className,
+  label,
+  sizes = "(min-width: 1024px) 300px, 50vw",
+  preload = false,
+}: PetArtProps) {
+  const fotoId = temFoto(`${kind}-${palette}`) ? `${kind}-${palette}` : fotoPadrao[kind];
+  if (temFoto(fotoId)) {
+    return <Foto id={fotoId} alt={label ?? ""} sizes={sizes} preload={preload} className={`aspect-[5/4] ${className ?? ""}`} />;
+  }
   const c = palettes[palette];
   return (
     <svg

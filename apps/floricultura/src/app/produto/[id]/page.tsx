@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: PageProps<"/produto/[id]">
       </Link>
       <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
         <div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
-          <Gallery art={product.art} />
+          <Gallery art={product.art} id={product.id} />
           <p className="mt-6 text-xs tracking-wide text-muted uppercase">
             {product.occasionIds.map((id) => occasions.find((o) => o.id === id)?.name).join(" · ")}
           </p>

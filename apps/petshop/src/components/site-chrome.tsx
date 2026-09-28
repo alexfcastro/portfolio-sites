@@ -70,7 +70,7 @@ export function SiteFooter() {
           <p className="text-xl font-extrabold">PetVille</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75">
             O PetVille é um pet shop fictício. Este site é uma demonstração criada por Alex Castro: serviços, preços,
-            profissionais e horários são exemplos, e nenhum agendamento é enviado.
+            profissionais e horários são exemplos, e nenhum agendamento é enviado. As fotos são ilustrativas, geradas por IA.
           </p>
           <p className="mt-3 text-sm text-white/75">Terça a sexta, 9h às 18h · Sábado, 9h às 17h (horários de exemplo)</p>
         </div>

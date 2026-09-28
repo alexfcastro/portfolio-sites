@@ -244,7 +244,7 @@ export function BookingFlow() {
                         onChange={() => update({ species: item })}
                         className="sr-only"
                       />
-                      <PetArt kind={item} className="size-12 shrink-0 rounded-xl" />
+                      <PetArt kind={item} sizes="48px" className="size-12 shrink-0 rounded-xl" />
                       <span className="font-bold">{speciesLabels[item]}</span>
                     </label>
                   ))}
@@ -482,11 +482,11 @@ export function BookingFlow() {
 
       <aside aria-label="Seu pedido" className="h-fit rounded-card bg-coral-soft p-5 lg:sticky lg:top-24">
         {species ? (
-          <PetArt kind={species} palette="caramelo" className="h-auto w-full rounded-2xl" />
+          <PetArt kind={species} palette="caramelo" sizes="(min-width: 1024px) 280px, 90vw" className="h-auto w-full rounded-2xl" />
         ) : (
           <div className="grid grid-cols-2 gap-2">
-            <PetArt kind="cao" className="h-auto w-full rounded-2xl" />
-            <PetArt kind="gato" palette="cinza" className="h-auto w-full rounded-2xl" />
+            <PetArt kind="cao" sizes="(min-width: 1024px) 140px, 45vw" className="h-auto w-full rounded-2xl" />
+            <PetArt kind="gato" palette="cinza" sizes="(min-width: 1024px) 140px, 45vw" className="h-auto w-full rounded-2xl" />
           </div>
         )}
         <p className="mt-4 text-lg font-extrabold">{draft.name.trim() || "Seu pet"}</p>

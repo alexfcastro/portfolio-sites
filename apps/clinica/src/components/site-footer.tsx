@@ -11,7 +11,7 @@ export function SiteFooter() {
           <VitaLogo />
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
             A Vita Clínica é um negócio fictício. Esta página é uma demonstração criada por Alex Castro: especialidades,
-            profissionais e horários são exemplos. Nenhuma consulta é marcada e nenhum dado de saúde é coletado.
+            profissionais e horários são exemplos. Nenhuma consulta é marcada e nenhum dado de saúde é coletado. As fotos são ilustrativas, geradas por IA.
           </p>
           <ul className="mt-4 flex flex-wrap gap-x-5 text-sm">
             <li>

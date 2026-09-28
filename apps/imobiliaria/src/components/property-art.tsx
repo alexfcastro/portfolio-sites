@@ -1,6 +1,8 @@
+import { Foto, temFoto } from "@/components/foto";
+
 /*
- * Ilustrações originais (SVG) de imóveis: fachada, sala e quarto.
- * Não são fotos de imóveis reais.
+ * Imagem do imóvel (fachada, sala ou quarto): a foto gerada por IA, quando existe, ou a ilustração original (SVG).
+ * Nenhuma das duas mostra um imóvel real.
  */
 
 export type Scene = "fachada" | "sala" | "quarto";
@@ -18,6 +20,9 @@ export function PropertyArt({
   building = false,
   className,
   id,
+  code,
+  sizes = "(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw",
+  preload = false,
 }: {
   variant: number;
   scene?: Scene;
@@ -25,7 +30,15 @@ export function PropertyArt({
   building?: boolean;
   className?: string;
   id: string;
+  /** Código do imóvel, para achar a foto (ex.: HZ-0142 → hz-0142-sala). */
+  code?: string;
+  sizes?: string;
+  preload?: boolean;
 }) {
+  const fotoId = code ? `${code.toLowerCase()}-${scene}` : "";
+  if (fotoId && temFoto(fotoId)) {
+    return <Foto id={fotoId} sizes={sizes} preload={preload} className={`aspect-[16/10] ${className ?? ""}`} />;
+  }
   const p = palettes[variant % palettes.length]!;
   const gradient = `sky-${id}-${scene}`;
   return (

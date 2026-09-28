@@ -63,11 +63,11 @@ export default function HomePage() {
           <h2 id="trabalhos-title" className="mt-3 text-3xl sm:text-4xl">
             Portfólio
           </h2>
-          <p className="mt-3 text-muted">Exemplos ilustrativos, criados para esta demonstração — não são trabalhos reais.</p>
+          <p className="mt-3 text-muted">Fotos ilustrativas geradas por IA para esta demonstração — não são trabalhos reais.</p>
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioWorks.map((work) => (
               <li key={work.id} className="overflow-hidden rounded-card border border-line">
-                <WorkArt serviceId={work.serviceId} />
+                <WorkArt serviceId={work.serviceId} workId={work.id} />
                 <div className="p-5">
                   <p className="text-xs font-bold tracking-wider text-petrol uppercase">{getServiceType(work.serviceId)?.name}</p>
                   <h3 className="mt-1 text-lg">{work.title}</h3>
