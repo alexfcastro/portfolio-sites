@@ -1,0 +1,36 @@
+Gere as 4 imagens abaixo com o Nano Banana para o site PetVille (pet shop). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: cao-caramelo deve virar o arquivo cao-caramelo.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 4:3 (paisagem)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia realista e alegre de pet shop. Pet limpo e penteado logo depois do banho, sentado e olhando para a câmera, fundo liso em tom pêssego claro, luz suave de estúdio, retrato com espaço livre ao redor.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: cao-caramelo
+   O que mostrar (Cachorro caramelo (banho e tosa higiênica)): Pet: cachorro vira-lata caramelo de porte médio, com uma bandana vermelha no pescoço.
+
+2. NOME: gato-cinza
+   O que mostrar (Gato cinza (banho com hidratação)): Pet: gato cinza de pelo macio e brilhante, com um lacinho vermelho.
+
+3. NOME: cao-creme
+   O que mostrar (Cachorro creme (tosa na tesoura)): Pet: cachorro pequeno de pelo creme cacheado recém-tosado na tesoura, com um lacinho vermelho na cabeça.
+
+4. NOME: gato-preto
+   O que mostrar (Gato preto (banho tranquilo)): Pet: gato preto calmo e relaxado, deitado sobre uma toalha macia.
+
+Ao terminar, liste os 4 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+cao-caramelo
+gato-cinza
+cao-creme
+gato-preto

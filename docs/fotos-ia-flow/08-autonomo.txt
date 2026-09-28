@@ -1,0 +1,44 @@
+Gere as 6 imagens abaixo com o Nano Banana para o site Lia Torres (fotógrafa de produto). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: cafe deve virar o arquivo cafe.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 4:3 (paisagem)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de produto profissional de estúdio, do portfólio de uma fotógrafa de produto. Composição cuidadosa, luz suave controlada, fundo limpo.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: cafe
+   O que mostrar (Café especial): Cena: três pacotes de café especial em papel kraft sem rótulo, com grãos de café torrados espalhados, fundo claro.
+
+2. NOME: sabonetes
+   O que mostrar (Sabonetes artesanais): Cena: sabonetes artesanais em barra empilhados, com ramos de lavanda e uma toalha de linho, foto ambientada num banheiro claro.
+
+3. NOME: tenis
+   O que mostrar (Tênis de corrida): Cena: um tênis de corrida moderno sem nenhuma marca ou logotipo, visto de lado, fundo cinza-claro liso.
+
+4. NOME: doces
+   O que mostrar (Doceria de bairro): Cena: doces de confeitaria (brigadeiros, bem-casados e uma fatia de bolo) arrumados num prato de cerâmica, vista de cima.
+
+5. NOME: bolsas
+   O que mostrar (Bolsas de couro): Cena: bolsa de couro caramelo sem marca, fundo neutro bege, com destaque para a costura.
+
+6. NOME: serum
+   O que mostrar (Linha de sérum): Cena: frasco de sérum de vidro âmbar com conta-gotas e sem rótulo, sobre uma pedra, com água e reflexos de luz lateral.
+
+Ao terminar, liste os 6 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+cafe
+sabonetes
+tenis
+doces
+bolsas
+serum

@@ -1,0 +1,68 @@
+Gere as 12 imagens abaixo com o Nano Banana para o site Raiz & Grão (produtos naturais) — parte 1 de 2. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: canela-em-po deve virar o arquivo canela-em-po.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de produto para empório de produtos naturais. Vista de cima levemente inclinada (cerca de 30 graus). O produto está num pote de vidro aberto ou numa tigela de cerâmica clara, com uma colher de madeira e um pouco do produto espalhado sobre um pano de linho bege. Luz natural suave de janela, fundo em tons de bege e verde-oliva, visual acolhedor e fresco. Pote e embalagens sem rótulo.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: canela-em-po
+   O que mostrar (Canela em pó): Produto: canela em pó marrom-avermelhada, com dois paus de canela ao lado.
+
+2. NOME: curcuma
+   O que mostrar (Cúrcuma em pó): Produto: cúrcuma em pó amarelo-ouro intenso, com uma raiz de cúrcuma fresca cortada ao lado.
+
+3. NOME: paprica-defumada
+   O que mostrar (Páprica defumada): Produto: páprica defumada em pó vermelho-escuro.
+
+4. NOME: camomila
+   O que mostrar (Camomila (flores secas)): Produto: flores secas de camomila, pequenas e amareladas, e uma xícara de chá claro ao lado.
+
+5. NOME: hortela
+   O que mostrar (Hortelã (folhas secas)): Produto: folhas secas de hortelã verde e alguns raminhos frescos ao lado.
+
+6. NOME: quinoa
+   O que mostrar (Quinoa em grãos): Produto: grãos de quinoa clara crua.
+
+7. NOME: lentilha
+   O que mostrar (Lentilha): Produto: lentilhas marrons cruas.
+
+8. NOME: aveia-flocos
+   O que mostrar (Aveia em flocos): Produto: aveia em flocos.
+
+9. NOME: castanha-caju
+   O que mostrar (Castanha de caju): Produto: castanhas de caju torradas inteiras.
+
+10. NOME: castanha-para
+   O que mostrar (Castanha-do-pará): Produto: castanhas-do-pará sem casca.
+
+11. NOME: amendoas
+   O que mostrar (Amêndoas): Produto: amêndoas inteiras com pele.
+
+12. NOME: damasco
+   O que mostrar (Damasco seco): Produto: damascos secos alaranjados.
+
+Ao terminar, liste os 12 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+canela-em-po
+curcuma
+paprica-defumada
+camomila
+hortela
+quinoa
+lentilha
+aveia-flocos
+castanha-caju
+castanha-para
+amendoas
+damasco

@@ -1,0 +1,44 @@
+Gere as 6 imagens abaixo com o Nano Banana para o site Resolve Serviços. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: quadro deve virar o arquivo quadro.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 4:3 (paisagem)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia realista de um serviço residencial concluído, mostrando o resultado final, ambiente limpo e organizado, luz natural.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: quadro
+   O que mostrar (Quadro de disjuntores reorganizado): Resultado: quadro de disjuntores residencial aberto, fiação organizada e disjuntores alinhados, sem etiquetas legíveis e sem marcas.
+
+2. NOME: sala
+   O que mostrar (Sala com parede de destaque): Resultado: sala de estar com uma parede de destaque recém-pintada em verde-escuro, acabamento liso, móveis simples.
+
+3. NOME: painel
+   O que mostrar (Painel de TV instalado): Resultado: painel de madeira para TV fixado na parede da sala, com TV desligada de tela preta e sem fios aparentes.
+
+4. NOME: split
+   O que mostrar (Split instalado): Resultado: ar-condicionado split branco sem marca instalado no alto da parede de um quarto, acabamento limpo.
+
+5. NOME: banheiro
+   O que mostrar (Vazamento sob a pia corrigido): Resultado: vista do encanamento sob a pia do banheiro com sifão novo e registro, tudo seco e limpo.
+
+6. NOME: fachada
+   O que mostrar (Fachada renovada): Resultado: fachada de casa térrea recém-pintada em tom claro, sem fissuras, com portão simples.
+
+Ao terminar, liste os 6 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+quadro
+sala
+painel
+split
+banheiro
+fachada

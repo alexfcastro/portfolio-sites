@@ -1,0 +1,64 @@
+Gere as 11 imagens abaixo com o Nano Banana para o site Raiz & Grão (produtos naturais) — parte 2 de 2. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: uva-passa deve virar o arquivo uva-passa.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de produto para empório de produtos naturais. Vista de cima levemente inclinada (cerca de 30 graus). O produto está num pote de vidro aberto ou numa tigela de cerâmica clara, com uma colher de madeira e um pouco do produto espalhado sobre um pano de linho bege. Luz natural suave de janela, fundo em tons de bege e verde-oliva, visual acolhedor e fresco. Pote e embalagens sem rótulo.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: uva-passa
+   O que mostrar (Uva-passa escura): Produto: uvas-passas escuras.
+
+2. NOME: farinha-amendoas
+   O que mostrar (Farinha de amêndoas): Produto: farinha de amêndoas fina e clara, com algumas amêndoas inteiras ao lado.
+
+3. NOME: farinha-integral
+   O que mostrar (Farinha de trigo integral): Produto: farinha de trigo integral em tom caramelo claro, com alguns grãos de trigo ao lado.
+
+4. NOME: chia
+   O que mostrar (Semente de chia): Produto: sementes de chia pequenas, pretas e cinzas.
+
+5. NOME: girassol
+   O que mostrar (Semente de girassol): Produto: sementes de girassol descascadas.
+
+6. NOME: granola-tradicional
+   O que mostrar (Granola tradicional): Produto: granola dourada em cachos, com uva-passa e castanha de caju.
+
+7. NOME: granola-sem-acucar
+   O que mostrar (Granola sem açúcar): Produto: granola rústica com coco em flocos e sementes de girassol.
+
+8. NOME: mel-silvestre
+   O que mostrar (Mel silvestre (pote de 500 g)): Produto: um pote de vidro fechado cheio de mel dourado, sem rótulo, com um pegador de mel de madeira ao lado e um fio de mel escorrendo.
+
+9. NOME: pasta-amendoim
+   O que mostrar (Pasta de amendoim integral (pote de 450 g)): Produto: um pote de vidro aberto com pasta de amendoim cremosa, sem rótulo, com amendoins torrados ao lado.
+
+10. NOME: kit-cafe-da-manha
+   O que mostrar (Kit café da manhã): Produto: uma caixa de papel kraft aberta com quatro potes de vidro sem rótulo: granola, aveia, uva-passa e pasta de amendoim, arrumados lado a lado.
+
+11. NOME: kit-chas
+   O que mostrar (Kit chás da tarde): Produto: uma caixa de papel kraft aberta com três pequenos potes de vidro sem rótulo: flores de camomila, folhas de hortelã e canela em pó, com uma xícara de chá ao lado.
+
+Ao terminar, liste os 11 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+uva-passa
+farinha-amendoas
+farinha-integral
+chia
+girassol
+granola-tradicional
+granola-sem-acucar
+mel-silvestre
+pasta-amendoim
+kit-cafe-da-manha
+kit-chas

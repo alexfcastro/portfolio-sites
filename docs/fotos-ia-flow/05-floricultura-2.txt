@@ -1,0 +1,68 @@
+Gere as 12 imagens abaixo com o Nano Banana para o site Flor & Afeto (floricultura) — parte 2 de 2. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: arranjo-rosa-antigo deve virar o arquivo arranjo-rosa-antigo.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de floricultura delicada e elegante, visual emocional. Tons de rosa-antigo e verde-sálvia, luz suave e difusa, composição centralizada com espaço livre ao redor.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: arranjo-rosa-antigo
+   O que mostrar (Arranjo rosa-antigo — principal): Produto: arranjo de rosas e cravos em tons de rosa-antigo dentro de uma caixa rígida redonda de papelão claro. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+2. NOME: arranjo-rosa-antigo-mesa
+   O que mostrar (Arranjo rosa-antigo — sobre a mesa): Produto: arranjo de rosas e cravos em tons de rosa-antigo dentro de uma caixa rígida redonda de papelão claro. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+3. NOME: arranjo-rosa-antigo-detalhe
+   O que mostrar (Arranjo rosa-antigo — detalhe): Produto: arranjo de rosas e cravos em tons de rosa-antigo dentro de uma caixa rígida redonda de papelão claro. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+4. NOME: arranjo-branco-sereno
+   O que mostrar (Arranjo branco sereno (condolências) — principal): Produto: arranjo sóbrio e sereno de lírios e rosas brancas com folhagens verdes, em recipiente baixo claro, clima respeitoso e calmo. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+5. NOME: arranjo-branco-sereno-mesa
+   O que mostrar (Arranjo branco sereno (condolências) — sobre a mesa): Produto: arranjo sóbrio e sereno de lírios e rosas brancas com folhagens verdes, em recipiente baixo claro, clima respeitoso e calmo. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+6. NOME: arranjo-branco-sereno-detalhe
+   O que mostrar (Arranjo branco sereno (condolências) — detalhe): Produto: arranjo sóbrio e sereno de lírios e rosas brancas com folhagens verdes, em recipiente baixo claro, clima respeitoso e calmo. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+7. NOME: cesta-cafe
+   O que mostrar (Cesta café com flores — principal): Produto: cesta de vime com um mini buquê de flores rosa, um pote de geleia sem rótulo, biscoitos e uma caixinha de chá lisa. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+8. NOME: cesta-cafe-mesa
+   O que mostrar (Cesta café com flores — sobre a mesa): Produto: cesta de vime com um mini buquê de flores rosa, um pote de geleia sem rótulo, biscoitos e uma caixinha de chá lisa. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+9. NOME: cesta-cafe-detalhe
+   O que mostrar (Cesta café com flores — detalhe): Produto: cesta de vime com um mini buquê de flores rosa, um pote de geleia sem rótulo, biscoitos e uma caixinha de chá lisa. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+10. NOME: orquidea
+   O que mostrar (Orquídea em vaso — principal): Produto: orquídea phalaenopsis lilás com hastes floridas num cachepô de cerâmica branca. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+11. NOME: orquidea-mesa
+   O que mostrar (Orquídea em vaso — sobre a mesa): Produto: orquídea phalaenopsis lilás com hastes floridas num cachepô de cerâmica branca. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+12. NOME: orquidea-detalhe
+   O que mostrar (Orquídea em vaso — detalhe): Produto: orquídea phalaenopsis lilás com hastes floridas num cachepô de cerâmica branca. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+Ao terminar, liste os 12 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+arranjo-rosa-antigo
+arranjo-rosa-antigo-mesa
+arranjo-rosa-antigo-detalhe
+arranjo-branco-sereno
+arranjo-branco-sereno-mesa
+arranjo-branco-sereno-detalhe
+cesta-cafe
+cesta-cafe-mesa
+cesta-cafe-detalhe
+orquidea
+orquidea-mesa
+orquidea-detalhe

@@ -1,0 +1,44 @@
+Gere as 6 imagens abaixo com o Nano Banana para o site Bravus Barbearia. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: classico deve virar o arquivo classico.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de barbearia com clima clássico e masculino, luz dourada quente, fundo escuro desfocado. Mostrar só o corte de cabelo e a barba: pessoa de costas ou de perfil em sombra, rosto não identificável.
+
+REGRAS (valem para todas): Sem texto, letras, logotipos ou marcas d'água.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: classico
+   O que mostrar (Corte clássico): Estilo: corte clássico social curto, penteado de lado, laterais baixas.
+
+2. NOME: degrade
+   O que mostrar (Degradê): Estilo: corte degradê bem marcado nas laterais, topo mais volumoso.
+
+3. NOME: barba
+   O que mostrar (Barba desenhada): Estilo: barba cheia desenhada com contornos bem definidos, vista de perfil.
+
+4. NOME: texturizado
+   O que mostrar (Texturizado): Estilo: corte texturizado com fios bagunçados de propósito no topo.
+
+5. NOME: raspado
+   O que mostrar (Raspado com barba): Estilo: cabeça raspada com barba curta bem aparada.
+
+6. NOME: topete
+   O que mostrar (Topete): Estilo: topete alto penteado para trás, laterais curtas.
+
+Ao terminar, liste os 6 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+classico
+degrade
+barba
+texturizado
+raspado
+topete

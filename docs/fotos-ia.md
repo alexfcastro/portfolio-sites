@@ -8,7 +8,7 @@ Lista das fotos que substituem as ilustrações das demos, com um prompt pronto 
 
 Pode entregar aos poucos: onde ainda não houver foto, a demo continua usando a ilustração atual.
 
-Para gerar em sequência com o agente do Flow, use os arquivos de `docs/fotos-ia-lote/` (veja o `LEIA-ME.md` de lá).
+Para gerar com o agente do Flow (até 20 imagens por pedido), use os prompts prontos de `docs/fotos-ia-flow/`, um por site (veja o `LEIA-ME.md` de lá).
 
 ## O que fica como está (de propósito)
 

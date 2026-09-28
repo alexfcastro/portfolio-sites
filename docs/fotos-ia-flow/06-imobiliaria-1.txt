@@ -1,0 +1,88 @@
+Gere as 17 imagens abaixo com o Nano Banana para o site Horizonte Imóveis (imobiliária) — parte 1 de 2. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: hz-0142-fachada deve virar o arquivo hz-0142-fachada.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 16:9 (paisagem)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia imobiliária realista de um imóvel no Brasil, luz do dia, céu claro, lente grande-angular sem distorção exagerada, ambiente limpo e organizado.
+
+REGRAS (valem para todas): Sem placas, sem número da casa, sem carros com placa visível. Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: hz-0142-fachada
+   O que mostrar (Casa com quintal — fachada): Vista externa: casa térrea simples e bem cuidada, com quintal gramado na frente e churrasqueira ao fundo.
+
+2. NOME: hz-0142-sala
+   O que mostrar (Casa com quintal — sala): Ambiente interno, sala: sala integrada à cozinha, sofá claro, piso de porcelanato, decoração neutra.
+
+3. NOME: hz-0142-quarto
+   O que mostrar (Casa com quintal — quarto): Ambiente interno: quarto de casal simples e aconchegante, cama arrumada, decoração neutra.
+
+4. NOME: hz-0157-fachada
+   O que mostrar (Apartamento perto do metrô — fachada): Vista externa: prédio residencial de médio porte com varandas, numa rua arborizada do centro.
+
+5. NOME: hz-0157-sala
+   O que mostrar (Apartamento perto do metrô — sala): Ambiente interno, sala: sala pequena reformada com varanda, decoração neutra.
+
+6. NOME: hz-0157-quarto
+   O que mostrar (Apartamento perto do metrô — quarto): Ambiente interno: quarto compacto e reformado, cama arrumada, decoração neutra.
+
+7. NOME: hz-0163-fachada
+   O que mostrar (Casa em condomínio — fachada): Vista externa: casa moderna de dois andares em condomínio fechado com muito verde ao redor.
+
+8. NOME: hz-0163-sala
+   O que mostrar (Casa em condomínio — sala): Ambiente interno, sala: sala ampla com pé-direito alto e porta de vidro para o jardim, decoração neutra.
+
+9. NOME: hz-0163-quarto
+   O que mostrar (Casa em condomínio — quarto): Ambiente interno: suíte master espaçosa, cama arrumada, decoração neutra.
+
+10. NOME: hz-0171-fachada
+   O que mostrar (Studio mobiliado — fachada): Vista externa: prédio residencial moderno e estreito, de muitos andares.
+
+11. NOME: hz-0171-sala
+   O que mostrar (Studio mobiliado — sala): Ambiente interno, sala: studio mobiliado com sofá-cama, bancada e pequena cozinha no mesmo ambiente, decoração neutra.
+
+12. NOME: hz-0171-quarto
+   O que mostrar (Studio mobiliado — quarto): Ambiente interno: cama de casal no studio mobiliado, vista para a janela, cama arrumada, decoração neutra.
+
+13. NOME: hz-0178-fachada
+   O que mostrar (Sala comercial com recepção — fachada): Vista externa: prédio comercial moderno com fachada de vidro.
+
+14. NOME: hz-0178-sala
+   O que mostrar (Sala comercial com recepção — interior): Ambiente interno: sala comercial com recepção e balcão, divisória de vidro para uma segunda sala, decoração neutra.
+
+15. NOME: hz-0184-fachada
+   O que mostrar (Apartamento com vista — fachada): Vista externa: torre residencial alta com varandas de vidro.
+
+16. NOME: hz-0184-sala
+   O que mostrar (Apartamento com vista — sala): Ambiente interno, sala: sala para dois ambientes com janela ampla e vista aberta da cidade, decoração neutra.
+
+17. NOME: hz-0184-quarto
+   O que mostrar (Apartamento com vista — quarto): Ambiente interno: suíte com janela ampla e vista da cidade, cama arrumada, decoração neutra.
+
+Ao terminar, liste os 17 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+hz-0142-fachada
+hz-0142-sala
+hz-0142-quarto
+hz-0157-fachada
+hz-0157-sala
+hz-0157-quarto
+hz-0163-fachada
+hz-0163-sala
+hz-0163-quarto
+hz-0171-fachada
+hz-0171-sala
+hz-0171-quarto
+hz-0178-fachada
+hz-0178-sala
+hz-0184-fachada
+hz-0184-sala
+hz-0184-quarto

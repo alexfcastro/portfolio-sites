@@ -1,0 +1,72 @@
+Gere as 13 imagens abaixo com o Nano Banana para o site Sabor & Brasa (restaurante). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: picanha deve virar o arquivo picanha.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 4:3 (paisagem)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia gastronômica de churrascaria brasileira. Prato servido sobre mesa de madeira escura, luz quente e suave vinda da lateral, fundo desfocado em tons de marrom e brasa, câmera em ângulo de 45 graus, prato centralizado com espaço livre ao redor, cores naturais e apetitosas, profundidade de campo rasa.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: picanha
+   O que mostrar (Picanha na brasa): Prato: picanha fatiada ao ponto, suculenta, sobre tábua de madeira, com sal grosso por cima.
+
+2. NOME: costela
+   O que mostrar (Costela assada): Prato: costela bovina assada lentamente, desmanchando, com casquinha dourada, numa travessa de barro.
+
+3. NOME: frango
+   O que mostrar (Frango na brasa): Prato: meio frango assado na brasa, pele dourada e crocante, com ramos de ervas frescas.
+
+4. NOME: linguica
+   O que mostrar (Linguiça artesanal): Prato: três gomos de linguiça artesanal grelhada com cebola dourada na chapa de ferro.
+
+5. NOME: arroz
+   O que mostrar (Arroz biro-biro): Prato: arroz biro-biro com ovo mexido, pedaços de bacon e batata palha, numa travessa branca.
+
+6. NOME: farofa
+   O que mostrar (Farofa da casa): Prato: farofa dourada com banana e cebola douradas, numa cumbuca de cerâmica.
+
+7. NOME: mandioca
+   O que mostrar (Mandioca frita): Prato: porção de mandioca frita crocante em palitos grossos, numa cesta de metal forrada com papel manteiga.
+
+8. NOME: salada
+   O que mostrar (Salada da estação): Prato: salada de folhas verdes, tomate e cebola roxa em rodelas, numa saladeira de vidro.
+
+9. NOME: refri
+   O que mostrar (Refrigerante lata): Prato: lata de refrigerante genérica toda lisa, sem nenhuma estampa, com gotas de condensação, ao lado de um copo com gelo.
+
+10. NOME: suco
+   O que mostrar (Suco natural): Prato: copo alto de suco natural de laranja com gelo, com meia laranja ao lado.
+
+11. NOME: agua
+   O que mostrar (Água mineral): Prato: garrafa de água mineral de vidro transparente sem rótulo e um copo com água.
+
+12. NOME: pudim
+   O que mostrar (Pudim de leite): Prato: fatia de pudim de leite com calda de caramelo brilhante escorrendo, num prato de sobremesa.
+
+13. NOME: brownie
+   O que mostrar (Brownie): Prato: brownie de chocolate com calda de chocolate por cima, num prato pequeno.
+
+Ao terminar, liste os 13 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+picanha
+costela
+frango
+linguica
+arroz
+farofa
+mandioca
+salada
+refri
+suco
+agua
+pudim
+brownie

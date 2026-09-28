@@ -1,0 +1,22 @@
+Gere as 1 imagens abaixo com o Nano Banana para o site Vita Clínica. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: recepcao deve virar o arquivo recepcao.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+Nenhuma imagem pode ter texto, letras, números, rótulos, logotipos, marcas ou marca d'água.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: recepcao
+   O que mostrar (Recepção da clínica): Fotografia realista da recepção vazia de uma clínica moderna e acolhedora, tons de verde-água e branco, plantas, poltronas claras, balcão de recepção, luz natural suave. Sem pessoas, sem texto, letras, números, logotipos, marcas ou marcas d'água.
+
+Ao terminar, liste os 1 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+recepcao

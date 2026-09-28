@@ -1,0 +1,56 @@
+Gere as 9 imagens abaixo com o Nano Banana para o site Flor & Afeto (floricultura) — parte 1 de 2. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: buque-rosas-vermelhas deve virar o arquivo buque-rosas-vermelhas.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de floricultura delicada e elegante, visual emocional. Tons de rosa-antigo e verde-sálvia, luz suave e difusa, composição centralizada com espaço livre ao redor.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, rótulo, logotipo, marca ou marca d'água na imagem. Sem pessoas e sem mãos. Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz, fundo e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: buque-rosas-vermelhas
+   O que mostrar (Buquê de rosas vermelhas — principal): Produto: buquê de rosas vermelhas com folhagens verdes, envolto em papel kraft com laço de fita de cetim. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+2. NOME: buque-rosas-vermelhas-mesa
+   O que mostrar (Buquê de rosas vermelhas — sobre a mesa): Produto: buquê de rosas vermelhas com folhagens verdes, envolto em papel kraft com laço de fita de cetim. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+3. NOME: buque-rosas-vermelhas-detalhe
+   O que mostrar (Buquê de rosas vermelhas — detalhe): Produto: buquê de rosas vermelhas com folhagens verdes, envolto em papel kraft com laço de fita de cetim. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+4. NOME: buque-campo
+   O que mostrar (Buquê do campo — principal): Produto: buquê do campo com margaridas brancas, lisianthus lilás e flores miúdas claras, envolto em papel lilás claro. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+5. NOME: buque-campo-mesa
+   O que mostrar (Buquê do campo — sobre a mesa): Produto: buquê do campo com margaridas brancas, lisianthus lilás e flores miúdas claras, envolto em papel lilás claro. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+6. NOME: buque-campo-detalhe
+   O que mostrar (Buquê do campo — detalhe): Produto: buquê do campo com margaridas brancas, lisianthus lilás e flores miúdas claras, envolto em papel lilás claro. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+7. NOME: buque-girassois
+   O que mostrar (Buquê de girassóis — principal): Produto: buquê de girassóis com folhagens verdes, envolto em papel creme. Fundo liso rosa-antigo bem claro, produto sozinho, visto de frente.
+
+8. NOME: buque-girassois-mesa
+   O que mostrar (Buquê de girassóis — sobre a mesa): Produto: buquê de girassóis com folhagens verdes, envolto em papel creme. O mesmo produto sobre uma mesa de madeira clara, numa sala iluminada perto de uma janela, fundo desfocado.
+
+9. NOME: buque-girassois-detalhe
+   O que mostrar (Buquê de girassóis — detalhe): Produto: buquê de girassóis com folhagens verdes, envolto em papel creme. Close-up das flores do produto, mostrando pétalas e textura, fundo bem desfocado.
+
+Ao terminar, liste os 9 nomes dos arquivos gerados, um por linha, exatamente como ficaram:
+buque-rosas-vermelhas
+buque-rosas-vermelhas-mesa
+buque-rosas-vermelhas-detalhe
+buque-campo
+buque-campo-mesa
+buque-campo-detalhe
+buque-girassois
+buque-girassois-mesa
+buque-girassois-detalhe
