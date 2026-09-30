@@ -64,6 +64,8 @@ pnpm preview:local
 
 Se o terminal disser que `pnpm` não é reconhecido, feche e abra o terminal de novo (ele foi aberto antes de o pnpm entrar no PATH) ou use o `iniciar-previa.cmd`.
 
+O `iniciar-previa.cmd` e o `scripts/local-preview.mjs` chamam o Next direto pelo Node, sem depender do executável do pnpm: se o Windows bloquear o `pnpm-native.exe` (por exemplo, pelo Controle Inteligente de Aplicativos, porque ele não é assinado), a prévia continua funcionando. O pnpm só é necessário para instalar dependências e para `lint`, `typecheck` e `test`.
+
 Gera os builds de produção já interligados e sobe o portfólio em http://localhost:3100 e as 12 demos em http://localhost:3101 a 3112 (lista completa no terminal). O primeiro build leva alguns minutos; depois, `pnpm preview:local --skip-build` sobe os servidores direto. Ctrl+C encerra tudo.
 
 Nessa prévia, cada case mostra "Abrir demonstração", e cada demo tem "Voltar ao portfólio", "Ver case" e "Solicitar um site como este". Tudo continua `noindex`, e nenhuma demo envia mensagens ou pedidos. O contato do portfólio aparece como "Contato em configuração" até você informar WhatsApp ou e-mail (veja a seção de variáveis). Os dados que você cria nas demos (agendamentos, carrinhos, favoritos) ficam só no navegador; cada demo tem um botão para limpar.

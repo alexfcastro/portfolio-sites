@@ -45,11 +45,15 @@ const envFor = (app) => {
   return env;
 };
 
-const run = (args, env) =>
+// Chama o Next de cada app direto pelo Node (sem pnpm): funciona mesmo se o executável do pnpm estiver bloqueado.
+const nextBin = (app) => join(root, "apps", app, "node_modules", "next", "dist", "bin", "next");
+const next = (app, args, env, stdio = ["ignore", "ignore", "inherit"]) =>
+  spawn(process.execPath, [nextBin(app), ...args], { cwd: join(root, "apps", app), env, stdio });
+
+const build = (app) =>
   new Promise((ok, fail) => {
-    // Comando único (argumentos fixos, sem entrada externa): o pnpm no Windows precisa de shell.
-    const child = spawn(`pnpm ${args.join(" ")}`, { env, stdio: ["ignore", "ignore", "inherit"], shell: true });
-    child.on("exit", (code) => (code === 0 ? ok() : fail(new Error(`pnpm ${args.join(" ")} saiu com código ${code}`))));
+    const child = next(app, ["build"], envFor(app));
+    child.on("exit", (code) => (code === 0 ? ok() : fail(new Error(`build de ${app} saiu com código ${code}`))));
   });
 
 const apps = ["portfolio", ...DEMOS];
@@ -58,13 +62,13 @@ if (!skipBuild) {
   for (const app of apps) {
     process.stdout.write(`build ${app}… `);
     try {
-      await run(["--filter", `@ax/${app}`, "build"], envFor(app));
+      await build(app);
     } catch {
       // Um cache de build corrompido (ex.: build interrompido) às vezes faz o Turbopack falhar ao processar as
       // fontes do Google. Apaga o cache do app e tenta de novo uma vez.
       process.stdout.write("falhou; limpando o cache e tentando de novo… ");
       rmSync(join(root, "apps", app, ".next"), { recursive: true, force: true });
-      await run(["--filter", `@ax/${app}`, "build"], envFor(app));
+      await build(app);
     }
     console.log("ok");
   }
@@ -72,11 +76,7 @@ if (!skipBuild) {
 
 const servers = apps.map((app) => {
   const port = app === "portfolio" ? PORTFOLIO_PORT : demoPort(app);
-  const child = spawn(`pnpm --filter @ax/${app} exec next start --port ${port}`, {
-    env: envFor(app),
-    stdio: ["ignore", "ignore", "inherit"],
-    shell: true,
-  });
+  const child = next(app, ["start", "--port", String(port)], envFor(app));
   console.log(`${app.padEnd(18)} http://localhost:${port}`);
   return child;
 });
