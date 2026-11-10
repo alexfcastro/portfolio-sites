@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 import { MenuBoard } from "@/components/menu-board";
 import { MessagePreview } from "@/components/message-preview";
 import { OpenStatus } from "@/components/open-status";
@@ -10,16 +11,32 @@ const days = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sáb
 export default function MenuPage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="bg-coal text-cream">
-        <div className="wrap py-12 sm:py-16">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-coal text-cream">
+        {/* Foto ilustrativa (gerada por IA) como fundo; o degradê garante a leitura do texto. */}
+        <Image
+          src="/fotos/picanha.webp"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="-z-20 object-cover object-[70%_center]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-coal via-coal/90 to-coal/25 max-md:via-coal/85 max-md:to-coal/70"
+        />
+        <div className="wrap py-16 sm:py-28">
           <p className="kicker !text-ember">Churrascaria · retirada e entrega</p>
-          <h1 id="hero-title" className="mt-3 max-w-2xl text-4xl leading-tight sm:text-6xl">
+          <h1 id="hero-title" className="mt-3 max-w-2xl text-5xl leading-[1.05] sm:text-7xl">
             Da brasa para a sua mesa.
           </h1>
-          <p className="mt-4 max-w-xl text-cream/80">
+          <p className="mt-5 max-w-xl text-lg text-cream/90">
             Monte o pedido com os adicionais do seu jeito, veja o total na hora e escolha retirar ou receber em casa.
           </p>
-          <div className="mt-6">
+          <div className="mt-7 flex flex-wrap items-center gap-4">
+            <a href="#carnes" className="btn btn-primary">
+              Ver cardápio
+            </a>
             <OpenStatus />
           </div>
         </div>

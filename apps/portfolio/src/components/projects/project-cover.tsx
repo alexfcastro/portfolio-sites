@@ -9,9 +9,20 @@ interface ProjectCoverProps {
   className?: string;
   /** Em cards, o nome do projeto já é lido; a imagem pode ser decorativa. */
   decorative?: boolean;
+  /** Em cards, a moldura de navegador já indica a captura; o selo só aparece para prévias conceituais. */
+  hideScreenshotLabel?: boolean;
 }
 
-export function ProjectCover({ media, preload = false, sizes, className, decorative = false }: ProjectCoverProps) {
+export function ProjectCover({
+  media,
+  preload = false,
+  sizes,
+  className,
+  decorative = false,
+  hideScreenshotLabel = false,
+}: ProjectCoverProps) {
+  const showLabel = !(hideScreenshotLabel && media.kind === "screenshot");
+
   return (
     <div className={`relative overflow-hidden bg-sand ${className ?? ""}`}>
       <Image
@@ -25,9 +36,11 @@ export function ProjectCover({ media, preload = false, sizes, className, decorat
         unoptimized={media.src.endsWith(".svg")}
         className="h-auto w-full"
       />
-      <span className="absolute top-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-canvas backdrop-blur-sm">
-        {media.kind === "concept" ? "Prévia conceitual" : "Captura da demonstração"}
-      </span>
+      {showLabel && (
+        <span className="absolute top-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-canvas backdrop-blur-sm">
+          {media.kind === "concept" ? "Prévia conceitual" : "Captura da demonstração"}
+        </span>
+      )}
     </div>
   );
 }

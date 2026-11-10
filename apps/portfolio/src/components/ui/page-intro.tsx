@@ -8,10 +8,25 @@ interface PageIntroProps {
 
 export function PageIntro({ eyebrow, title, children }: PageIntroProps) {
   return (
-    <div className="container-page pt-12 pb-10 sm:pt-16">
-      <p className="eyebrow">{eyebrow}</p>
-      <h1 className="mt-3 max-w-3xl text-4xl leading-[1.1] font-extrabold sm:text-5xl">{title}</h1>
-      {children && <div className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{children}</div>}
+    <div className="relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_24rem_at_90%_-20%,var(--color-accent-soft),transparent_70%)]"
+      />
+      <div className="container-page relative pt-14 pb-12 sm:pt-20">
+        <p className="eyebrow rise-in">{eyebrow}</p>
+        <h1
+          style={{ "--i": 1 } as React.CSSProperties}
+          className="rise-in mt-3 max-w-3xl text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-6xl"
+        >
+          {title}
+        </h1>
+        {children && (
+          <div style={{ "--i": 2 } as React.CSSProperties} className="rise-in mt-5 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+            {children}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

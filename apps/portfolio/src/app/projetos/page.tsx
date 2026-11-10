@@ -31,7 +31,7 @@ export default function ProjectsPage() {
       <PageIntro eyebrow="Projetos" title="Doze segmentos, doze problemas diferentes">
         <p>
           Cada projeto é um conceito com um negócio fictício, criado para mostrar como um site pode resolver um
-          problema comum do segmento. As demonstrações navegáveis serão publicadas uma de cada vez.
+          problema comum do segmento. Em cada demonstração, dá para testar o fluxo como se fosse o cliente.
         </p>
       </PageIntro>
 

@@ -1,5 +1,6 @@
-import { CalendarPlus, Clock, MapPin, Scissors, Star } from "lucide-react";
+import { CalendarPlus, Clock, MapPin, Star } from "lucide-react";
 import Link from "next/link";
+import { Foto } from "@/components/foto";
 import { IllustrativeMap, StyleIllustration, galleryItems } from "@/components/illustrations";
 import { WhatsAppPreview } from "@/components/whatsapp-preview";
 import { business, professionals, sampleReviews, services } from "@/data/business";
@@ -59,13 +60,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div aria-hidden className="relative mx-auto aspect-square w-full max-w-sm">
-            <div className="absolute inset-0 rounded-full border border-gold/30" />
-            <div className="absolute inset-6 rounded-full border border-gold/15" />
-            <div className="absolute inset-12 grid place-items-center rounded-full bg-coal-2">
-              <Scissors className="size-24 text-gold" strokeWidth={1.25} />
-            </div>
-            <div className="absolute right-2 bottom-8 rounded-lg border border-edge bg-coal-3 px-4 py-3 font-display tracking-wider uppercase">
+          <div aria-hidden className="relative mx-auto w-full max-w-md pb-10 pl-8">
+            <div className="absolute top-6 right-[-0.75rem] bottom-16 left-14 rounded-2xl border border-gold/40" />
+            <Foto
+              id="degrade"
+              preload
+              sizes="(min-width: 1024px) 420px, 90vw"
+              className="relative aspect-[4/5] w-full rounded-2xl shadow-2xl shadow-black/60"
+            />
+            <Foto
+              id="raspado"
+              sizes="180px"
+              className="absolute bottom-0 left-0 aspect-square w-2/5 rounded-xl border-4 border-coal shadow-2xl shadow-black/60"
+            />
+            <div className="absolute right-[-0.5rem] bottom-16 rounded-lg border border-edge bg-coal-3 px-4 py-3 font-display tracking-wider uppercase">
               <span className="block text-xs text-smoke">Agenda on-line</span>
               <span className="text-lg text-gold">{business.bookingWindowDays} dias à frente</span>
             </div>

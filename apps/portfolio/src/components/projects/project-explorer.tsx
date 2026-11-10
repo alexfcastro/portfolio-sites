@@ -90,7 +90,7 @@ export function ProjectExplorer({ items, cards, categories, solutions }: Project
 
   return (
     <div>
-      <div className="grid gap-6 rounded-card border border-line bg-paper p-5 sm:p-6 lg:grid-cols-[1.4fr_1fr]">
+      <div className="grid gap-6 rounded-card border border-line bg-paper p-5 shadow-card sm:p-6 lg:grid-cols-[1.4fr_1fr]">
         <FilterGroup label="Segmento" options={categories} value={category} onChange={setCategory} />
         <FilterGroup label="Tipo de solução" options={solutions} value={solution} onChange={setSolution} />
       </div>
@@ -109,7 +109,7 @@ export function ProjectExplorer({ items, cards, categories, solutions }: Project
       </div>
 
       {visible.length > 0 ? (
-        <ul className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-4 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item) => (
             <li key={item.slug}>{cards[item.slug]}</li>
           ))}

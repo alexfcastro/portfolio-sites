@@ -55,10 +55,10 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
         </nav>
       </div>
 
-      <header className="container-page grid gap-10 pt-4 pb-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+      <header className="container-page grid gap-10 pt-4 pb-14 lg:grid-cols-[1fr_1.15fr] lg:items-center">
         <div>
           <p className="eyebrow">{getCategoryLabel(project.categoryId)}</p>
-          <h1 className="mt-3 text-4xl leading-[1.08] font-extrabold sm:text-5xl">{project.name}</h1>
+          <h1 className="mt-3 text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-6xl">{project.name}</h1>
           <div className="mt-4 flex flex-wrap gap-2">
             <ConceptBadge />
             <DemoStatusBadge status={demo.state} href={demo.link} />
@@ -88,12 +88,15 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
                 aria-label={`Abrir a demonstração de ${project.name} (abre em nova aba)`}
                 className="group relative block rounded-card"
               >
-                <ProjectCover
-                  media={cover}
-                  preload
-                  sizes="(min-width: 1024px) 600px, 100vw"
-                  className="rounded-card border border-line shadow-raised transition-shadow group-hover:shadow-lg group-hover:ring-2 group-hover:ring-accent/40"
-                />
+                <div className="browser-frame shadow-raised transition-shadow group-hover:ring-2 group-hover:ring-accent/40">
+                  <div aria-hidden className="browser-bar">
+                    <i />
+                    <i />
+                    <i />
+                    <span className="ml-2 truncate text-xs font-medium text-muted">{project.name}</span>
+                  </div>
+                  <ProjectCover media={cover} preload hideScreenshotLabel sizes="(min-width: 1024px) 640px, 100vw" />
+                </div>
                 <span
                   aria-hidden
                   className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-white shadow-raised transition-colors group-hover:bg-accent-strong"
@@ -103,12 +106,9 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
                 </span>
               </a>
             ) : (
-              <ProjectCover
-                media={cover}
-                preload
-                sizes="(min-width: 1024px) 600px, 100vw"
-                className="rounded-card border border-line shadow-raised"
-              />
+              <div className="browser-frame shadow-raised">
+                <ProjectCover media={cover} preload hideScreenshotLabel sizes="(min-width: 1024px) 640px, 100vw" />
+              </div>
             )}
             <figcaption className="mt-3 text-sm text-muted">{cover.caption}</figcaption>
           </figure>
@@ -139,8 +139,8 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
         <p className="mt-3 max-w-2xl text-muted">O caminho que o cliente percorre no site, do primeiro clique ao resumo.</p>
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {project.flow.map((step, stepIndex) => (
-            <li key={step.title} className="rounded-card border border-line bg-paper p-5">
-              <span className="inline-flex size-8 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-canvas">
+            <li key={step.title} className="reveal card-lift rounded-card border border-line bg-paper p-5 shadow-card">
+              <span className="inline-flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-accent to-[#7a5cff] font-display text-sm font-bold text-white">
                 {stepIndex + 1}
               </span>
               <h3 className="mt-4 font-bold">{step.title}</h3>
@@ -186,7 +186,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           </p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {project.features.map((feature) => (
-              <li key={feature.title} className="rounded-card border border-line bg-paper p-5">
+              <li key={feature.title} className="reveal rounded-card border border-line bg-paper p-5">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-bold">{feature.title}</h3>
                   {feature.status === "implemented" ? (
@@ -236,15 +236,19 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
             )}
           </div>
 
-          <div className="on-dark flex flex-col justify-between rounded-card bg-ink p-6 text-canvas sm:p-8">
-            <div>
-              <h2 className="text-xl font-extrabold">Quer algo parecido para o seu negócio?</h2>
+          <div className="on-dark relative flex flex-col justify-between overflow-hidden rounded-card bg-ink p-6 text-canvas shadow-raised sm:p-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(26rem_16rem_at_100%_0%,color-mix(in_srgb,var(--color-accent)_50%,transparent),transparent_70%)]"
+            />
+            <div className="relative">
+              <h2 className="text-2xl font-extrabold">Quer algo parecido para o seu negócio?</h2>
               <p className="mt-3 leading-relaxed text-muted-on-dark">
                 A proposta pode ser adaptada ao seu segmento, ao seu fluxo de atendimento e ao que realmente faz sentido
                 na primeira versão.
               </p>
             </div>
-            <Link href={`/contato?projeto=${project.slug}`} className="btn btn-primary mt-6 self-start">
+            <Link href={`/contato?projeto=${project.slug}`} className="btn btn-primary relative mt-6 self-start">
               Quero uma solução como esta
               <ArrowRight aria-hidden className="size-4" />
             </Link>
@@ -257,7 +261,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           <div className="container-page grid gap-4 py-10 sm:grid-cols-2">
             <Link
               href={getCaseUrl(previous.slug)}
-              className="group flex min-h-11 flex-col rounded-card border border-line bg-paper p-5 hover:border-ink"
+              className="group flex min-h-11 flex-col rounded-card border border-line bg-paper p-5 transition-colors hover:border-accent"
             >
               <span className="inline-flex items-center gap-1.5 text-sm text-muted">
                 <ArrowLeft aria-hidden className="size-4" /> Projeto anterior
@@ -266,7 +270,7 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
             </Link>
             <Link
               href={getCaseUrl(next.slug)}
-              className="group flex min-h-11 flex-col rounded-card border border-line bg-paper p-5 text-right hover:border-ink"
+              className="group flex min-h-11 flex-col rounded-card border border-line bg-paper p-5 text-right transition-colors hover:border-accent"
             >
               <span className="inline-flex items-center justify-end gap-1.5 text-sm text-muted">
                 Próximo projeto <ArrowRight aria-hidden className="size-4" />

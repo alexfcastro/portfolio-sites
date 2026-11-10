@@ -426,7 +426,7 @@ export const projects: Project[] = [
       { title: "Resumo", description: "Revisão completa antes da confirmação simulada." },
     ],
     demoStatus: "available",
-    featuredOrder: null,
+    featuredOrder: 6,
     features: [
       implemented("Cadastro do pet", "Nome, espécie e porte, com validação e mensagens de erro claras."),
       implemented("Serviços compatíveis", "Só aparecem os serviços para a espécie; gatos não recebem tosa."),

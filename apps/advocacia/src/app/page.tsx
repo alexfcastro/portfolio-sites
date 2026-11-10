@@ -5,8 +5,13 @@ import { areas, articles, getArea, team } from "@/data/firm";
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="bg-navy text-white">
-        <div className="wrap py-16 sm:py-24">
+      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-navy text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(44rem_26rem_at_95%_0%,rgb(184_155_94/0.22),transparent_70%)]"
+        />
+        <div className="wrap relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.25fr_1fr]">
+         <div>
           <p className="kicker !text-brass">Escritório de advocacia</p>
           <h1 id="hero-title" className="mt-5 max-w-3xl text-4xl leading-tight font-medium sm:text-6xl">
             Orientação jurídica clara, com atenção a cada caso.
@@ -23,6 +28,28 @@ export default function HomePage() {
               Áreas de atuação
             </Link>
           </div>
+         </div>
+         <div className="relative border border-brass/40 bg-navy-2/70 p-7 sm:p-9">
+            <div aria-hidden className="absolute -top-px left-8 h-px w-24 bg-brass" />
+            <h2 className="text-3xl">Como começa</h2>
+            <ol className="mt-6 space-y-5">
+              {[
+                { title: "Você conta o caso", text: "Pelo formulário, com a área e um resumo do que aconteceu." },
+                { title: "Conversa inicial", text: "Entendemos o contexto e quais documentos ajudam." },
+                { title: "Orientação", text: "Explicamos os caminhos possíveis, em linguagem direta." },
+              ].map((step, index) => (
+                <li key={step.title} className="flex gap-4">
+                  <span aria-hidden className="font-serif text-3xl leading-none text-brass">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-xl">{step.title}</h3>
+                    <p className="mt-1 text-white/80">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+         </div>
         </div>
       </section>
 

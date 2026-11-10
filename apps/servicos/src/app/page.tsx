@@ -1,5 +1,6 @@
 import { ArrowRight, Check, MapPin, X } from "lucide-react";
 import Link from "next/link";
+import { Foto } from "@/components/foto";
 import { MessagePreview } from "@/components/message-preview";
 import { WorkArt } from "@/components/work-art";
 import { getServiceType, portfolioWorks, regions, serviceTypes } from "@/data/services";
@@ -8,8 +9,13 @@ import { travelFeeLabel } from "@/lib/request";
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="bg-petrol text-white">
-        <div className="wrap py-14 sm:py-20">
+      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-petrol text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(40rem_24rem_at_100%_0%,rgb(255_255_255/0.12),transparent_70%)]"
+        />
+        <div className="wrap relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.1fr_1fr]">
+         <div>
           <p className="kicker !text-sun">Elétrica · pintura · manutenção · ar · hidráulica</p>
           <h1 id="hero-title" className="mt-4 max-w-3xl text-4xl leading-tight sm:text-6xl">
             Diga o que precisa. A gente chega preparado.
@@ -27,6 +33,17 @@ export default function HomePage() {
               Ver regiões atendidas
             </Link>
           </div>
+         </div>
+         <div aria-hidden className="grid grid-cols-5 grid-rows-2 gap-3 sm:gap-4">
+            <Foto
+              id="sala"
+              preload
+              sizes="(min-width: 1024px) 330px, 60vw"
+              className="col-span-3 row-span-2 h-full min-h-64 w-full rounded-3xl shadow-2xl shadow-black/40 sm:min-h-96"
+            />
+            <Foto id="painel" sizes="(min-width: 1024px) 220px, 40vw" className="col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
+            <Foto id="fachada" sizes="(min-width: 1024px) 220px, 40vw" className="col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
+         </div>
         </div>
       </section>
 

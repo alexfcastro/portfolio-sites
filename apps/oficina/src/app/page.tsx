@@ -14,8 +14,12 @@ const steps = [
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="bg-graphite text-white">
-        <div className="wrap grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr]">
+      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-graphite text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(42rem_24rem_at_100%_0%,rgb(255_140_40/0.22),transparent_70%),repeating-linear-gradient(135deg,transparent_0_46px,rgb(255_255_255/0.03)_46px_48px)]"
+        />
+        <div className="wrap relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="kicker !text-orange">Mecânica geral · orçamento on-line</p>
             <h1 id="hero-title" className="mt-4 text-4xl leading-tight uppercase sm:text-6xl">

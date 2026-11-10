@@ -1,5 +1,8 @@
 export const hero = {
   title: "Sites que trabalham pelo seu negócio.",
+  titleStart: "Sites que",
+  titleHighlight: "trabalham",
+  titleEnd: "pelo seu negócio.",
   subtitle:
     "Desenvolvo sites modernos para pequenos e médios negócios, com foco em presença digital, atendimento e soluções como agendamentos, orçamentos e contato pelo WhatsApp.",
 };

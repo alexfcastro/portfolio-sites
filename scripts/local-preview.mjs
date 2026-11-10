@@ -3,6 +3,7 @@
 // Uso:
 //   pnpm preview:local               # build de tudo + servidores
 //   pnpm preview:local --skip-build  # só sobe os servidores (usa os builds existentes)
+//   node scripts/local-preview.mjs --only=portfolio,barbearia  # refaz só os builds indicados e sobe tudo
 //
 // Portfólio em http://localhost:3100 e demos em 3101–3112 (as portas 3000/3001 ficam livres para outros projetos).
 // Os builds usam NEXT_PUBLIC_DEPLOY_ENV=development, única forma de aceitar URLs `localhost`: o portfólio mostra
@@ -34,6 +35,7 @@ const DEMOS = [
 const portfolioUrl = `http://localhost:${PORTFOLIO_PORT}`;
 const demoPort = (slug) => PORTFOLIO_PORT + 1 + DEMOS.indexOf(slug);
 const skipBuild = process.argv.includes("--skip-build");
+const only = process.argv.find((arg) => arg.startsWith("--only="))?.slice(7).split(",");
 
 const envFor = (app) => {
   const env = { ...process.env, NEXT_PUBLIC_DEPLOY_ENV: "development" };
@@ -59,7 +61,7 @@ const build = (app) =>
 const apps = ["portfolio", ...DEMOS];
 
 if (!skipBuild) {
-  for (const app of apps) {
+  for (const app of apps.filter((name) => !only || only.includes(name))) {
     process.stdout.write(`build ${app}… `);
     try {
       await build(app);

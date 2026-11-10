@@ -166,6 +166,16 @@ p {
       transform 160ms var(--ease-out-soft);
   }
 
+  .btn-lg {
+    min-height: 3.25rem;
+    padding-inline: 1.75rem;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    box-shadow: 0 8px 24px -10px color-mix(in srgb, var(--color-accent) 80%, transparent);
+  }
+
   .btn:active {
     transform: translateY(1px);
   }
@@ -234,4 +244,150 @@ p {
   .prose-page strong {
     color: var(--color-ink);
   }
+}
+
+/* ---------- Efeitos visuais do redesenho ---------- */
+
+/* Palavra em destaque com degradê. `color` continua sólido como reserva (e para medir contraste). */
+.text-gradient {
+  color: var(--color-accent);
+  background-image: linear-gradient(100deg, var(--color-accent) 0%, #7a5cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.on-dark .text-gradient {
+  color: var(--color-accent-on-dark);
+  background-image: linear-gradient(100deg, #9db1ff 0%, #c9b8ff 55%, #8fe3ff 100%);
+}
+
+/* Malha de fundo discreta para seções escuras */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 100%);
+}
+
+/* Moldura de navegador para as capturas */
+.browser-frame {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-canvas);
+  padding: 0.625rem 0.875rem;
+}
+
+.browser-bar i {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-line);
+}
+
+.on-dark .browser-frame {
+  border-color: rgb(255 255 255 / 0.14);
+  background: var(--color-ink-soft);
+}
+
+.on-dark .browser-bar {
+  border-color: rgb(255 255 255 / 0.1);
+  background: #23262d;
+}
+
+.on-dark .browser-bar i {
+  background: rgb(255 255 255 / 0.22);
+}
+
+/* Faixa de capturas em movimento contínuo (pausa no hover, no foco e pelo botão) */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding-block: 0.5rem 1.5rem;
+  animation: marquee 80s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee[data-paused="true"] .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+@keyframes float-soft {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada da primeira dobra */
+  .rise-in {
+    animation: rise-in 700ms var(--ease-out-soft) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+
+  /* Entrada ao rolar: só onde o navegador anima pela rolagem; nos demais o conteúdo já aparece pronto. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 28%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Sem movimento: a faixa vira uma lista rolável manualmente. */
+  .marquee {
+    overflow-x: auto;
+    mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Cartão com realce na borda ao passar o mouse */
+.card-lift {
+  transition:
+    transform 240ms var(--ease-out-soft),
+    box-shadow 240ms var(--ease-out-soft),
+    border-color 240ms var(--ease-out-soft);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-line));
+  box-shadow: var(--shadow-raised);
 }
