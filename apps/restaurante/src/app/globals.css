@@ -165,3 +165,295 @@ dialog:focus-visible {
     outline-offset: 2px;
   }
 }
+
+/* ============================================================================
+ * Movimento (kit compartilhado das demos)
+ * Tudo aqui é disparado por quem usa o site (passar o mouse, rolar a página) ou
+ * dura pouco na abertura da página. Nada fica se movendo sozinho, e com
+ * "reduzir movimento" ativo o conteúdo aparece pronto.
+ * ========================================================================== */
+
+/* Toda foto fica dentro de uma moldura que recorta o zoom. */
+.foto {
+  display: block;
+  overflow: hidden;
+}
+
+.foto-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: inherit;
+  transition:
+    scale 900ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@keyframes kit-rise {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+
+@keyframes kit-pop {
+  from {
+    opacity: 0;
+    scale: 0.92;
+  }
+}
+
+@keyframes kit-settle {
+  from {
+    scale: 1.18;
+  }
+}
+
+@keyframes kit-parallax-up {
+  to {
+    translate: 0 -56px;
+  }
+}
+
+@keyframes kit-parallax-down {
+  to {
+    translate: 0 44px;
+  }
+}
+
+@keyframes kit-grow-x {
+  from {
+    scale: 0 1;
+  }
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) {
+    /* Zoom da foto ao passar o mouse nela ou no cartão que a contém */
+    .foto:hover > .foto-img,
+    a:hover .foto-img,
+    li:hover .foto-img,
+    figure:hover .foto-img,
+    article:hover .foto-img,
+    label:hover .foto-img {
+      scale: 1.1;
+    }
+
+    /* Cartões sobem ao passar o mouse */
+    main :is(li, a, article, figure)[class*="rounded-card"],
+    main li > a[class*="border"] {
+      transition:
+        transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 400ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        border-color 300ms,
+        background-color 300ms,
+        color 300ms;
+    }
+
+    main :is(li, a, article, figure)[class*="rounded-card"]:hover,
+    main li > a[class*="border"]:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 50px -26px rgb(0 0 0 / 0.4);
+    }
+
+    .btn {
+      transition:
+        transform 250ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 250ms,
+        background-color 200ms,
+        border-color 200ms,
+        color 200ms;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px -14px rgb(0 0 0 / 0.45);
+    }
+
+    .btn svg {
+      transition: translate 250ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .btn:hover svg:last-child {
+      translate: 3px 0;
+    }
+  }
+
+  /* Abertura da página: o texto da primeira dobra sobe em sequência e as fotos assentam. */
+  main > section:first-child :is(.kicker, h1, h1 ~ p, h1 ~ div, h1 ~ form) {
+    animation: kit-rise 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  main > section:first-child h1 {
+    animation-delay: 90ms;
+  }
+
+  main > section:first-child h1 ~ p {
+    animation-delay: 200ms;
+  }
+
+  main > section:first-child :is(h1 ~ div, h1 ~ form) {
+    animation-delay: 320ms;
+  }
+
+  main > section:first-child .foto:not(.fundo) {
+    animation: kit-pop 900ms 150ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  main > section:first-child .foto-img {
+    animation: kit-settle 2400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  main > section:first-child .fundo .foto-img {
+    animation-duration: 4500ms;
+  }
+
+  @supports (animation-timeline: view()) {
+    /* Entrada ao rolar: títulos, itens de lista e figuras sobem quando entram na tela. */
+    main > :not(:first-child) :is(.kicker, h2, h2 + p),
+    main > :not(:first-child) :is(ul, ol) > li,
+    main > :not(:first-child) figure,
+    main > :not(:first-child):is(.kicker, h2) {
+      animation: kit-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 34%;
+    }
+
+    /* Profundidade na primeira dobra: as fotos se deslocam em ritmos diferentes ao rolar. */
+    .parallax,
+    main > section:first-child .foto.parallax:not(.fundo) {
+      animation:
+        kit-pop 900ms 150ms cubic-bezier(0.2, 0.7, 0.2, 1) both,
+        kit-parallax-up linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range:
+        normal,
+        0 720px;
+    }
+
+    .parallax-inv,
+    main > section:first-child .foto.parallax-inv:not(.fundo) {
+      animation:
+        kit-pop 900ms 300ms cubic-bezier(0.2, 0.7, 0.2, 1) both,
+        kit-parallax-down linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range:
+        normal,
+        0 720px;
+    }
+  }
+}
+
+/* ---------- Toque próprio da Sabor & Brasa: calor ---------- */
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  main li[class*="rounded-card"]:hover {
+    box-shadow: 0 28px 54px -26px rgb(179 54 26 / 0.5);
+  }
+
+  main li:hover .foto-img {
+    scale: 1.14;
+    filter: saturate(1.15) brightness(1.05);
+  }
+
+  .btn-primary svg {
+    transition: rotate 350ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .btn-primary:hover svg {
+    rotate: 90deg;
+  }
+}
+
+/* ---------- Faixa de palavras que desliza conforme a página rola ---------- */
+.faixa {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.faixa-linha {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  padding-block: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.faixa-item::after {
+  content: "✦";
+  margin-inline: 1.75rem;
+  opacity: 0.55;
+}
+
+@keyframes kit-faixa {
+  to {
+    translate: -35% 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .faixa-linha {
+      animation: kit-faixa linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 2600px;
+    }
+  }
+}
+
+/* ---------- Painéis de foto com texto por cima (seções-assinatura) ---------- */
+.painel-foto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.painel-foto > .foto {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.painel-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.82) 0%, rgb(0 0 0 / 0.35) 45%, rgb(0 0 0 / 0.05) 75%);
+  transition: opacity 500ms;
+}
+
+.painel-texto {
+  transition: translate 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .painel-foto:hover .foto-img {
+    scale: 1.1;
+  }
+
+  .painel-foto:hover .painel-texto {
+    translate: 0 -8px;
+  }
+}
+
+/* Fundo escuro de reserva dos painéis (enquanto a foto carrega) e entrada curta de conteúdo trocado. */
+.painel-foto {
+  background-color: #1b1b1b;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .troca {
+    animation: kit-rise 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}

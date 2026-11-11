@@ -25,15 +25,17 @@ export function Foto({
   const foto = fotos[id];
   if (!foto) return null;
   return (
-    <Image
-      src={`/fotos/${id}.webp`}
-      alt={alt}
-      width={foto.width}
-      height={foto.height}
-      sizes={sizes}
-      preload={preload}
-      className={`object-cover ${className}`}
-    />
+    <span className={`foto ${className}`}>
+      <Image
+        src={`/fotos/${id}.webp`}
+        alt={alt}
+        width={foto.width}
+        height={foto.height}
+        sizes={sizes}
+        preload={preload}
+        className="foto-img"
+      />
+    </span>
   );
 }
 

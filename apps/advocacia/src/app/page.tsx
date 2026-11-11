@@ -9,7 +9,7 @@ export default function HomePage() {
       <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-navy text-white">
         {temFoto("hero") && (
           <>
-            <Foto id="hero" preload sizes="100vw" className="absolute inset-0 -z-20 size-full" />
+            <Foto id="hero" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
             <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/70" />
           </>
         )}

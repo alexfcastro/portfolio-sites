@@ -1,8 +1,10 @@
 import { CalendarHeart, Gift, PenLine, Truck } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { FlowerArt } from "@/components/flower-art";
+import { OccasionPicker } from "@/components/occasion-picker";
 import { ProductCard } from "@/components/product-card";
-import { faq, getProduct, occasions, products, storeHours } from "@/data/shop";
+import { faq, getProduct, products, storeHours } from "@/data/shop";
 
 const steps = [
   { icon: Gift, title: "Escolha", text: "Buquê, arranjo, cesta ou planta, por ocasião." },
@@ -22,7 +24,7 @@ export default function HomePage() {
         <div className="wrap grid items-center gap-10 py-12 md:grid-cols-[1.1fr_1fr] md:py-20">
           <div>
             <p className="kicker">Floricultura e presentes</p>
-            <h1 className="mt-4 text-5xl sm:text-7xl">
+            <h1 className="mt-4 text-6xl leading-[1.02] sm:text-8xl">
               Flores que dizem <em className="text-rose">o que você sente</em>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -39,34 +41,29 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="overflow-hidden rounded-t-full rounded-b-[2rem] border-4 border-paper shadow-xl">
+            <div className="parallax overflow-hidden rounded-t-full rounded-b-[2rem] border-4 border-paper shadow-xl">
               <FlowerArt art={hero.art} id={hero.id} sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-36 overflow-hidden rounded-full border-4 border-paper shadow-lg sm:w-44">
+            <div className="parallax-inv absolute -bottom-6 -left-6 w-36 overflow-hidden rounded-full border-4 border-paper shadow-lg sm:w-44">
               <FlowerArt art={heroSmall.art} id={heroSmall.id} scene={1} sizes="176px" className="h-auto w-full" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="ocasioes" aria-labelledby="ocasioes-title" className="border-y border-line bg-paper">
-        <div className="wrap py-14">
+      <Faixa
+        className="bg-rose font-display text-xl text-white"
+        itens={["Aniversário", "Amor", "Maternidade", "Agradecimento", "Com cartão escrito por você"]}
+      />
+
+      <section id="ocasioes" aria-labelledby="ocasioes-title" className="border-b border-line bg-paper">
+        <div className="wrap py-16">
           <p className="kicker">Ocasiões</p>
-          <h2 id="ocasioes-title" className="mt-2 text-4xl">
-            Para cada momento
+          <h2 id="ocasioes-title" className="mt-2 text-4xl sm:text-6xl">
+            Qual é o momento?
           </h2>
-          <ul className="mt-6 flex flex-wrap gap-2">
-            {occasions.map((occasion) => (
-              <li key={occasion.id}>
-                <Link
-                  href={`/catalogo?ocasiao=${occasion.id}`}
-                  className="inline-flex min-h-11 items-center rounded-full border border-line bg-blush px-5 hover:border-rose"
-                >
-                  {occasion.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-3 max-w-xl text-muted">Escolha a ocasião e veja as flores que combinam com ela.</p>
+          <OccasionPicker />
         </div>
       </section>
 

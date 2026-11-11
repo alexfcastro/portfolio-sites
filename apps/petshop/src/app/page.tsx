@@ -1,5 +1,6 @@
 import { CalendarCheck, Clock, PawPrint, Scissors } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { Retrato } from "@/components/foto";
 import { PetArt, type Palette, type PetKind } from "@/components/pet-art";
 import { faq, groomers, packages, services, sizeHints, sizeLabels, speciesLabels, type Size } from "@/data/petshop";
@@ -29,7 +30,7 @@ export default function HomePage() {
         <div className="wrap grid items-center gap-10 py-12 md:grid-cols-[1.1fr_1fr] md:py-20">
           <div>
             <p className="kicker">Pet shop · banho e tosa</p>
-            <h1 className="mt-3 text-4xl leading-tight sm:text-5xl">Banho e tosa com hora marcada, do jeito do seu pet</h1>
+            <h1 className="mt-3 text-5xl leading-[1.05] sm:text-7xl">Banho e tosa com hora marcada, do jeito do seu pet</h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
               Informe o porte e veja na hora quanto tempo leva e quanto custa. Escolha o profissional e um horário livre.
             </p>
@@ -43,17 +44,22 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="overflow-hidden rounded-[2rem] border-4 border-paper shadow-xl">
+            <div className="parallax overflow-hidden rounded-[2rem] border-4 border-paper shadow-xl">
               <PetArt kind="cao" palette="caramelo" accessory="bandana" sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
             </div>
-            <div className="absolute -bottom-6 -left-4 w-36 overflow-hidden rounded-3xl border-4 border-paper shadow-lg sm:w-44">
+            <div className="parallax-inv absolute -bottom-6 -left-4 w-36 overflow-hidden rounded-3xl border-4 border-paper shadow-lg sm:w-44">
               <PetArt kind="gato" palette="cinza" accessory="laco" sizes="176px" className="h-auto w-full" />
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="como-funciona" className="border-y border-line bg-paper">
+      <Faixa
+        className="bg-coral text-lg text-white"
+        itens={["Banho", "Tosa higiênica", "Tosa completa", "Hidratação", "Cães e gatos", "Hora marcada"]}
+      />
+
+      <section aria-labelledby="como-funciona" className="border-b border-line bg-paper">
         <div className="wrap py-14">
           <h2 id="como-funciona" className="text-3xl">Agendar leva quatro passos</h2>
           <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

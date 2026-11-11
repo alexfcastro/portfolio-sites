@@ -39,10 +39,10 @@ export default function HomePage() {
               id="sala"
               preload
               sizes="(min-width: 1024px) 330px, 60vw"
-              className="col-span-3 row-span-2 h-full min-h-64 w-full rounded-3xl shadow-2xl shadow-black/40 sm:min-h-96"
+              className="parallax col-span-3 row-span-2 h-full min-h-64 w-full rounded-3xl shadow-2xl shadow-black/40 sm:min-h-96"
             />
-            <Foto id="painel" sizes="(min-width: 1024px) 220px, 40vw" className="col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
-            <Foto id="fachada" sizes="(min-width: 1024px) 220px, 40vw" className="col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
+            <Foto id="painel" sizes="(min-width: 1024px) 220px, 40vw" className="parallax-inv col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
+            <Foto id="fachada" sizes="(min-width: 1024px) 220px, 40vw" className="parallax-inv col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
          </div>
         </div>
       </section>

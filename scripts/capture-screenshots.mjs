@@ -103,6 +103,8 @@ try {
       sessionId,
     );
     if (shot.mobile) await send("Emulation.setTouchEmulationEnabled", { enabled: true }, sessionId);
+    // Sem animações: a captura mostra o estado final, não um quadro no meio de uma entrada.
+    await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] }, sessionId);
 
     const loaded = waitFor("Page.loadEventFired", sessionId);
     await send("Page.navigate", { url: new URL(shot.path, baseUrl).toString() }, sessionId);

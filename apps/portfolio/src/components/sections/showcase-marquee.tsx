@@ -46,7 +46,7 @@ export function ShowcaseMarquee({ items }: { items: ShowcaseItem[] }) {
             height={item.height}
             sizes="(min-width: 640px) 416px, 304px"
             loading="eager"
-            className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
+            className="h-auto w-full transition-transform duration-700 group-hover:scale-110"
           />
         </span>
         <span className="sr-only">Ver o projeto {item.name}</span>

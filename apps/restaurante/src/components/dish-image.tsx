@@ -11,13 +11,8 @@ export function DishImage({ art, sizes, className = "" }: { art: Art; sizes: str
   const foto = fotos[art];
   if (!foto) return <PlateArt art={art} className={`h-auto w-full ${className}`} />;
   return (
-    <Image
-      src={`/fotos/${art}.webp`}
-      alt=""
-      width={foto.width}
-      height={foto.height}
-      sizes={sizes}
-      className={`aspect-[4/3] h-auto w-full object-cover ${className}`}
-    />
+    <span className={`foto aspect-[4/3] w-full ${className}`}>
+      <Image src={`/fotos/${art}.webp`} alt="" width={foto.width} height={foto.height} sizes={sizes} className="foto-img" />
+    </span>
   );
 }

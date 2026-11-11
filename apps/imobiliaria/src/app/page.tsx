@@ -8,15 +8,21 @@ export default function HomePage() {
   const featured = listings.filter((listing) => listing.featured).slice(0, 3);
   return (
     <>
-      <section aria-labelledby="hero-title" className="bg-gradient-to-b from-blue-soft to-sky">
-        <div className="wrap grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.15fr_1fr]">
-         <div>
-          <p className="kicker">Imobiliária</p>
-          <h1 id="hero-title" className="mt-3 max-w-3xl text-4xl leading-tight sm:text-6xl">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-ink text-white">
+        {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o degradê garante a leitura do texto. */}
+        <Foto id="hz-0163-fachada" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/20 max-md:via-ink/85 max-md:to-ink/70"
+        />
+        <div className="wrap flex min-h-[78svh] flex-col justify-center py-14 sm:py-20">
+         <div className="max-w-3xl">
+          <p className="kicker !text-white">Imobiliária</p>
+          <h1 id="hero-title" className="mt-3 max-w-3xl text-5xl leading-[1.03] sm:text-7xl">
             Encontre o imóvel certo sem perder tempo.
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-muted">Filtre por bairro, preço e quartos e fale com o corretor já sabendo qual imóvel quer ver.</p>
-          <form action="/imoveis" className="mt-8 grid max-w-3xl gap-3 rounded-card bg-paper p-3 shadow-sm shadow-xl shadow-blue/10 sm:grid-cols-[9rem_1fr_auto]">
+          <p className="mt-5 max-w-xl text-lg text-white/90">Filtre por bairro, preço e quartos e fale com o corretor já sabendo qual imóvel quer ver.</p>
+          <form action="/imoveis" className="mt-8 grid max-w-3xl gap-3 rounded-card bg-paper p-3 text-ink shadow-2xl shadow-black/40 sm:grid-cols-[9rem_1fr_auto]">
             <label className="sr-only" htmlFor="finalidade">
               Finalidade
             </label>
@@ -32,19 +38,20 @@ export default function HomePage() {
               <Search aria-hidden className="size-4" /> Buscar
             </button>
           </form>
-         </div>
-         <div aria-hidden className="relative pb-8 pl-6">
-            <Foto
-              id="hz-0163-fachada"
-              preload
-              sizes="(min-width: 1024px) 480px, 92vw"
-              className="aspect-[4/3] w-full rounded-[2rem] shadow-2xl shadow-blue/25"
-            />
-            <Foto
-              id="hz-0163-sala"
-              sizes="220px"
-              className="absolute bottom-0 left-0 aspect-[4/3] w-2/5 rounded-2xl border-4 border-paper shadow-xl"
-            />
+          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-3 text-white">
+            <div>
+              <dt className="text-sm text-white/80">Imóveis no site</dt>
+              <dd className="text-3xl font-bold">{listings.length}</dd>
+            </div>
+            <div>
+              <dt className="text-sm text-white/80">Para comprar</dt>
+              <dd className="text-3xl font-bold">{listings.filter((l) => l.purpose === "venda").length}</dd>
+            </div>
+            <div>
+              <dt className="text-sm text-white/80">Para alugar</dt>
+              <dd className="text-3xl font-bold">{listings.filter((l) => l.purpose === "aluguel").length}</dd>
+            </div>
+          </dl>
          </div>
         </div>
       </section>

@@ -15,11 +15,21 @@ const steps = [
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="overflow-hidden">
-        <div className="wrap grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.1fr_1fr]">
-          <div>
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden">
+        {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o véu claro garante a leitura do texto. */}
+        {temFoto("recepcao") && (
+          <>
+            <Foto id="recepcao" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
+            <div
+              aria-hidden
+              className="absolute inset-0 -z-10 bg-gradient-to-r from-mist via-mist/95 to-mist/20 max-md:via-mist/92 max-md:to-mist/80"
+            />
+          </>
+        )}
+        <div className="wrap flex min-h-[74svh] flex-col justify-center py-14 sm:py-20">
+          <div className="max-w-2xl">
             <p className="kicker">Clínica multiprofissional</p>
-            <h1 id="hero-title" className="mt-4 text-4xl leading-[1.1] sm:text-6xl">
+            <h1 id="hero-title" className="mt-4 text-5xl leading-[1.05] sm:text-7xl">
               Cuidado com hora marcada e informação clara.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -36,9 +46,11 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-md">
-            <HeroArt />
-          </div>
+          {!temFoto("recepcao") && (
+            <div className="mx-auto mt-10 w-full max-w-md">
+              <HeroArt />
+            </div>
+          )}
         </div>
       </section>
 
@@ -60,7 +72,7 @@ export default function HomePage() {
                       <Foto
                         id={`esp-${specialty.id}`}
                         sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
-                        className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-105"
+                        className="aspect-[16/10] w-full"
                       />
                     </span>
                   )}

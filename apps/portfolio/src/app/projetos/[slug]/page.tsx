@@ -95,7 +95,13 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
                     <i />
                     <span className="ml-2 truncate text-xs font-medium text-muted">{project.name}</span>
                   </div>
-                  <ProjectCover media={cover} preload hideScreenshotLabel sizes="(min-width: 1024px) 640px, 100vw" />
+                  <ProjectCover
+                    media={cover}
+                    preload
+                    hideScreenshotLabel
+                    sizes="(min-width: 1024px) 640px, 100vw"
+                    className="[&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-105"
+                  />
                 </div>
                 <span
                   aria-hidden
@@ -160,11 +166,11 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
             {screens.map((media) => {
               const portrait = media.height > media.width;
               return (
-                <figure key={media.src} className={portrait ? "mx-auto w-full max-w-72 md:row-span-2" : ""}>
+                <figure key={media.src} className={`reveal group ${portrait ? "mx-auto w-full max-w-72 md:row-span-2" : ""}`}>
                   <ProjectCover
                     media={media}
                     sizes={portrait ? "288px" : "(min-width: 1024px) 800px, 100vw"}
-                    className={`border border-line shadow-card ${portrait ? "rounded-[1.75rem]" : "rounded-card"}`}
+                    className={`border border-line shadow-card transition-shadow duration-500 group-hover:shadow-raised [&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-105 ${portrait ? "rounded-[1.75rem]" : "rounded-card"}`}
                   />
                   <figcaption className="mt-3 text-sm text-muted">{media.caption}</figcaption>
                 </figure>

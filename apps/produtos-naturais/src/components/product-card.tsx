@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProductArt } from "@/components/product-art";
 import { FavoriteButton } from "@/components/shop-links";
+import { TagSymbols } from "@/components/tag-symbols";
 import { getCategory, stockLabels, type Product } from "@/data/catalog";
 import { fromPrice, listPrice } from "@/lib/cart";
 import { formatBRL } from "@/lib/money";
@@ -40,6 +41,10 @@ export function ProductCard({ product }: { product: Product }) {
             {product.name}
           </Link>
         </h3>
+        <p className="mt-1 line-clamp-2 text-sm text-muted">{product.info.uso}</p>
+        <div className="mt-3">
+          <TagSymbols tags={product.tags} />
+        </div>
         <p className="mt-auto pt-3">
           {product.promoPercent ? (
             <span className="mr-2 text-sm text-muted line-through">

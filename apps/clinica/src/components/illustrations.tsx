@@ -27,7 +27,7 @@ export function IllustrativeMap() {
 /** Imagem do hero: foto da recepção gerada por IA (sem pessoas), quando existe, ou a composição de formas orgânicas. */
 export function HeroArt() {
   if (temFoto("recepcao")) {
-    return <Foto id="recepcao" sizes="(min-width: 768px) 448px, 90vw" preload className="aspect-square h-auto w-full rounded-[2rem]" />;
+    return <Foto id="recepcao" sizes="(min-width: 768px) 448px, 90vw" preload className="parallax aspect-square h-auto w-full rounded-[2rem]" />;
   }
   return (
     <svg viewBox="0 0 420 380" className="h-auto w-full" aria-hidden focusable="false">

@@ -1,5 +1,6 @@
 import { CalendarPlus, Clock, MapPin, Star } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { Foto, Retrato } from "@/components/foto";
 import { IllustrativeMap, StyleIllustration, galleryItems } from "@/components/illustrations";
 import { WhatsAppPreview } from "@/components/whatsapp-preview";
@@ -7,6 +8,16 @@ import { business, professionals, sampleReviews, services } from "@/data/busines
 import { genericGreeting } from "@/lib/messages";
 import { formatBRL } from "@/lib/money";
 import { formatTime } from "@/lib/time";
+
+// Cada estilo da galeria leva ao serviço correspondente no agendamento.
+const estiloParaServico: Record<(typeof galleryItems)[number]["id"], string> = {
+  classico: "corte",
+  degrade: "degrade",
+  barba: "barba",
+  texturizado: "corte",
+  raspado: "combo",
+  topete: "corte",
+};
 
 const weekdayNames = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
 
@@ -32,15 +43,17 @@ function openingRows() {
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="relative overflow-hidden border-b border-edge">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden border-b border-edge">
+        {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o degradê garante a leitura do texto. */}
+        <Foto id="topete" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full object-[70%_30%]" />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(135deg,transparent_0_38px,rgb(201_164_92/0.05)_38px_40px)]"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-coal via-coal/90 to-coal/30 max-md:via-coal/85 max-md:to-coal/75"
         />
-        <div className="wrap relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.15fr_1fr]">
+        <div className="wrap relative grid min-h-[78svh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div>
             <p className="kicker">Barbearia · Cortes e barba</p>
-            <h1 id="hero-title" className="mt-4 text-5xl leading-[0.95] font-bold sm:text-7xl">
+            <h1 id="hero-title" className="mt-4 text-6xl leading-[0.92] font-bold sm:text-7xl lg:text-8xl">
               Seu horário,
               <br />
               <span className="text-gold">sem espera.</span>
@@ -60,26 +73,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div aria-hidden className="relative mx-auto w-full max-w-md pb-10 pl-8">
-            <div className="absolute top-6 right-[-0.75rem] bottom-16 left-14 rounded-2xl border border-gold/40" />
-            <Foto
-              id="degrade"
-              preload
-              sizes="(min-width: 1024px) 420px, 90vw"
-              className="relative aspect-[4/5] w-full rounded-2xl shadow-2xl shadow-black/60"
-            />
-            <Foto
-              id="raspado"
-              sizes="180px"
-              className="absolute bottom-0 left-0 aspect-square w-2/5 rounded-xl border-4 border-coal shadow-2xl shadow-black/60"
-            />
-            <div className="absolute right-[-0.5rem] bottom-16 rounded-lg border border-edge bg-coal-3 px-4 py-3 font-display tracking-wider uppercase">
-              <span className="block text-xs text-smoke">Agenda on-line</span>
-              <span className="text-lg text-gold">{business.bookingWindowDays} dias à frente</span>
+          <div aria-hidden className="hidden justify-self-end lg:block">
+            <div className="parallax rounded-lg border border-gold/50 bg-coal/80 px-6 py-5 font-display tracking-wider uppercase backdrop-blur">
+              <span className="block text-sm text-smoke">Agenda on-line</span>
+              <span className="text-3xl text-gold">{business.bookingWindowDays} dias à frente</span>
             </div>
           </div>
         </div>
       </section>
+
+      <Faixa
+        className="border-b border-edge bg-gold font-display text-lg text-coal"
+        itens={["Corte clássico", "Degradê", "Barba na navalha", "Acabamento", "Sem fila, com hora marcada"]}
+      />
 
       <section id="servicos" aria-labelledby="servicos-title" className="wrap py-20">
         <p className="kicker">Serviços</p>
@@ -141,13 +147,25 @@ export default function HomePage() {
         <h2 id="galeria-title" className="mt-3 text-4xl font-bold sm:text-5xl">
           Estilos
         </h2>
-        <p className="mt-3 text-smoke">Fotos ilustrativas geradas por IA — não são clientes reais.</p>
+        <p className="mt-3 text-smoke">
+          Viu um corte que é a sua cara? Agende direto por ele. Fotos ilustrativas geradas por IA — não são clientes
+          reais.
+        </p>
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
           {galleryItems.map((item) => (
             <li key={item.id}>
-              <figure className="overflow-hidden rounded-card border border-edge">
+              <figure className="overflow-hidden rounded-card border border-edge bg-coal-2">
                 <StyleIllustration id={item.id} />
-                <figcaption className="bg-coal-2 px-4 py-3 font-display tracking-wider uppercase">{item.label}</figcaption>
+                <figcaption className="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
+                  <span className="font-display tracking-wider uppercase">{item.label}</span>
+                  <Link
+                    href={`/agendar?servico=${estiloParaServico[item.id]}`}
+                    className="inline-flex min-h-11 items-center gap-1.5 font-display text-sm tracking-wider text-gold uppercase underline-offset-4 hover:underline"
+                  >
+                    Agendar<span className="sr-only"> {item.label}</span>
+                    <span className="max-sm:sr-only"> esse corte</span>
+                  </Link>
+                </figcaption>
               </figure>
             </li>
           ))}

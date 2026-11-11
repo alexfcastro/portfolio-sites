@@ -285,3 +285,15 @@ Limites: o verificador não avalia texto sobre imagem ou gradiente, estados de h
 - Um fluxo do Firefox e uma captura da floricultura falharam por usarem uma data de entrega fixa que venceu; passaram a usar a próxima sexta-feira. Não era defeito do site.
 - Não refeito nesta rodada: `lint` (o pnpm segue bloqueado nesta máquina) e Lighthouse.
 - As 114 fotos existentes foram revistas de novo em folhas de contato: nenhum texto, logotipo ou marca d'água. Segue a observação da barbearia (três fotos com rosto de perfil, pessoas geradas por IA).
+
+## Segunda rodada do redesenho: movimento e referências (12/11/2026)
+
+A partir de 20 sites de referência enviados pelo proprietário (hotelaria, estúdios, churrascarias, barbearias, floriculturas, empórios):
+
+- **Todas as demos:** fotos com zoom ao passar o mouse, cartões que sobem, texto da abertura entrando em sequência, itens que sobem ao rolar e faixa de palavras que desliza conforme a rolagem. Cada demo tem um efeito próprio (dourado que acende na barbearia, faixa laranja na oficina, linha do pulso que se desenha na academia etc.).
+- **Abertura em tela cheia com foto:** barbearia, restaurante, imobiliária, clínica e produtos naturais.
+- **Seções novas:** "Três cortes" (restaurante), galeria com "Agendar esse corte" (barbearia), "Qual é o momento?" com vitrine que muda pela ocasião (floricultura), categorias com foto e legenda de símbolos (produtos naturais).
+- **Portfólio:** painéis de destaque com a paleta de cada demo, no computador e no celular, e índice dos 12 projetos com prévia ao passar o mouse.
+- Nada se move sozinho por mais de alguns segundos: os efeitos dependem de passar o mouse ou rolar, ou duram pouco na abertura. Com "reduzir movimento", tudo aparece pronto. As entradas ao rolar e a faixa usam animação por rolagem do CSS; no Firefox, que ainda não tem esse recurso por padrão, o conteúdo aparece estático.
+- Verificado com a prévia local: 213 testes unitários (portfólio e 12 demos), `check:reflow` (392), `check:contrast` (7.422 textos) e `check:firefox` (reflow, 17 fluxos e console). Capturas refeitas, agora sem animações para mostrar o estado final. Hover conferido por captura em restaurante, barbearia e imobiliária.
+- Não refeito: `lint` local (pnpm bloqueado; roda no CI) e Lighthouse. Texto sobre foto não é medido pelo verificador de contraste; os degradês de leitura foram conferidos a olho.

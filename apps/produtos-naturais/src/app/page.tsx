@@ -1,26 +1,46 @@
 import { Bike, Scale, Store } from "lucide-react";
 import Link from "next/link";
-import { ProductArt } from "@/components/product-art";
+import { Faixa } from "@/components/faixa";
+import { Foto } from "@/components/foto";
+import { TagLegend } from "@/components/tag-symbols";
 import { ProductCard } from "@/components/product-card";
 import { categories, faq, FREE_DELIVERY_FROM_CENTS, products, regions, storeHours } from "@/data/catalog";
 import { formatBRL } from "@/lib/money";
+
+// Foto que abre cada categoria: um produto dela, visto de perto.
+const categoryPhoto: Record<string, string> = {
+  temperos: "curcuma",
+  chas: "camomila",
+  graos: "quinoa",
+  castanhas: "castanha-para",
+  "frutas-secas": "damasco",
+  farinhas: "farinha-integral",
+  sementes: "chia",
+  granolas: "granola-sem-acucar",
+  mel: "mel-silvestre",
+  kits: "kit-cafe-da-manha",
+};
 
 export default function HomePage() {
   const featured = products.filter((p) => p.featured && p.categoryId !== "kits");
   const promos = products.filter((p) => p.promoPercent);
   const kits = products.filter((p) => p.categoryId === "kits");
   const news = products.filter((p) => p.isNew);
-  const hero = products.find((p) => p.id === "granola-tradicional")!;
-  const heroJar = products.find((p) => p.id === "mel-silvestre")!;
 
   return (
     <>
-      <section className="overflow-hidden">
-        <div className="wrap grid items-center gap-10 py-12 md:grid-cols-[1.15fr_1fr] md:py-20">
-          <div>
-            <p className="kicker">Empório de produtos naturais</p>
-            <h1 className="mt-3 text-4xl leading-tight sm:text-6xl">Do jeito que você usa: 100&nbsp;g, 250&nbsp;g ou 1&nbsp;kg</h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+      <section className="relative isolate overflow-hidden bg-ink text-white">
+        {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o degradê garante a leitura do texto. */}
+        <Foto id="granola-tradicional" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/15 max-md:via-ink/85 max-md:to-ink/70"
+        />
+        <div className="wrap flex min-h-[76svh] flex-col justify-center py-14 md:py-20">
+          <div className="max-w-2xl">
+            <p className="kicker !text-white">Empório de produtos naturais</p>
+            <h1 className="mt-3 text-5xl leading-[1.05] sm:text-7xl">Do jeito que você usa: 100&nbsp;g, 250&nbsp;g ou 1&nbsp;kg</h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/90">
               Grãos, castanhas, chás e temperos a granel. Escolha o peso, veja o preço na hora e monte um pedido só
               para retirar ou receber em casa.
             </p>
@@ -33,16 +53,13 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="overflow-hidden rounded-[2rem] border-4 border-paper shadow-lg">
-              <ProductArt product={hero} sizes="(min-width: 768px) 448px, 90vw" preload className="h-auto w-full" />
-            </div>
-            <div className="absolute -bottom-6 -left-4 w-36 overflow-hidden rounded-3xl border-4 border-paper shadow-lg sm:w-44">
-              <ProductArt product={heroJar} sizes="176px" className="h-auto w-full" />
-            </div>
-          </div>
         </div>
       </section>
+
+      <Faixa
+        className="bg-olive text-white"
+        itens={["A granel", "Castanhas", "Grãos e cereais", "Chás e ervas", "Temperos", "Granolas", "Mel e pastas"]}
+      />
 
       <section aria-labelledby="como-title" className="border-y border-line bg-paper">
         <div className="wrap grid gap-6 py-10 sm:grid-cols-3">
@@ -72,21 +89,27 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="categorias-title" className="wrap py-14">
-        <h2 id="categorias-title" className="text-3xl">
-          Categorias
+        <h2 id="categorias-title" className="text-4xl sm:text-5xl">
+          Comece pelo ingrediente
         </h2>
-        <ul className="mt-6 flex flex-wrap gap-2">
+        <p className="mt-3 max-w-xl text-muted">Cada categoria abre com o produto de perto, do jeito que ele chega à loja.</p>
+        <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {categories.map((category) => (
             <li key={category.id}>
               <Link
                 href={`/produtos?categoria=${category.id}`}
-                className="inline-flex min-h-11 items-center rounded-full border border-line bg-paper px-4 font-semibold hover:border-olive"
+                className="painel-foto flex aspect-[4/5] flex-col justify-end rounded-card p-4 text-white"
               >
-                {category.name}
+                <Foto id={categoryPhoto[category.id] ?? ""} sizes="(min-width: 1024px) 230px, 45vw" />
+                <span className="painel-texto block font-display text-xl leading-tight sm:text-2xl">{category.name}</span>
               </Link>
             </li>
           ))}
         </ul>
+        <div className="mt-8 rounded-card border border-line bg-paper p-5">
+          <p className="mb-3 font-bold">Como ler os símbolos dos produtos</p>
+          <TagLegend />
+        </div>
       </section>
 
       <ProductRow id="destaques" title="Destaques" items={featured} href="/produtos" />

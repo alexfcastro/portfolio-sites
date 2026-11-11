@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { Foto, Retrato, temFoto } from "@/components/foto";
 import { intensityLabels, modalities, plans, teachers, weeklyClasses } from "@/data/studio";
 import { formatBRL } from "@/lib/money";
@@ -13,7 +14,7 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden border-b border-edge">
         {temFoto("hero") && (
           <>
-            <Foto id="hero" preload sizes="100vw" className="absolute inset-0 -z-20 size-full" />
+            <Foto id="hero" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
             <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/90 to-night/55" />
           </>
         )}
@@ -35,7 +36,7 @@ export default function HomePage() {
         <div className="wrap relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.4fr_1fr]">
           <div>
           <p className="kicker">Estúdio de treino em grupo</p>
-          <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] sm:text-7xl">
+          <h1 className="mt-4 max-w-3xl text-6xl leading-[1.02] sm:text-8xl">
             Treine no seu ritmo. <span className="text-lime">Sinta o pulso.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -71,6 +72,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Faixa
+        className="border-b border-edge bg-lime text-xl text-night"
+        itens={modalities.map((modality) => modality.name)}
+      />
+
       <section aria-labelledby="modalidades-title" className="wrap py-16">
         <p className="kicker">Modalidades</p>
         <h2 id="modalidades-title" className="mt-2 text-4xl">Escolha como quer suar</h2>
@@ -86,7 +92,7 @@ export default function HomePage() {
                     <Foto
                       id={`mod-${modality.id}`}
                       sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-                      className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-105"
+                      className="aspect-[16/10] w-full"
                     />
                   </span>
                 )}

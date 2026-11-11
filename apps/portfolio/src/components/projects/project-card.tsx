@@ -40,7 +40,7 @@ export function ProjectCard({ project, headingLevel: Heading = "h3", priority = 
               hideScreenshotLabel
               preload={priority}
               sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
-              className="aspect-[16/10] [&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-[1.04]"
+              className="aspect-[16/10] [&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-110"
             />
           </div>
         </div>

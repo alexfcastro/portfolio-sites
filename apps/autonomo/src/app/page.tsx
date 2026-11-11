@@ -27,9 +27,9 @@ export default function HomePage() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3" aria-hidden>
-          <WorkArt variant={0} sizes="(min-width: 1024px) 520px, 100vw" preload className="col-span-2 h-auto w-full" />
-          <WorkArt variant={5} sizes="(min-width: 1024px) 260px, 50vw" className="h-auto w-full" />
-          <WorkArt variant={1} sizes="(min-width: 1024px) 260px, 50vw" className="h-auto w-full" />
+          <WorkArt variant={0} sizes="(min-width: 1024px) 520px, 100vw" preload className="parallax col-span-2 h-auto w-full" />
+          <WorkArt variant={5} sizes="(min-width: 1024px) 260px, 50vw" className="parallax-inv h-auto w-full" />
+          <WorkArt variant={1} sizes="(min-width: 1024px) 260px, 50vw" className="parallax-inv h-auto w-full" />
         </div>
       </section>
 
