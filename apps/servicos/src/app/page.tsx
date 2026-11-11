@@ -1,26 +1,36 @@
 import { ArrowRight, Check, MapPin, X } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { Foto } from "@/components/foto";
 import { MessagePreview } from "@/components/message-preview";
 import { WorkArt } from "@/components/work-art";
 import { getServiceType, portfolioWorks, regions, serviceTypes } from "@/data/services";
 import { travelFeeLabel } from "@/lib/request";
 
+// Os três passos do pedido, como descritos no fluxo de solicitação.
+const passos = [
+  { titulo: "Escolha o serviço", texto: "Elétrica, pintura, manutenção, ar-condicionado ou hidráulica." },
+  { titulo: "Confirme a região", texto: "Você vê na hora se atendemos o seu bairro e a taxa de deslocamento." },
+  { titulo: "Conte o que precisa", texto: "Perguntas rápidas sobre o problema e os dias em que você pode receber a equipe." },
+];
+
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-petrol text-white">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-petrol-dark text-white">
+        {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o degradê garante a leitura do texto. */}
+        <Foto id="sala" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(40rem_24rem_at_100%_0%,rgb(255_255_255/0.12),transparent_70%)]"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-petrol-dark via-petrol-dark/90 to-petrol-dark/25 max-md:via-petrol-dark/88 max-md:to-petrol-dark/75"
         />
-        <div className="wrap relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.1fr_1fr]">
-         <div>
+        <div className="wrap relative flex min-h-[76svh] flex-col justify-center py-14 sm:py-20">
+         <div className="max-w-3xl">
           <p className="kicker !text-sun">Elétrica · pintura · manutenção · ar · hidráulica</p>
-          <h1 id="hero-title" className="mt-4 max-w-3xl text-4xl leading-tight sm:text-6xl">
+          <h1 id="hero-title" className="mt-4 max-w-3xl text-5xl leading-[1.04] sm:text-7xl">
             Diga o que precisa. A gente chega preparado.
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-white/80">
+          <p className="mt-5 max-w-xl text-lg text-white/90">
             Escolha o serviço, confirme se atendemos a sua região e responda perguntas rápidas. O orçamento chega com
             menos idas e vindas.
           </p>
@@ -34,28 +44,44 @@ export default function HomePage() {
             </Link>
           </div>
          </div>
-         <div aria-hidden className="grid grid-cols-5 grid-rows-2 gap-3 sm:gap-4">
-            <Foto
-              id="sala"
-              preload
-              sizes="(min-width: 1024px) 330px, 60vw"
-              className="parallax col-span-3 row-span-2 h-full min-h-64 w-full rounded-3xl shadow-2xl shadow-black/40 sm:min-h-96"
-            />
-            <Foto id="painel" sizes="(min-width: 1024px) 220px, 40vw" className="parallax-inv col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
-            <Foto id="fachada" sizes="(min-width: 1024px) 220px, 40vw" className="parallax-inv col-span-2 aspect-square w-full rounded-3xl shadow-xl shadow-black/30" />
-         </div>
+        </div>
+      </section>
+
+      <Faixa className="bg-sun text-lg text-petrol-dark" itens={serviceTypes.map((service) => service.name)} />
+
+      <section aria-labelledby="passos-title" className="bg-petrol py-16 text-white sm:py-20">
+        <div className="wrap">
+          <p className="kicker !text-sun">Como funciona</p>
+          <h2 id="passos-title" className="mt-3 max-w-2xl text-4xl leading-tight sm:text-5xl">
+            Três passos e o orçamento sai certo de primeira.
+          </h2>
+          <ol className="mt-10 grid gap-5 md:grid-cols-3">
+            {passos.map((passo, index) => (
+              <li key={passo.titulo} className="rounded-card border border-white/15 bg-white/5 p-6">
+                <span aria-hidden className="block text-6xl font-bold text-sun">
+                  {index + 1}
+                </span>
+                <h3 className="mt-3 text-2xl">{passo.titulo}</h3>
+                <p className="mt-2 text-white/85">{passo.texto}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       <section id="servicos" aria-labelledby="servicos-title" className="wrap py-16 sm:py-20">
         <p className="kicker">Serviços</p>
-        <h2 id="servicos-title" className="mt-3 text-3xl sm:text-4xl">
+        <h2 id="servicos-title" className="mt-3 text-4xl sm:text-5xl">
           O que fazemos
         </h2>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {serviceTypes.map((service) => (
-            <li key={service.id} className="flex flex-col rounded-card border border-line bg-paper p-6">
-              <h3 className="text-xl">{service.name}</h3>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {serviceTypes.map((service) => {
+            const foto = portfolioWorks.find((work) => work.serviceId === service.id)?.id;
+            return (
+            <li key={service.id} className="flex flex-col overflow-hidden rounded-card border border-line bg-paper">
+              {foto && <Foto id={foto} sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw" className="aspect-[16/10] w-full" />}
+              <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-2xl">{service.name}</h3>
               <p className="mt-1 text-muted">{service.summary}</p>
               <ul className="mt-4 flex-1 space-y-1.5 text-sm">
                 {service.includes.map((item) => (
@@ -69,15 +95,17 @@ export default function HomePage() {
                 Pedir orçamento de {service.name.toLowerCase()}
                 <ArrowRight aria-hidden className="size-4" />
               </Link>
+              </div>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </section>
 
       <section id="trabalhos" aria-labelledby="trabalhos-title" className="border-y border-line bg-paper py-16 sm:py-20">
         <div className="wrap">
           <p className="kicker">Trabalhos</p>
-          <h2 id="trabalhos-title" className="mt-3 text-3xl sm:text-4xl">
+          <h2 id="trabalhos-title" className="mt-3 text-4xl sm:text-5xl">
             Portfólio
           </h2>
           <p className="mt-3 text-muted">Fotos ilustrativas geradas por IA para esta demonstração — não são trabalhos reais.</p>

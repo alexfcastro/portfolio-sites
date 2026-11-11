@@ -1,5 +1,6 @@
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import { Faixa } from "@/components/faixa";
 import { MessagePreview } from "@/components/message-preview";
 import { PortfolioGrid } from "@/components/portfolio-grid";
 import { WorkArt } from "@/components/work-art";
@@ -9,41 +10,54 @@ import { formatBRL } from "@/lib/money";
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="wrap grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr]">
-        <div>
+      <section aria-labelledby="hero-title" className="overflow-hidden pt-14 sm:pt-20">
+        <div className="wrap">
           <p className="kicker">{professional.role}</p>
-          <h1 id="hero-title" className="mt-4 text-5xl leading-[1.05] sm:text-7xl">
+          <h1 id="hero-title" className="mt-4 max-w-5xl text-6xl leading-[0.98] sm:text-8xl lg:text-9xl">
             {professional.pitch}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{professional.about}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/proposta" className="btn btn-primary">
-              Pedir proposta
-              <ArrowRight aria-hidden className="size-4" />
-            </Link>
-            <Link href="#portfolio" className="btn btn-secondary">
-              Ver portfólio
-            </Link>
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+            <p className="max-w-xl text-lg leading-relaxed text-muted">{professional.about}</p>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <Link href="/proposta" className="btn btn-primary">
+                Pedir proposta
+                <ArrowRight aria-hidden className="size-4" />
+              </Link>
+              <Link href="#portfolio" className="btn btn-secondary">
+                Ver portfólio
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3" aria-hidden>
-          <WorkArt variant={0} sizes="(min-width: 1024px) 520px, 100vw" preload className="parallax col-span-2 h-auto w-full" />
-          <WorkArt variant={5} sizes="(min-width: 1024px) 260px, 50vw" className="parallax-inv h-auto w-full" />
-          <WorkArt variant={1} sizes="(min-width: 1024px) 260px, 50vw" className="parallax-inv h-auto w-full" />
+        {/* Mosaico de trabalhos (fotos ilustrativas, geradas por IA), de ponta a ponta. */}
+        <div className="mt-12 grid grid-cols-2 gap-2 px-2 sm:gap-3 sm:px-3 md:grid-cols-4" aria-hidden>
+          <WorkArt variant={0} sizes="(min-width: 768px) 50vw, 100vw" preload className="col-span-2 row-span-2 !aspect-auto h-full min-h-72 w-full" />
+          <WorkArt variant={5} sizes="(min-width: 768px) 25vw, 50vw" className="h-auto w-full" />
+          <WorkArt variant={1} sizes="(min-width: 768px) 25vw, 50vw" className="h-auto w-full" />
+          <WorkArt variant={4} sizes="(min-width: 768px) 25vw, 50vw" className="h-auto w-full" />
+          <WorkArt variant={3} sizes="(min-width: 768px) 25vw, 50vw" className="h-auto w-full" />
         </div>
       </section>
 
-      <section id="servicos" aria-labelledby="servicos-title" className="border-y border-line bg-paper py-16 sm:py-20">
+      <Faixa
+        className="mt-2 bg-ink font-serif text-xl text-paper sm:mt-3"
+        itens={[...offers.map((offer) => offer.name), "Luz controlada", "Edição cuidadosa"]}
+      />
+
+      <section id="servicos" aria-labelledby="servicos-title" className="border-b border-line bg-paper py-16 sm:py-20">
         <div className="wrap">
           <p className="kicker">Serviços</p>
-          <h2 id="servicos-title" className="mt-3 text-4xl">
+          <h2 id="servicos-title" className="mt-3 text-4xl sm:text-6xl">
             Como posso ajudar
           </h2>
           <p className="mt-3 text-muted">Valores de referência demonstrativos; o valor final vem na proposta.</p>
           <ul className="mt-10 grid gap-8 md:grid-cols-3">
-            {offers.map((offer) => (
+            {offers.map((offer, index) => (
               <li key={offer.id} className="border-t-2 border-ink pt-5">
-                <h3 className="text-2xl">{offer.name}</h3>
+                <span aria-hidden className="block font-serif text-6xl text-terra">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 text-3xl">{offer.name}</h3>
                 <p className="mt-2 text-muted">{offer.description}</p>
                 <ul className="mt-4 space-y-1.5 text-sm">
                   {offer.includes.map((item) => (
@@ -62,7 +76,7 @@ export default function HomePage() {
 
       <section id="portfolio" aria-labelledby="portfolio-title" className="wrap py-16 sm:py-20">
         <p className="kicker">Portfólio</p>
-        <h2 id="portfolio-title" className="mt-3 text-4xl">
+        <h2 id="portfolio-title" className="mt-3 text-4xl sm:text-6xl">
           Trabalhos recentes
         </h2>
         <p className="mt-3 mb-8 text-muted">Fotos ilustrativas geradas por IA para esta demonstração — não são trabalhos para clientes reais.</p>
