@@ -156,6 +156,56 @@ const MAPAS = {
   },
 };
 
+// Segunda leva (equipe, especialidades, modalidades, oficina e advocacia): prompts em docs/fotos-ia-flow/13 a 17.
+// O valor é o começo do nome do arquivo esperado; quando o arquivo tem exatamente o nome do item, casa direto.
+const SEGUNDA_LEVA = {
+  oficina: ["hero", "cat-freios", "cat-suspensao", "cat-motor", "cat-eletrica", "cat-ar", "cat-revisao"],
+  advocacia: [
+    "hero",
+    "equipe-helena",
+    "equipe-ricardo",
+    "equipe-camila",
+    "artigo-inventario-em-cartorio",
+    "artigo-cobranca-indevida",
+    "artigo-contrato-de-locacao",
+  ],
+  academia: [
+    "hero",
+    "mod-funcional",
+    "mod-bike",
+    "mod-hiit",
+    "mod-pilates",
+    "mod-danca",
+    "mod-yoga",
+    "equipe-nina",
+    "equipe-caio",
+    "equipe-duda",
+    "equipe-rafa",
+  ],
+  clinica: [
+    "esp-clinica-geral",
+    "esp-dermatologia",
+    "esp-nutricao",
+    "esp-fisioterapia",
+    "esp-psicologia",
+    "esp-pediatria",
+    "equipe-helena",
+    "equipe-rui",
+    "equipe-paula",
+    "equipe-marina",
+    "equipe-tiago",
+    "equipe-carla",
+    "equipe-beatriz",
+  ],
+  barbearia: { "equipe-rafa": "barbearia-equipe-rafa", "equipe-leo": "barbearia-equipe-leo", "equipe-davi": "barbearia-equipe-davi" },
+  petshop: { "equipe-bia": "petshop-equipe-bia", "equipe-tom": "petshop-equipe-tom" },
+  imobiliaria: { "equipe-mv": "imobiliaria-equipe-mv", "equipe-jc": "imobiliaria-equipe-jc" },
+};
+for (const [site, itens] of Object.entries(SEGUNDA_LEVA)) {
+  MAPAS[site] ??= {};
+  for (const [id, regra] of Array.isArray(itens) ? itens.map((item) => [item, item]) : Object.entries(itens)) MAPAS[site][id] = regra;
+}
+
 // Áreas desfocadas antes de redimensionar (coordenadas no arquivo original).
 const RETOQUES = {
   imobiliaria: {

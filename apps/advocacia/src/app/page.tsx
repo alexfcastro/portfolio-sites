@@ -1,11 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Foto, temFoto } from "@/components/foto";
 import { areas, articles, getArea, team } from "@/data/firm";
 
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-navy text-white">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-navy text-white">
+        {temFoto("hero") && (
+          <>
+            <Foto id="hero" preload sizes="100vw" className="absolute inset-0 -z-20 size-full" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/70" />
+          </>
+        )}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(44rem_26rem_at_95%_0%,rgb(184_155_94/0.22),transparent_70%)]"
@@ -83,6 +90,13 @@ export default function HomePage() {
           <ul className="mt-10 grid gap-8 md:grid-cols-3">
             {team.map((member) => (
               <li key={member.name} className="border-t border-brass pt-5">
+                {temFoto(`equipe-${member.id}`) && (
+                  <Foto
+                    id={`equipe-${member.id}`}
+                    sizes="(min-width: 768px) 360px, 100vw"
+                    className="mb-5 aspect-[4/5] w-full object-top"
+                  />
+                )}
                 <h3 className="text-2xl">{member.name}</h3>
                 <p className="text-sm font-semibold tracking-wider text-brass-text uppercase">{member.role}</p>
                 <p className="mt-3 text-muted">{member.bio}</p>
@@ -101,11 +115,16 @@ export default function HomePage() {
         <ul className="mt-10 grid gap-6 md:grid-cols-3">
           {articles.map((article) => (
             <li key={article.slug}>
-              <Link href={`/artigos/${article.slug}`} className="group block h-full border border-line bg-paper p-6 hover:border-navy">
+              <Link href={`/artigos/${article.slug}`} className="group block h-full border border-line bg-paper hover:border-navy">
+                {temFoto(`artigo-${article.slug}`) && (
+                  <Foto id={`artigo-${article.slug}`} sizes="(min-width: 768px) 380px, 100vw" className="aspect-[16/9] w-full" />
+                )}
+                <div className="p-6">
                 <p className="kicker">{getArea(article.areaSlug)?.name}</p>
                 <h3 className="mt-3 text-2xl group-hover:underline">{article.title}</h3>
                 <p className="mt-2 text-muted">{article.summary}</p>
                 <p className="mt-4 text-sm text-muted">{article.readingMinutes} min de leitura</p>
+                </div>
               </Link>
             </li>
           ))}

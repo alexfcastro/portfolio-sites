@@ -1,5 +1,6 @@
 import { CalendarCheck, Clock, PawPrint, Scissors } from "lucide-react";
 import Link from "next/link";
+import { Retrato } from "@/components/foto";
 import { PetArt, type Palette, type PetKind } from "@/components/pet-art";
 import { faq, groomers, packages, services, sizeHints, sizeLabels, speciesLabels, type Size } from "@/data/petshop";
 import { durationFor } from "@/lib/booking";
@@ -129,12 +130,12 @@ export default function HomePage() {
           <ul className="grid gap-4 sm:grid-cols-2">
             {groomers.map((groomer, index) => (
               <li key={groomer.id} className="flex items-center gap-4 rounded-card bg-paper p-5">
-                <span
-                  aria-hidden
-                  className={`flex size-14 shrink-0 items-center justify-center rounded-full text-xl font-extrabold text-white ${index === 0 ? "bg-coral" : "bg-leaf"}`}
-                >
-                  {groomer.name[0]}
-                </span>
+                <Retrato
+                  id={`equipe-${groomer.id}`}
+                  inicial={groomer.name[0] ?? ""}
+                  className="size-20"
+                  fallback={`text-xl font-extrabold text-white ${index === 0 ? "bg-coral" : "bg-leaf"}`}
+                />
                 <span>
                   <span className="block text-lg font-extrabold">{groomer.name}</span>
                   <span className="text-sm text-muted">{groomer.specialty}</span>

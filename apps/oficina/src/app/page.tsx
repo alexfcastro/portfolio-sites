@@ -1,5 +1,6 @@
 import { Camera, ClipboardList, Gauge, MapPin, Wrench } from "lucide-react";
 import Link from "next/link";
+import { Foto, temFoto } from "@/components/foto";
 import { MessagePreview } from "@/components/message-preview";
 import { problemCategories, services } from "@/data/garage";
 import { formatBRL } from "@/lib/money";
@@ -14,7 +15,13 @@ const steps = [
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-graphite text-white">
+      <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-graphite text-white">
+        {temFoto("hero") && (
+          <>
+            <Foto id="hero" preload sizes="100vw" className="absolute inset-0 -z-20 size-full" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-graphite via-graphite/90 to-graphite/60" />
+          </>
+        )}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(42rem_24rem_at_100%_0%,rgb(255_140_40/0.22),transparent_70%),repeating-linear-gradient(135deg,transparent_0_46px,rgb(255_255_255/0.03)_46px_48px)]"
@@ -64,7 +71,11 @@ export default function HomePage() {
           {problemCategories.map((category) => {
             const ids = [...new Set(category.symptoms.flatMap((symptom) => symptom.serviceIds))];
             return (
-              <section key={category.id} aria-labelledby={`cat-${category.id}`} className="rounded-card border border-line bg-paper p-5">
+              <section key={category.id} aria-labelledby={`cat-${category.id}`} className="overflow-hidden rounded-card border border-line bg-paper">
+                {temFoto(`cat-${category.id}`) && (
+                  <Foto id={`cat-${category.id}`} sizes="(min-width: 1024px) 400px, 100vw" className="aspect-[16/9] w-full" />
+                )}
+                <div className="p-5">
                 <h3 id={`cat-${category.id}`} className="text-lg uppercase">
                   {category.name}
                 </h3>
@@ -83,6 +94,7 @@ export default function HomePage() {
                     );
                   })}
                 </ul>
+                </div>
               </section>
             );
           })}

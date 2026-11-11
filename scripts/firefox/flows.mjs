@@ -18,6 +18,14 @@ const dialogText = () => $('dialog[open]')?.innerText ?? '';
 const s = (code) => H + code;
 
 const P = "http://localhost:3100";
+
+// Data de entrega dos pedidos de teste: a próxima sexta-feira a pelo menos 2 dias de hoje (datas fixas vencem).
+const proximaSexta = (() => {
+  const d = new Date();
+  d.setDate(d.getDate() + 2);
+  while (d.getDay() !== 5) d.setDate(d.getDate() + 1);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+})();
 const port = (n) => `http://localhost:${3100 + n}`;
 
 export const flows = [
@@ -231,8 +239,8 @@ export const flows = [
         version: 2,
         nextNumber: 1001,
         cart: [
-          { productId: "buque-campo", sizeId: "m", addonIds: ["chocolates", "vaso-vidro"], card: "Oi", fulfillment: "entrega", regionId: "jardim-primavera", date: "2026-10-02", period: "tarde", personName: "Ana" },
-          { productId: "cesta-cafe", sizeId: "p", addonIds: [], card: "", fulfillment: "entrega", regionId: "jardim-primavera", date: "2026-10-02", period: "tarde", personName: "ana " },
+          { productId: "buque-campo", sizeId: "m", addonIds: ["chocolates", "vaso-vidro"], card: "Oi", fulfillment: "entrega", regionId: "jardim-primavera", date: proximaSexta, period: "tarde", personName: "Ana" },
+          { productId: "cesta-cafe", sizeId: "p", addonIds: [], card: "", fulfillment: "entrega", regionId: "jardim-primavera", date: proximaSexta, period: "tarde", personName: "ana " },
         ],
       },
     },

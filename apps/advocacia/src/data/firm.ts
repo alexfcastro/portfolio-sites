@@ -79,18 +79,21 @@ export const areas: PracticeArea[] = [
 
 export const team = [
   {
+    id: "helena",
     name: "Helena Almeida",
     role: "Sócia",
     areas: ["familia", "sucessoes"],
     bio: "Atua em questões de família e sucessões, com foco em soluções consensuais quando possíveis.",
   },
   {
+    id: "ricardo",
     name: "Ricardo Prado",
     role: "Sócio",
     areas: ["empresarial", "imobiliario"],
     bio: "Atua na rotina jurídica de pequenas empresas e em negócios imobiliários.",
   },
   {
+    id: "camila",
     name: "Camila Souza",
     role: "Advogada associada",
     areas: ["trabalho", "consumidor"],

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Foto, Retrato, temFoto } from "@/components/foto";
 import { intensityLabels, modalities, plans, teachers, weeklyClasses } from "@/data/studio";
 import { formatBRL } from "@/lib/money";
 
@@ -9,7 +10,13 @@ export default function HomePage() {
   const cheapest = Math.min(...plans.map((p) => p.monthlyCents));
   return (
     <>
-      <section className="relative overflow-hidden border-b border-edge">
+      <section className="relative isolate overflow-hidden border-b border-edge">
+        {temFoto("hero") && (
+          <>
+            <Foto id="hero" preload sizes="100vw" className="absolute inset-0 -z-20 size-full" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/90 to-night/55" />
+          </>
+        )}
         <svg
           viewBox="0 0 800 200"
           preserveAspectRatio="none"
@@ -72,8 +79,18 @@ export default function HomePage() {
             <li key={modality.id}>
               <Link
                 href={`/aulas?modalidade=${modality.id}`}
-                className="group flex h-full flex-col rounded-card border border-edge bg-panel p-6 hover:border-lime"
+                className="group flex h-full flex-col overflow-hidden rounded-card border border-edge bg-panel hover:border-lime"
               >
+                {temFoto(`mod-${modality.id}`) && (
+                  <span className="block overflow-hidden">
+                    <Foto
+                      id={`mod-${modality.id}`}
+                      sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                      className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </span>
+                )}
+                <span className="flex flex-1 flex-col p-6">
                 <span className="flex items-center justify-between gap-3">
                   <span className="text-2xl font-bold">{modality.name}</span>
                   <ArrowRight aria-hidden className="size-5 text-muted group-hover:text-lime" />
@@ -86,6 +103,7 @@ export default function HomePage() {
                     ))}
                   </span>
                   Intensidade {intensityLabels[modality.intensity].toLowerCase()}
+                </span>
                 </span>
               </Link>
             </li>
@@ -101,9 +119,12 @@ export default function HomePage() {
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {teachers.map((teacher) => (
               <li key={teacher.id} className="rounded-card border border-edge bg-night p-6">
-                <span aria-hidden className="flex size-14 items-center justify-center rounded-full bg-lime text-2xl font-bold text-night">
-                  {teacher.name[0]}
-                </span>
+                <Retrato
+                  id={`equipe-${teacher.id}`}
+                  inicial={teacher.name[0] ?? ""}
+                  className="size-20 border-2 border-lime"
+                  fallback="bg-lime text-2xl font-bold text-night"
+                />
                 <p className="mt-4 text-xl font-bold">{teacher.name}</p>
                 <p className="mt-1 text-sm text-lime">
                   {teacher.modalityIds.map((id) => modalities.find((m) => m.id === id)?.name).join(" · ")}

@@ -277,3 +277,11 @@ Limites: o verificador não avalia texto sobre imagem ou gradiente, estados de h
 - Depois da troca: `pnpm check:reflow` (392 verificações), `pnpm check:contrast` (7.622 textos) e `pnpm check:firefox` (reflow, 17 fluxos e console) sem problemas; capturas de todos os cases refeitas e revisadas.
 - Um build falhou com erro do Turbopack ao processar as fontes do Google por causa de um cache corrompido da advocacia; apagar `apps/advocacia/.next` resolveu, e `pnpm preview:local` passou a limpar o cache e tentar de novo automaticamente.
 
+## Redesenho visual (11/11/2026)
+
+- Portfólio: primeira dobra escura com faixa das capturas, cards com moldura de navegador, seções com entrada ao rolar (só onde o navegador anima pela rolagem; com "reduzir movimento", nada se move e a faixa vira lista rolável). A faixa pausa no hover, no foco e por botão.
+- Demos: fotos na primeira dobra de barbearia, restaurante, serviços e imobiliária; painel "Como começa" na advocacia; fundo novo na oficina. Espaços de foto preparados (equipe, especialidades, modalidades, oficina, advocacia) que só aparecem quando a foto existir.
+- Verificado depois das mudanças, com a prévia local: testes unitários de portfólio, barbearia, restaurante, serviços, imobiliária, advocacia, oficina, clínica, pet shop e academia (178 testes); `check:reflow` (392 verificações); `check:contrast` (7.214 textos, medido com "reduzir movimento" para não pegar conteúdo em transição); `check:firefox` (reflow, 17 fluxos e console). Capturas das 12 demos refeitas e revisadas.
+- Um fluxo do Firefox e uma captura da floricultura falharam por usarem uma data de entrega fixa que venceu; passaram a usar a próxima sexta-feira. Não era defeito do site.
+- Não refeito nesta rodada: `lint` (o pnpm segue bloqueado nesta máquina) e Lighthouse.
+- As 114 fotos existentes foram revistas de novo em folhas de contato: nenhum texto, logotipo ou marca d'água. Segue a observação da barbearia (três fotos com rosto de perfil, pessoas geradas por IA).

@@ -1,0 +1,46 @@
+Gere as 7 imagens abaixo com o Nano Banana para o site Almeida & Prado Advocacia (escritório de advocacia). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: equipe-helena deve virar o arquivo equipe-helena.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO: indicada em cada item.
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia editorial sóbria e elegante de um escritório de advocacia. Tons de azul-marinho, madeira escura e detalhes em dourado envelhecido. Luz natural suave de janela, ambiente calmo e organizado.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto legível, letra, número, logotipo, marca ou marca d'água na imagem (lombadas de livros e papéis sem texto legível). Sem símbolos religiosos. As pessoas retratadas não existem: não devem se parecer com nenhuma pessoa famosa ou conhecida. Sem crachás nem placas com nome.
+Se aparecer qualquer texto legível, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: hero
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (foto principal do site): Sala de reunião vazia de um escritório de advocacia, com mesa de madeira escura, cadeiras de couro e uma estante de livros ao fundo, do lado direito da imagem. O lado esquerdo da imagem deve ficar mais escuro e vazio (vai receber texto por cima). Sem pessoas.
+
+2. NOME: equipe-helena
+   PROPORÇÃO: 4:5 (vertical)
+   O que mostrar (retrato de Helena Almeida, sócia): Retrato profissional de uma mulher brasileira de cerca de 50 anos, cabelo castanho-escuro na altura dos ombros, blazer azul-marinho, expressão serena e confiante, olhando para a câmera. Enquadramento do peito para cima, rosto na parte de cima da imagem. Fundo: escritório com estante de livros desfocada.
+
+3. NOME: equipe-ricardo
+   PROPORÇÃO: 4:5 (vertical)
+   O que mostrar (retrato de Ricardo Prado, sócio): Retrato profissional de um homem brasileiro de cerca de 45 anos, cabelo curto grisalho, barba bem aparada, terno cinza-escuro sem gravata, expressão tranquila, olhando para a câmera. Enquadramento do peito para cima, rosto na parte de cima da imagem. Fundo: escritório com estante de livros desfocada.
+
+4. NOME: equipe-camila
+   PROPORÇÃO: 4:5 (vertical)
+   O que mostrar (retrato de Camila Souza, advogada associada): Retrato profissional de uma mulher brasileira negra de cerca de 30 anos, cabelo cacheado preso, blazer bege, sorriso leve, olhando para a câmera. Enquadramento do peito para cima, rosto na parte de cima da imagem. Fundo: escritório com estante de livros desfocada.
+
+5. NOME: artigo-inventario-em-cartorio
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (artigo sobre inventário em cartório): Close de uma mesa de madeira com uma pasta de documentos, uma caneta-tinteiro e um par de óculos. Papéis sem texto legível. Sem pessoas.
+
+6. NOME: artigo-cobranca-indevida
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (artigo sobre cobrança indevida): Close de uma mesa com algumas contas de papel empilhadas (sem texto legível), uma calculadora sem marca e uma xícara de café. Sem pessoas.
+
+7. NOME: artigo-contrato-de-locacao
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (artigo sobre contrato de locação): Close de um molho de chaves de casa sobre um contrato de papel (sem texto legível), com uma caneta ao lado, em uma mesa de madeira. Sem pessoas.

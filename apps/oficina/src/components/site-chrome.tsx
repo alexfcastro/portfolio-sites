@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { fotos } from "@/data/fotos";
 
 /** Marca fictícia da Torque: engrenagem simplificada com "T". Não usa a marca AX. */
 export function TorqueMark({ className }: { className?: string }) {
@@ -52,6 +53,7 @@ export function SiteFooter() {
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/70">
             A Torque é uma oficina fictícia. Esta página é uma demonstração criada por Alex Castro: serviços, faixas de
             preço e acompanhamento são exemplos. Nenhum orçamento é enviado e nenhuma foto sai do seu navegador.
+            {Object.keys(fotos).length > 0 && " As fotos são ilustrativas, geradas por IA."}
           </p>
           <ul className="mt-3 flex flex-wrap gap-x-5 text-sm">
             <li>

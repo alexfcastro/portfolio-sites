@@ -1,0 +1,62 @@
+Gere as 11 imagens abaixo com o Nano Banana para o site Pulse Studio (estúdio de treino em grupo). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: mod-yoga deve virar o arquivo mod-yoga.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO: indicada em cada item.
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de estúdio de treino moderno e escuro, com paredes pretas, piso emborrachado escuro e luzes de LED verde-limão como detalhe. Clima energético, contraste alto, visual de academia boutique.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, logotipo, marca em roupas ou equipamentos, ou marca d'água na imagem. Roupas de treino lisas, sem estampa. As pessoas retratadas não existem: não devem se parecer com nenhuma pessoa famosa ou conhecida. Nas fotos de modalidade, as pessoas aparecem de costas, de lado ou desfocadas, sem rosto em destaque.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: hero
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (foto principal do site): Sala de treino em grupo vazia, com kettlebells, bicicletas de spinning e colchonetes organizados do lado direito da imagem, iluminada por faixas de LED verde-limão. O lado esquerdo da imagem deve ficar bem escuro e vazio (vai receber texto por cima). Sem pessoas.
+
+2. NOME: mod-funcional
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Funcional): Pessoa de costas fazendo agachamento com kettlebell em um circuito de treino funcional, com elásticos e caixas ao fundo.
+
+3. NOME: mod-bike
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Bike indoor): Fileira de bicicletas de spinning com três pessoas pedalando, vistas de lado e de costas, sob luz verde-limão.
+
+4. NOME: mod-hiit
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (HIIT): Pessoa vista de lado, sem rosto em destaque, saltando sobre uma caixa de madeira de treino, com movimento congelado no ar.
+
+5. NOME: mod-pilates
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Pilates solo): Pessoa de lado fazendo um exercício de pilates no colchonete, com uma bola pequena, em sala tranquila com luz suave.
+
+6. NOME: mod-danca
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Dança): Grupo pequeno de pessoas de costas dançando em frente a um espelho de estúdio, com movimento e energia.
+
+7. NOME: mod-yoga
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Yoga): Pessoa de costas sentada em postura de meditação sobre um tapete de yoga, em sala com luz suave e baixa.
+
+8. NOME: equipe-nina
+   PROPORÇÃO: 1:1 (quadrada)
+   O que mostrar (retrato da professora Nina): Retrato de uma mulher brasileira de cerca de 28 anos, cabelo escuro preso em rabo de cavalo, regata de treino preta lisa, sorriso confiante, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo escuro de estúdio com luz verde-limão desfocada.
+
+9. NOME: equipe-caio
+   PROPORÇÃO: 1:1 (quadrada)
+   O que mostrar (retrato do professor Caio): Retrato de um homem brasileiro de cerca de 30 anos, cabelo curto castanho, camiseta de treino cinza lisa, sorriso aberto, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo escuro de estúdio com luz verde-limão desfocada.
+
+10. NOME: equipe-duda
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato da professora Duda): Retrato de uma mulher brasileira de cerca de 35 anos, cabelo cacheado solto, blusa de treino verde-oliva lisa, expressão calma e simpática, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo escuro de estúdio com luz verde-limão desfocada.
+
+11. NOME: equipe-rafa
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato do professor Rafa): Retrato de um homem brasileiro negro de cerca de 26 anos, cabelo curto, camiseta de treino preta lisa, sorriso animado, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo escuro de estúdio com luz verde-limão desfocada.

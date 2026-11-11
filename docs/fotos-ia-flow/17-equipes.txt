@@ -1,0 +1,42 @@
+Gere as 7 imagens abaixo com o Nano Banana: são retratos de equipe para três sites diferentes (Bravus Barbearia, PetVille e Horizonte Imóveis). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: barbearia-equipe-leo deve virar o arquivo barbearia-equipe-leo.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 1:1 (quadrada)
+
+REGRAS (valem para todas): Fotografia realista de retrato, nítida e bem iluminada. Rosto centralizado, enquadramento dos ombros para cima, olhando para a câmera. Sem nenhum texto, letra, número, logotipo, marca em roupas ou marca d'água na imagem. Sem crachás. As pessoas retratadas não existem: não devem se parecer com nenhuma pessoa famosa ou conhecida.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+
+IMAGENS
+
+BRAVUS BARBEARIA — fundo: barbearia escura com madeira e luzes quentes desfocadas.
+
+1. NOME: barbearia-equipe-rafa
+   O que mostrar (barbeiro Rafael Moura): Homem brasileiro de cerca de 40 anos, cabelo penteado para trás, barba cheia bem cuidada, avental de couro marrom sobre camisa preta, expressão séria e simpática.
+
+2. NOME: barbearia-equipe-leo
+   O que mostrar (barbeiro Leonardo Brandão): Homem brasileiro negro de cerca de 30 anos, corte degradê, barba desenhada, avental preto sobre camiseta cinza lisa, sorriso leve.
+
+3. NOME: barbearia-equipe-davi
+   O que mostrar (barbeiro Davi Correia): Homem brasileiro de cerca de 25 anos, cabelo texturizado no topo, sem barba, tatuagem discreta no antebraço, avental preto sobre camiseta branca lisa, sorriso aberto.
+
+PETVILLE — fundo: pet shop claro em tons de pêssego e creme, desfocado.
+
+4. NOME: petshop-equipe-bia
+   O que mostrar (tosadora Bia): Mulher brasileira de cerca de 28 anos, cabelo castanho preso em coque, avental coral liso, sorriso carinhoso, segurando um cachorro pequeno de pelo longo no colo.
+
+5. NOME: petshop-equipe-tom
+   O que mostrar (tosador Tom): Homem brasileiro de cerca de 35 anos, cabelo curto, barba curta, avental verde liso, sorriso tranquilo, com um gato cinza no colo.
+
+HORIZONTE IMÓVEIS — fundo: escritório claro e moderno, com janela, desfocado.
+
+6. NOME: imobiliaria-equipe-mv
+   O que mostrar (corretor Marcos Vieira): Homem brasileiro de cerca de 45 anos, cabelo curto grisalho, camisa social azul-clara sem gravata, blazer azul-marinho, sorriso confiante.
+
+7. NOME: imobiliaria-equipe-jc
+   O que mostrar (corretora Juliana Castro): Mulher brasileira de cerca de 35 anos, cabelo liso castanho na altura dos ombros, blazer branco sobre blusa azul, sorriso simpático.

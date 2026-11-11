@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarCheck, CheckCircle2, ClipboardList, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
+import { Foto, Retrato, temFoto } from "@/components/foto";
 import { HeroArt, IllustrativeMap } from "@/components/illustrations";
 import { MessagePreview } from "@/components/message-preview";
 import { faq, getSpecialty, professionals, specialties } from "@/data/clinic";
@@ -52,13 +53,24 @@ export default function HomePage() {
               <li key={specialty.id}>
                 <Link
                   href={`/especialidades/${specialty.id}`}
-                  className="group flex h-full flex-col rounded-card border border-line bg-mist p-6 transition-colors hover:border-teal"
+                  className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-mist transition-colors hover:border-teal"
                 >
+                  {temFoto(`esp-${specialty.id}`) && (
+                    <span className="block overflow-hidden">
+                      <Foto
+                        id={`esp-${specialty.id}`}
+                        sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+                        className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </span>
+                  )}
+                  <span className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl">{specialty.name}</h3>
                   <p className="mt-2 flex-1 text-muted">{specialty.summary}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 font-semibold text-teal">
                     Saiba mais
                     <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                   </span>
                 </Link>
               </li>
@@ -78,12 +90,12 @@ export default function HomePage() {
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {professionals.map((professional) => (
             <li key={professional.id} className="rounded-card border border-line bg-paper p-6">
-              <span
-                aria-hidden
-                className="grid size-12 place-items-center rounded-full bg-teal-soft font-serif text-lg text-teal"
-              >
-                {professional.name.replace(/^Dra?\.\s/, "").slice(0, 1)}
-              </span>
+              <Retrato
+                id={`equipe-${professional.id}`}
+                inicial={professional.name.replace(/^Dra?\.\s/, "").slice(0, 1)}
+                className="size-20"
+                fallback="bg-teal-soft font-serif text-2xl text-teal"
+              />
               <h3 className="mt-4 text-lg">{professional.name}</h3>
               <p className="text-sm font-semibold text-teal">{getSpecialty(professional.specialtyId)?.name}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">{professional.approach}</p>

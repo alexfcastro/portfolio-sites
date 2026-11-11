@@ -17,7 +17,21 @@ Cada arquivo é **um prompt**: copie o conteúdo inteiro e cole no agente do Flo
 | `11-barbearia.txt` | Bravus Barbearia | 6 | `fotos-ia/barbearia/` |
 | `12-clinica.txt` | Vita Clínica | 1 | `fotos-ia/clinica/` |
 
-**Total:** 114 imagens em 12 prompts.
+**Total da primeira leva:** 114 imagens em 12 prompts (todas já geradas e publicadas).
+
+## Segunda leva: fotos que ainda faltam
+
+Para todas as demos terem fotos realistas, faltam estas 45 imagens (oficina, advocacia e academia ainda não têm nenhuma; as outras ganham retratos da equipe). As páginas já estão preparadas: enquanto a foto não existe, continua aparecendo a inicial ou o fundo liso.
+
+| Arquivo | Site | Imagens | Salvar em |
+|---|---|---|---|
+| `13-oficina.txt` | Torque Auto Center (oficina) | 7 | `fotos-ia/oficina/` |
+| `14-advocacia.txt` | Almeida & Prado Advocacia | 7 | `fotos-ia/advocacia/` |
+| `15-academia.txt` | Pulse Studio (academia) | 11 | `fotos-ia/academia/` |
+| `16-clinica-2.txt` | Vita Clínica: especialidades e equipe | 13 | `fotos-ia/clinica/` |
+| `17-equipes.txt` | Retratos de equipe: barbearia, pet shop e imobiliária | 7 | `fotos-ia/barbearia/`, `fotos-ia/petshop/` e `fotos-ia/imobiliaria/` (o começo do nome diz o site) |
+
+Os retratos são de pessoas que não existem, geradas por IA. Os prompts pedem que não se pareçam com ninguém conhecido, e as demos já avisam que a equipe é fictícia e que as fotos são geradas por IA.
 
 ## Nomes dos arquivos
 

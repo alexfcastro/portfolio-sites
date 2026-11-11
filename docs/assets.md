@@ -1,6 +1,6 @@
 # Assets: origem, licença e uso
 
-Todos os assets visuais do portfólio foram **criados para este projeto** (vetores desenhados em código). Não há fotos, imagens de bancos, imagens geradas por IA nem material de terceiros.
+Os assets visuais do **portfólio** foram criados para este projeto (vetores desenhados em código e capturas das demos). As **demos** usam fotos geradas por IA, listadas mais abaixo. Não há imagens de bancos nem material de terceiros.
 
 | Asset | Local | Origem | Uso |
 |---|---|---|---|
@@ -77,3 +77,7 @@ Observações da revisão (28/09/2026):
 - **Sobrado (HZ-0232):** a fachada gerada tinha o número "210"; a área foi desfocada na versão publicada (retoque registrado no importador). O original não foi alterado.
 - **Barbearia:** duas fotos mostram o cliente de perfil com o rosto visível e uma mostra o barbeiro trabalhando; são pessoas geradas por IA, não reais. Se preferir, gere de novo com o rosto em sombra e rode o importador.
 - Mapas e fotos de equipe continuam ilustrativos (sem foto), de propósito.
+
+### Segunda leva de fotos (pendente)
+
+Faltam 45 imagens para todas as demos terem fotos: oficina (7), advocacia (7), academia (11), clínica (13: especialidades e equipe) e retratos de equipe de barbearia, pet shop e imobiliária (7). Prompts em `docs/fotos-ia-flow/13` a `17`. As páginas já têm os espaços: sem a foto, aparece a inicial ou o fundo liso. Mapas continuam ilustrativos, porque os negócios não têm endereço.

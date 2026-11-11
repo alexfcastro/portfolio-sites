@@ -1,0 +1,70 @@
+Gere as 13 imagens abaixo com o Nano Banana para o site Vita Clínica (clínica multiprofissional) — segunda leva. Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: esp-nutricao deve virar o arquivo esp-nutricao.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO: indicada em cada item.
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia de clínica moderna, clara e acolhedora. Paredes brancas com detalhes em verde-água, madeira clara e plantas. Luz natural suave de janela, ambiente limpo e tranquilo.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água na imagem. Sem crachás, sem nomes bordados no jaleco e sem diplomas legíveis na parede. As fotos de especialidade mostram só o ambiente, sem pessoas. As pessoas dos retratos não existem: não devem se parecer com nenhuma pessoa famosa ou conhecida.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: esp-clinica-geral
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Clínica geral): Consultório médico vazio, com mesa de madeira clara, maca ao fundo, um estetoscópio sobre a mesa e uma planta.
+
+2. NOME: esp-dermatologia
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Dermatologia): Sala de dermatologia vazia, com poltrona reclinável branca, uma lupa de luz circular e uma bancada com frascos sem rótulo.
+
+3. NOME: esp-nutricao
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Nutrição): Mesa de consultório de nutrição com uma tigela de frutas frescas, legumes coloridos, uma fita métrica enrolada e um caderno fechado.
+
+4. NOME: esp-fisioterapia
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Fisioterapia): Sala de fisioterapia vazia, com maca, bola suíça, faixas elásticas e halteres leves organizados, e um espelho na parede.
+
+5. NOME: esp-psicologia
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Psicologia): Sala de terapia aconchegante e vazia, com duas poltronas frente a frente, uma mesinha com caixa de lenços, um abajur aceso e uma planta.
+
+6. NOME: esp-pediatria
+   PROPORÇÃO: 16:9 (horizontal)
+   O que mostrar (Pediatria): Consultório de pediatria vazio e colorido, com maca infantil, brinquedos de madeira em uma prateleira e desenhos abstratos coloridos na parede (sem personagens conhecidos).
+
+7. NOME: equipe-helena
+   PROPORÇÃO: 1:1 (quadrada)
+   O que mostrar (retrato da Dra. Helena Martins, clínica geral): Retrato de uma mulher brasileira de cerca de 50 anos, cabelo castanho curto, jaleco branco liso, sorriso acolhedor, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+8. NOME: equipe-rui
+   PROPORÇÃO: 1:1 (quadrada)
+   O que mostrar (retrato do Dr. Rui Albuquerque, clínica geral): Retrato de um homem brasileiro de cerca de 55 anos, cabelo grisalho, óculos de armação fina, jaleco branco liso, expressão tranquila, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+9. NOME: equipe-paula
+   PROPORÇÃO: 1:1 (quadrada)
+   O que mostrar (retrato da Dra. Paula Rezende, dermatologia): Retrato de uma mulher brasileira de cerca de 38 anos, cabelo loiro-escuro preso, jaleco branco liso, sorriso leve, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+10. NOME: equipe-marina
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato de Marina Costa, nutrição): Retrato de uma mulher brasileira negra de cerca de 32 anos, cabelo cacheado solto, jaleco branco liso sobre blusa verde, sorriso aberto, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+11. NOME: equipe-tiago
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato de Tiago Lemos, fisioterapia): Retrato de um homem brasileiro de cerca de 34 anos, cabelo curto escuro, barba curta, camisa polo verde-água lisa, sorriso simpático, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+12. NOME: equipe-carla
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato de Carla Nunes, psicologia): Retrato de uma mulher brasileira de cerca de 42 anos, cabelo liso escuro na altura dos ombros, blusa bege lisa (sem jaleco), expressão calma e atenta, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.
+
+13. NOME: equipe-beatriz
+    PROPORÇÃO: 1:1 (quadrada)
+    O que mostrar (retrato da Dra. Beatriz Farias, pediatria): Retrato de uma mulher brasileira de cerca de 36 anos, cabelo ruivo-escuro preso, jaleco branco liso, sorriso alegre, olhando para a câmera. Rosto centralizado, enquadramento dos ombros para cima. Fundo claro de clínica desfocado.

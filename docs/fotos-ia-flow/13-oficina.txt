@@ -1,0 +1,39 @@
+Gere as 7 imagens abaixo com o Nano Banana para o site Torque Auto Center (oficina mecânica). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Exemplo: o item com NOME: cat-freios deve virar o arquivo cat-freios.png — exatamente assim.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO de todas as imagens: 16:9 (horizontal)
+
+ESTILO (vale para todas as imagens deste pedido): Fotografia profissional de oficina mecânica moderna, limpa e organizada. Piso cinza-escuro, ferramentas arrumadas, iluminação branca forte com leves reflexos alaranjados. Tons de grafite, aço e laranja. Foco nítido na peça ou no ambiente principal, fundo levemente desfocado.
+
+REGRAS (valem para todas): Fotografia realista, nítida e bem iluminada. Sem nenhum texto, letra, número, placa de carro legível, logotipo, marca de carro ou marca d'água na imagem. Carros sem emblema e sem placa. Sem rostos de pessoas (mãos com luvas de mecânico podem aparecer). Não recortar o objeto principal nas bordas.
+Se aparecer qualquer texto, logotipo, emblema ou marca d'água, gere a imagem de novo antes de seguir.
+Consistência: use a primeira imagem aprovada como referência de luz e cores para as seguintes.
+
+IMAGENS
+
+1. NOME: hero
+   O que mostrar (foto principal do site): Interior amplo de uma oficina mecânica moderna, com um carro prata sem emblema erguido em um elevador automotivo ao fundo, do lado direito da imagem. O lado esquerdo da imagem deve ficar mais escuro e vazio (vai receber texto por cima). Bancada de ferramentas organizada ao fundo.
+
+2. NOME: cat-freios
+   O que mostrar (Freios): Close de um disco de freio novo e uma pinça de freio vermelha em uma roda sem o pneu, com a mão de um mecânico de luva preta segurando uma chave.
+
+3. NOME: cat-suspensao
+   O que mostrar (Suspensão e direção): Carro erguido no elevador visto de baixo em ângulo, mostrando o amortecedor e a mola da suspensão dianteira, limpos e novos.
+
+4. NOME: cat-motor
+   O que mostrar (Motor): Capô aberto mostrando um motor de carro limpo, com a mão de um mecânico de luva preta conectando um aparelho de diagnóstico (scanner sem tela legível).
+
+5. NOME: cat-eletrica
+   O que mostrar (Elétrica): Close de uma bateria de carro sem rótulo no cofre do motor, com as pontas de um multímetro encostadas nos polos.
+
+6. NOME: cat-ar
+   O que mostrar (Ar-condicionado): Interior de um carro mostrando o painel e as saídas de ar-condicionado, com uma leve névoa de ar frio saindo das saídas. Sem logotipo no volante.
+
+7. NOME: cat-revisao
+   O que mostrar (Revisão): Mão de mecânico de luva preta despejando óleo novo, dourado e limpo, no motor de um carro, usando um funil. Frasco de óleo sem rótulo.

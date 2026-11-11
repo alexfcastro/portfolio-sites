@@ -51,3 +51,7 @@ Todas estão com `demoStatus: "available"` nos dados. O botão "Abrir demonstra�
 ## Próximo passo
 
 Resolver as pendências do proprietário e publicar: primeiro o portfólio em preview, depois cada demo, conferindo na URL real (HTTPS, links de ida e volta, `noindex` das demos, 404).
+
+## Atualização de 11/11/2026
+
+Redesenho visual do portfólio e da primeira dobra de 6 demos concluído e verificado (ver `validation.md`). Pendente: gerar a segunda leva de fotos (45 imagens, `docs/fotos-ia-flow/LEIA-ME.md`) e importá-las com `node scripts/importar-fotos.mjs <site>`.

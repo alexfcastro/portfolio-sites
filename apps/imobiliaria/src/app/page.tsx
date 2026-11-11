@@ -1,6 +1,6 @@
 import { ArrowRight, Search } from "lucide-react";
 import Link from "next/link";
-import { Foto } from "@/components/foto";
+import { Foto, Retrato } from "@/components/foto";
 import { ListingCard } from "@/components/listing-card";
 import { agents, listings } from "@/data/listings";
 
@@ -81,9 +81,12 @@ export default function HomePage() {
             <ul className="mt-6 space-y-4">
               {agents.map((agent) => (
                 <li key={agent.name} className="flex items-center gap-4">
-                  <span aria-hidden className="grid size-12 place-items-center rounded-full bg-blue-soft font-bold text-blue">
-                    {agent.initials}
-                  </span>
+                  <Retrato
+                    id={`equipe-${agent.initials.toLowerCase()}`}
+                    inicial={agent.initials}
+                    className="size-16"
+                    fallback="bg-blue-soft font-bold text-blue"
+                  />
                   <span>
                     <span className="block font-semibold">{agent.name}</span>
                     <span className="block text-sm text-muted">{agent.focus}</span>

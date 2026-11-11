@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { fotos } from "@/data/fotos";
 
 export function Logo() {
   return (
@@ -84,6 +85,7 @@ export function SiteFooter() {
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
             O Pulse Studio é uma academia fictícia. Este site é uma demonstração criada por Alex Castro: modalidades,
             professores, grade, vagas e planos são exemplos, e nenhuma reserva é enviada.
+            {Object.keys(fotos).length > 0 && " As fotos são ilustrativas, geradas por IA."}
           </p>
         </div>
         {quoteUrl && (

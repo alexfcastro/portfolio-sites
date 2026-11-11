@@ -19,7 +19,14 @@ if (!configPath || !baseUrl) {
   process.exit(1);
 }
 
-const config = JSON.parse(readFileSync(configPath, "utf8"));
+// Datas fixas vencem: __PROXIMA_SEXTA__ vira a próxima sexta-feira a pelo menos 2 dias de hoje.
+const proximaSexta = (() => {
+  const d = new Date();
+  d.setDate(d.getDate() + 2);
+  while (d.getDay() !== 5) d.setDate(d.getDate() + 1);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+})();
+const config = JSON.parse(readFileSync(configPath, "utf8").replaceAll("__PROXIMA_SEXTA__", proximaSexta));
 const outDir = resolve(dirname(configPath), config.outDir);
 mkdirSync(outDir, { recursive: true });
 

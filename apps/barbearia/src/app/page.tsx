@@ -1,6 +1,6 @@
 import { CalendarPlus, Clock, MapPin, Star } from "lucide-react";
 import Link from "next/link";
-import { Foto } from "@/components/foto";
+import { Foto, Retrato } from "@/components/foto";
 import { IllustrativeMap, StyleIllustration, galleryItems } from "@/components/illustrations";
 import { WhatsAppPreview } from "@/components/whatsapp-preview";
 import { business, professionals, sampleReviews, services } from "@/data/business";
@@ -121,12 +121,12 @@ export default function HomePage() {
           <ul className="mt-10 grid gap-5 md:grid-cols-3">
             {professionals.map((professional) => (
               <li key={professional.id} className="rounded-card border border-edge bg-coal p-6">
-                <span
-                  aria-hidden
-                  className="grid size-16 place-items-center rounded-full border border-gold/40 bg-coal-3 font-display text-2xl text-gold"
-                >
-                  {professional.shortName.slice(0, 1)}
-                </span>
+                <Retrato
+                  id={`equipe-${professional.id}`}
+                  inicial={professional.shortName.slice(0, 1)}
+                  className="size-20 border border-gold/40"
+                  fallback="bg-coal-3 font-display text-2xl text-gold"
+                />
                 <h3 className="mt-4 text-2xl font-semibold">{professional.name}</h3>
                 <p className="text-sm font-semibold text-gold">{professional.role}</p>
                 <p className="mt-2 text-sm leading-relaxed text-smoke">{professional.bio}</p>

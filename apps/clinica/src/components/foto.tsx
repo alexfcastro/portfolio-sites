@@ -36,3 +36,26 @@ export function Foto({
     />
   );
 }
+
+/** Retrato redondo de alguém da equipe (pessoa fictícia, gerada por IA). Sem foto, mostra a inicial. */
+export function Retrato({
+  id,
+  inicial,
+  className = "",
+  fallback = "",
+}: {
+  id: string;
+  inicial: string;
+  className?: string;
+  /** Classes usadas só quando não há foto (cores e tipografia da inicial). */
+  fallback?: string;
+}) {
+  if (!temFoto(id)) {
+    return (
+      <span aria-hidden className={`grid shrink-0 place-items-center rounded-full ${className} ${fallback}`}>
+        {inicial}
+      </span>
+    );
+  }
+  return <Foto id={id} sizes="160px" className={`shrink-0 rounded-full ${className}`} />;
+}

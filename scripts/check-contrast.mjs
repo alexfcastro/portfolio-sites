@@ -148,6 +148,8 @@ try {
   for (const width of widths) {
     const mobile = width < 768;
     await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile }, sessionId);
+    // Sem animações: as entradas ao rolar deixariam o conteúdo fora da tela transparente durante a medição.
+    await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] }, sessionId);
     for (const app of config.apps) {
       if (app.storage) {
         const loaded = waitFor("Page.loadEventFired", sessionId);
