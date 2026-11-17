@@ -13,7 +13,7 @@ export function DemoBar() {
           <span className="hidden font-normal text-demo-muted sm:inline"> · nenhuma reserva ou mensagem real é criada</span>
         </p>
         {(home || caseUrl) && (
-          <nav aria-label="Portfólio de Alex Castro" className="flex items-center gap-4">
+          <nav aria-label="Portfólio do Estúdio X" className="flex items-center gap-4">
             {home && (
               <a href={home} className="inline-flex min-h-9 items-center gap-1 font-medium underline-offset-4 hover:underline">
                 <ArrowLeft aria-hidden className="size-3.5" />

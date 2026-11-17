@@ -40,6 +40,8 @@
     "dev:produtos-naturais": "pnpm --filter @ax/produtos-naturais dev",
     "build:produtos-naturais": "pnpm --filter @ax/produtos-naturais build",
     "dev:floricultura": "pnpm --filter @ax/floricultura dev",
-    "build:floricultura": "pnpm --filter @ax/floricultura build"
+    "build:floricultura": "pnpm --filter @ax/floricultura build",
+    "dev:landing": "pnpm --filter @ax/landing dev",
+    "build:landing": "pnpm --filter @ax/landing build"
   }
 }

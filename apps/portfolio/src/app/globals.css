@@ -391,3 +391,155 @@ p {
   border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-line));
   box-shadow: var(--shadow-raised);
 }
+
+/* ---------- Abertura em profundidade (project-tunnel.tsx) ---------- */
+.cena-3d {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* A altura extra é o "trilho" de rolagem que conduz a cena. */
+  .cena-rolagem {
+    height: calc(100svh + var(--janelas, 6) * 42svh);
+  }
+
+  .cena-palco {
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100svh - var(--header-height));
+    overflow: hidden;
+  }
+
+  .cena-texto {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 5;
+    will-change: transform, opacity;
+  }
+
+  .cena-alternativa {
+    display: none;
+  }
+
+  .cena-3d {
+    display: block;
+    position: absolute;
+    inset: 0;
+    perspective: 1300px;
+    perspective-origin: 50% 50%;
+    background:
+      radial-gradient(38rem 24rem at 50% 55%, color-mix(in srgb, var(--color-accent) 30%, transparent), transparent 70%),
+      radial-gradient(30rem 20rem at 85% 15%, rgb(122 92 255 / 0.22), transparent 70%);
+  }
+
+  .cena-mundo,
+  .cena-mundo > ul {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .cena-janela {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 84vw;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  .cena-rotulo {
+    opacity: var(--rotulo, 0);
+  }
+
+  .cena-monitor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90vw;
+    height: 104vw;
+    border-radius: 1.25rem;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    background: #1a1d23;
+    box-shadow:
+      0 0 0 6px rgb(255 255 255 / 0.04),
+      0 40px 90px -30px rgb(47 84 235 / 0.55);
+    overflow: hidden;
+  }
+
+  .cena-dica {
+    position: absolute;
+    left: 50%;
+    bottom: 4.5rem;
+    z-index: 6;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    translate: -50% 0;
+    border-radius: 999px;
+    border: 1px solid rgb(255 255 255 / 0.15);
+    background: rgb(20 22 26 / 0.7);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--color-canvas);
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+  }
+
+  .cena-rodape {
+    position: absolute;
+    inset: auto 1rem 0.75rem 1rem;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  /* No celular, o texto de abertura fica mais enxuto para caber acima do mosaico. */
+  @media (max-width: 1023px) {
+    .cena-texto > div {
+      padding-top: 1.5rem;
+      padding-bottom: 0;
+    }
+
+    .cena-fatos {
+      display: none;
+    }
+
+    /* A dica vai para o canto, ao lado do botão de pular, para não cobrir os botões da abertura. */
+    .cena-dica {
+      left: 1rem;
+      bottom: 0.9rem;
+      translate: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cena-rolagem {
+      height: calc(100svh + var(--janelas, 6) * 52svh);
+    }
+
+    .cena-janela {
+      width: 46vw;
+    }
+
+    .cena-monitor {
+      width: 56vw;
+      height: 31vw;
+    }
+
+    .cena-dica {
+      left: 50%;
+      bottom: 1.25rem;
+      translate: -50% 0;
+    }
+
+    .cena-rodape {
+      inset: auto 2rem 1.25rem 2rem;
+    }
+  }
+}

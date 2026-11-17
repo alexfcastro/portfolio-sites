@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
+  authors: [{ name: siteConfig.owner }],
+  creator: siteConfig.owner,
   robots: isIndexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {
     type: "website",

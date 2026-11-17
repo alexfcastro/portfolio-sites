@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Política de privacidade",
-  description: "Como o portfólio de Alex Castro trata as informações de quem entra em contato.",
+  description: "Como o Estúdio X, de Alex Castro, trata as informações de quem entra em contato.",
   path: "/privacidade",
 });
 
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
         <div className="prose-page max-w-3xl">
           <p>
             Esta página explica, de forma direta, como este site funciona em relação às informações de quem o visita e
-            de quem entra em contato com <strong>{siteConfig.name}</strong>. Ela descreve o funcionamento atual do
+            de quem entra em contato com o <strong>{siteConfig.name}</strong>, de {siteConfig.owner}. Ela descreve o funcionamento atual do
             site e será atualizada se algo mudar.
           </p>
 
@@ -91,9 +91,8 @@ export default function PrivacyPage() {
 
           <h2>Projetos demonstrativos</h2>
           <p>
-            Os projetos apresentados no portfólio são conceituais e usam negócios fictícios. Quando demonstrações
-            navegáveis forem publicadas, elas usarão apenas dados de exemplo e não criarão pedidos, reservas ou
-            mensagens reais.
+            Os projetos apresentados no portfólio são conceituais e usam negócios fictícios. As demonstrações
+            navegáveis usam apenas dados de exemplo e não criam pedidos, reservas ou mensagens reais.
           </p>
 
           <h2>Seus direitos e contato</h2>

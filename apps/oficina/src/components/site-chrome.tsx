@@ -51,7 +51,7 @@ export function SiteFooter() {
         <div>
           <p className="text-xl font-extrabold">TORQUE AUTO CENTER</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/70">
-            A Torque é uma oficina fictícia. Esta página é uma demonstração criada por Alex Castro: serviços, faixas de
+            A Torque é uma oficina fictícia. Esta página é uma demonstração criada pelo Estúdio X, de Alex Castro: serviços, faixas de
             preço e acompanhamento são exemplos. Nenhum orçamento é enviado e nenhuma foto sai do seu navegador.
             {Object.keys(fotos).length > 0 && " As fotos são ilustrativas, geradas por IA."}
           </p>

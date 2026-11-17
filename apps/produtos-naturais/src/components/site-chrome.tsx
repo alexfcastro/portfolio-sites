@@ -61,7 +61,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-2xl">Raiz &amp; Grão</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/80">
-            A Raiz &amp; Grão é uma loja fictícia. Este site é uma demonstração criada por Alex Castro: produtos, preços,
+            A Raiz &amp; Grão é uma loja fictícia. Este site é uma demonstração criada pelo Estúdio X, de Alex Castro: produtos, preços,
             estoque e bairros são exemplos, e nenhum pedido é enviado. As fotos são ilustrativas, geradas por IA.
           </p>
         </div>

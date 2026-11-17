@@ -30,12 +30,13 @@ const port = (n) => `http://localhost:${3100 + n}`;
 
 export const flows = [
   {
-    name: "portfólio: listagem com 12 demos e contato com projeto pré-selecionado",
+    name: "portfólio: listagem com 12 demos, 6 landing pages e contato com projeto pré-selecionado",
     base: P,
     path: "/projetos",
     steps: [],
     check: s(`return {
-      cards: $$('main article').length === 12 || $$('main article').length,
+      cards: $$('main article').filter((a) => !a.closest('#landing-pages')).length === 12 || $$('main article').length,
+      landings: $$('#landing-pages article').length === 6 || $$('#landing-pages article').length,
       abrir: $$('a').filter((a) => a.textContent.includes('Abrir demonstração')).length === 12,
     };`),
   },

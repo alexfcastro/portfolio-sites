@@ -18,5 +18,17 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "gato-preto": {
     "width": 1200,
     "height": 896
+  },
+  "equipe-bia": {
+    "width": 1024,
+    "height": 1024
+  },
+  "equipe-tom": {
+    "width": 1024,
+    "height": 1024
+  },
+  "ambiente-banho": {
+    "width": 1200,
+    "height": 896
   }
 };

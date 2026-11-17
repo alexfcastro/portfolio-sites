@@ -29,7 +29,7 @@ export function SiteFooter() {
         <div>
           <p className="font-serif text-2xl">Sabor &amp; Brasa</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/75">
-            O Sabor &amp; Brasa é um restaurante fictício. Esta página é uma demonstração criada por Alex Castro: cardápio,
+            O Sabor &amp; Brasa é um restaurante fictício. Esta página é uma demonstração criada pelo Estúdio X, de Alex Castro: cardápio,
             preços, bairros e taxas são exemplos, e nenhum pedido é enviado. As fotos dos pratos são ilustrativas, geradas por IA.
           </p>
         </div>

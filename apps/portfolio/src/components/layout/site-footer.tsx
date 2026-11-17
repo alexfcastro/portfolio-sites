@@ -86,7 +86,7 @@ export function SiteFooter() {
       <div className="border-t border-ink-line">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-muted-on-dark sm:flex-row sm:justify-between">
           <p>
-            © {year} {siteConfig.name}. Todos os direitos reservados.
+            © {year} {siteConfig.name}, por {siteConfig.owner}. Todos os direitos reservados.
           </p>
           <p>Os projetos apresentados são conceituais e usam negócios fictícios.</p>
         </div>

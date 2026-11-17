@@ -65,7 +65,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-3xl">Flor &amp; Afeto</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75">
-            A Flor &amp; Afeto é uma floricultura fictícia. Este site é uma demonstração criada por Alex Castro: produtos,
+            A Flor &amp; Afeto é uma floricultura fictícia. Este site é uma demonstração criada pelo Estúdio X, de Alex Castro: produtos,
             preços, bairros e horários são exemplos, e nenhum pedido é enviado. As fotos são ilustrativas, geradas por IA.
           </p>
         </div>

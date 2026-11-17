@@ -26,5 +26,17 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "topete": {
     "width": 1024,
     "height": 1024
+  },
+  "equipe-rafa": {
+    "width": 1024,
+    "height": 1024
+  },
+  "equipe-leo": {
+    "width": 1024,
+    "height": 1024
+  },
+  "equipe-davi": {
+    "width": 1024,
+    "height": 1024
   }
 };

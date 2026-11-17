@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useSyncExternalStore, type ChangeEvent, ty
 import { SelectField, TextAreaField, TextField } from "@/components/contact/form-fields";
 import type { ContactMode } from "@/config/site";
 import { businessTypeOptions, objectiveOptions, projectTypeOptions } from "@/data/contact";
+import { describeSample } from "@/data/personalizer";
 import { buildMailtoUrl, buildWhatsAppUrl } from "@/lib/contact/channels";
 import {
   buildContactMessage,
@@ -43,14 +44,18 @@ function useHydrated(): boolean {
   );
 }
 
-/** Lê `?projeto=<slug>` e pré-seleciona apenas slugs cadastrados. */
+/**
+ * Lê `?projeto=<slug>` e pré-seleciona apenas slugs cadastrados. Também lê as escolhas da amostra
+ * "Sob medida" (segmento, cor, estilo, recurso) e começa a mensagem com esse resumo, editável.
+ */
 export function ContactFormWithParams(props: ContactFormProps) {
   const searchParams = useSearchParams();
   const slug = resolveProjectSlug(
     searchParams.get("projeto"),
     props.projects.map((project) => project.slug),
   );
-  return <ContactForm {...props} initialProjectSlug={slug} />;
+  const sample = describeSample((field) => searchParams.get(field));
+  return <ContactForm {...props} initialProjectSlug={slug} initialMessage={sample} />;
 }
 
 export function ContactForm({
@@ -59,12 +64,14 @@ export function ContactForm({
   emailRecipient,
   projects,
   initialProjectSlug = "",
-}: ContactFormProps & { initialProjectSlug?: string }) {
+  initialMessage = "",
+}: ContactFormProps & { initialProjectSlug?: string; initialMessage?: string }) {
   const hydrated = useHydrated();
   const slugs = projects.map((project) => project.slug);
   const [values, setValues] = useState<ContactFormValues>(() => ({
     ...emptyContactForm,
     projectSlug: initialProjectSlug,
+    message: initialMessage,
   }));
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState("");

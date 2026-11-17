@@ -83,7 +83,7 @@ export function SiteFooter() {
             Pulse <span className="text-lime">Studio</span>
           </p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-            O Pulse Studio é uma academia fictícia. Este site é uma demonstração criada por Alex Castro: modalidades,
+            O Pulse Studio é uma academia fictícia. Este site é uma demonstração criada pelo Estúdio X, de Alex Castro: modalidades,
             professores, grade, vagas e planos são exemplos, e nenhuma reserva é enviada.
             {Object.keys(fotos).length > 0 && " As fotos são ilustrativas, geradas por IA."}
           </p>

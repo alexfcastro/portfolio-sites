@@ -4,7 +4,7 @@ export const hero = {
   titleHighlight: "trabalham",
   titleEnd: "pelo seu negócio.",
   subtitle:
-    "Desenvolvo sites modernos para pequenos e médios negócios, com foco em presença digital, atendimento e soluções como agendamentos, orçamentos e contato pelo WhatsApp.",
+    "Desenvolvo sites modernos e sob medida para pequenos e médios negócios. Cada projeto é pensado para o jeito que o seu negócio atende: agendamentos, pedidos, orçamentos e contato pelo WhatsApp.",
 };
 
 export const benefits = [

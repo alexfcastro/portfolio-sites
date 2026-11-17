@@ -1,7 +1,7 @@
 {
   "outDir": "../../apps/portfolio/public/projects/restaurante",
   "shots": [
-    { "name": "desktop-cardapio", "path": "/", "width": 1440, "height": 900, "scale": 1, "steps": ["window.scrollTo(0, 330);"] },
+    { "name": "desktop-cardapio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
     {
       "name": "desktop-adicionais",
       "path": "/",

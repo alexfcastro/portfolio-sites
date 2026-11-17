@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div>
           <BravusLogo />
           <p className="mt-4 max-w-md text-sm leading-relaxed text-smoke">
-            Bravus Barbearia é um negócio fictício. Esta página é uma demonstração criada por Alex Castro: serviços,
+            Bravus Barbearia é um negócio fictício. Esta página é uma demonstração criada pelo Estúdio X, de Alex Castro: serviços,
             preços, equipe, avaliações e agenda são exemplos, e nenhum agendamento é real. As fotos são ilustrativas, geradas por IA.
           </p>
           <ul className="mt-4 flex flex-wrap gap-x-5 text-sm">

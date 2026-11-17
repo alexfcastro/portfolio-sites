@@ -10,6 +10,8 @@ export interface ShowcaseItem {
   name: string;
   category: string;
   href: string;
+  /** Endereço da demonstração, quando ela está disponível neste ambiente. */
+  demoHref?: string | null;
   src: string;
   width: number;
   height: number;

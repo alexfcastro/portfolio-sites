@@ -138,5 +138,13 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "hz-0232-quarto": {
     "width": 1200,
     "height": 670
+  },
+  "equipe-mv": {
+    "width": 1024,
+    "height": 1024
+  },
+  "equipe-jc": {
+    "width": 1024,
+    "height": 1024
   }
 };

@@ -198,7 +198,7 @@ export const projects: Project[] = [
       implemented("Pedido pelo WhatsApp", "Gera um código e a prévia local da mensagem do pedido, sem envio."),
     ],
     media: [
-      screenshot("restaurante", "desktop-cardapio.png", DESKTOP, "Cardápio da demo Sabor & Brasa no computador: categorias fixas no topo e cards de pratos com preço e botão Adicionar.", "Cardápio por categorias (computador)."),
+      screenshot("restaurante", "desktop-cardapio.png", DESKTOP, "Página inicial da demo Sabor & Brasa no computador: foto da churrasqueira em brasa, título “Da brasa para a sua mesa” e botão Ver cardápio.", "Página inicial da demonstração (computador)."),
       screenshot("restaurante", "desktop-adicionais.png", DESKTOP, "Diálogo de adicionais da picanha: ponto da carne obrigatório, dois acompanhamentos extras marcados e total atualizado.", "Adicionais com obrigatórios, limite e total atualizado na hora."),
       screenshot("restaurante", "mobile-adicionais.png", MOBILE, "Diálogo do suco natural no celular com sabor maracujá e tamanho 500 ml escolhidos.", "Escolha de adicionais no celular."),
       screenshot("restaurante", "desktop-carrinho.png", DESKTOP, "Carrinho com três itens, entrega no bairro Jardim das Palmeiras, taxa e total.", "Carrinho com entrega: bairro, taxa e total."),

@@ -15,7 +15,7 @@ export default function HomePage() {
         {temFoto("hero") && (
           <>
             <Foto id="hero" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
-            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/90 to-night/55" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/80 to-night/25 max-md:via-night/85 max-md:to-night/70" />
           </>
         )}
         <svg

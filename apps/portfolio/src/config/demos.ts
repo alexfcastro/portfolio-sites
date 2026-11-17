@@ -24,6 +24,11 @@ const rawDemoUrls: Record<string, string | undefined> = {
 
 export const demoUrlSlugs = Object.keys(rawDemoUrls);
 
+/** Endereço do app de landing pages (apps/landing); cada página fica em `<endereço>/<slug>`. */
+export function getLandingBaseUrl(): string | null {
+  return parsePublicUrl(process.env.NEXT_PUBLIC_DEMO_URL_LANDING, siteConfig.deployEnv);
+}
+
 export function getConfiguredDemoUrl(slug: string): string | null {
   return parsePublicUrl(rawDemoUrls[slug], siteConfig.deployEnv);
 }

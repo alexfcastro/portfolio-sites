@@ -11,8 +11,13 @@ interface BrandSignatureProps {
 export function BrandSignature({ tone = "light", asHomeLink = false }: BrandSignatureProps) {
   const content = (
     <>
-      <AxSymbol tone={tone} className="size-8 shrink-0" />
-      <span className="font-display text-[1.0625rem] font-bold tracking-tight whitespace-nowrap">{siteConfig.name}</span>
+      <AxSymbol variant="tile" className="size-9 shrink-0 drop-shadow-[0_6px_14px_rgb(47_84_235/0.45)]" />
+      <span className="flex flex-col leading-none">
+        <span className="font-display text-[1.125rem] font-extrabold tracking-tight whitespace-nowrap">{siteConfig.name}</span>
+        <span className={`mt-1 text-[0.6875rem] font-medium whitespace-nowrap ${tone === "dark" ? "text-muted-on-dark" : "text-muted"}`}>
+          por {siteConfig.owner}
+        </span>
+      </span>
     </>
   );
 

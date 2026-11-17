@@ -1,0 +1,47 @@
+{
+  "outDir": "../../apps/portfolio/public/landing",
+  "shots": [
+    {
+      "name": "residencial-aurora",
+      "path": "/residencial-aurora",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "fluente-na-mala",
+      "path": "/fluente-na-mala",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "festival-sabores-da-serra",
+      "path": "/festival-sabores-da-serra",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "agenda-leve",
+      "path": "/agenda-leve",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "clube-serra-alta",
+      "path": "/clube-serra-alta",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "solar-viva",
+      "path": "/solar-viva",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  ]
+}

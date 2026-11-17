@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import { Faixa } from "@/components/faixa";
+import { Foto, temFoto } from "@/components/foto";
 import { MenuBoard } from "@/components/menu-board";
 import { MessagePreview } from "@/components/message-preview";
 import { OpenStatus } from "@/components/open-status";
@@ -21,9 +22,13 @@ export default function MenuPage() {
     <>
       <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-coal text-cream">
         {/* Foto ilustrativa (gerada por IA) como fundo; o degradê garante a leitura do texto. */}
-        <span className="foto fundo absolute inset-0 -z-20 object-[70%_center]">
-          <Image src="/fotos/picanha.webp" alt="" fill preload sizes="100vw" className="foto-img" />
-        </span>
+        {temFoto("ambiente-brasa") ? (
+          <Foto id="ambiente-brasa" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
+        ) : (
+          <span className="foto fundo absolute inset-0 -z-20 object-[70%_center]">
+            <Image src="/fotos/picanha.webp" alt="" fill preload sizes="100vw" className="foto-img" />
+          </span>
+        )}
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-gradient-to-r from-coal via-coal/90 to-coal/25 max-md:via-coal/85 max-md:to-coal/70"
@@ -87,6 +92,21 @@ export default function MenuPage() {
       </section>
 
       <MenuBoard />
+
+      {temFoto("ambiente-salao") && (
+        <section aria-labelledby="casa-title" className="painel-foto min-h-[60svh] justify-end bg-coal text-cream">
+          <Foto id="ambiente-salao" sizes="100vw" />
+          <div className="wrap painel-texto py-12 sm:py-16">
+            <p className="kicker !text-cream">A casa</p>
+            <h2 id="casa-title" className="mt-3 max-w-2xl text-4xl leading-tight sm:text-6xl">
+              Mesa posta, brasa acesa e o cheiro que chega antes do prato.
+            </h2>
+            <p className="mt-4 max-w-xl text-cream/90">
+              Foto ilustrativa, gerada por IA: o Sabor &amp; Brasa é um restaurante fictício.
+            </p>
+          </div>
+        </section>
+      )}
 
       <section id="horarios" aria-labelledby="horarios-title" className="border-t border-line bg-paper py-16">
         <div className="wrap grid gap-10 md:grid-cols-2">

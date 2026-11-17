@@ -10,14 +10,14 @@ export default function HomePage() {
         {temFoto("hero") && (
           <>
             <Foto id="hero" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
-            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/70" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/30 max-md:via-navy/85 max-md:to-navy/75" />
           </>
         )}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(44rem_26rem_at_95%_0%,rgb(184_155_94/0.22),transparent_70%)]"
         />
-        <div className="wrap relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.25fr_1fr]">
+        <div className="wrap relative grid min-h-[76svh] items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.25fr_1fr]">
          <div>
           <p className="kicker !text-brass">Escritório de advocacia</p>
           <h1 id="hero-title" className="mt-5 max-w-3xl text-4xl leading-tight font-medium sm:text-6xl">

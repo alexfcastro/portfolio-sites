@@ -12,7 +12,7 @@ export default function NoticesPage() {
       <h1 className="mt-3 text-5xl">Avisos legais e privacidade</h1>
       <h2 className="mt-10 text-3xl">Demonstração</h2>
       <p className="text-muted">
-        Almeida &amp; Prado Advocacia é um escritório fictício. Este site foi criado por Alex Castro como demonstração de
+        Almeida &amp; Prado Advocacia é um escritório fictício. Este site foi criado pelo Estúdio X, de Alex Castro, como demonstração de
         um site institucional e não presta serviços jurídicos.
       </p>
       <h2 className="mt-10 text-3xl">Conteúdo informativo</h2>

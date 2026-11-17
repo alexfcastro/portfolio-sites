@@ -298,3 +298,28 @@ A partir de 20 sites de referência enviados pelo proprietário (hotelaria, est�
 - Verificado com a prévia local: 213 testes unitários (portfólio e 12 demos), `check:reflow` (392), `check:contrast` (7.422 textos) e `check:firefox` (reflow, 17 fluxos e console). Capturas refeitas, agora sem animações para mostrar o estado final. Hover conferido por captura em restaurante, barbearia e imobiliária.
 - Não refeito: `lint` local (pnpm bloqueado; roda no CI) e Lighthouse. Texto sobre foto não é medido pelo verificador de contraste; os degradês de leitura foram conferidos a olho.
 - **Serviços e fotógrafa (em seguida):** a Resolve abre com foto em tela cheia, ganhou a seção "Três passos" e os serviços passaram a ter foto; a Lia Torres abre com título grande e um mosaico de trabalhos de ponta a ponta. Depois disso: `check:reflow` (392), `check:contrast` (7.450 textos), `check:firefox` e os testes das duas demos, sem problemas; capturas das duas refeitas.
+
+## Fotos novas, revisão das existentes e página inicial (12/11/2026)
+
+- 56 imagens geradas no Flow e importadas (ver `assets.md`); abertura com foto em oficina, advocacia e academia; churrascaria abre com a brasa e ganhou a seção "A casa".
+- Portfólio: projetos logo após a abertura, nova seção interativa "Sob medida" (a amostra muda conforme tipo de negócio, cor, estilo e recurso principal), logotipo em quadrado com degradê.
+- Verificado com a prévia local: 213 testes unitários, `check:reflow` (392), `check:contrast` (7.552 textos) e `check:firefox` (reflow, 17 fluxos e console), sem problemas. Capturas das 12 demos refeitas.
+- **Abertura em profundidade (portfólio):** em telas largas, as 12 janelas dos projetos formam um mosaico num monitor; ao rolar, elas se soltam e a câmera atravessa um corredor em 3D, parando em cada projeto (link para o case). O mouse inclina a cena, há "Pular a apresentação" e o foco pelo teclado leva a página até a janela. Em telas menores ou com "reduzir movimento", continua a faixa de capturas. Conferido por capturas em 1280 e 1440 px em vários pontos da rolagem; reflow, contraste, Firefox e testes do portfólio refeitos sem problemas. Não testei em aparelho real nem medi o desempenho da animação.
+
+## Ajustes a partir do relatório externo de análise (12/11/2026)
+
+Adotado: abertura em 3D com os 6 projetos em destaque (em vez de 12) e também no celular; destaques reduzidos a 3, com funções diferentes e uma tarefa para testar; seção de benefícios retirada da página inicial (repetia argumentos); título do catálogo corrigido ("Doze projetos, diferentes desafios de negócio"); instrução do índice sem depender de mouse, com prévia também no foco; escolhas da amostra "Sob medida" levadas ao contato e pré-preenchidas na mensagem; promessas absolutas trocadas por afirmações precisas; texto de estado da demo e política de privacidade alinhados; seção de dúvidas sobre a contratação.
+
+Não adotado: tornar a abertura opcional (decisão do proprietário de mantê-la), preços fixos, e os itens que dependem do proprietário (canal de contato, hospedagem das demos, foto e dados pessoais em "Sobre").
+
+As respostas da seção de dúvidas descrevem o que é combinado na proposta e precisam ser revisadas pelo proprietário antes de publicar.
+
+Depois das mudanças: testes do portfólio (59), `check:reflow` (392), `check:contrast` e `check:firefox` sem problemas.
+
+## Landing pages e janelas clicáveis (13/11/2026)
+
+- **Novo app `apps/landing`** (porta 3113): seis landing pages com ofertas fictícias e objetivos diferentes: Residencial Aurora (lançamento imobiliário), Fluente na Mala (curso), Festival Sabores da Serra (evento), Agenda Leve (aplicativo), Clube Serra Alta (assinatura de café) e Solar Viva (serviço com simulação). Cada uma tem identidade própria, abertura em tela cheia com foto, um elemento interativo (plantas, programação, planos mensal/anual, montagem do plano, calculadora) e formulário de conversão que valida e confirma, sem enviar nem guardar nada.
+- **Portfólio:** seção "Landing pages" na página inicial e em /projetos, item no menu, e as janelas da abertura em 3D agora abrem a demonstração (com "Ver projeto" ao lado).
+- **Como o app foi criado:** o pnpm continua indisponível nesta máquina, então as dependências de `apps/landing` foram ligadas à mão às mesmas versões do `apps/autonomo`, e o bloco correspondente foi copiado no `pnpm-lock.yaml`. Falta confirmar com `pnpm install --frozen-lockfile` (o CI faz isso no próximo envio).
+- Verificado com a prévia local: testes do app novo (9) e do portfólio (59); `check:reflow` (448 verificações, incluindo as 7 páginas novas em 8 larguras); `check:contrast` (8.392 textos); `check:firefox` (o fluxo da listagem passou a conferir os 12 projetos e as 6 landing pages). Capturas das 6 páginas feitas para o portfólio.
+- 19 fotos geradas no Flow para as landing pages. Uma veio com passaportes e texto visível e foi refeita; a descartada está em `fotos-ia/landing/substituidas/`.

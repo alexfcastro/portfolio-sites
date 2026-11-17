@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Sobre",
   description:
-    "Alex Castro desenvolve sites e soluções digitais para pequenos e médios negócios, unindo design, tecnologia e funcionalidades úteis no dia a dia.",
+    "No Estúdio X, Alex Castro desenvolve sites e soluções digitais para pequenos e médios negócios, unindo design, tecnologia e funcionalidades úteis no dia a dia.",
   path: "/sobre",
 });
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="container-page grid gap-12 pt-12 pb-16 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16">
         <div>
           <p className="eyebrow">Sobre</p>
-          <h1 className="mt-3 text-4xl leading-[1.1] font-extrabold sm:text-5xl">Olá, eu sou o {siteConfig.name}.</h1>
+          <h1 className="mt-3 text-4xl leading-[1.1] font-extrabold sm:text-5xl">Olá, eu sou o {siteConfig.owner}.</h1>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
             <p>
               Desenvolvo soluções digitais voltadas para pequenos e médios negócios, unindo design, tecnologia e
@@ -49,7 +49,7 @@ export default function AboutPage() {
               simples de usar e úteis no dia a dia do negócio.
             </p>
             <p>
-              Trabalho de forma independente: sou eu quem conversa com você, planeja, desenvolve e publica o site. Isso
+              O Estúdio X é o nome do meu trabalho independente: sou eu quem conversa com você, planeja, desenvolve e publica o site. Isso
               torna a comunicação direta e cada decisão pode ser explicada em linguagem simples.
             </p>
           </div>

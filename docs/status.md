@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado em 27/09/2026.
+Atualizado em 17/11/2026.
 
 ## Fases concluídas
 
@@ -46,7 +46,7 @@ Todas estão com `demoStatus: "available"` nos dados. O botão "Abrir demonstra�
 - Testar em Safari/iOS, em aparelhos reais e com leitor de tela (Chromium e Firefox foram testados).
 - Considerar CSP completa após escolher o host.
 - LCP de laboratório do portfólio de 2,6–3,0 s em 4G lento simulado (nota de desempenho 0,93–0,97; LCP = primeira pintura, sem imagem atrasada). Ver `validation.md`.
-- CI (`.github/workflows/ci.yml`) criado, mas não executado: o repositório não tem remoto no GitHub.
+- CI (`.github/workflows/ci.yml`): o repositório está em github.com/alexfcastro/portfolio-sites; conferir no CI se `pnpm install --frozen-lockfile` aceita o app `apps/landing` (o lockfile foi ajustado à mão).
 
 ## Próximo passo
 
@@ -54,4 +54,12 @@ Resolver as pendências do proprietário e publicar: primeiro o portfólio em pr
 
 ## Atualização de 11/11/2026
 
-Redesenho visual do portfólio e da primeira dobra de 6 demos concluído e verificado (ver `validation.md`). Pendente: gerar a segunda leva de fotos (45 imagens, `docs/fotos-ia-flow/LEIA-ME.md`) e importá-las com `node scripts/importar-fotos.mjs <site>`.
+Redesenho visual do portfólio e da primeira dobra de 6 demos concluído e verificado (ver `validation.md`).
+
+## Atualização de 17/11/2026
+
+- **Marca:** o portfólio passou a se chamar **Estúdio X, por Alex Castro**, com símbolo novo (`lib/brand.ts`, `app/icon.svg`, `public/brand/`).
+- **Página inicial:** abertura com corredor 3D de janelas (`project-tunnel.tsx`, também no celular; cada janela abre a demo), destaques temáticos, personalizador ligado ao formulário de contato e FAQ.
+- **Fotos:** as 12 demos têm fotos realistas geradas por IA (182 publicadas; segunda leva importada; as fracas foram trocadas). Originais em `fotos-ia/` (fora do Git).
+- **Landing pages:** app novo `apps/landing` (porta 3113) com 6 landing pages fictícias, listadas no portfólio em `/#landing-pages`. Precisa de `NEXT_PUBLIC_DEMO_URL_LANDING` no portfólio quando publicado.
+- Pendências do proprietário acima continuam valendo (contato real, hospedagem, publicação, revisão da privacidade). Agora também: **revisar as respostas do FAQ** (prazos e formas de contratação) e publicar o app de landing pages.

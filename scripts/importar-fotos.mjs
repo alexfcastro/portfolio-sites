@@ -198,8 +198,33 @@ const SEGUNDA_LEVA = {
     "equipe-beatriz",
   ],
   barbearia: { "equipe-rafa": "barbearia-equipe-rafa", "equipe-leo": "barbearia-equipe-leo", "equipe-davi": "barbearia-equipe-davi" },
-  petshop: { "equipe-bia": "petshop-equipe-bia", "equipe-tom": "petshop-equipe-tom" },
+  petshop: { "equipe-bia": "petshop-equipe-bia", "equipe-tom": "petshop-equipe-tom", "ambiente-banho": "ambiente-banho" },
   imobiliaria: { "equipe-mv": "imobiliaria-equipe-mv", "equipe-jc": "imobiliaria-equipe-jc" },
+  // Terceira leva: fotos de ambiente (o lugar em si), geradas depois da revisão de 12/11/2026.
+  restaurante: ["ambiente-brasa", "ambiente-salao"],
+  servicos: ["ambiente-equipe"],
+  // Landing pages (apps/landing): 19 fotos, uma leva só.
+  landing: [
+    "aurora-fachada",
+    "aurora-living",
+    "aurora-varanda",
+    "aurora-lazer",
+    "fluente-hero",
+    "fluente-aula",
+    "fluente-viagem",
+    "festival-hero",
+    "festival-prato",
+    "festival-palco",
+    "festival-feira",
+    "agenda-hero",
+    "cafe-hero",
+    "cafe-fazenda",
+    "cafe-preparo",
+    "cafe-caixa",
+    "solar-hero",
+    "solar-instalacao",
+    "solar-casa",
+  ],
 };
 for (const [site, itens] of Object.entries(SEGUNDA_LEVA)) {
   MAPAS[site] ??= {};

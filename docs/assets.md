@@ -78,6 +78,30 @@ Observações da revisão (28/09/2026):
 - **Barbearia:** duas fotos mostram o cliente de perfil com o rosto visível e uma mostra o barbeiro trabalhando; são pessoas geradas por IA, não reais. Se preferir, gere de novo com o rosto em sombra e rode o importador.
 - Mapas e fotos de equipe continuam ilustrativos (sem foto), de propósito.
 
-### Segunda leva de fotos (pendente)
+### Segunda leva de fotos (gerada em 12/11/2026)
 
-Faltam 45 imagens para todas as demos terem fotos: oficina (7), advocacia (7), academia (11), clínica (13: especialidades e equipe) e retratos de equipe de barbearia, pet shop e imobiliária (7). Prompts em `docs/fotos-ia-flow/13` a `17`. As páginas já têm os espaços: sem a foto, aparece a inicial ou o fundo liso. Mapas continuam ilustrativos, porque os negócios não têm endereço.
+Geradas e importadas as 45 imagens que faltavam para todas as demos terem fotos: oficina (7), advocacia (7), academia (11), clínica (13: especialidades e equipe) e retratos de equipe de barbearia, pet shop e imobiliária (7). Prompts em `docs/fotos-ia-flow/13` a `17`. As páginas já têm os espaços: sem a foto, aparece a inicial ou o fundo liso. Mapas continuam ilustrativos, porque os negócios não têm endereço.
+
+### Segunda e terceira levas (12/11/2026)
+
+Geradas no Google Flow com o Nano Banana 2.1, pelo agente do Flow, na conta do proprietário, e baixadas na resolução original. Total publicado agora: **163 fotos**.
+
+| Demo | Novas | O quê |
+|---|---|---|
+| Torque Auto Center | 7 | Abertura e as 6 categorias de serviço |
+| Almeida & Prado | 7 | Abertura, 3 retratos da equipe e 3 capas de artigo |
+| Pulse Studio | 11 | Abertura, 6 modalidades e 4 professores |
+| Vita Clínica | 13 | 6 especialidades e 7 profissionais |
+| Bravus, PetVille e Horizonte | 7 | Retratos da equipe |
+| Sabor & Brasa | 8 | 6 pratos e bebidas refeitos (água, refrigerante, brownie, pudim, salada, suco) e 2 de ambiente (brasa e salão) |
+| PetVille | 1 | Banho (ambiente) |
+| Resolve Serviços | 3 | Abertura com técnico em serviço; quadro e fachada refeitos no padrão brasileiro |
+
+- **Por que refazer:** na churrascaria, água e refrigerante apareciam em garrafa e lata sem rótulo (pareciam falsas), e brownie, pudim e salada estavam distantes e sem vida; na Resolve, o quadro elétrico e a fachada eram de padrão estrangeiro. Os originais substituídos ficam em `fotos-ia/<site>/substituidas/`.
+- **Retratos:** pessoas que não existem, geradas por IA; as seções dizem que a equipe é fictícia e o rodapé avisa que as fotos são geradas por IA.
+- **Revisão:** todas as fotos novas foram conferidas em folha de contato (correspondência com o item, sem texto legível, logotipo ou marca d'água). No contrato de locação da advocacia, o papel tem um título desfocado e ilegível.
+- **Marca:** o símbolo AX ganhou uma versão em quadrado arredondado com degradê (`public/brand/ax-symbol-tile.svg`), usada no cabeçalho, no rodapé e no ícone do site. Continua sendo vetor, criação própria.
+
+### Landing pages (13/11/2026)
+
+19 fotos geradas no Google Flow (Nano Banana 2.1), na conta do proprietário, em `apps/landing/public/fotos/`: Residencial Aurora (4), Fluente na Mala (3), Festival Sabores da Serra (4), Agenda Leve (1), Clube Serra Alta (4) e Solar Viva (3). A tela do aplicativo Agenda Leve é desenhada em HTML, não é imagem. Total publicado: **182 fotos**.

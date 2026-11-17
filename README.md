@@ -2,7 +2,7 @@
 
 Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e das 12 aplicações demonstrativas de cada segmento.
 
-**Estado atual:** Fases 1 a 5 implementadas e validadas localmente: portfólio + 12 demos. Nada publicado. Veja [`docs/status.md`](docs/status.md).
+**Estado atual:** Fases 1 a 5 implementadas e validadas localmente: portfólio + 12 demos + 6 landing pages. Veja [`docs/status.md`](docs/status.md).
 
 ## Arquitetura
 
@@ -20,6 +20,7 @@ apps/
   academia/             Demo Pulse Studio (3110): grade filtrável, aula experimental com vagas, planos, painel
   produtos-naturais/    Demo Raiz & Grão (3111): catálogo, venda por peso, carrinho, retirada ou entrega
   floricultura/         Demo Flor & Afeto (3112): ocasião, personalização, cartão, data e período, carrinho
+  landing/              Seis landing pages de demonstração (3113): imóvel, curso, evento, aplicativo, assinatura e energia solar
   portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/

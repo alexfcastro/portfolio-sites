@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Contato e orçamento",
   description:
-    "Conte sobre o seu negócio e o que você precisa. Prepare sua mensagem e continue a conversa com Alex Castro.",
+    "Conte sobre o seu negócio e o que você precisa. Prepare sua mensagem e continue a conversa com Alex Castro, do Estúdio X.",
   path: "/contato",
 });
 

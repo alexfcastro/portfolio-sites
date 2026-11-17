@@ -54,5 +54,13 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "brownie": {
     "width": 1200,
     "height": 896
+  },
+  "ambiente-brasa": {
+    "width": 1200,
+    "height": 670
+  },
+  "ambiente-salao": {
+    "width": 1200,
+    "height": 896
   }
 };

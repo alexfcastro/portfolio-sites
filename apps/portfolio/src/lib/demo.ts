@@ -22,7 +22,7 @@ export const demoStatusDescriptions: Record<PublicDemoState, string> = {
   in_progress:
     "A demonstração navegável está em desenvolvimento. O link será publicado depois que o fluxo for testado.",
   available:
-    "A demonstração navegável está publicada. Ela usa dados fictícios e não cria reservas, pedidos ou mensagens reais.",
+    "A demonstração navegável está disponível. Ela usa dados fictícios e não cria reservas, pedidos ou mensagens reais.",
   unpublished:
     "A demonstração já foi implementada e testada — as imagens acima são capturas reais dela —, mas ainda não tem endereço público. O link aparecerá aqui quando for publicada.",
   unavailable: "A demonstração está temporariamente fora do ar. A proposta continua descrita nesta página.",

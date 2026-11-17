@@ -6,12 +6,12 @@ import { getConfiguredDemoUrl } from "@/config/demos";
 import { siteConfig } from "@/config/site";
 import { getCategoryLabel } from "@/data/categories";
 import { getProjectTheme } from "@/data/project-themes";
-import { getCaseUrl, getFeaturedProjects, projects } from "@/data/projects";
+import { getCaseUrl, getProjectBySlug, projects } from "@/data/projects";
 import { resolveDemoPresentation } from "@/lib/demo";
 import type { Project } from "@/types/project";
 
 /** Painel de destaque: o projeto aparece com as cores do próprio negócio, no computador e no celular. */
-function Spotlight({ project, index }: { project: Project; index: number }) {
+function Spotlight({ project, index, task }: { project: Project; index: number; task?: string }) {
   const theme = getProjectTheme(project.slug);
   const desktop = project.media[0];
   const phone = project.media.find((media) => media.height > media.width);
@@ -35,6 +35,17 @@ function Spotlight({ project, index }: { project: Project; index: number }) {
         <p style={{ color: theme.muted }} className="mt-5 max-w-md text-lg leading-relaxed">
           {project.summary}
         </p>
+        {task && (
+          <p className="mt-5 flex max-w-md items-start gap-2.5 text-[0.9375rem] leading-relaxed font-medium">
+            <span
+              style={{ background: theme.accent, color: theme.background }}
+              className="mt-0.5 rounded-full px-2.5 py-0.5 text-xs font-bold tracking-wide uppercase"
+            >
+              Experimente
+            </span>
+            {task}
+          </p>
+        )}
         <p style={{ color: theme.muted }} className="mt-3 text-sm">
           Projeto conceitual, com negócio fictício.
         </p>
@@ -94,18 +105,28 @@ function Spotlight({ project, index }: { project: Project; index: number }) {
   );
 }
 
+// Três destaques com funções diferentes (agendar, pedir, buscar) e uma tarefa curta para o visitante testar.
+const highlights = [
+  { slug: "barbearia", task: "Escolha um serviço, um barbeiro e um horário livre." },
+  { slug: "restaurante", task: "Monte um pedido com adicionais e veja o total na hora." },
+  { slug: "imobiliaria", task: "Filtre por bairro e preço e salve um imóvel nos favoritos." },
+];
+
 export function FeaturedProjects() {
-  const featured = getFeaturedProjects();
+  const featured = highlights.flatMap((highlight) => {
+    const project = getProjectBySlug(highlight.slug);
+    return project ? [{ project, task: highlight.task }] : [];
+  });
 
   return (
     <>
       <section aria-labelledby="destaques-title" className="border-y border-line bg-sand/60 py-20 sm:py-28">
         <div className="container-page">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionHeading id="destaques-title" eyebrow="Projetos" title="Cada negócio com a sua cara">
+            <SectionHeading id="destaques-title" eyebrow="Em destaque" title="Três jeitos de um site trabalhar por você">
               <p>
-                Projetos conceituais com negócios fictícios. Cada um tem identidade, cores e fluxo próprios, pensados
-                para o segmento, e funciona de verdade na demonstração, no computador e no celular.
+                Agendar, pedir e encontrar: três projetos conceituais, com negócios fictícios, em que o fluxo principal
+                pode ser testado na demonstração, no computador e no celular.
               </p>
             </SectionHeading>
             <Link href="/projetos" className="btn btn-secondary shrink-0 self-start md:self-auto">
@@ -115,9 +136,9 @@ export function FeaturedProjects() {
           </div>
 
           <ul className="mt-12 space-y-8">
-            {featured.map((project, index) => (
+            {featured.map(({ project, task }, index) => (
               <li key={project.slug}>
-                <Spotlight project={project} index={index} />
+                <Spotlight project={project} index={index} task={task} />
               </li>
             ))}
           </ul>
@@ -127,7 +148,7 @@ export function FeaturedProjects() {
       <section aria-labelledby="indice-title" className="bg-paper py-20 sm:py-28">
         <div className="container-page">
           <SectionHeading id="indice-title" eyebrow="Índice" title={`Os ${projects.length} projetos, lado a lado`}>
-            <p>Passe o mouse para ver a página inicial de cada um; clique para abrir o projeto.</p>
+            <p>Selecione um projeto para conhecer o problema, a solução e a demonstração.</p>
           </SectionHeading>
 
           <ul className="mt-10 border-t border-line">
@@ -153,7 +174,7 @@ export function FeaturedProjects() {
                     {cover && (
                       <span
                         aria-hidden
-                        className="pointer-events-none absolute top-1/2 right-40 z-10 hidden w-72 -translate-y-1/2 scale-95 rotate-2 overflow-hidden rounded-xl opacity-0 shadow-raised ring-1 ring-black/10 transition duration-300 group-hover:scale-100 group-hover:opacity-100 lg:block"
+                        className="pointer-events-none absolute top-1/2 right-40 z-10 hidden w-72 -translate-y-1/2 scale-95 rotate-2 overflow-hidden rounded-xl opacity-0 shadow-raised ring-1 ring-black/10 transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 lg:block"
                       >
                         <Image src={cover.src} alt="" width={cover.width} height={cover.height} sizes="288px" className="h-auto w-full" />
                       </span>

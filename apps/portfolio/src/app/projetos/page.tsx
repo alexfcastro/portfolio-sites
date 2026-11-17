@@ -1,6 +1,7 @@
 import { ProjectCard } from "@/components/projects/project-card";
 import { ProjectExplorer } from "@/components/projects/project-explorer";
 import { FinalCta } from "@/components/sections/final-cta";
+import { LandingPages } from "@/components/sections/landing-pages";
 import { PageIntro } from "@/components/ui/page-intro";
 import { categories, solutionTypes } from "@/data/categories";
 import { projects } from "@/data/projects";
@@ -28,7 +29,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <PageIntro eyebrow="Projetos" title="Doze segmentos, doze problemas diferentes">
+      <PageIntro eyebrow="Projetos" title="Doze projetos, diferentes desafios de negócio">
         <p>
           Cada projeto é um conceito com um negócio fictício, criado para mostrar como um site pode resolver um
           problema comum do segmento. Em cada demonstração, dá para testar o fluxo como se fosse o cliente.
@@ -43,6 +44,9 @@ export default function ProjectsPage() {
           solutions={[...usedSolutions]}
         />
       </div>
+
+      <LandingPages />
+      <div className="pt-20" />
 
       <FinalCta
         title="Não encontrou o seu segmento?"

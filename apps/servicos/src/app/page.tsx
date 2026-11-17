@@ -1,7 +1,7 @@
 import { ArrowRight, Check, MapPin, X } from "lucide-react";
 import Link from "next/link";
 import { Faixa } from "@/components/faixa";
-import { Foto } from "@/components/foto";
+import { Foto, temFoto } from "@/components/foto";
 import { MessagePreview } from "@/components/message-preview";
 import { WorkArt } from "@/components/work-art";
 import { getServiceType, portfolioWorks, regions, serviceTypes } from "@/data/services";
@@ -19,7 +19,12 @@ export default function HomePage() {
     <>
       <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-petrol-dark text-white">
         {/* Foto ilustrativa (gerada por IA) ocupando a abertura; o degradê garante a leitura do texto. */}
-        <Foto id="sala" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
+        <Foto
+          id={temFoto("ambiente-equipe") ? "ambiente-equipe" : "sala"}
+          preload
+          sizes="100vw"
+          className="fundo absolute inset-0 -z-20 size-full"
+        />
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-gradient-to-r from-petrol-dark via-petrol-dark/90 to-petrol-dark/25 max-md:via-petrol-dark/88 max-md:to-petrol-dark/75"

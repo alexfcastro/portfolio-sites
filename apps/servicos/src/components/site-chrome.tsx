@@ -55,7 +55,7 @@ export function SiteFooter() {
         <div>
           <p className="text-xl font-extrabold">Resolve Serviços</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75">
-            A Resolve é um prestador de serviços fictício. Esta página é uma demonstração criada por Alex Castro: serviços,
+            A Resolve é um prestador de serviços fictício. Esta página é uma demonstração criada pelo Estúdio X, de Alex Castro: serviços,
             regiões e trabalhos são exemplos, e nenhuma solicitação é enviada. As fotos são ilustrativas, geradas por IA.
           </p>
         </div>

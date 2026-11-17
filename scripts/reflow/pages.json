@@ -67,6 +67,7 @@
           ]
         }
       }
-    }
+    },
+    { "base": "http://localhost:3113", "paths": ["/", "/residencial-aurora", "/fluente-na-mala", "/festival-sabores-da-serra", "/agenda-leve", "/clube-serra-alta", "/solar-viva"] }
   ]
 }

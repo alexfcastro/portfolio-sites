@@ -55,7 +55,7 @@ export function SiteFooter() {
         <div>
           <Wordmark tone="light" />
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75">
-            Almeida &amp; Prado é um escritório fictício. Este site é uma demonstração criada por Alex Castro, com
+            Almeida &amp; Prado é um escritório fictício. Este site é uma demonstração criada pelo Estúdio X, de Alex Castro, com
             conteúdo apenas informativo. Nenhum contato é enviado e não há atendimento jurídico.
             {Object.keys(fotos).length > 0 && " As fotos são ilustrativas, geradas por IA."}
           </p>

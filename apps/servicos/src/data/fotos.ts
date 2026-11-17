@@ -26,5 +26,9 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "fachada": {
     "width": 1200,
     "height": 896
+  },
+  "ambiente-equipe": {
+    "width": 1200,
+    "height": 670
   }
 };

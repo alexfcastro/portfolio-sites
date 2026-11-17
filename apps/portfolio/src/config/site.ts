@@ -23,12 +23,15 @@ function optionalText(raw: string | undefined): string | null {
 }
 
 export const siteConfig = {
-  name: "Alex Castro",
-  monogram: "AX",
+  /** Marca do negócio. */
+  name: "Estúdio X",
+  /** Quem atende e desenvolve: o estúdio é de uma pessoa só, e o site diz isso. */
+  owner: "Alex Castro",
+  monogram: "X",
   tagline: "Sites e Soluções Digitais",
-  title: "Alex Castro | Sites e Soluções Digitais",
+  title: "Estúdio X | Sites e Soluções Digitais, por Alex Castro",
   description:
-    "Desenvolvo sites modernos para pequenos e médios negócios, com foco em presença digital, atendimento e soluções como agendamentos, orçamentos e contato pelo WhatsApp.",
+    "Desenvolvo sites modernos e sob medida para pequenos e médios negócios, com foco em presença digital, atendimento e soluções como agendamentos, orçamentos e contato pelo WhatsApp.",
   locale: "pt_BR",
 
   deployEnv,

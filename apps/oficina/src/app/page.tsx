@@ -19,14 +19,14 @@ export default function HomePage() {
         {temFoto("hero") && (
           <>
             <Foto id="hero" preload sizes="100vw" className="fundo absolute inset-0 -z-20 size-full" />
-            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-graphite via-graphite/90 to-graphite/60" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-graphite via-graphite/80 to-graphite/20 max-md:via-graphite/85 max-md:to-graphite/70" />
           </>
         )}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(42rem_24rem_at_100%_0%,rgb(255_140_40/0.22),transparent_70%),repeating-linear-gradient(135deg,transparent_0_46px,rgb(255_255_255/0.03)_46px_48px)]"
         />
-        <div className="wrap relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr]">
+        <div className="wrap relative grid min-h-[76svh] items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="kicker !text-orange">Mecânica geral · orçamento on-line</p>
             <h1 id="hero-title" className="mt-4 text-4xl leading-tight uppercase sm:text-6xl">

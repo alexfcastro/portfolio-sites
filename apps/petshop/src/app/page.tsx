@@ -1,7 +1,7 @@
 import { CalendarCheck, Clock, PawPrint, Scissors } from "lucide-react";
 import Link from "next/link";
 import { Faixa } from "@/components/faixa";
-import { Retrato } from "@/components/foto";
+import { Foto, Retrato, temFoto } from "@/components/foto";
 import { PetArt, type Palette, type PetKind } from "@/components/pet-art";
 import { faq, groomers, packages, services, sizeHints, sizeLabels, speciesLabels, type Size } from "@/data/petshop";
 import { durationFor } from "@/lib/booking";
@@ -132,6 +132,13 @@ export default function HomePage() {
             <p className="kicker">Equipe</p>
             <h2 id="equipe-title" className="mt-2 text-3xl">Quem cuida do seu pet</h2>
             <p className="mt-3 text-muted">Profissionais fictícios desta demonstração.</p>
+            {temFoto("ambiente-banho") && (
+              <Foto
+                id="ambiente-banho"
+                sizes="(min-width: 768px) 420px, 100vw"
+                className="mt-6 aspect-[4/3] w-full rounded-[2rem] border-4 border-paper shadow-xl"
+              />
+            )}
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {groomers.map((groomer, index) => (
@@ -139,7 +146,7 @@ export default function HomePage() {
                 <Retrato
                   id={`equipe-${groomer.id}`}
                   inicial={groomer.name[0] ?? ""}
-                  className="size-20"
+                  className="size-24 object-top"
                   fallback={`text-xl font-extrabold text-white ${index === 0 ? "bg-coral" : "bg-leaf"}`}
                 />
                 <span>
