@@ -1,4 +1,4 @@
-// Prévia local completa: gera os builds de produção já interligados e sobe o portfólio e as 12 demos.
+// Prévia local completa: gera os builds de produção já interligados e sobe o portfólio, as demos e as landing pages.
 //
 // Uso:
 //   pnpm preview:local               # build de tudo + servidores

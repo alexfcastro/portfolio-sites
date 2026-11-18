@@ -2,8 +2,12 @@
  * Landing pages de demonstração (app independente em apps/landing). Ofertas fictícias.
  * Cada uma mostra um objetivo de conversão diferente. As capturas ficam em public/landing/<slug>.png.
  */
+import type { CategoryId } from "@/types/project";
+
 export interface LandingPage {
   slug: string;
+  /** Segmento do catálogo: com esse filtro ativo, a landing page aparece junto dos projetos. */
+  categoryId: CategoryId;
   name: string;
   /** Tipo de oferta, em linguagem do visitante. */
   kind: string;
@@ -15,6 +19,7 @@ export interface LandingPage {
 export const landingPages: LandingPage[] = [
   {
     slug: "residencial-aurora",
+    categoryId: "imoveis",
     name: "Residencial Aurora",
     kind: "Lançamento imobiliário",
     goal: "Receber a tabela e as plantas",
@@ -22,6 +27,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "fluente-na-mala",
+    categoryId: "profissionais",
     name: "Fluente na Mala",
     kind: "Curso on-line",
     goal: "Garantir a vaga",
@@ -29,6 +35,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "festival-sabores-da-serra",
+    categoryId: "alimentacao",
     name: "Festival Sabores da Serra",
     kind: "Evento",
     goal: "Reservar o ingresso",
@@ -36,6 +43,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "agenda-leve",
+    categoryId: "servicos",
     name: "Agenda Leve",
     kind: "Aplicativo",
     goal: "Começar o teste grátis",
@@ -43,6 +51,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "clube-serra-alta",
+    categoryId: "alimentacao",
     name: "Clube Serra Alta",
     kind: "Assinatura de produto",
     goal: "Assinar o clube",
@@ -50,6 +59,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "solar-viva",
+    categoryId: "servicos",
     name: "Solar Viva",
     kind: "Serviço com simulação",
     goal: "Pedir a simulação",
@@ -57,6 +67,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "volume-perfeito",
+    categoryId: "beleza",
     name: "Curso Volume Perfeito",
     kind: "Curso presencial",
     goal: "Reservar a vaga",

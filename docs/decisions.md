@@ -112,3 +112,9 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 - Studio Linha Fina: comparador de antes e depois feito com `<input type="range">` invisível sobre a foto (teclado e leitor de tela funcionam; no celular, arrastar na vertical rola a página).
 - `<fieldset>` tem largura mínima igual ao conteúdo por padrão: listas que rolam na horizontal dentro dele precisam de `min-w-0`, senão a página alarga no celular.
 - `scripts/importar-fotos.mjs` agora limpa o cache do otimizador de imagens do app (`.next/cache/images`), que servia a versão antiga de uma foto substituída por até 4 horas.
+
+## Beleza visível na página inicial e landing pages no filtro (18/11/2026)
+
+- Seção "Beleza e estética" (`/#beleza`) na página inicial, logo depois dos destaques: os sete sites do segmento e a landing page do curso, com botão para `/projetos?segmento=beleza` (o link único das abordagens). No celular, os cartões deslizam na horizontal.
+- Cada landing page ganhou um segmento (`categoryId` em `data/landing-pages.ts`). No catálogo, com um segmento filtrado e sem tipo de solução, as landing pages daquele segmento aparecem junto dos sites, com a etiqueta "Landing page" e o contador "X projetos e Y landing pages". Sem filtro, continuam só na seção própria, para não repetir.
+- O cartão de landing page virou um componente único (`components/projects/landing-card.tsx`), usado na seção, no catálogo e na página inicial.

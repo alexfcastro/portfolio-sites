@@ -1,4 +1,5 @@
 import { AboutTeaser } from "@/components/sections/about-teaser";
+import { Beleza } from "@/components/sections/beleza";
 import { Faq } from "@/components/sections/faq";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -17,6 +18,7 @@ export default function HomePage() {
     <>
       <Hero />
       <FeaturedProjects />
+      <Beleza />
       <LandingPages />
       <Solutions />
       <Personalizer />

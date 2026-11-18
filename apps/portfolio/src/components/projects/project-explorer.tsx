@@ -19,6 +19,9 @@ interface ExplorerItem {
 interface ProjectExplorerProps {
   items: ExplorerItem[];
   cards: Record<string, ReactNode>;
+  /** Landing pages com o segmento de cada uma: aparecem quando esse segmento está filtrado. */
+  landings?: { slug: string; categoryId: CategoryId }[];
+  landingCards?: Record<string, ReactNode>;
   categories: FilterOption<CategoryId>[];
   solutions: FilterOption<SolutionId>[];
 }
@@ -79,6 +82,8 @@ export function ProjectExplorerWithParams(props: ProjectExplorerProps) {
 export function ProjectExplorer({
   items,
   cards,
+  landings = [],
+  landingCards = {},
   categories,
   solutions,
   initialCategory = null,
@@ -97,6 +102,10 @@ export function ProjectExplorer({
       (category === null || item.categoryId === category) &&
       (solution === null || item.solutionIds.includes(solution)),
   );
+  // Landing pages só entram com um segmento escolhido (sem filtro, elas já têm a própria seção logo abaixo).
+  // Com tipo de solução filtrado, ficam de fora: são páginas de conversão, não sistemas.
+  const visibleLandings = category !== null && solution === null ? landings.filter((l) => l.categoryId === category) : [];
+  const total = visible.length + visibleLandings.length;
   const hasFilters = category !== null || solution !== null;
 
   const clear = () => {
@@ -141,6 +150,12 @@ export function ProjectExplorer({
       <div className="mt-6 flex min-h-11 flex-wrap items-center justify-between gap-3">
         <p ref={summaryRef} tabIndex={-1} role="status" aria-live="polite" className="text-sm text-muted">
           Mostrando <strong className="text-ink">{visible.length}</strong> de {items.length} projetos
+          {visibleLandings.length > 0 && (
+            <>
+              {" "}
+              e <strong className="text-ink">{visibleLandings.length}</strong> landing {visibleLandings.length === 1 ? "page" : "pages"}
+            </>
+          )}
           {activeLabels.length > 0 && <> · Filtros: {activeLabels.join(" + ")}</>}
         </p>
         {hasFilters && (
@@ -151,10 +166,13 @@ export function ProjectExplorer({
         )}
       </div>
 
-      {visible.length > 0 ? (
+      {total > 0 ? (
         <ul className="mt-4 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item) => (
             <li key={item.slug}>{cards[item.slug]}</li>
+          ))}
+          {visibleLandings.map((item) => (
+            <li key={`landing-${item.slug}`}>{landingCards[item.slug]}</li>
           ))}
         </ul>
       ) : (

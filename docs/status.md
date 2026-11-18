@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado em 17/11/2026 (noite).
+Atualizado em 18/11/2026.
 
 ## Fases concluídas
 
@@ -12,7 +12,7 @@ Atualizado em 17/11/2026 (noite).
 | 4 | Linha Direta Profissional, Almeida & Prado Advocacia, Horizonte Imóveis, PetVille, Pulse Studio | Implementadas e validadas localmente; **não publicadas** |
 | 5 | Raiz & Grão, Flor & Afeto | Implementadas e validadas localmente; **não publicadas** |
 
-As 12 demos previstas no briefing existem. **Nada está publicado.** O projeto não está pronto para publicação comercial: faltam os itens do proprietário abaixo.
+As 12 demos previstas no briefing existem, e outras 7 de beleza e estética foram criadas depois (ver o fim deste arquivo). **Nada está publicado.** O projeto não está pronto para publicação comercial: faltam os itens do proprietário abaixo.
 
 ## Demos
 
@@ -37,7 +37,7 @@ Todas estão com `demoStatus: "available"` nos dados. O botão "Abrir demonstra�
 
 1. **Contato real:** número de WhatsApp com código do país e/ou e-mail. Sem isso, o site mostra "Contato em configuração".
 2. **URL pública do portfólio** e **hospedagem** (sugestão documentada: Vercel, um projeto por app). Nada foi contratado.
-3. **Publicar as 12 demos** (um projeto por app no host) e configurar `NEXT_PUBLIC_DEMO_URL_<SLUG>` no portfólio e `NEXT_PUBLIC_PORTFOLIO_URL` em cada demo.
+3. **Publicar as 19 demos** (um projeto por app no host) e configurar `NEXT_PUBLIC_DEMO_URL_<SLUG>` no portfólio e `NEXT_PUBLIC_PORTFOLIO_URL` em cada demo.
 4. **Revisão da política de privacidade** com os dados reais de contato e, se desejar, revisão jurídica.
 5. **Opcional:** redes sociais, cidade e área de atendimento (somente se confirmadas).
 
@@ -82,5 +82,7 @@ Sete demos novas, todas com fotos geradas por IA, entrada no catálogo (segmento
 E uma landing page nova no app `apps/landing`: **Curso Volume Perfeito** (`/volume-perfeito`), com reserva de vaga, parcelamento e botão fixo no celular.
 
 Links por segmento para as abordagens: `docs/links-por-segmento.md`.
+
+Em 18/11/2026 os projetos de beleza ganharam uma seção própria na página inicial (`/#beleza`), e as landing pages passaram a aparecer no catálogo quando um segmento está filtrado (cada uma tem `categoryId`).
 
 Pendências do proprietário (somam-se às de cima): números de registro profissional reais (Clínica Núcleo), depoimentos reais (hoje são exemplos marcados) e, se quiser, publicar as novas demos junto com as antigas.

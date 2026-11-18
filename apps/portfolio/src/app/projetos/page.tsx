@@ -1,3 +1,4 @@
+import { LandingCard } from "@/components/projects/landing-card";
 import { ProjectCard } from "@/components/projects/project-card";
 import { Suspense } from "react";
 import { ProjectExplorer, ProjectExplorerWithParams } from "@/components/projects/project-explorer";
@@ -5,6 +6,7 @@ import { FinalCta } from "@/components/sections/final-cta";
 import { LandingPages } from "@/components/sections/landing-pages";
 import { PageIntro } from "@/components/ui/page-intro";
 import { categories, solutionTypes } from "@/data/categories";
+import { landingPages } from "@/data/landing-pages";
 import { projects } from "@/data/projects";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -31,6 +33,8 @@ export default function ProjectsPage() {
   const explorerProps = {
     items: projects.map(({ slug, categoryId, solutionIds }) => ({ slug, categoryId, solutionIds })),
     cards,
+    landings: landingPages.map(({ slug, categoryId }) => ({ slug, categoryId })),
+    landingCards: Object.fromEntries(landingPages.map((page) => [page.slug, <LandingCard key={page.slug} page={page} headingLevel="h2" etiqueta />])),
     categories: [...usedCategories],
     solutions: [...usedSolutions],
   };

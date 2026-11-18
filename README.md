@@ -74,7 +74,7 @@ Se o terminal disser que `pnpm` não é reconhecido, feche e abra o terminal de 
 
 O `iniciar-previa.cmd` e o `scripts/local-preview.mjs` chamam o Next direto pelo Node, sem depender do executável do pnpm: se o Windows bloquear o `pnpm-native.exe` (por exemplo, pelo Controle Inteligente de Aplicativos, porque ele não é assinado), a prévia continua funcionando. O pnpm só é necessário para instalar dependências e para `lint`, `typecheck` e `test`.
 
-Gera os builds de produção já interligados e sobe o portfólio em http://localhost:3100 e as 12 demos em http://localhost:3101 a 3112 (lista completa no terminal). O primeiro build leva alguns minutos; depois, `pnpm preview:local --skip-build` sobe os servidores direto. Ctrl+C encerra tudo.
+Gera os builds de produção já interligados e sobe o portfólio em http://localhost:3100 as demos em http://localhost:3101 a 3112 e 3114 a 3120 e as landing pages em 3113 (lista completa no terminal). O primeiro build leva alguns minutos; depois, `pnpm preview:local --skip-build` sobe os servidores direto. Ctrl+C encerra tudo.
 
 Nessa prévia, cada case mostra "Abrir demonstração", e cada demo tem "Voltar ao portfólio", "Ver case" e "Solicitar um site como este". Tudo continua `noindex`, e nenhuma demo envia mensagens ou pedidos. O contato do portfólio aparece como "Contato em configuração" até você informar WhatsApp ou e-mail (veja a seção de variáveis). Os dados que você cria nas demos (agendamentos, carrinhos, favoritos) ficam só no navegador; cada demo tem um botão para limpar.
 
@@ -165,7 +165,7 @@ Nada é salvo no navegador nem enviado a servidores. Para um backend futuro, a v
 1. Acrescente um item em `src/data/projects.ts` (slug em minúsculas com hífen, `demoStatus: "planned"`, recursos com `status: "planned"`, `technologies: []`).
 2. Coloque uma prévia conceitual em `public/projects/<slug>/` (mídia com `kind: "concept"`, rotulada como "Prévia conceitual").
 3. Acrescente a entrada `NEXT_PUBLIC_DEMO_URL_<SLUG>` em `src/config/demos.ts` e no `.env.example`.
-4. Rode `pnpm test`: os testes conferem slugs, categorias, imagens e estados. (Se o total mudar de 12, ajuste o teste de propósito; o teste de estado hoje espera as 12 demos implementadas.)
+4. Rode `pnpm test`: os testes conferem slugs, categorias, imagens e estados. (Se o total mudar, ajuste o teste de propósito; ele lista os slugs canônicos e as demos implementadas, hoje 19.)
 
 Nenhuma página nova é necessária: `/projetos/[slug]` é gerada a partir dos dados.
 
