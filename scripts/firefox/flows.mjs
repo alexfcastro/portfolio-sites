@@ -18,6 +18,8 @@ const dialogText = () => $('dialog[open]')?.innerText ?? '';
 const s = (code) => H + code;
 
 const P = "http://localhost:3100";
+/** Demos no catálogo (as 12 originais e as de beleza já prontas). */
+const TOTAL_DEMOS = 19;
 
 // Data de entrega dos pedidos de teste: a próxima sexta-feira a pelo menos 2 dias de hoje (datas fixas vencem).
 const proximaSexta = (() => {
@@ -30,14 +32,14 @@ const port = (n) => `http://localhost:${3100 + n}`;
 
 export const flows = [
   {
-    name: "portfólio: listagem com 12 demos, 6 landing pages e contato com projeto pré-selecionado",
+    name: "portfólio: listagem com todas as demos, 7 landing pages e contato com projeto pré-selecionado",
     base: P,
     path: "/projetos",
     steps: [],
     check: s(`return {
-      cards: $$('main article').filter((a) => !a.closest('#landing-pages')).length === 12 || $$('main article').length,
-      landings: $$('#landing-pages article').length === 6 || $$('#landing-pages article').length,
-      abrir: $$('a').filter((a) => a.textContent.includes('Abrir demonstração')).length === 12,
+      cards: $$('main article').filter((a) => !a.closest('#landing-pages')).length === ${TOTAL_DEMOS} || $$('main article').length,
+      landings: $$('#landing-pages article').length === 7 || $$('#landing-pages article').length,
+      abrir: $$('a').filter((a) => a.textContent.includes('Abrir demonstração')).length === ${TOTAL_DEMOS},
     };`),
   },
   {
@@ -57,7 +59,9 @@ export const flows = [
     steps: [
       s(`$('input[name=professional][value=leo]').click(); return true;`),
       s(`click('Continuar', 'main button'); return true;`),
-      s(`$$('input[name=time]')[2].click(); return true;`),
+      // Escolhe um dia seguinte com horários livres (hoje pode já não ter, dependendo da hora do teste).
+      s(`const dias = $$('input[name=date]:not(:disabled)'); dias[Math.min(1, dias.length - 1)].click(); return true;`),
+      s(`$$('input[name=time]:not(:disabled)')[2].click(); return true;`),
       s(`click('Continuar', 'main button'); return true;`),
       s(`click('Confirmar agendamento de demonstração', 'main button'); return true;`),
     ],
@@ -271,6 +275,145 @@ export const flows = [
       "KEY:Escape",
     ],
     check: s(`return { abriu: window.__abriu, focoDentro: window.__focoDentro, fechado: !$('dialog[open]'), foco: document.activeElement.textContent.includes('Lembrete') || document.activeElement.tagName };`),
+  },
+  {
+    name: "Linha Fina: comparador e avaliação com micropigmentação anterior",
+    base: port(14),
+    path: "/?procedimento=fio-a-fio",
+    steps: [
+      s(`const r = $('main input[type=range]'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(r, '20'); r.dispatchEvent(new Event('input', { bubbles: true })); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__comparador = $('main input[type=range]').value === '20'; $$('input[name=anterior]')[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); $$('input[name=tempo]')[2].click(); $$('input[name=cor]')[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__sugestao = text().includes('avaliar uma correção'); click('Avaliar correção', 'main button'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); $$('#campo-horario .grid button:not([disabled])')[0].click(); setV($('#nome'), 'Cláudia'); setV($('#whatsapp'), '11977776666'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('Reservar avaliação', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      comparador: window.__comparador,
+      sugeriuCorrecao: window.__sugestao,
+      confirmada: /LF-\\d{5}/.test(text()) || text().slice(0, 200),
+      procedimento: text().includes('Correção de trabalho antigo'),
+      salvo: (localStorage.getItem('ax-linha-fina-demo') || '').includes('correcao'),
+    };`),
+  },
+  {
+    name: "Clínica Núcleo: montador de protocolo e avaliação com o resumo",
+    base: port(15),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-nucleo-demo'); await new Promise((r) => setTimeout(r, 300)); $$('input[name=objetivo]')[0].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); $$('input[name=pos-operatorio-cirurgia]')[0].click(); $$('input[name=pos-operatorio-dias]')[1].click(); $$('input[name=pos-operatorio-liberacao]')[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__protocolo = text().includes('10 sessões') && text().includes('1.275,00') && text().includes('liberação de quem operou'); return true;`),
+      s(`$$('#campo-horario .grid button:not([disabled])')[0].click(); setV($('#nome'), 'Paula'); setV($('#whatsapp'), '11966665555'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('Reservar avaliação', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      protocolo: window.__protocolo,
+      confirmada: /NC-\\d{5}/.test(text()) || text().slice(0, 200),
+      levouResumo: text().includes('Drenagem linfática pós-operatória'),
+      salvo: (localStorage.getItem('ax-nucleo-demo') || '').includes('NC-'),
+    };`),
+  },
+  {
+    name: "Lash Lab: porta da aluna e reserva de vaga que reduz a contagem",
+    base: port(16),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-lash-lab-demo'); await new Promise((r) => setTimeout(r, 300)); click('Quero aprender', 'main button'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 500)); window.__antes = text().includes('2 de 3 restantes'); window.__semCliente = !text().includes('Quatro técnicas'); return true;`),
+      s(`setV($('#nome'), 'Bia Souza'); setV($('#whatsapp'), '11955554444'); $$('input[name=experiencia]')[0].click(); $$('input[name=pagamento]')[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('Reservar minha vaga', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 500)); return {
+      contagemInicial: window.__antes,
+      soCaminhoDaAluna: window.__semCliente,
+      reservada: /CT-\\d{5}/.test(text()) || text().slice(0, 200),
+      vagaSaiu: text().includes('1 de 3 restante'),
+      urlComCaminho: location.search.includes('caminho=aluna'),
+    };`),
+  },
+  {
+    name: "Ateliê Véu: grupo da noiva, data livre e pedido de orçamento",
+    base: port(17),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-atelie-veu-demo'); await new Promise((r) => setTimeout(r, 300)); window.__antes = text().includes('Comecem às 11:30'); $$('#montador button').filter((b) => b.textContent.includes('Mais uma'))[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__depois = (text().includes('5 pessoas') && text().includes('2 cabeleireiras')) || text().slice(text().indexOf('Grupo'), text().indexOf('Grupo') + 60); const livre = $$('#disponibilidade button[aria-pressed]').filter((b) => !b.disabled); livre[0].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); setV($('#nome'), 'Aline'); setV($('#whatsapp'), '11944443333'); click('Pedir orçamento', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      calculoInicial: window.__antes,
+      recalculou: window.__depois,
+      pedido: /AV-\\d{5}/.test(text()) || text().slice(0, 200),
+      resumoComGrupo: text().includes('3 madrinhas: cabelo e maquiagem'),
+      salvo: (localStorage.getItem('ax-atelie-veu-demo') || '').includes('AV-'),
+    };`),
+  },
+  {
+    name: "Meia-Lua: foto do catálogo, montador e plano de manutenção",
+    base: port(18),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-meia-lua-demo'); await new Promise((r) => setTimeout(r, 300)); click('Stiletto', '#catalogo button'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__filtro = $('#catalogo [role=status]').textContent.trim(); $$('#catalogo button').find((b) => b.textContent.includes('Quero esta')).click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 500)); window.__montado = text().includes('Combinação da foto Cromado longo') && /R\\$\\s285,00/.test(text()); $$('input[name=plano]')[1].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); $$('#campo-horario .grid button:not([disabled])')[0].click(); setV($('#nome'), 'Júlia'); setV($('#whatsapp'), '11933332222'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('Reservar plano', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      filtro: window.__filtro === '1 inspiração' || window.__filtro,
+      montado: window.__montado,
+      plano: /ML-\\d{5}/.test(text()) || text().slice(0, 200),
+      proximasDatas: text().includes('Suas próximas manutenções'),
+      salvo: (localStorage.getItem('ax-meia-lua-demo') || '').includes('ML-'),
+    };`),
+  },
+  {
+    name: "Fio Nobre: questionário com orientação e avaliação agendada",
+    base: port(19),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-fio-nobre-demo'); await new Promise((r) => setTimeout(r, 300)); const refazer = $$('#questionario button').find((b) => b.textContent.includes('Refazer')); if (refazer) refazer.click(); return true;`),
+      s(`const escolhas = [1, 0, 0, 1, 0, 0]; for (const i of escolhas) { await new Promise((r) => setTimeout(r, 250)); $$('#questionario fieldset button')[i].click(); } return true;`),
+      s(`await new Promise((r) => setTimeout(r, 400)); window.__orientacao = text().includes('Tratamento para a queda e para o fio') && text().includes('Isto não é um diagnóstico') && text().includes('passar também com um médico'); $$('#campo-horario .grid button:not([disabled])')[0].click(); setV($('#nome'), 'Marta'); setV($('#whatsapp'), '11922221111'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('Reservar avaliação', 'main button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      orientacao: window.__orientacao,
+      reservada: /FN-\\d{5}/.test(text()) || text().slice(0, 200),
+      salvo: (localStorage.getItem('ax-fio-nobre-demo') || '').includes('FN-'),
+    };`),
+  },
+  {
+    name: "Casa Serena: vale-presente com valor livre, prévia do cartão e finalização",
+    base: port(20),
+    path: "/",
+    steps: [
+      s(`localStorage.removeItem('ax-casa-serena-demo'); await new Promise((r) => setTimeout(r, 300)); const f = $('#vale-presente form'); const radios = [...f.querySelectorAll('input[type=radio]')]; radios[4].click(); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); click('R$ 500,00', '#vale-presente button'); const f = $('#vale-presente form'); const campos = [...f.querySelectorAll('input:not([type=radio]), textarea')]; setV(campos.find((c) => c.placeholder === 'Ex.: Mãe'), 'Mãe'); setV(campos.find((c) => c.placeholder === 'Ex.: Ana e Pedro'), 'Ana'); const t = f.querySelector('textarea'); Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set.call(t, 'Para você descansar.'); t.dispatchEvent(new Event('input', { bubbles: true })); setV(campos.find((c) => c.type === 'email'), 'mae@exemplo.com.br'); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__previa = $('#vale-presente figure').textContent.includes('Para você descansar.') && $('#vale-presente figure').textContent.includes('500,00 em experiências'); click('Finalizar vale-presente', '#vale-presente button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      previaAoVivo: window.__previa,
+      pronto: text().includes('Vale-presente pronto') || text().slice(0, 200),
+      codigo: /[A-Z2-9]{3}-[A-Z2-9]{3}-[A-Z2-9]{3}/.test($('#vale-presente').textContent),
+      salvo: (localStorage.getItem('ax-casa-serena-demo') || '').includes('validoAte'),
+    };`),
+  },
+  {
+    name: "Volume Perfeito: parcelamento e reserva de vaga que reduz a contagem",
+    base: port(13),
+    path: "/volume-perfeito",
+    steps: [
+      s(`localStorage.removeItem('ax-volume-perfeito-demo'); await new Promise((r) => setTimeout(r, 400)); window.__antes = text().includes('4 de 6 vagas'); const sel = $$('#reserva select')[0]; Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(sel, '6'); sel.dispatchEvent(new Event('change', { bubbles: true })); return true;`),
+      s(`await new Promise((r) => setTimeout(r, 300)); window.__parcela = /6× de R\\$\\s498,33/.test(text()); const campos = $$('#reserva input:not([type=radio])'); setV(campos[0], 'Kelly'); setV(campos[1], '11911110000'); click('Reservar minha vaga', '#reserva button'); return true;`),
+    ],
+    check: s(`await new Promise((r) => setTimeout(r, 400)); return {
+      contagemInicial: window.__antes,
+      parcela: window.__parcela,
+      reservada: /VP-\\d{5}/.test(text()) || text().slice(0, 200),
+      vagaSaiu: text().includes('3 de 6 vagas'),
+    };`),
   },
 ];
 

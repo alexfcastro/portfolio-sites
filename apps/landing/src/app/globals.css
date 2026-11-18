@@ -5,6 +5,10 @@
   --color-demo-bg: #f6f5f1;
   --color-demo-ink: #14161a;
   --color-demo-muted: #555962;
+  --color-wa-head: #1f3b33;
+  --color-wa-subtle: #cfe3dc;
+  --color-wa-chat: #0f1a17;
+  --color-wa-bubble: #1e5c4b;
 
   /* Índice das landing pages (neutro) */
   --color-ink: #14161a;
@@ -123,6 +127,17 @@ p {
   --lp-card: #fffaf3;
   --lp-line: #e6d6c1;
   --lp-display: var(--font-fraunces), Georgia, serif;
+}
+
+[data-lp="volume"] {
+  --lp-bg: #0b0b0c;
+  --lp-fg: #ffffff;
+  --lp-accent: #ff5c93;
+  --lp-on-accent: #0b0b0c;
+  --lp-muted: #c4c4c8;
+  --lp-card: #161618;
+  --lp-line: #2c2c30;
+  --lp-display: var(--font-space-grotesk), system-ui, sans-serif;
 }
 
 [data-lp="solar"] {

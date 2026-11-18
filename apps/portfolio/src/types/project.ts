@@ -9,7 +9,8 @@ export type CategoryId =
   | "automotivo"
   | "profissionais"
   | "imoveis"
-  | "comercio";
+  | "comercio"
+  | "beleza";
 
 /** Tipo de solução que o projeto demonstra; usado nos filtros da listagem. */
 export type SolutionId =
@@ -48,6 +49,10 @@ export interface Project {
   isConceptual: true;
   /** Frase curta usada em cards. */
   summary: string;
+  /** Tarefa curta para o visitante testar na demonstração ("Experimente: …"). */
+  tryIt?: string;
+  /** O que foi considerado no projeto (decisões de conteúdo, acessibilidade, limites da demonstração). */
+  considerations?: string[];
   /** Tipo de negócio representado, em linguagem do visitante. */
   audience: string;
   problem: string;

@@ -1,6 +1,7 @@
 "use client";
 
-import { SearchX, X } from "lucide-react";
+import { ChevronDown, SlidersHorizontal, SearchX, X } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { useRef, useState, type ReactNode } from "react";
 import type { CategoryId, SolutionId } from "@/types/project";
 
@@ -64,12 +65,34 @@ function FilterGroup<T extends string>({
   );
 }
 
-export function ProjectExplorer({ items, cards, categories, solutions }: ProjectExplorerProps) {
-  const [category, setCategory] = useState<CategoryId | null>(null);
+/**
+ * Lê `?segmento=<id>` (link enviado numa abordagem, ex.: /projetos?segmento=beleza): o catálogo abre filtrado
+ * por esse segmento e, ao limpar o filtro, os projetos dele continuam aparecendo primeiro.
+ * Só aceita segmentos que existem no catálogo.
+ */
+export function ProjectExplorerWithParams(props: ProjectExplorerProps) {
+  const requested = useSearchParams().get("segmento");
+  const initialCategory = props.categories.find((option) => option.id === requested)?.id ?? null;
+  return <ProjectExplorer key={initialCategory ?? "todos"} {...props} initialCategory={initialCategory} />;
+}
+
+export function ProjectExplorer({
+  items,
+  cards,
+  categories,
+  solutions,
+  initialCategory = null,
+}: ProjectExplorerProps & { initialCategory?: CategoryId | null }) {
+  const [category, setCategory] = useState<CategoryId | null>(initialCategory);
   const [solution, setSolution] = useState<SolutionId | null>(null);
+  const [open, setOpen] = useState(false);
   const summaryRef = useRef<HTMLParagraphElement>(null);
 
-  const visible = items.filter(
+  // O segmento vindo do link fica na frente mesmo depois de limpar o filtro (ordem estável no resto).
+  const ordered = initialCategory
+    ? [...items.filter((item) => item.categoryId === initialCategory), ...items.filter((item) => item.categoryId !== initialCategory)]
+    : items;
+  const visible = ordered.filter(
     (item) =>
       (category === null || item.categoryId === category) &&
       (solution === null || item.solutionIds.includes(solution)),
@@ -90,7 +113,27 @@ export function ProjectExplorer({ items, cards, categories, solutions }: Project
 
   return (
     <div>
-      <div className="grid gap-6 rounded-card border border-line bg-paper p-5 shadow-card sm:p-6 lg:grid-cols-[1.4fr_1fr]">
+      {/* No celular os filtros ficam recolhidos atrás de um botão, para os projetos aparecerem logo. */}
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls="filtros-projetos"
+        onClick={() => setOpen((value) => !value)}
+        className="flex min-h-12 w-full items-center gap-3 rounded-card border border-line bg-paper px-5 text-left font-semibold shadow-card md:hidden"
+      >
+        <SlidersHorizontal aria-hidden className="size-5 text-accent" />
+        <span className="flex-1">
+          Filtrar projetos
+          {activeLabels.length > 0 && (
+            <span className="block text-sm font-normal text-muted">{activeLabels.join(" + ")}</span>
+          )}
+        </span>
+        <ChevronDown aria-hidden className={`size-5 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      <div
+        id="filtros-projetos"
+        className={`${open ? "grid" : "hidden"} gap-6 rounded-card border border-line bg-paper p-5 shadow-card max-md:mt-3 sm:p-6 md:grid lg:grid-cols-[1.4fr_1fr]`}
+      >
         <FilterGroup label="Segmento" options={categories} value={category} onChange={setCategory} />
         <FilterGroup label="Tipo de solução" options={solutions} value={solution} onChange={setSolution} />
       </div>

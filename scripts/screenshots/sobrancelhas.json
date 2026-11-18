@@ -1,0 +1,46 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/sobrancelhas",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1 },
+    {
+      "name": "desktop-galeria",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('#antes-e-depois button')].find((b) => b.textContent.includes('Trabalho antigo')).click();",
+        "await new Promise((r) => setTimeout(r, 400)); const i = document.querySelector('#antes-e-depois input[type=range]'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(i, '52'); i.dispatchEvent(new Event('input', { bubbles: true }));",
+        "document.getElementById('galeria-titulo').scrollIntoView(); window.scrollBy(0, -100);"
+      ]
+    },
+    {
+      "name": "mobile-avaliacao",
+      "path": "/?procedimento=fio-a-fio",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "await new Promise((r) => setTimeout(r, 600)); document.querySelectorAll('input[name=anterior]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelectorAll('input[name=tempo]')[2].click(); document.querySelectorAll('input[name=cor]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('campo-historico').scrollIntoView(); window.scrollBy(0, -120);"
+      ]
+    },
+    {
+      "name": "desktop-avaliacao",
+      "path": "/?procedimento=fio-a-fio",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "await new Promise((r) => setTimeout(r, 600)); document.querySelectorAll('input[name=anterior]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelectorAll('input[name=tempo]')[2].click(); document.querySelectorAll('input[name=cor]')[0].click(); document.querySelectorAll('input[name=removeu]')[0].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario button[aria-pressed]')][2].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario .grid button:not([disabled])')][1].click();",
+        "const setV = (el, v) => { Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event('input', { bubbles: true })); }; setV(document.getElementById('nome'), 'Juliana'); setV(document.getElementById('whatsapp'), '11988887777');",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('campo-horario').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

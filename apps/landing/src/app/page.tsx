@@ -10,6 +10,7 @@ const temas: Record<string, string> = {
   "agenda-leve": "agenda",
   "clube-serra-alta": "cafe",
   "solar-viva": "solar",
+  "volume-perfeito": "volume",
 };
 
 export default function IndexPage() {
@@ -22,7 +23,7 @@ export default function IndexPage() {
             Uma página, um objetivo: fazer o visitante agir.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
-            Seis exemplos de landing page, cada um para um tipo de oferta e com um pedido diferente ao visitante. As
+            Sete exemplos de landing page, cada um para um tipo de oferta e com um pedido diferente ao visitante. As
             ofertas são fictícias; a estrutura e o cuidado são os de um projeto real.
           </p>
         </div>

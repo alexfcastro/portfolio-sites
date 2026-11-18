@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { AxSymbol } from "@/components/ui/ax-symbol";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -32,8 +33,20 @@ export function AboutTeaser() {
           />
           <AxSymbol tone="dark" className="pointer-events-none absolute -right-10 -bottom-12 size-64 opacity-10" />
           <div className="relative">
-            <p className="eyebrow">Quem desenvolve</p>
-            <h3 className="mt-3 text-3xl leading-tight font-extrabold">Olá, eu sou o Alex Castro.</h3>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/alex/alex-castro.webp"
+                alt=""
+                width={900}
+                height={900}
+                sizes="64px"
+                className="size-16 shrink-0 rounded-full object-cover ring-2 ring-white/25"
+              />
+              <div>
+                <p className="eyebrow">Quem desenvolve</p>
+                <h3 className="mt-1 text-2xl leading-tight font-extrabold sm:text-3xl">Olá, eu sou o Alex Castro.</h3>
+              </div>
+            </div>
             <p className="mt-4 text-lg leading-relaxed text-muted-on-dark">
               Desenvolvo soluções digitais para pequenos e médios negócios, unindo design, tecnologia e funcionalidades
               que facilitam o atendimento. Meu objetivo é criar sites simples de usar e úteis no dia a dia.

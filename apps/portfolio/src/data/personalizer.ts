@@ -60,3 +60,32 @@ export function describeSample(read: (field: SampleField) => string | null): str
   if (lines.length === 0) return "";
   return `Montei esta amostra no site como ponto de partida:\n${lines.join("\n")}\n\nSobre o meu negócio: `;
 }
+
+const businessBySegment: Partial<Record<string, string>> = {
+  barbearia: "beleza",
+  clinica: "saude",
+  restaurante: "alimentacao",
+  loja: "comercio",
+};
+
+/**
+ * Sugestão de "Tipo de negócio" e "Tipo de projeto" a partir da amostra, para o visitante não
+ * repetir uma escolha que já fez. Só preenche quando a relação é clara; o resto fica em branco.
+ * Os valores continuam editáveis no formulário.
+ */
+export function suggestFromSample(read: (field: SampleField) => string | null): {
+  businessType: string;
+  projectType: string;
+} {
+  const segmento = read("segmento") ?? "";
+  const recurso = read("recurso") ?? "";
+  const projectByFeature: Partial<Record<string, string>> = {
+    agendar: "agendamento",
+    orcamento: "orcamento",
+    pedir: segmento === "restaurante" ? "cardapio" : segmento === "loja" ? "loja" : "",
+  };
+  return {
+    businessType: businessBySegment[segmento] ?? "",
+    projectType: projectByFeature[recurso] ?? "",
+  };
+}

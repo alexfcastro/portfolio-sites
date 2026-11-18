@@ -6,7 +6,7 @@ import { useEffect, useRef, useState, useSyncExternalStore, type ChangeEvent, ty
 import { SelectField, TextAreaField, TextField } from "@/components/contact/form-fields";
 import type { ContactMode } from "@/config/site";
 import { businessTypeOptions, objectiveOptions, projectTypeOptions } from "@/data/contact";
-import { describeSample } from "@/data/personalizer";
+import { describeSample, suggestFromSample, type SampleField } from "@/data/personalizer";
 import { buildMailtoUrl, buildWhatsAppUrl } from "@/lib/contact/channels";
 import {
   buildContactMessage,
@@ -54,8 +54,11 @@ export function ContactFormWithParams(props: ContactFormProps) {
     searchParams.get("projeto"),
     props.projects.map((project) => project.slug),
   );
-  const sample = describeSample((field) => searchParams.get(field));
-  return <ContactForm {...props} initialProjectSlug={slug} initialMessage={sample} />;
+  const read = (field: SampleField) => searchParams.get(field);
+  const sample = describeSample(read);
+  return (
+    <ContactForm {...props} initialProjectSlug={slug} initialMessage={sample} initialChoices={suggestFromSample(read)} />
+  );
 }
 
 export function ContactForm({
@@ -65,11 +68,17 @@ export function ContactForm({
   projects,
   initialProjectSlug = "",
   initialMessage = "",
-}: ContactFormProps & { initialProjectSlug?: string; initialMessage?: string }) {
+  initialChoices,
+}: ContactFormProps & {
+  initialProjectSlug?: string;
+  initialMessage?: string;
+  initialChoices?: { businessType: string; projectType: string };
+}) {
   const hydrated = useHydrated();
   const slugs = projects.map((project) => project.slug);
   const [values, setValues] = useState<ContactFormValues>(() => ({
     ...emptyContactForm,
+    ...initialChoices,
     projectSlug: initialProjectSlug,
     message: initialMessage,
   }));

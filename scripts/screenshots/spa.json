@@ -1,0 +1,45 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/spa",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    {
+      "name": "desktop-vale",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "await new Promise((r) => setTimeout(r, 600)); const setV = (el, v) => { const p = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype; Object.getOwnPropertyDescriptor(p, 'value').set.call(el, v); el.dispatchEvent(new Event('input', { bubbles: true })); }; const f = document.querySelector('#vale-presente form'); f.querySelectorAll('input[type=radio]')[2].click(); await new Promise((r) => setTimeout(r, 200)); const campos = f.querySelectorAll('input:not([type=radio]), textarea'); setV([...campos].find((c) => c.placeholder === 'Ex.: Mãe'), 'Mãe'); setV([...campos].find((c) => c.placeholder === 'Ex.: Ana e Pedro'), 'Ana e Pedro'); setV(f.querySelector('textarea'), 'Uma tarde inteira só sua, sem pressa e sem celular. Você merece esse silêncio.');",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('vale-titulo').scrollIntoView(); window.scrollBy(0, 150);"
+      ]
+    },
+    {
+      "name": "mobile-vale",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "await new Promise((r) => setTimeout(r, 600)); const setV = (el, v) => { const p = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype; Object.getOwnPropertyDescriptor(p, 'value').set.call(el, v); el.dispatchEvent(new Event('input', { bubbles: true })); }; const f = document.querySelector('#vale-presente form'); f.querySelectorAll('input[type=radio]')[2].click(); await new Promise((r) => setTimeout(r, 200)); const campos = f.querySelectorAll('input:not([type=radio]), textarea'); setV([...campos].find((c) => c.placeholder === 'Ex.: Mãe'), 'Mãe'); setV([...campos].find((c) => c.placeholder === 'Ex.: Ana e Pedro'), 'Ana e Pedro'); setV(f.querySelector('textarea'), 'Uma tarde inteira só sua, sem pressa e sem celular. Você merece esse silêncio.');",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelector('#vale-presente figure').scrollIntoView(); window.scrollBy(0, -160);"
+      ]
+    },
+    {
+      "name": "desktop-experiencias",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "await new Promise((r) => setTimeout(r, 600)); document.getElementById('experiencias-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

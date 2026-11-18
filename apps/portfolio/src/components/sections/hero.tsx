@@ -5,15 +5,17 @@ import { ShowcaseMarquee, type ShowcaseItem } from "@/components/sections/showca
 import { getConfiguredDemoUrl } from "@/config/demos";
 import { siteConfig } from "@/config/site";
 import { getCategoryLabel } from "@/data/categories";
-import { hero } from "@/data/home";
+import { hero, openingSlugs } from "@/data/home";
 import { quoteHref } from "@/data/navigation";
 import { resolveDemoPresentation } from "@/lib/demo";
-import { getCaseUrl, getFeaturedProjects, projects } from "@/data/projects";
+import { getCaseUrl, getProjectBySlug, projects } from "@/data/projects";
 
 export function Hero() {
-  // A abertura atravessa só os projetos em destaque; o catálogo completo fica em /projetos.
-  const items: ShowcaseItem[] = getFeaturedProjects().flatMap((project) => {
-    const cover = project.media[0];
+  // A abertura atravessa seis projetos que não repetem os destaques logo abaixo; o catálogo completo fica em /projetos.
+  const items: ShowcaseItem[] = openingSlugs.flatMap((slug) => {
+    const project = getProjectBySlug(slug);
+    const cover = project?.media[0];
+    if (!project) return [];
     if (!cover || cover.kind !== "screenshot") return [];
     return [
       {
@@ -53,24 +55,24 @@ export function Hero() {
         }
       >
       <div className="container-page relative pt-16 pb-12 text-center sm:pt-24 sm:pb-16 lg:pt-14 lg:pb-0">
-        <p className="rise-in inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-canvas backdrop-blur">
+        <p className="cena-selo rise-in inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-canvas backdrop-blur">
           <span aria-hidden className="size-2 rounded-full bg-accent-on-dark shadow-[0_0_0_4px_rgb(143_166_255_/_0.25)]" />
           {projects.length} projetos com demonstração para explorar
         </p>
         <h1
           id="hero-title"
           style={{ "--i": 1 } as React.CSSProperties}
-          className="rise-in mx-auto mt-6 max-w-4xl text-[2.625rem] leading-[1.03] font-extrabold tracking-tight sm:text-7xl lg:mt-4 lg:text-[4.25rem]"
+          className="cena-titulo rise-in mx-auto mt-6 max-w-4xl text-[2.625rem] leading-[1.03] font-extrabold tracking-tight sm:text-7xl lg:mt-4 lg:text-[4.25rem]"
         >
           {hero.titleStart} <span className="text-gradient">{hero.titleHighlight}</span> {hero.titleEnd}
         </h1>
         <p
           style={{ "--i": 2 } as React.CSSProperties}
-          className="rise-in mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-on-dark sm:text-xl lg:mt-4 lg:text-lg"
+          className="cena-sub rise-in mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-on-dark sm:text-xl lg:mt-4 lg:text-lg"
         >
           {hero.subtitle}
         </p>
-        <div style={{ "--i": 3 } as React.CSSProperties} className="rise-in mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:mt-6">
+        <div style={{ "--i": 3 } as React.CSSProperties} className="cena-acoes rise-in mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:mt-6">
           <Link href="/projetos" className="btn btn-primary btn-lg">
             Ver os {projects.length} projetos
             <ArrowRight aria-hidden className="size-4" />

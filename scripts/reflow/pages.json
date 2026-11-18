@@ -1,5 +1,5 @@
 {
-  "widths": [320, 360, 390, 412, 768, 1024, 1280, 1440],
+  "widths": [320, 360, 375, 390, 412, 768, 1024, 1280, 1440],
   "apps": [
     { "base": "http://localhost:3100", "paths": ["/", "/projetos", "/projetos/floricultura", "/sobre", "/contato", "/privacidade", "/nao-existe"] },
     { "base": "http://localhost:3101", "paths": ["/", "/agendar", "/admin"] },
@@ -68,6 +68,13 @@
         }
       }
     },
-    { "base": "http://localhost:3113", "paths": ["/", "/residencial-aurora", "/fluente-na-mala", "/festival-sabores-da-serra", "/agenda-leve", "/clube-serra-alta", "/solar-viva"] }
+    { "base": "http://localhost:3120", "paths": ["/"] },
+    { "base": "http://localhost:3119", "paths": ["/"], "storage": { "ax-fio-nobre-demo": {"versao": 1, "respostas": {"incomodo": "afinamento", "tempo": "recente", "quimica": "descoloracao", "mudanca": "parto", "objetivo": "ambos", "historico": "voltou"}, "avaliacoes": []} } },
+    { "base": "http://localhost:3118", "paths": ["/"] },
+    { "base": "http://localhost:3117", "paths": ["/"], "storage": { "ax-atelie-veu-demo": {"versao": 1, "grupo": {"noiva": {"quantidade": 1, "servico": "ambos"}, "mae": {"quantidade": 2, "servico": "ambos"}, "madrinha": {"quantidade": 8, "servico": "ambos"}, "convidada": {"quantidade": 4, "servico": "maquiagem"}, "daminha": {"quantidade": 2, "servico": "cabelo"}}, "cerimonia": 600, "noLocal": true, "data": null, "pedidos": []} } },
+    { "base": "http://localhost:3116", "paths": ["/", "/?caminho=cliente", "/?caminho=aluna"] },
+    { "base": "http://localhost:3115", "paths": ["/"], "storage": { "ax-nucleo-demo": { "versao": 1, "objetivo": "pos-operatorio", "respostas": { "cirurgia": "lipo", "dias": "ate-7", "liberacao": "nao" }, "avaliacoes": [] } } },
+    { "base": "http://localhost:3114", "paths": ["/", "/?procedimento=correcao"] },
+    { "base": "http://localhost:3113", "paths": ["/", "/residencial-aurora", "/fluente-na-mala", "/festival-sabores-da-serra", "/agenda-leve", "/clube-serra-alta", "/solar-viva", "/volume-perfeito"] }
   ]
 }

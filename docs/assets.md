@@ -105,3 +105,44 @@ Geradas no Google Flow com o Nano Banana 2.1, pelo agente do Flow, na conta do p
 ### Landing pages (13/11/2026)
 
 19 fotos geradas no Google Flow (Nano Banana 2.1), na conta do proprietário, em `apps/landing/public/fotos/`: Residencial Aurora (4), Fluente na Mala (3), Festival Sabores da Serra (4), Agenda Leve (1), Clube Serra Alta (4) e Solar Viva (3). A tela do aplicativo Agenda Leve é desenhada em HTML, não é imagem. Total publicado: **182 fotos**.
+
+## Foto do proprietário (17/11/2026)
+
+- `apps/portfolio/public/alex/alex-castro.webp`: foto de Alex Castro enviada por ele mesmo para uso no portfólio (página Sobre e bloco "Quem desenvolve" da página inicial). Convertida de `perfil.png` para WebP 900×900 (≈50 KB).
+
+## Studio Linha Fina (apps/sobrancelhas) — 17/11/2026
+
+- 15 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/18-sobrancelhas.txt`. Pessoas fictícias.
+- Os pares de antes e depois foram gerados como **uma imagem só** (antes à esquerda, depois à direita do mesmo rosto) e divididos com `scripts/dividir-pares.mjs`, para garantir o mesmo rosto, luz e enquadramento nas duas metades.
+- O par "trabalho antigo" foi refeito a pedido do proprietário: a primeira versão tinha a sobrancelha cinza em bloco, artificial. A atual mostra pigmento antigo desbotado e irregular, com os fios naturais por cima. Versões descartadas em `fotos-ia/sobrancelhas/substituidas/`.
+- A página avisa que as imagens são ilustrativas e não mostram resultados de clientes.
+
+## Clínica Núcleo (apps/estetica) — 17/11/2026
+
+- 9 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/19-estetica.txt`: sala, quatro objetivos, duas esteticistas fictícias e a estrutura. Corpos cobertos e enquadramento discreto.
+- Os números de registro profissional da equipe aparecem como espaço reservado ("espaço para o número real"), nunca inventados.
+
+
+## Lash Lab (apps/cilios) — 17/11/2026
+
+- 13 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/20-cilios.txt`: portas, técnicas em close, galeria de olhares e "trabalhos de ex-alunas" (exemplos marcados na página). Pessoas fictícias.
+
+## Ateliê Véu (apps/noivas) — 17/11/2026
+
+- 8 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/21-noivas.txt`: abertura, portfólio de penteados e maquiagens e o teste. Pessoas fictícias; depoimentos marcados como exemplo.
+
+
+## Esmalteria Meia-Lua (apps/unhas) — 17/11/2026
+
+- 10 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/22-unhas.txt`: abertura, oito inspirações do catálogo e a bancada de esterilização. Mãos de pessoas fictícias.
+
+
+## Instituto Fio Nobre (apps/capilar) — 17/11/2026
+
+- 6 fotos geradas por IA (Nano Banana, Google Flow), 8 depois de dividir os pares; prompt em `docs/fotos-ia-flow/23-capilar.txt`. Pares de antes e depois gerados numa imagem só e divididos com `scripts/dividir-pares.mjs`. Pessoas fictícias; a página avisa que não são resultados de clientes.
+
+
+## Casa Serena (apps/spa) — 17/11/2026
+
+- 9 fotos geradas por IA (Nano Banana, Google Flow), prompt em `docs/fotos-ia-flow/24-spa.txt`: sala, experiências, day spa e o espaço. Corpos cobertos, enquadramento discreto.
+- O vale-presente é um módulo reaproveitável em `apps/spa/src/vale-presente/` (lógica, testes, componentes e README).

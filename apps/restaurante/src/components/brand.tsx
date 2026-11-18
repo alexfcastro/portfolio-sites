@@ -12,7 +12,7 @@ export function Logo() {
   return (
     <span className="inline-flex items-center gap-2.5">
       <FlameMark className="size-9 shrink-0" />
-      <span className="font-serif text-2xl whitespace-nowrap text-brick">Sabor &amp; Brasa</span>
+      <span className="font-serif text-xl whitespace-nowrap text-brick sm:text-2xl">Sabor &amp; Brasa</span>
     </span>
   );
 }

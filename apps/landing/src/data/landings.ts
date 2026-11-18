@@ -1,5 +1,5 @@
 /*
- * As seis landing pages de demonstração. Todos os negócios, ofertas, preços e datas são fictícios.
+ * As landing pages de demonstração. Todos os negócios, ofertas, preços e datas são fictícios.
  * Cada página tem um objetivo de conversão diferente, para mostrar a variedade do formato.
  */
 export interface Landing {
@@ -62,5 +62,13 @@ export const landings: Landing[] = [
     goal: "Pedir a simulação de economia",
     summary: "Capta pedidos de energia solar: calculadora com o valor da conta, etapas da instalação e formulário.",
     cover: "solar-hero",
+  },
+  {
+    slug: "volume-perfeito",
+    name: "Curso Volume Perfeito",
+    kind: "Curso presencial",
+    goal: "Reservar a vaga na turma",
+    summary: "Turma de seis alunas com data, vagas que diminuem, cronograma, parcelamento calculado na hora e reserva.",
+    cover: "vp-hero",
   },
 ];

@@ -42,6 +42,20 @@
     "dev:floricultura": "pnpm --filter @ax/floricultura dev",
     "build:floricultura": "pnpm --filter @ax/floricultura build",
     "dev:landing": "pnpm --filter @ax/landing dev",
-    "build:landing": "pnpm --filter @ax/landing build"
+    "build:landing": "pnpm --filter @ax/landing build",
+    "dev:sobrancelhas": "pnpm --filter @ax/sobrancelhas dev",
+    "build:sobrancelhas": "pnpm --filter @ax/sobrancelhas build",
+    "dev:estetica": "pnpm --filter @ax/estetica dev",
+    "build:estetica": "pnpm --filter @ax/estetica build",
+    "dev:cilios": "pnpm --filter @ax/cilios dev",
+    "build:cilios": "pnpm --filter @ax/cilios build",
+    "dev:noivas": "pnpm --filter @ax/noivas dev",
+    "build:noivas": "pnpm --filter @ax/noivas build",
+    "dev:unhas": "pnpm --filter @ax/unhas dev",
+    "build:unhas": "pnpm --filter @ax/unhas build",
+    "dev:capilar": "pnpm --filter @ax/capilar dev",
+    "build:capilar": "pnpm --filter @ax/capilar build",
+    "dev:spa": "pnpm --filter @ax/spa dev",
+    "build:spa": "pnpm --filter @ax/spa build"
   }
 }

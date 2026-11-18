@@ -86,3 +86,15 @@ export const differentials = [
     description: "Desempenho, acessibilidade e boa leitura no celular fazem parte do trabalho, não são extras.",
   },
 ] as const;
+
+/**
+ * A página inicial mostra cada projeto uma vez só: três destaques com uma tarefa para testar e, na
+ * abertura em 3D, outros seis. O catálogo completo fica em /projetos.
+ */
+export const homeHighlights = [
+  { slug: "barbearia", task: "Escolha um serviço, um barbeiro e um horário livre." },
+  { slug: "restaurante", task: "Monte um pedido com adicionais e veja o total na hora." },
+  { slug: "imobiliaria", task: "Filtre por bairro e preço e salve um imóvel nos favoritos." },
+] as const;
+
+export const openingSlugs = ["clinica", "floricultura", "academia", "petshop", "advocacia", "oficina"] as const;

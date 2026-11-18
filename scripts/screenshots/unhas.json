@@ -1,0 +1,50 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/unhas",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-meia-lua-demo');"
+      ]
+    },
+    {
+      "name": "desktop-catalogo",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-meia-lua-demo'); await new Promise((r) => setTimeout(r, 600)); document.getElementById('catalogo-titulo').scrollIntoView(); window.scrollBy(0, -100);"
+      ]
+    },
+    {
+      "name": "mobile-montador",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "localStorage.removeItem('ax-meia-lua-demo'); await new Promise((r) => setTimeout(r, 600)); [...document.querySelectorAll('#catalogo button')].find((b) => b.textContent.includes('Quero esta') && b.textContent.includes('Rosa com glitter')).click();",
+        "await new Promise((r) => setTimeout(r, 900)); document.getElementById('resultado-titulo').scrollIntoView(); window.scrollBy(0, -260);"
+      ]
+    },
+    {
+      "name": "desktop-plano",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-meia-lua-demo'); await new Promise((r) => setTimeout(r, 600)); document.querySelectorAll('input[name=plano]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario button[aria-pressed]')][3].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario .grid button:not([disabled])')][1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('agendar-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

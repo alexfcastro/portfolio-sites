@@ -1,0 +1,61 @@
+Gere as 13 imagens abaixo com o Nano Banana para o site Lash Lab (lash designer que atende clientes e dá curso). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Moderno e direto. Fundo neutro claro ou preto, toques sutis de rosa claro. Fotografia de beleza em close, nítida, com pele de textura real (poros visíveis), sem filtro de plástico.
+
+REGRAS (valem para todas): Fotografia realista. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água. As pessoas não existem e não devem se parecer com ninguém conhecido. Extensões de cílios realistas e bem aplicadas, nunca exageradas nem tortas; olhos naturais, sem lentes coloridas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: porta-cliente
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de meio rosto de uma mulher de uns 30 anos, pele parda, olhos abertos olhando para o lado, com extensão de cílios volume brasileiro bem natural. Luz suave, fundo neutro.
+
+2. NOME: porta-aluna
+   PROPORÇÃO: 4:3 (horizontal)
+   Aluna de uns 25 anos, de luvas e máscara, aplicando cílios com pinça em uma cabeça de treino (manequim) sobre uma bancada clara, com uma instrutora ao lado apontando. Sala clara.
+
+3. NOME: olhar-fio-a-fio
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com extensão fio a fio clássica, efeito rímel natural. Mulher de pele clara.
+
+4. NOME: olhar-brasileiro
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com volume brasileiro, preenchido e leve. Mulher de pele negra.
+
+5. NOME: olhar-russo
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com volume russo, cílios mais cheios e marcados, porém elegantes. Mulher de pele morena.
+
+6. NOME: olhar-lifting
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com lash lifting: os cílios naturais curvados e escurecidos, sem extensão. Mulher de pele clara com sardas.
+
+7. NOME: galeria-olhar-fio-a-fio
+   PROPORÇÃO: 4:5 (vertical)
+   Mulher de uns 40 anos de olhos fechados, deitada na maca, logo após aplicação fio a fio, close do rosto de lado.
+
+8. NOME: galeria-olhar-brasileiro
+   PROPORÇÃO: 4:5 (vertical)
+   Mulher de uns 28 anos, pele negra, olhando para cima, close do olhar com volume brasileiro.
+
+9. NOME: galeria-olhar-russo
+   PROPORÇÃO: 4:5 (vertical)
+   Mulher de uns 35 anos, pele morena, de perfil, close do olhar com volume russo, fundo preto.
+
+10. NOME: galeria-olhar-lifting
+   PROPORÇÃO: 4:5 (vertical)
+   Mulher de uns 50 anos, cabelo grisalho curto, sorrindo de leve, close do olhar com lash lifting natural.
+
+11. NOME: aluna-1
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de um olho fechado de uma cliente deitada com extensão fio a fio recém-aplicada, com fita de proteção sob os cílios inferiores, sobre lençol rosa claro.
+
+12. NOME: aluna-2
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de um olho fechado de outra cliente deitada, com volume brasileiro recém-aplicado e fita de proteção, iluminação de luminária de anel.
+
+13. NOME: aluna-3
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de um olho aberto de uma cliente sentada em frente a um espelho, vendo o resultado de uma extensão leve, sorriso parcial visível.

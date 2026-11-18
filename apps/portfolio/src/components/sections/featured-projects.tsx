@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { getConfiguredDemoUrl } from "@/config/demos";
 import { siteConfig } from "@/config/site";
 import { getCategoryLabel } from "@/data/categories";
+import { homeHighlights } from "@/data/home";
 import { getProjectTheme } from "@/data/project-themes";
 import { getCaseUrl, getProjectBySlug, projects } from "@/data/projects";
 import { resolveDemoPresentation } from "@/lib/demo";
@@ -25,7 +26,7 @@ function Spotlight({ project, index, task }: { project: Project; index: number; 
   return (
     <article
       style={{ background: theme.background, color: theme.foreground }}
-      className="reveal group relative grid items-center gap-10 overflow-hidden rounded-[2rem] p-7 shadow-raised sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-14"
+      className="reveal group relative grid items-center gap-7 overflow-hidden rounded-[2rem] p-6 shadow-raised sm:gap-10 sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-14"
     >
       <div className={flipped ? "lg:order-2" : ""}>
         <p style={{ color: theme.accent }} className="text-sm font-semibold tracking-[0.12em] uppercase">
@@ -46,10 +47,7 @@ function Spotlight({ project, index, task }: { project: Project; index: number; 
             {task}
           </p>
         )}
-        <p style={{ color: theme.muted }} className="mt-3 text-sm">
-          Projeto conceitual, com negócio fictício.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
           <Link
             href={getCaseUrl(project.slug)}
             style={{ background: theme.foreground, color: theme.background }}
@@ -105,15 +103,8 @@ function Spotlight({ project, index, task }: { project: Project; index: number; 
   );
 }
 
-// Três destaques com funções diferentes (agendar, pedir, buscar) e uma tarefa curta para o visitante testar.
-const highlights = [
-  { slug: "barbearia", task: "Escolha um serviço, um barbeiro e um horário livre." },
-  { slug: "restaurante", task: "Monte um pedido com adicionais e veja o total na hora." },
-  { slug: "imobiliaria", task: "Filtre por bairro e preço e salve um imóvel nos favoritos." },
-];
-
 export function FeaturedProjects() {
-  const featured = highlights.flatMap((highlight) => {
+  const featured = homeHighlights.flatMap((highlight) => {
     const project = getProjectBySlug(highlight.slug);
     return project ? [{ project, task: highlight.task }] : [];
   });
@@ -142,48 +133,19 @@ export function FeaturedProjects() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
 
-      <section aria-labelledby="indice-title" className="bg-paper py-20 sm:py-28">
-        <div className="container-page">
-          <SectionHeading id="indice-title" eyebrow="Índice" title={`Os ${projects.length} projetos, lado a lado`}>
-            <p>Selecione um projeto para conhecer o problema, a solução e a demonstração.</p>
-          </SectionHeading>
-
-          <ul className="mt-10 border-t border-line">
-            {projects.map((project, index) => {
-              const cover = project.media[0];
-              return (
-                <li key={project.slug} className="reveal">
-                  <Link
-                    href={getCaseUrl(project.slug)}
-                    className="group relative flex min-h-16 items-center gap-4 border-b border-line py-4 transition-colors hover:bg-canvas sm:gap-8 sm:py-6"
-                  >
-                    <span className="w-8 shrink-0 font-display text-sm font-bold text-muted tabular-nums">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-display text-2xl leading-tight font-extrabold tracking-tight transition-transform duration-300 group-hover:translate-x-2 sm:text-4xl">
-                      {project.name}
-                    </span>
-                    <span className="ml-auto hidden text-muted sm:block">{getCategoryLabel(project.categoryId)}</span>
-                    <ArrowRight
-                      aria-hidden
-                      className="size-5 shrink-0 text-accent transition-transform duration-300 group-hover:translate-x-1 max-sm:ml-auto"
-                    />
-                    {cover && (
-                      <span
-                        aria-hidden
-                        className="pointer-events-none absolute top-1/2 right-40 z-10 hidden w-72 -translate-y-1/2 scale-95 rotate-2 overflow-hidden rounded-xl opacity-0 shadow-raised ring-1 ring-black/10 transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 lg:block"
-                      >
-                        <Image src={cover.src} alt="" width={cover.width} height={cover.height} sizes="288px" className="h-auto w-full" />
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="mt-10 flex flex-col items-start gap-4 rounded-[2rem] border border-line bg-canvas p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+            <p className="max-w-xl text-lg leading-relaxed">
+              <strong className="font-display text-xl font-extrabold">
+                Mais {projects.length - featured.length} projetos no catálogo.
+              </strong>{" "}
+              Clínica, oficina, advocacia, academia e outros, cada um com o próprio fluxo para testar.
+            </p>
+            <Link href="/projetos" className="btn btn-primary shrink-0">
+              Ver o catálogo completo
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

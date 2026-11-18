@@ -1,0 +1,49 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/capilar",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-fio-nobre-demo');"
+      ]
+    },
+    {
+      "name": "desktop-orientacao",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-fio-nobre-demo'); await new Promise((r) => setTimeout(r, 600)); const refazer = [...document.querySelectorAll('#questionario button')].find((b) => b.textContent.includes('Refazer')); if (refazer) { refazer.click(); await new Promise((r) => setTimeout(r, 300)); } const responder = async (i) => { [...document.querySelectorAll('#questionario fieldset button')][i].click(); await new Promise((r) => setTimeout(r, 250)); }; await responder(2); await responder(0); await responder(3); await responder(0); await responder(1); await responder(2);",
+        "await new Promise((r) => setTimeout(r, 400)); document.getElementById('questionario-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    },
+    {
+      "name": "mobile-questionario",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "localStorage.removeItem('ax-fio-nobre-demo'); await new Promise((r) => setTimeout(r, 600)); const refazer = [...document.querySelectorAll('#questionario button')].find((b) => b.textContent.includes('Refazer')); if (refazer) { refazer.click(); await new Promise((r) => setTimeout(r, 300)); } const responder = async (i) => { [...document.querySelectorAll('#questionario fieldset button')][i].click(); await new Promise((r) => setTimeout(r, 250)); }; await responder(0); await responder(1);",
+        "await new Promise((r) => setTimeout(r, 400)); document.getElementById('questionario-titulo').scrollIntoView(); window.scrollBy(0, -80);"
+      ]
+    },
+    {
+      "name": "desktop-mega",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-fio-nobre-demo'); await new Promise((r) => setTimeout(r, 600)); document.querySelectorAll('input[name=mega-cm]')[2].click(); document.querySelectorAll('input[name=mega-g]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('mega-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

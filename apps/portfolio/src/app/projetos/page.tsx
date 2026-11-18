@@ -1,5 +1,6 @@
 import { ProjectCard } from "@/components/projects/project-card";
-import { ProjectExplorer } from "@/components/projects/project-explorer";
+import { Suspense } from "react";
+import { ProjectExplorer, ProjectExplorerWithParams } from "@/components/projects/project-explorer";
 import { FinalCta } from "@/components/sections/final-cta";
 import { LandingPages } from "@/components/sections/landing-pages";
 import { PageIntro } from "@/components/ui/page-intro";
@@ -10,7 +11,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Projetos",
   description:
-    "Doze projetos conceituais de sites para barbearia, clínica, restaurante, oficina, imobiliária, floricultura e outros segmentos. Negócios fictícios.",
+    `${projects.length} projetos conceituais de sites para barbearia, clínica, restaurante, estética, sobrancelhas, unhas, spa e outros segmentos. Negócios fictícios.`,
   path: "/projetos",
 });
 
@@ -27,9 +28,16 @@ export default function ProjectsPage() {
     ]),
   );
 
+  const explorerProps = {
+    items: projects.map(({ slug, categoryId, solutionIds }) => ({ slug, categoryId, solutionIds })),
+    cards,
+    categories: [...usedCategories],
+    solutions: [...usedSolutions],
+  };
+
   return (
     <>
-      <PageIntro eyebrow="Projetos" title="Doze projetos, diferentes desafios de negócio">
+      <PageIntro eyebrow="Projetos" title={`${projects.length} projetos, diferentes desafios de negócio`}>
         <p>
           Cada projeto é um conceito com um negócio fictício, criado para mostrar como um site pode resolver um
           problema comum do segmento. Em cada demonstração, dá para testar o fluxo como se fosse o cliente.
@@ -37,12 +45,9 @@ export default function ProjectsPage() {
       </PageIntro>
 
       <div className="container-page pb-20">
-        <ProjectExplorer
-          items={projects.map(({ slug, categoryId, solutionIds }) => ({ slug, categoryId, solutionIds }))}
-          cards={cards}
-          categories={[...usedCategories]}
-          solutions={[...usedSolutions]}
-        />
+        <Suspense fallback={<ProjectExplorer {...explorerProps} />}>
+          <ProjectExplorerWithParams {...explorerProps} />
+        </Suspense>
       </div>
 
       <LandingPages />

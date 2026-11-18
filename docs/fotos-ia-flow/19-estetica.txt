@@ -1,0 +1,47 @@
+Gere as 9 imagens abaixo com o Nano Banana para o site Clínica Núcleo (clínica de estética facial e corporal). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo ou palavra extra. Sem espaços nem acentos, tudo em minúsculas e os hífens como estão.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+ESTILO (vale para todas): Clínica de estética séria e limpa. Paredes brancas, detalhes em verde-água suave e cinza claro, madeira clara, luz natural difusa. Nada de luxo exagerado, dourado ou neon.
+
+REGRAS (valem para todas): Fotografia realista e nítida, pele com textura real. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água; sem crachás e sem diplomas legíveis. As pessoas não existem e não devem se parecer com ninguém conhecido. Nada de corpos sensualizados: roupas e toalhas cobrem o corpo, enquadramento discreto e profissional.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: hero-sala
+   PROPORÇÃO: 4:3 (horizontal)
+   Sala de atendimento da clínica: maca branca com lençol cinza claro, carrinho auxiliar organizado, parede branca com um detalhe verde-água, planta, janela com cortina leve. Uma esteticista de jaleco branco ajeitando a toalha, de costas ou de perfil, sem cliente.
+
+2. NOME: obj-pos-operatorio
+   PROPORÇÃO: 4:3 (horizontal)
+   Mãos de uma esteticista de luvas fazendo drenagem linfática suave na lateral do abdome de uma cliente deitada, coberta por toalha branca do peito para cima e da cintura para baixo. Enquadramento fechado e discreto.
+
+3. NOME: obj-manchas
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de uma esteticista de luvas aplicando um produto incolor com pincel na bochecha de uma cliente deitada, olhos fechados, com faixa branca no cabelo.
+
+4. NOME: obj-flacidez
+   PROPORÇÃO: 4:3 (horizontal)
+   Esteticista usando uma ponteira de radiofrequência (aparelho manual simples, sem tela visível) no contorno do rosto de uma cliente deitada, com faixa no cabelo.
+
+5. NOME: obj-acne
+   PROPORÇÃO: 4:3 (horizontal)
+   Limpeza de pele: esteticista de luvas e lupa de luz circular acima do rosto de uma cliente jovem deitada, olhos protegidos com algodão.
+
+6. NOME: equipe-helena
+   PROPORÇÃO: 1:1 (quadrada)
+   Retrato de esteticista de uns 40 anos, pele clara, cabelo castanho curto, jaleco branco, sorriso calmo, fundo da clínica clara desfocado.
+
+7. NOME: equipe-luana
+   PROPORÇÃO: 1:1 (quadrada)
+   Retrato de esteticista de uns 30 anos, pele negra, cabelo crespo preso, jaleco branco, sorriso leve, fundo da clínica clara desfocado.
+
+8. NOME: estrutura-sala
+   PROPORÇÃO: 4:3 (horizontal)
+   Outra sala individual da clínica, vazia: maca elétrica, armário branco fechado, pia pequena, autoclave discreta sobre a bancada, luz natural.
+
+9. NOME: estrutura-recepcao
+   PROPORÇÃO: 4:3 (horizontal)
+   Recepção pequena e tranquila: duas poltronas cinza claro, mesinha com jarra de água e copos, planta, parede branca com detalhe verde-água, sem pessoas.

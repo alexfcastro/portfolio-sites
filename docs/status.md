@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado em 17/11/2026.
+Atualizado em 17/11/2026 (noite).
 
 ## Fases concluídas
 
@@ -61,5 +61,26 @@ Redesenho visual do portfólio e da primeira dobra de 6 demos concluído e verif
 - **Marca:** o portfólio passou a se chamar **Estúdio X, por Alex Castro**, com símbolo novo (`lib/brand.ts`, `app/icon.svg`, `public/brand/`).
 - **Página inicial:** abertura com corredor 3D de janelas (`project-tunnel.tsx`, também no celular; cada janela abre a demo), destaques temáticos, personalizador ligado ao formulário de contato e FAQ.
 - **Fotos:** as 12 demos têm fotos realistas geradas por IA (182 publicadas; segunda leva importada; as fracas foram trocadas). Originais em `fotos-ia/` (fora do Git).
-- **Landing pages:** app novo `apps/landing` (porta 3113) com 6 landing pages fictícias, listadas no portfólio em `/#landing-pages`. Precisa de `NEXT_PUBLIC_DEMO_URL_LANDING` no portfólio quando publicado.
+- **Landing pages:** app novo `apps/landing` (porta 3113) com landing pages fictícias (hoje são 7), listadas no portfólio em `/#landing-pages`. Precisa de `NEXT_PUBLIC_DEMO_URL_LANDING` no portfólio quando publicado.
 - Pendências do proprietário acima continuam valendo (contato real, hospedagem, publicação, revisão da privacidade). Agora também: **revisar as respostas do FAQ** (prazos e formas de contratação) e publicar o app de landing pages.
+
+
+## Demos de beleza e estética (17/11/2026, noite)
+
+Sete demos novas, todas com fotos geradas por IA, entrada no catálogo (segmento "Beleza e estética"), página do projeto com "O que foi considerado", capturas reais e fluxo principal testado no Firefox:
+
+| Slug | Negócio fictício | Porta | Fluxo principal |
+|---|---|---|---|
+| `sobrancelhas` | Studio Linha Fina | 3114 | Comparador de antes e depois → avaliação com micropigmentação anterior |
+| `estetica` | Clínica Núcleo | 3115 | Montador de protocolo (sessões, intervalo, investimento) → avaliação |
+| `cilios` | Lash Lab | 3116 | Duas portas; reserva de vaga com contagem que diminui |
+| `noivas` | Ateliê Véu | 3117 | Orçamento em grupo (tempo, horário de início, valor) → data → pedido |
+| `unhas` | Esmalteria Meia-Lua | 3118 | Catálogo → montador da combinação → plano de manutenção |
+| `capilar` | Instituto Fio Nobre | 3119 | Questionário com orientação (não diagnóstico) → avaliação |
+| `spa` | Casa Serena | 3120 | Vale-presente com prévia do cartão (módulo reaproveitável) |
+
+E uma landing page nova no app `apps/landing`: **Curso Volume Perfeito** (`/volume-perfeito`), com reserva de vaga, parcelamento e botão fixo no celular.
+
+Links por segmento para as abordagens: `docs/links-por-segmento.md`.
+
+Pendências do proprietário (somam-se às de cima): números de registro profissional reais (Clínica Núcleo), depoimentos reais (hoje são exemplos marcados) e, se quiser, publicar as novas demos junto com as antigas.

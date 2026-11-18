@@ -78,5 +78,29 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "solar-casa": {
     "width": 1200,
     "height": 896
+  },
+  "vp-hero": {
+    "width": 1200,
+    "height": 670
+  },
+  "vp-aula": {
+    "width": 1200,
+    "height": 896
+  },
+  "vp-professora": {
+    "width": 1024,
+    "height": 1024
+  },
+  "vp-aluna-1": {
+    "width": 1024,
+    "height": 1024
+  },
+  "vp-aluna-2": {
+    "width": 1024,
+    "height": 1024
+  },
+  "vp-aluna-3": {
+    "width": 1024,
+    "height": 1024
   }
 };

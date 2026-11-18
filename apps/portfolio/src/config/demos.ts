@@ -20,6 +20,13 @@ const rawDemoUrls: Record<string, string | undefined> = {
   academia: process.env.NEXT_PUBLIC_DEMO_URL_ACADEMIA,
   "produtos-naturais": process.env.NEXT_PUBLIC_DEMO_URL_PRODUTOS_NATURAIS,
   floricultura: process.env.NEXT_PUBLIC_DEMO_URL_FLORICULTURA,
+  sobrancelhas: process.env.NEXT_PUBLIC_DEMO_URL_SOBRANCELHAS,
+  estetica: process.env.NEXT_PUBLIC_DEMO_URL_ESTETICA,
+  cilios: process.env.NEXT_PUBLIC_DEMO_URL_CILIOS,
+  noivas: process.env.NEXT_PUBLIC_DEMO_URL_NOIVAS,
+  unhas: process.env.NEXT_PUBLIC_DEMO_URL_UNHAS,
+  capilar: process.env.NEXT_PUBLIC_DEMO_URL_CAPILAR,
+  spa: process.env.NEXT_PUBLIC_DEMO_URL_SPA,
 };
 
 export const demoUrlSlugs = Object.keys(rawDemoUrls);

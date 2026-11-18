@@ -50,6 +50,12 @@ export function ProjectCard({ project, headingLevel: Heading = "h3", priority = 
         <p className="eyebrow !text-xs">{getCategoryLabel(project.categoryId)}</p>
         <Heading className="mt-1.5 text-[1.375rem] leading-tight font-extrabold">{project.name}</Heading>
         <p className="mt-3 leading-relaxed text-muted">{project.summary}</p>
+        {project.tryIt && (
+          <p className="mt-3 text-sm leading-relaxed">
+            <span className="font-semibold text-accent">Experimente: </span>
+            {project.tryIt}
+          </p>
+        )}
 
         <div className="mt-4 flex flex-wrap gap-2">
           <ConceptBadge />

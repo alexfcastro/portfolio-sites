@@ -109,7 +109,7 @@ export function Personalizer() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+        <div className="mt-10 grid gap-8 sm:mt-12 sm:gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center">
           <div className="space-y-6">
             <Group legend="1. Que tipo de negócio?" options={segments} value={segmentId} onChange={setSegmentId} />
             <Group legend="2. Qual a cor da marca?" options={palettes} value={paletteId} onChange={setPaletteId} swatch={(option) => option.accent} />
@@ -120,7 +120,8 @@ export function Personalizer() {
             </p>
           </div>
 
-          <div>
+          {/* No celular a prévia vem antes das escolhas, logo acima delas, para a mudança ser vista sem rolar. */}
+          <div className="max-lg:order-first">
             <div aria-hidden className="browser-frame shadow-raised">
               <div className="browser-bar">
                 <i />
@@ -143,20 +144,20 @@ export function Personalizer() {
                     {feature.button}
                   </span>
                 </div>
-                <p style={{ color: palette.accent }} className="mt-8 text-xs font-bold tracking-[0.14em] uppercase transition-colors duration-500">
+                <p style={{ color: palette.accent }} className="mt-5 text-xs font-bold tracking-[0.14em] uppercase transition-colors duration-500 sm:mt-8">
                   {segment.label === "Outro negócio" ? "O seu segmento" : segment.label}
                 </p>
-                <p key={`${segment.id}-${style.id}`} style={heading} className="rise-in mt-2 text-3xl leading-[1.05] sm:text-5xl">
+                <p key={`${segment.id}-${style.id}`} style={heading} className="rise-in mt-2 text-[1.75rem] leading-[1.05] sm:text-5xl">
                   {segment.headline}
                 </p>
                 <span
                   style={{ background: palette.accent, color: palette.onAccent }}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-colors duration-500"
+                  className="mt-5 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-colors duration-500"
                 >
                   <FeatureIcon className="size-4" />
                   {feature.button}
                 </span>
-                <div className="mt-8 grid grid-cols-3 gap-3">
+                <div className="mt-8 hidden grid-cols-3 gap-3 sm:grid">
                   {segment.items.map((item) => (
                     <div
                       key={item}
@@ -177,14 +178,14 @@ export function Personalizer() {
           </div>
         </div>
 
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-3 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {[
             { title: "Análise individual", text: "Começo entendendo como você atende, vende e o que hoje toma mais tempo." },
             { title: "Ponto de partida, não molde", text: "Gostou de um projeto? Ele vira referência e é adaptado ao seu jeito." },
-            { title: "Seu segmento não está aqui?", text: "Não tem problema: os 12 projetos são exemplos, não a lista do que é possível." },
+            { title: "Seu segmento não está aqui?", text: "Não tem problema: os projetos do catálogo são exemplos, não a lista do que é possível." },
             { title: "Ajustes até ficar com a sua cara", text: "Cores, fotos, textos e fluxos são revisados com você antes de publicar." },
           ].map((item) => (
-            <li key={item.title} className="reveal rounded-card border border-white/10 bg-white/[0.04] p-6">
+            <li key={item.title} className="reveal rounded-card border border-white/10 bg-white/[0.04] p-5 sm:p-6">
               <h3 className="text-lg font-bold">{item.title}</h3>
               <p className="mt-2 text-[0.9375rem] leading-relaxed text-muted-on-dark">{item.text}</p>
             </li>

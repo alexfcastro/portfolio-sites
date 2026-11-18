@@ -1,0 +1,51 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/noivas",
+  "shots": [
+    {
+      "name": "desktop-inicio",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-atelie-veu-demo');"
+      ]
+    },
+    {
+      "name": "desktop-grupo",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-atelie-veu-demo'); await new Promise((r) => setTimeout(r, 600)); [...document.querySelectorAll('#montador button')].filter((b) => b.textContent.includes('Mais uma'))[1].click();",
+        "await new Promise((r) => setTimeout(r, 200)); [...document.querySelectorAll('#montador button')].filter((b) => b.textContent.includes('Mais uma'))[1].click();",
+        "await new Promise((r) => setTimeout(r, 200)); const s = document.getElementById('cerimonia'); Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(s, '960'); s.dispatchEvent(new Event('change', { bubbles: true }));",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('montador-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    },
+    {
+      "name": "mobile-grupo",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "localStorage.removeItem('ax-atelie-veu-demo'); await new Promise((r) => setTimeout(r, 600)); [...document.querySelectorAll('#montador button')].filter((b) => b.textContent.includes('Mais uma'))[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelector('#montador fieldset').scrollIntoView(); window.scrollBy(0, -80);"
+      ]
+    },
+    {
+      "name": "desktop-datas",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-atelie-veu-demo'); await new Promise((r) => setTimeout(r, 600)); const livre = [...document.querySelectorAll('#disponibilidade button[aria-pressed]')].filter((b) => !b.disabled); livre[Math.min(9, livre.length - 1)].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('disponibilidade-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

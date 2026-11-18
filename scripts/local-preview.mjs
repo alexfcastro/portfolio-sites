@@ -5,7 +5,7 @@
 //   pnpm preview:local --skip-build  # só sobe os servidores (usa os builds existentes)
 //   node scripts/local-preview.mjs --only=portfolio,barbearia  # refaz só os builds indicados e sobe tudo
 //
-// Portfólio em http://localhost:3100, demos em 3101–3112 e landing pages em 3113 (as portas 3000/3001 ficam livres para outros projetos).
+// Portfólio em http://localhost:3100, demos em 3101–3112 e landing pages em 3113, demos novas a partir de 3114 (as portas 3000/3001 ficam livres para outros projetos).
 // Os builds usam NEXT_PUBLIC_DEPLOY_ENV=development, única forma de aceitar URLs `localhost`: o portfólio mostra
 // "Abrir demonstração" e as demos apontam de volta para o portfólio. Tudo continua `noindex`.
 // Ctrl+C encerra todos os servidores.
@@ -32,6 +32,13 @@ const DEMOS = [
   "produtos-naturais",
   "floricultura",
   "landing",
+  "sobrancelhas",
+  "estetica",
+  "cilios",
+  "noivas",
+  "unhas",
+  "capilar",
+  "spa",
 ];
 const portfolioUrl = `http://localhost:${PORTFOLIO_PORT}`;
 const demoPort = (slug) => PORTFOLIO_PORT + 1 + DEMOS.indexOf(slug);

@@ -1,0 +1,62 @@
+Gere as 10 imagens abaixo com o Nano Banana para o site Studio Linha Fina (estúdio de sobrancelhas e micropigmentação). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada.
+- Não acrescente nada ao nome: nenhum número, data, prefixo, sufixo, palavra extra, "(1)", "copia", "final", "v2" ou descrição.
+- Não use espaços nem acentos. Mantenha tudo em minúsculas e os hífens como estão.
+- Se gerar mais de uma variação de um item, entregue só uma com esse nome.
+
+PROPORÇÃO: indicada em cada item.
+
+ESTILO (vale para todas): Fotografia de estúdio de beleza delicado e minimalista. Tons nude, bege, marrom-cacau e branco. Luz natural suave e difusa, pele com textura real (poros visíveis, sem aspecto de plástico), muito espaço limpo.
+
+REGRAS (valem para todas): Fotografia realista, nítida, como foto de celular bom ou câmera. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água. As pessoas não existem: não devem se parecer com nenhuma pessoa famosa ou conhecida. Sem maquiagem pesada.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere a imagem de novo antes de seguir.
+
+ITENS 1 A 5 — COMPARAÇÃO ANTES E DEPOIS (MUITO IMPORTANTE)
+Cada um desses itens é UMA imagem dividida ao meio na vertical, com DUAS fotos lado a lado do MESMO rosto:
+- metade esquerda = ANTES; metade direita = DEPOIS.
+- Mesma mulher, mesmo ângulo, mesma luz, mesmo enquadramento, mesma expressão e mesmo fundo nas duas metades. A ÚNICA diferença é a sobrancelha.
+- Enquadramento bem fechado: da testa até a ponta do nariz, olhos abertos olhando para a câmera, as duas sobrancelhas inteiras e centralizadas.
+- Sem linha, moldura, seta ou texto separando as metades: as duas fotos simplesmente encostam uma na outra.
+- O DEPOIS deve parecer micropigmentação fio a fio natural e bem feita (fios finos e individuais, cor marrom suave), nunca uma sobrancelha pintada em bloco.
+
+1. NOME: par-hero
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 35 anos, pele morena clara, cabelo castanho preso. ANTES: sobrancelhas com falhas no meio e o rabo quase sem fios. DEPOIS: as mesmas sobrancelhas completas com fios desenhados.
+
+2. NOME: par-falhas
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 28 anos, pele clara com sardas leves. ANTES: fios bonitos mas com buracos visíveis no meio de cada sobrancelha. DEPOIS: falhas preenchidas com fios, formato mantido.
+
+3. NOME: par-ralas
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 45 anos, pele negra, cabelo crespo curto. ANTES: sobrancelhas muito ralas, quase sem formato. DEPOIS: sobrancelhas desenhadas por completo, naturais e delicadas.
+
+4. NOME: par-assimetricas
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 32 anos, pele parda. ANTES: uma sobrancelha visivelmente mais alta e mais curta que a outra. DEPOIS: as duas na mesma altura e comprimento.
+
+5. NOME: par-correcao
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 55 anos, pele clara, cabelo grisalho. ANTES: micropigmentação antiga, larga, em bloco e acinzentada-azulada. DEPOIS: cor corrigida para marrom suave, formato mais fino com fios.
+
+6. NOME: proc-design
+   PROPORÇÃO: 4:3 (horizontal)
+   Close das mãos de uma profissional de luvas fazendo design de sobrancelha com pinça numa cliente deitada, olhos fechados. Só parte do rosto aparece.
+
+7. NOME: proc-fio-a-fio
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de uma profissional de luvas desenhando com lápis branco o mapeamento da sobrancelha (linhas de medida finas) numa cliente deitada, antes do procedimento.
+
+8. NOME: proc-nano
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de bancada limpa com caneta de micropigmentação, pequenos copinhos de pigmento marrom, luvas e algodão, sobre superfície bege. Sem pessoas.
+
+9. NOME: proc-correcao
+   PROPORÇÃO: 4:3 (horizontal)
+   Sala de atendimento do estúdio: maca branca com lençol bege, luminária de anel, carrinho auxiliar organizado, parede nude, planta. Sem pessoas.
+
+10. NOME: profissional
+   PROPORÇÃO: 4:5 (vertical)
+   Retrato de uma designer de sobrancelhas de uns 38 anos, pele morena, cabelo castanho preso em coque baixo, blusa bege, sorriso leve, no estúdio claro ao fundo desfocado.

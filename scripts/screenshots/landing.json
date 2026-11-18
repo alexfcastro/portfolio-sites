@@ -42,6 +42,13 @@
       "width": 1440,
       "height": 900,
       "scale": 1
+    },
+    {
+      "name": "volume-perfeito",
+      "path": "/volume-perfeito",
+      "width": 1440,
+      "height": 900,
+      "scale": 1
     }
   ]
 }

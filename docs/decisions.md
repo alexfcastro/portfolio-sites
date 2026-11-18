@@ -87,3 +87,28 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 - **Toda foto dentro de uma moldura (`.foto`).** O componente `Foto` passou a renderizar a imagem dentro de um contêiner que recorta o zoom; classes de tamanho, proporção e cantos vão na moldura.
 - **Painéis de destaque com a paleta de cada demo** (`apps/portfolio/src/data/project-themes.ts`), para o portfólio mostrar que cada negócio tem identidade própria.
 - **Marca "Estúdio X, por Alex Castro" (13/11/2026).** O portfólio passou a se apresentar como estúdio, mantendo visível que é um profissional só: o nome do proprietário aparece junto da marca no cabeçalho, no rodapé e em "Sobre", e os textos continuam em primeira pessoa. `siteConfig.name` é a marca e `siteConfig.owner` é a pessoa. O símbolo é um X de dois traços, o segundo interrompido no cruzamento, em vetor (criação própria); os arquivos em `public/brand/` mantiveram os nomes antigos (`ax-*`) para não quebrar referências. Pendente do proprietário: conferir disponibilidade do nome (domínio, redes sociais e INPI) antes de publicar.
+
+## Rodada de acabamento a partir do relatório de 17/11/2026
+
+- Cabeçalho do Sabor & Brasa: no celular o carrinho mostra só ícone e contagem (o botão passava da margem com barra de rolagem). "1 item" no singular. Reflow passou a testar também 375 px.
+- Página inicial sem repetição: a abertura em 3D mostra seis projetos diferentes dos três destaques; o índice dos 12 saiu da home (fica em /projetos) e virou um convite para o catálogo. Abertura ~30% mais curta.
+- Landing pages em carrossel horizontal no celular; filtros do catálogo recolhidos atrás de "Filtrar projetos" em telas pequenas.
+- Assinatura "por Alex Castro" maior (13 px) e foto do Alex nas páginas Sobre e inicial.
+- O formulário de contato pré-seleciona tipo de negócio e de projeto quando vem do personalizador e a relação é clara.
+- Não aplicado: novos textos de FAQ e da página Sobre com fatos da trajetória — dependem de informações reais do proprietário.
+
+## Segunda rodada (reanálise de 17/11/2026)
+
+- Abertura em celular baixo (320 × 740 e 320 × 568): o texto ficou mais compacto e não sai da tela; quando não há espaço, a dica de rolagem não aparece e o rodapé da cena (contador e "Pular") só surge depois que o texto saiu. Com foco pelo teclado, "Pular" aparece sempre. Verificado por `scripts/check-abertura.mjs`.
+- Página do case: botão "Testar demonstração" (quando a demo está publicada) e "Quero um site como este" logo abaixo do resumo; o selo de status continua só informativo.
+- Celular: destaques com espaçamento menor e, no personalizador, a prévia vem antes das escolhas (sem a grade de três itens), para a mudança aparecer sem rolar.
+- Pendente com o proprietário: textos mais específicos na página Sobre e no FAQ.
+
+## Demos de beleza (a partir de 17/11/2026)
+
+- Novo segmento "Beleza e estética" no catálogo; `/projetos?segmento=beleza` abre o catálogo filtrado e mantém esses projetos primeiro (link para usar nas abordagens).
+- Campos novos no catálogo: `tryIt` ("Experimente: …") e `considerations` ("O que foi considerado" na página do projeto).
+- Estado das demos no navegador (localStorage), como nas 12 anteriores; depoimentos são exemplos com aviso visível.
+- Studio Linha Fina: comparador de antes e depois feito com `<input type="range">` invisível sobre a foto (teclado e leitor de tela funcionam; no celular, arrastar na vertical rola a página).
+- `<fieldset>` tem largura mínima igual ao conteúdo por padrão: listas que rolam na horizontal dentro dele precisam de `min-w-0`, senão a página alarga no celular.
+- `scripts/importar-fotos.mjs` agora limpa o cache do otimizador de imagens do app (`.next/cache/images`), que servia a versão antiga de uma foto substituída por até 4 horas.

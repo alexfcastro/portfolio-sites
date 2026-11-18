@@ -16,7 +16,7 @@ const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", dis
 export const metadata: Metadata = {
   title: { default: "Landing pages — demonstração", template: "%s | Landing page de demonstração" },
   description:
-    "Seis landing pages de demonstração, cada uma com um objetivo de conversão diferente. Negócios e ofertas fictícios.",
+    "Sete landing pages de demonstração, cada uma com um objetivo de conversão diferente. Negócios e ofertas fictícios.",
   robots: { index: false, follow: false },
 };
 

@@ -1,0 +1,49 @@
+Gere as 10 imagens abaixo com o Nano Banana para o site Esmalteria Meia-Lua (alongamento em gel e fibra, banho em gel). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Leve e organizado. Fundo claro em tons de rosa claro, cinza e branco. Fotos em close nas mãos, luz suave e natural, mãos com pele de textura real e cutículas bem feitas.
+
+REGRAS (valem para todas): Fotografia realista e nítida. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água; frascos sem rótulo. Mãos de pessoas que não existem. Unhas bem feitas e proporcionais, as cinco unhas da mão iguais no formato pedido (exceto onde a decoração é só em duas unhas).
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: hero-maos
+   PROPORÇÃO: 4:3 (horizontal)
+   Nail designer de luvas pretas finalizando o alongamento em gel nude amendoado de uma cliente, sobre mesa branca com toalhinha rosa claro e luminária ao fundo.
+
+2. NOME: cat-nude-amendoado
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão feminina com unhas médias em formato amendoado, cor nude rosado, brilho de gel, sobre tecido cinza claro.
+
+3. NOME: cat-francesinha
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas médias formato bailarina (ponta reta e afunilada), francesinha clássica com ponta branca fina.
+
+4. NOME: cat-leitosa-curta
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas curtas redondas em branco leitoso translúcido (banho em gel), segurando uma xícara branca.
+
+5. NOME: cat-rosa-glitter
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas médias amendoadas rosa claro, com glitter prateado fino em apenas duas unhas (anelar e médio).
+
+6. NOME: cat-vermelho-quadrado
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão de pele negra com unhas curtas quadradas vermelho clássico, sobre fundo bege.
+
+7. NOME: cat-desenho
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas médias amendoadas nude, com pequenos desenhos de flores delicadas feitos à mão em duas unhas.
+
+8. NOME: cat-cromado
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas longas formato stiletto (pontudas) em efeito cromado perolado.
+
+9. NOME: cat-preto-pedrarias
+   PROPORÇÃO: 1:1 (quadrada)
+   Mão com unhas longas formato bailarina pretas, com pequenas pedrarias brilhantes discretas em duas unhas.
+
+10. NOME: autoclave
+   PROPORÇÃO: 4:3 (horizontal)
+   Bancada branca de esmalteria com uma autoclave pequena, alicates em embalagens de esterilização fechadas, lixas novas e luvas, tudo organizado.

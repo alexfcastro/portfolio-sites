@@ -55,4 +55,11 @@ export const landingPages: LandingPage[] = [
     goal: "Pedir a simulação",
     summary: "Calculadora de economia com o valor da conta, etapas da instalação e formulário.",
   },
+  {
+    slug: "volume-perfeito",
+    name: "Curso Volume Perfeito",
+    kind: "Curso presencial",
+    goal: "Reservar a vaga",
+    summary: "Uma descida só, sem menu: vagas que diminuem, cronograma dos dois dias, parcelamento e reserva fixa no celular.",
+  },
 ];

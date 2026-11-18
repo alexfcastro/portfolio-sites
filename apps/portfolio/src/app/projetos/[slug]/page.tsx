@@ -64,7 +64,26 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
             <DemoStatusBadge status={demo.state} href={demo.link} />
           </div>
           <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">{project.summary}</p>
-          <p className="mt-4 text-sm text-muted">
+          {project.tryIt && (
+            <p className="mt-4 leading-relaxed">
+              <span className="font-semibold text-accent">Experimente: </span>
+              {project.tryIt}
+            </p>
+          )}
+          {/* Ação principal logo no topo: testar a demonstração (o selo acima é só informativo). */}
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            {demo.link && (
+              <a href={demo.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Testar demonstração<span className="sr-only"> de {project.name} (abre em nova aba)</span>
+                <ExternalIcon aria-hidden className="size-4" />
+              </a>
+            )}
+            <Link href={`/contato?projeto=${project.slug}`} className={`btn ${demo.link ? "btn-secondary" : "btn-primary"}`}>
+              Quero um site como este
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+          </div>
+          <p className="mt-6 text-sm text-muted">
             <span className="font-semibold text-ink">Para quem: </span>
             {project.audience}
           </p>
@@ -72,7 +91,8 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
             <Info aria-hidden className="mt-0.5 size-4 shrink-0 text-accent" />
             <p>
               <strong className="text-ink">{project.name}</strong> é um negócio fictício. Este é um projeto conceitual,
-              criado para demonstrar uma solução para o segmento — não um trabalho feito para um cliente.
+              criado para demonstrar uma solução para o segmento — não um trabalho feito para um cliente. Serviços,
+              ofertas e preços mostrados são exemplos.
             </p>
           </div>
         </div>
@@ -211,6 +231,23 @@ export default async function ProjectCasePage({ params }: PageProps<"/projetos/[
           </ul>
         </div>
       </section>
+
+      {project.considerations && project.considerations.length > 0 && (
+        <section aria-labelledby="consideracoes" className="container-page pt-16">
+          <h2 id="consideracoes" className="text-2xl font-extrabold sm:text-3xl">
+            O que foi considerado
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted">Decisões de conteúdo e de uso pensadas para quem é cliente deste tipo de negócio.</p>
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+            {project.considerations.map((item) => (
+              <li key={item} className="reveal flex gap-3 rounded-card border border-line bg-paper p-5 leading-relaxed">
+                <CircleCheck aria-hidden className="mt-1 size-4 shrink-0 text-accent" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section aria-labelledby="demonstracao" className="container-page py-16">
         <div className="grid gap-8 lg:grid-cols-2">

@@ -10,8 +10,12 @@ export function CartLink() {
   return (
     <Link href="/carrinho" className="btn btn-primary shrink-0 !px-4">
       <ShoppingBag aria-hidden className="size-4" />
-      <span className="max-[379px]:sr-only">Carrinho</span>
-      <span className="rounded-full bg-black/25 px-2 text-sm tabular-nums" aria-label={`${count} itens`}>
+      {/* No celular o botão fica só com o ícone e a contagem, para caber ao lado da marca. */}
+      <span className="max-sm:sr-only">Carrinho</span>
+      <span
+        className="rounded-full bg-black/25 px-2 text-sm tabular-nums"
+        aria-label={count === 1 ? "1 item" : `${count} itens`}
+      >
         {count}
       </span>
     </Link>

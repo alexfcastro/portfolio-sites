@@ -1,8 +1,8 @@
 # Alex Castro — portfólio e demonstrações (monorepo)
 
-Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e das 12 aplicações demonstrativas de cada segmento.
+Monorepo do portfólio profissional de **Alex Castro (AX)** — sites e soluções digitais para pequenos e médios negócios — e das 19 aplicações demonstrativas de cada segmento.
 
-**Estado atual:** Fases 1 a 5 implementadas e validadas localmente: portfólio + 12 demos + 6 landing pages. Veja [`docs/status.md`](docs/status.md).
+**Estado atual:** portfólio + 19 demos (12 originais e 7 de beleza e estética) + 7 landing pages, implementados e validados localmente. Veja [`docs/status.md`](docs/status.md).
 
 ## Arquitetura
 
@@ -20,12 +20,19 @@ apps/
   academia/             Demo Pulse Studio (3110): grade filtrável, aula experimental com vagas, planos, painel
   produtos-naturais/    Demo Raiz & Grão (3111): catálogo, venda por peso, carrinho, retirada ou entrega
   floricultura/         Demo Flor & Afeto (3112): ocasião, personalização, cartão, data e período, carrinho
-  landing/              Seis landing pages de demonstração (3113): imóvel, curso, evento, aplicativo, assinatura e energia solar
+  landing/              Sete landing pages de demonstração (3113): imóvel, curso on-line, evento, aplicativo, assinatura, energia solar e curso presencial de cílios
+  sobrancelhas/         Demo Studio Linha Fina (3114): comparador de antes e depois, avaliação com micropigmentação anterior
+  estetica/             Demo Clínica Núcleo (3115): montador de protocolo com sessões e investimento, pós-operatório
+  cilios/               Demo Lash Lab (3116): duas portas (cliente e aluna), técnicas, turma com vagas e parcelamento
+  noivas/               Demo Ateliê Véu (3117): orçamento em grupo com horário de início, calendário de datas
+  unhas/                Demo Esmalteria Meia-Lua (3118): catálogo filtrável, montador da combinação, plano de manutenção
+  capilar/              Demo Instituto Fio Nobre (3119): questionário de orientação, tabela de mega hair
+  spa/                  Demo Casa Serena (3120): vale-presente reaproveitável (src/vale-presente/), reserva
   portfolio/            Portfólio (Next.js, porta 3000)
     src/app/            Rotas: /, /projetos, /projetos/[slug], /sobre, /contato, /privacidade, 404
     src/components/     ui/ · layout/ · sections/ · projects/ · contact/
     src/config/         site.ts (configuração pública central) · demos.ts (URLs das demos)
-    src/data/           Conteúdo: projects.ts (12 cases), home.ts, categories.ts, contact.ts, navigation.ts
+    src/data/           Conteúdo: projects.ts (19 cases), home.ts, categories.ts, contact.ts, navigation.ts
     src/lib/            Regras testadas: URLs, estado das demos, contato, metadata, geometria da marca
     public/brand/       Marca AX em SVG
     public/projects/    Capturas reais das demos (scripts/capture-screenshots.mjs)

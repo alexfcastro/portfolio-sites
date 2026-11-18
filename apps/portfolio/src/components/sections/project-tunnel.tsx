@@ -49,6 +49,7 @@ export function ProjectTunnel({
   const monitorRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLParagraphElement>(null);
   const counterRef = useRef<HTMLParagraphElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Array<HTMLLIElement | null>>([]);
 
   const count = items.length;
@@ -59,7 +60,14 @@ export function ProjectTunnel({
     const tilt = { x: 0, y: 0, targetX: 0, targetY: 0 };
 
     const reset = () => {
-      for (const element of [textRef.current, worldRef.current, monitorRef.current, hintRef.current, counterRef.current]) {
+      for (const element of [
+        textRef.current,
+        worldRef.current,
+        monitorRef.current,
+        hintRef.current,
+        counterRef.current,
+        footerRef.current,
+      ]) {
         element?.removeAttribute("style");
       }
       for (const card of cardRefs.current) card?.removeAttribute("style");
@@ -95,7 +103,16 @@ export function ProjectTunnel({
         textRef.current.style.pointerEvents = a > 0.7 ? "none" : "";
         textRef.current.style.visibility = a >= 1 ? "hidden" : "";
       }
-      if (hintRef.current) hintRef.current.style.opacity = String(clamp(1 - a * 3));
+      // Em telas baixas o texto de abertura ocupa quase toda a altura. Nesse caso a dica não aparece e
+      // os controles de baixo só surgem quando o texto começa a sair, para nunca cobrirem os botões.
+      const footerHeight = footerRef.current?.offsetHeight ?? 0;
+      const crowded = stage.clientHeight - (textRef.current?.offsetHeight ?? 0) < footerHeight + 24;
+      if (hintRef.current) hintRef.current.style.opacity = String(crowded ? 0 : clamp(1 - a * 3));
+      if (footerRef.current) {
+        const shown = crowded ? clamp((a - 0.7) * 5) : 1; // o texto já sumiu (opacidade 1 − 1,4a)
+        footerRef.current.style.opacity = String(shown);
+        footerRef.current.style.pointerEvents = shown < 0.5 ? "none" : "";
+      }
 
       world.style.transform = `translate3d(0, ${lerp((stage.clientWidth < 1024 ? 54 : 40) * vh, 0, a)}px, 0) scale(${lerp(0.6, 1, a)}) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`;
       if (monitorRef.current) {
@@ -285,7 +302,7 @@ export function ProjectTunnel({
             Role para <span className="max-lg:hidden">atravessar os projetos</span>
             <span className="lg:hidden">explorar</span>
           </p>
-          <div className="cena-rodape">
+          <div ref={footerRef} className="cena-rodape">
             <p ref={counterRef} aria-hidden className="font-display text-sm font-bold tracking-wide text-canvas" />
             <a
               href="#destaques-title"

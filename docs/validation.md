@@ -323,3 +323,7 @@ Depois das mudanças: testes do portfólio (59), `check:reflow` (392), `check:co
 - **Como o app foi criado:** o pnpm continua indisponível nesta máquina, então as dependências de `apps/landing` foram ligadas à mão às mesmas versões do `apps/autonomo`, e o bloco correspondente foi copiado no `pnpm-lock.yaml`. Falta confirmar com `pnpm install --frozen-lockfile` (o CI faz isso no próximo envio).
 - Verificado com a prévia local: testes do app novo (9) e do portfólio (59); `check:reflow` (448 verificações, incluindo as 7 páginas novas em 8 larguras); `check:contrast` (8.392 textos); `check:firefox` (o fluxo da listagem passou a conferir os 12 projetos e as 6 landing pages). Capturas das 6 páginas feitas para o portfólio.
 - 19 fotos geradas no Flow para as landing pages. Uma veio com passaportes e texto visível e foi refeita; a descartada está em `fotos-ia/landing/substituidas/`.
+
+## Abertura em telas pequenas (17/11/2026)
+
+`node scripts/check-abertura.mjs` abre a página inicial em 9 tamanhos (de 320 × 568 a 1280 × 720) e, no topo e em três pontos da rolagem, confere que os botões da abertura cabem na primeira tela e que nenhum controle da cena fica por cima deles. Resultado: 36 situações sem sobreposição. Reflow: 504 páginas (agora com 375 px). Contraste AA: 8.414 textos.

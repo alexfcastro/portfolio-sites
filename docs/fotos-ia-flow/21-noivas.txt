@@ -1,0 +1,41 @@
+Gere as 8 imagens abaixo com o Nano Banana para o site Ateliê Véu (salão de dia da noiva). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Elegante e luminoso, sem parecer convite de festa. Tons champanhe, branco e dourado discreto. Luz natural suave de janela grande. Fotografia de casamento real, editorial, com pele de textura real e maquiagem leve e bem feita.
+
+REGRAS (valem para todas): Fotografia realista. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água. As pessoas não existem e não devem se parecer com ninguém conhecido. Nada exagerado, kitsch ou cheio de brilho.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: hero-noiva
+   PROPORÇÃO: 16:9 (horizontal)
+   Noiva de uns 30 anos sentada de perfil numa cadeira de salão clara, perto de uma janela, enquanto uma maquiadora de preto finaliza o pó com pincel grande. A noiva fica no lado DIREITO da imagem; o lado esquerdo tem parede clara e luz suave (espaço livre para texto).
+
+2. NOME: port-coque
+   PROPORÇÃO: 4:5 (vertical)
+   Noiva de costas mostrando um coque baixo elegante com véu longo preso logo abaixo, cabelo castanho.
+
+3. NOME: port-ondas
+   PROPORÇÃO: 4:5 (vertical)
+   Noiva de pele negra com cabelo cacheado volumoso em ondas soltas definidas, com um pequeno enfeite dourado discreto de lado, olhando para baixo.
+
+4. NOME: port-make-natural
+   PROPORÇÃO: 4:5 (vertical)
+   Close do rosto de uma noiva de pele clara com maquiagem leve: pele iluminada, blush pêssego, batom nude, olhos com esfumado suave.
+
+5. NOME: port-semipreso
+   PROPORÇÃO: 4:5 (vertical)
+   Noiva de cabelo loiro escuro com penteado semipreso trançado e pequenas flores brancas, vista de três quartos de costas.
+
+6. NOME: port-make-noite
+   PROPORÇÃO: 4:5 (vertical)
+   Close do rosto de uma noiva de pele morena com maquiagem para cerimônia à noite: olho esfumado marrom mais marcado, cílios definidos, batom rosado escuro, ainda elegante.
+
+7. NOME: port-madrinhas
+   PROPORÇÃO: 4:5 (vertical)
+   Quatro madrinhas de vestidos longos no mesmo tom de verde-sálvia, rindo juntas num salão claro, com penteados e maquiagens combinando.
+
+8. NOME: teste
+   PROPORÇÃO: 4:3 (horizontal)
+   Teste de penteado: noiva de roupão branco sentada em frente ao espelho iluminado, cabeleireira ajustando um coque, fotos de referência impressas sobre a bancada (sem texto legível).

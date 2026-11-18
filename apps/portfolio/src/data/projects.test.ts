@@ -9,7 +9,7 @@ import { resolveDemoLink, resolveDemoPresentation } from "@/lib/demo";
 const publicDir = join(__dirname, "..", "..", "public");
 
 describe("matriz de projetos", () => {
-  it("tem exatamente os 12 slugs canônicos, sem repetição", () => {
+  it("tem exatamente os slugs canônicos, sem repetição", () => {
     const slugs = projects.map((project) => project.slug);
     expect(slugs).toEqual([
       "barbearia",
@@ -24,8 +24,15 @@ describe("matriz de projetos", () => {
       "academia",
       "produtos-naturais",
       "floricultura",
+      "sobrancelhas",
+      "estetica",
+      "cilios",
+      "noivas",
+      "unhas",
+      "capilar",
+      "spa",
     ]);
-    expect(new Set(slugs).size).toBe(12);
+    expect(new Set(slugs).size).toBe(slugs.length);
   });
 
   it("usa slugs compatíveis com URL e nomes únicos", () => {
@@ -88,7 +95,7 @@ describe("matriz de projetos", () => {
 });
 
 /** Demos implementadas e validadas até agora (Fase 2: barbearia). */
-const IMPLEMENTED_DEMOS = ["barbearia", "clinica", "restaurante", "oficina", "servicos", "autonomo", "advocacia", "imobiliaria", "petshop", "academia", "produtos-naturais", "floricultura"];
+const IMPLEMENTED_DEMOS = ["barbearia", "clinica", "restaurante", "oficina", "servicos", "autonomo", "advocacia", "imobiliaria", "petshop", "academia", "produtos-naturais", "floricultura", "sobrancelhas", "estetica", "cilios", "noivas", "unhas", "capilar", "spa"];
 
 describe("demos implementadas", () => {
   for (const slug of IMPLEMENTED_DEMOS) {

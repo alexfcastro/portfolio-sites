@@ -1,0 +1,36 @@
+Gere as 6 imagens abaixo com o Nano Banana para o site Instituto Fio Nobre (tricologia, tratamento de queda e mega hair). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Sério, com cara de instituto e confiança técnica. Tons terrosos, âmbar e creme, madeira, luz natural suave. Menos brilho, mais precisão. Pessoas com expressão tranquila.
+
+REGRAS (valem para todas): Fotografia realista e nítida. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água; telas de aparelho sem texto legível. As pessoas não existem e não devem se parecer com ninguém conhecido.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+ITENS 3 E 4 — ANTES E DEPOIS (MUITO IMPORTANTE)
+Cada um é UMA imagem dividida ao meio na vertical, com DUAS fotos lado a lado da MESMA pessoa: metade esquerda = ANTES, metade direita = DEPOIS. Mesma pessoa, mesmo ângulo, mesma luz, mesmo enquadramento e mesmo fundo. Sem linha, moldura ou texto entre as metades. A diferença deve ser realista e moderada, nada milagroso.
+
+1. NOME: hero-tricoscopia
+   PROPORÇÃO: 4:3 (horizontal)
+   Tricologista de jaleco bege examinando o couro cabeludo de uma cliente sentada com um tricoscópio de mão (câmera de aumento), num consultório de madeira clara e paredes creme.
+
+2. NOME: avaliacao
+   PROPORÇÃO: 4:3 (horizontal)
+   Close de um monitor mostrando a imagem ampliada de fios de cabelo e couro cabeludo (sem texto na tela), com a mão da tricologista apontando, consultório em tons creme.
+
+3. NOME: par-queda
+   PROPORÇÃO: 16:9 (horizontal)
+   Vista de cima da cabeça de uma mulher de uns 40 anos, cabelo castanho escuro repartido ao meio. ANTES: risca larga, couro cabeludo bem visível, fios ralos. DEPOIS: risca mais estreita e fios mais densos, ainda natural.
+
+4. NOME: par-mega
+   PROPORÇÃO: 16:9 (horizontal)
+   Mulher de uns 30 anos de costas, cabelo castanho. ANTES: cabelo fino na altura dos ombros. DEPOIS: o mesmo cabelo com mega hair até o meio das costas, volume natural e cor igual.
+
+5. NOME: equipe-renata
+   PROPORÇÃO: 1:1 (quadrada)
+   Retrato de uma tricologista de uns 45 anos, pele morena, cabelo preto curto, jaleco bege, expressão segura e tranquila, fundo do consultório desfocado.
+
+6. NOME: equipe-simone
+   PROPORÇÃO: 1:1 (quadrada)
+   Retrato de uma cabeleireira de uns 38 anos, pele clara, cabelo ruivo longo e saudável, avental marrom, sorriso leve, fundo do salão desfocado.

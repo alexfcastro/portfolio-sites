@@ -1,0 +1,46 @@
+{
+  "outDir": "../../apps/portfolio/public/projects/estetica",
+  "shots": [
+    { "name": "desktop-inicio", "path": "/", "width": 1440, "height": 900, "scale": 1, "steps": ["localStorage.removeItem('ax-nucleo-demo');"] },
+    {
+      "name": "desktop-protocolo",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-nucleo-demo'); await new Promise((r) => setTimeout(r, 500)); document.querySelector('input[name=objetivo]').click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelectorAll('input[name=pos-operatorio-cirurgia]')[0].click(); document.querySelectorAll('input[name=pos-operatorio-dias]')[1].click(); document.querySelectorAll('input[name=pos-operatorio-liberacao]')[0].click();",
+        "await new Promise((r) => setTimeout(r, 400)); document.getElementById('montador-titulo').scrollIntoView(); window.scrollBy(0, 260);"
+      ]
+    },
+    {
+      "name": "mobile-protocolo",
+      "path": "/",
+      "width": 390,
+      "height": 844,
+      "scale": 2,
+      "mobile": true,
+      "steps": [
+        "localStorage.removeItem('ax-nucleo-demo'); await new Promise((r) => setTimeout(r, 500)); document.querySelectorAll('input[name=objetivo]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelectorAll('input[name=manchas-tipo]')[0].click(); document.querySelectorAll('input[name=manchas-tempo]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 400)); document.getElementById('protocolo-titulo').scrollIntoView(); window.scrollBy(0, -110);"
+      ]
+    },
+    {
+      "name": "desktop-agendar",
+      "path": "/",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "localStorage.removeItem('ax-nucleo-demo'); await new Promise((r) => setTimeout(r, 500)); document.querySelectorAll('input[name=objetivo]')[2].click();",
+        "await new Promise((r) => setTimeout(r, 300)); document.querySelectorAll('input[name=flacidez-area]')[0].click(); document.querySelectorAll('input[name=flacidez-intensidade]')[1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario button[aria-pressed]')][1].click();",
+        "await new Promise((r) => setTimeout(r, 300)); [...document.querySelectorAll('#campo-horario .grid button:not([disabled])')][2].click();",
+        "const setV = (el, v) => { Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, v); el.dispatchEvent(new Event('input', { bubbles: true })); }; setV(document.getElementById('nome'), 'Paula'); setV(document.getElementById('whatsapp'), '11966665555');",
+        "await new Promise((r) => setTimeout(r, 300)); document.getElementById('agendar-titulo').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    }
+  ]
+}

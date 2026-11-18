@@ -8,6 +8,7 @@ export const categories: ReadonlyArray<{ id: CategoryId; label: string }> = [
   { id: "profissionais", label: "Profissionais" },
   { id: "imoveis", label: "Imóveis" },
   { id: "comercio", label: "Comércio e vendas" },
+  { id: "beleza", label: "Beleza e estética" },
 ];
 
 export const solutionTypes: ReadonlyArray<{ id: SolutionId; label: string }> = [

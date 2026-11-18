@@ -1,0 +1,33 @@
+Gere as 6 imagens abaixo com o Nano Banana para a landing page Curso Volume Perfeito (curso presencial de extensão de cílios, técnica de volume). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Alto contraste, fundo escuro ou neutro, luz direcionada e nítida, um toque de rosa forte como única cor de destaque. Fotografia profissional de beleza, pele com textura real.
+
+REGRAS (valem para todas): Fotografia realista. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água. As pessoas não existem e não devem se parecer com ninguém conhecido. Cílios de volume bem feitos, cheios e naturais, nunca tortos ou exagerados.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: vp-hero
+   PROPORÇÃO: 16:9 (horizontal)
+   Close lateral do olhar de uma mulher de pele morena com extensão de cílios em volume russo, olhos abertos, fundo preto. O rosto fica no lado DIREITO; o lado esquerdo é escuro e vazio (espaço para texto).
+
+2. NOME: vp-aula
+   PROPORÇÃO: 4:3 (horizontal)
+   Sala de curso com três alunas de luvas e máscara aplicando cílios em modelos deitadas, uma professora de preto orientando ao fundo, luminárias de anel, ambiente claro e organizado.
+
+3. NOME: vp-professora
+   PROPORÇÃO: 1:1 (quadrada)
+   Retrato de uma lash designer de uns 35 anos, pele negra, cabelo trançado preso, camiseta preta, braços cruzados, expressão confiante, fundo escuro com luz suave.
+
+4. NOME: vp-aluna-1
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho fechado de cliente deitada com volume brasileiro recém-aplicado, fita de proteção sob os cílios inferiores.
+
+5. NOME: vp-aluna-2
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com volume egípcio (efeito leque marcado), mulher de pele clara, fundo neutro.
+
+6. NOME: vp-aluna-3
+   PROPORÇÃO: 1:1 (quadrada)
+   Close de um olho aberto com volume híbrido natural, mulher de pele parda, luz suave lateral.

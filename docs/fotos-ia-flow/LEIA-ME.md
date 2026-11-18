@@ -30,6 +30,13 @@ Para todas as demos terem fotos realistas, faltam estas 45 imagens (oficina, adv
 | `15-academia.txt` | Pulse Studio (academia) | 11 | `fotos-ia/academia/` |
 | `16-clinica-2.txt` | Vita Clínica: especialidades e equipe | 13 | `fotos-ia/clinica/` |
 | `17-equipes.txt` | Retratos de equipe: barbearia, pet shop e imobiliária | 7 | `fotos-ia/barbearia/`, `fotos-ia/petshop/` e `fotos-ia/imobiliaria/` (o começo do nome diz o site) |
+| `18-sobrancelhas.txt` | Studio Linha Fina (sobrancelhas): pares de antes e depois, procedimentos e profissional | 10 (15 depois de dividir os pares) | `fotos-ia/sobrancelhas/` |
+| `19-estetica.txt` | Clínica Núcleo (estética): sala, objetivos, equipe e estrutura | 9 | `fotos-ia/estetica/` |
+| `20-cilios.txt` | Lash Lab (cílios e curso): portas, técnicas, galeria e ex-alunas | 13 | `fotos-ia/cilios/` |
+| `21-noivas.txt` | Ateliê Véu (dia da noiva): abertura, portfólio e teste | 8 | `fotos-ia/noivas/` |
+| `22-unhas.txt` | Esmalteria Meia-Lua (unhas): abertura, catálogo e biossegurança | 10 | `fotos-ia/unhas/` |
+| `23-capilar.txt` | Instituto Fio Nobre (capilar): consultório, antes e depois e equipe | 6 (8 depois de dividir os pares) | `fotos-ia/capilar/` |
+| `24-spa.txt` | Casa Serena (spa): sala, experiências, day spa e espaço | 9 | `fotos-ia/spa/` |
 
 Os retratos são de pessoas que não existem, geradas por IA. Os prompts pedem que não se pareçam com ninguém conhecido, e as demos já avisam que a equipe é fictícia e que as fotos são geradas por IA.
 

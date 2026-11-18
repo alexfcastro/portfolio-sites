@@ -52,8 +52,8 @@ describe("dados", () => {
     expect(formatBRL(123456).replace(/\s/g, " ")).toBe("R$ 1.234,56");
   });
 
-  it("tem seis landing pages com endereços únicos", () => {
-    expect(landings).toHaveLength(6);
-    expect(new Set(landings.map((landing) => landing.slug)).size).toBe(6);
+  it("tem sete landing pages com endereços únicos", () => {
+    expect(landings).toHaveLength(7);
+    expect(new Set(landings.map((landing) => landing.slug)).size).toBe(landings.length);
   });
 });

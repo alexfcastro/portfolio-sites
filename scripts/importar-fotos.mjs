@@ -224,7 +224,62 @@ const SEGUNDA_LEVA = {
     "solar-hero",
     "solar-instalacao",
     "solar-casa",
+    "vp-hero",
+    "vp-aula",
+    "vp-professora",
+    "vp-aluna-1",
+    "vp-aluna-2",
+    "vp-aluna-3",
   ],
+  // Demos de beleza (17/11/2026). Os pares de antes e depois chegam como "par-<nome>" e são divididos antes,
+  // com scripts/dividir-pares.mjs.
+  sobrancelhas: [
+    "hero-antes",
+    "hero-depois",
+    "falhas-antes",
+    "falhas-depois",
+    "ralas-antes",
+    "ralas-depois",
+    "assimetricas-antes",
+    "assimetricas-depois",
+    "correcao-antes",
+    "correcao-depois",
+    "proc-design",
+    "proc-fio-a-fio",
+    "proc-nano",
+    "proc-correcao",
+    "profissional",
+  ],
+  estetica: [
+    "hero-sala",
+    "obj-pos-operatorio",
+    "obj-manchas",
+    "obj-flacidez",
+    "obj-acne",
+    "equipe-helena",
+    "equipe-luana",
+    "estrutura-sala",
+    "estrutura-recepcao",
+  ],
+  cilios: [
+    "porta-cliente",
+    "porta-aluna",
+    "olhar-fio-a-fio",
+    "olhar-brasileiro",
+    "olhar-russo",
+    "olhar-lifting",
+    "galeria-olhar-fio-a-fio",
+    "galeria-olhar-brasileiro",
+    "galeria-olhar-russo",
+    "galeria-olhar-lifting",
+    "aluna-1",
+    "aluna-2",
+    "aluna-3",
+  ],
+  noivas: ["hero-noiva", "port-coque", "port-ondas", "port-make-natural", "port-semipreso", "port-make-noite", "port-madrinhas", "teste"],
+  unhas: ["hero-maos", "cat-nude-amendoado", "cat-francesinha", "cat-leitosa-curta", "cat-rosa-glitter", "cat-vermelho-quadrado", "cat-desenho", "cat-cromado", "cat-preto-pedrarias", "autoclave"],
+  capilar: ["hero-tricoscopia", "avaliacao", "queda-antes", "queda-depois", "mega-antes", "mega-depois", "equipe-renata", "equipe-simone"],
+  spa: ["hero-sala", "exp-relaxante", "exp-pedras", "exp-ritual", "exp-dayspa", "dayspa-ofuro", "espaco-sala", "espaco-jardim", "espaco-ofuro"],
 };
 for (const [site, itens] of Object.entries(SEGUNDA_LEVA)) {
   MAPAS[site] ??= {};
@@ -262,7 +317,8 @@ const tokens = (nome) =>
     .split(/[^a-z0-9]+/)
     .filter(Boolean);
 
-const arquivos = readdirSync(origem).filter((f) => /\.(png|jpe?g|webp)$/i.test(f));
+// "par-*" são as imagens de comparação originais, já divididas em "-antes" e "-depois".
+const arquivos = readdirSync(origem).filter((f) => /\.(png|jpe?g|webp)$/i.test(f) && !/^par-/i.test(f));
 const escolhidos = {};
 const problemas = [];
 for (const arquivo of arquivos) {
@@ -309,5 +365,8 @@ const ts = `// Gerado por scripts/importar-fotos.mjs — não editar à mão.
 export const fotos: Readonly<Record<string, { width: number; height: number }>> = ${JSON.stringify(manifest, null, 2)};
 `;
 writeFileSync(join(appDir, "src", "data", "fotos.ts"), ts);
+// O otimizador de imagens do Next guarda versões redimensionadas por 4 horas e não as refaz quando o arquivo
+// muda com o mesmo nome. Sem limpar, uma foto substituída continuaria aparecendo na versão antiga.
+rmSync(join(appDir, ".next", "cache", "images"), { recursive: true, force: true });
 console.log(`\n${Object.keys(manifest).length} de ${Object.keys(mapa).length} fotos importadas para apps/${slug}/public/fotos/`);
 if (faltando.length) console.log(`Sem foto (continuam com ilustração): ${faltando.join(", ")}`);

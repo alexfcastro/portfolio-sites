@@ -1,0 +1,45 @@
+Gere as 9 imagens abaixo com o Nano Banana para o site Casa Serena (spa pequeno de massagens, rituais e day spa para casal). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Fotografia calma, que transmite silêncio. Verde profundo, areia, madeira clara, linho, plantas, luz natural suave e baixa. Muito espaço vazio, composição limpa.
+
+REGRAS (valem para todas): Fotografia realista e nítida. Sem nenhum texto, letra, número, logotipo, marca ou marca d'água; frascos sem rótulo. As pessoas não existem e não devem se parecer com ninguém conhecido. Nada sensual: corpos cobertos por toalha ou lençol, enquadramento discreto.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: hero-sala
+   PROPORÇÃO: 16:9 (horizontal)
+   Sala de massagem vazia com maca coberta de linho areia, toalhas dobradas, vaso com folhagem, parede verde-escura e luz suave de uma janela com cortina de linho. O lado esquerdo da imagem é mais escuro e vazio (espaço para texto).
+
+2. NOME: exp-relaxante
+   PROPORÇÃO: 4:5 (vertical)
+   Mãos de uma terapeuta fazendo massagem relaxante nas costas de uma pessoa deitada, coberta por toalha da cintura para baixo, luz baixa.
+
+3. NOME: exp-pedras
+   PROPORÇÃO: 4:5 (vertical)
+   Pedras de basalto escuras e lisas, aquecidas, alinhadas sobre uma toalha de linho, com folhas verdes ao lado.
+
+4. NOME: exp-ritual
+   PROPORÇÃO: 4:5 (vertical)
+   Escalda-pés em bacia de madeira com água, pétalas e ervas, ao lado de uma xícara de chá, num deck de madeira com plantas.
+
+5. NOME: exp-dayspa
+   PROPORÇÃO: 4:5 (vertical)
+   Duas macas lado a lado numa sala dupla, com roupões dobrados sobre elas e luz suave, sem pessoas.
+
+6. NOME: dayspa-ofuro
+   PROPORÇÃO: 4:3 (horizontal)
+   Ofurô de madeira com água e vapor leve, numa varanda coberta com plantas e luz de fim de tarde, dois roupões pendurados ao lado.
+
+7. NOME: espaco-sala
+   PROPORÇÃO: 4:3 (horizontal)
+   Corredor da casa com piso de madeira, luz baixa e portas de madeira para as salas, plantas em vasos de barro.
+
+8. NOME: espaco-jardim
+   PROPORÇÃO: 4:3 (horizontal)
+   Varanda com poltronas de vime, bule de chá e xícaras numa mesinha, jardim verde e sombra.
+
+9. NOME: espaco-ofuro
+   PROPORÇÃO: 4:3 (horizontal)
+   Detalhe de um ofurô de madeira vazio e limpo, com toalha dobrada e ramo de eucalipto na borda.
