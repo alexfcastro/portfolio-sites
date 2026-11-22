@@ -197,7 +197,30 @@ const SEGUNDA_LEVA = {
     "equipe-carla",
     "equipe-beatriz",
   ],
-  barbearia: { "equipe-rafa": "barbearia-equipe-rafa", "equipe-leo": "barbearia-equipe-leo", "equipe-davi": "barbearia-equipe-davi" },
+  barbearia: {
+    "equipe-rafa": "barbearia-equipe-rafa",
+    "equipe-leo": "barbearia-equipe-leo",
+    "equipe-davi": "barbearia-equipe-davi",
+    // Loja (docs/fotos-ia-flow/26-loja-barbearia.txt): o arquivo tem o mesmo nome do item.
+    ...Object.fromEntries(
+      [
+        "loja-pomada-matte",
+        "loja-pomada-brilho",
+        "loja-gel-forte",
+        "loja-po-texturizador",
+        "loja-shampoo-hidratante",
+        "loja-condicionador",
+        "loja-shampoo-barba",
+        "loja-oleo-barba",
+        "loja-balm-barba",
+        "loja-pos-barba",
+        "loja-pente-madeira",
+        "loja-kit-barba",
+        "loja-kit-cabelo",
+        "loja-hero",
+      ].map((id) => [id, id]),
+    ),
+  },
   petshop: { "equipe-bia": "petshop-equipe-bia", "equipe-tom": "petshop-equipe-tom", "ambiente-banho": "ambiente-banho" },
   imobiliaria: { "equipe-mv": "imobiliaria-equipe-mv", "equipe-jc": "imobiliaria-equipe-jc" },
   // Terceira leva: fotos de ambiente (o lugar em si), geradas depois da revisão de 12/11/2026.

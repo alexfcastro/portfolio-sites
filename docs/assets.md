@@ -24,7 +24,7 @@ Os assets visuais do **portfólio** foram criados para este projeto (vetores des
 
 | Asset | Local | Origem | Uso |
 |---|---|---|---|
-| Capturas da Bravus Barbearia (4 PNG) | `apps/portfolio/public/projects/barbearia/` | Capturas reais da demo `apps/barbearia`, geradas por `scripts/capture-screenshots.mjs` | Card, case e hero do portfólio |
+| Capturas da Bravus Barbearia (6 PNG) | `apps/portfolio/public/projects/barbearia/` | Capturas reais da demo `apps/barbearia`, geradas por `scripts/capture-screenshots.mjs` | Card, case e hero do portfólio |
 | Marca Bravus (navalha estilizada) e favicon | `apps/barbearia/src/components/brand.tsx`, `src/app/icon.svg` | Criação própria; marca de negócio fictício, sem relação com empresas reais | Demo |
 | Ilustrações de estilos de corte e mapa ilustrativo | `apps/barbearia/src/components/illustrations.tsx` | Criação própria (SVG) | Galeria e "Visite" da demo |
 | Fontes Barlow e Barlow Condensed | via `next/font/google` | Google Fonts, SIL OFL 1.1 | Tipografia da demo |
@@ -67,6 +67,7 @@ As ilustrações das demos estão sendo substituídas por fotos **geradas por IA
 | PetVille (pet shop) | 4 pets | `apps/petshop/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
 | Resolve Serviços | 6 trabalhos concluídos | `apps/servicos/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
 | Bravus Barbearia | 6 estilos de corte | `apps/barbearia/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
+| Bravus Barbearia | 13 produtos da loja e 1 foto de abertura da loja (sem rótulo escrito) | `apps/barbearia/public/fotos/loja-*.webp` | Nano Banana (Google Flow), prompt em `docs/fotos-ia-flow/26-loja-barbearia.txt` | 21/11/2026 |
 | Vita Clínica | 1 recepção (destaque da página inicial) | `apps/clinica/public/fotos/` | Nano Banana (Google Flow), gerado pelo proprietário | 28/09/2026 |
 
 Critérios de revisão de cada foto: correspondência com o item, nenhum texto, logotipo ou marca d'água, sem pessoas identificáveis (vultos desfocados ao fundo são aceitos), proporção compatível com o card.

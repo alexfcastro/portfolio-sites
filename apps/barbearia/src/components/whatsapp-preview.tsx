@@ -7,6 +7,12 @@ interface WhatsAppPreviewProps {
   message: string;
   triggerLabel?: string;
   triggerClassName?: string;
+  /** Nome no topo da conversa (quem recebe). */
+  contactName?: string;
+  /** Explicação abaixo da conversa. */
+  note?: string;
+  /** Chamado ao abrir a prévia (por exemplo, para marcar como avisado). */
+  onOpen?: () => void;
 }
 
 /**
@@ -17,13 +23,20 @@ export function WhatsAppPreview({
   message,
   triggerLabel = "Prévia da mensagem no WhatsApp",
   triggerClassName = "btn btn-line",
+  contactName = "Bravus Barbearia",
+  note = "Esta é só uma prévia de como o cliente poderia confirmar o horário pelo WhatsApp em um site real. A Bravus é fictícia e não tem número.",
+  onOpen,
 }: WhatsAppPreviewProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
 
   return (
     <>
-      <button type="button" className={triggerClassName} onClick={() => dialogRef.current?.showModal()}>
+      <button type="button" className={triggerClassName} onClick={() => {
+          dialogRef.current?.showModal();
+          onOpen?.();
+        }}
+      >
         <MessageCircle aria-hidden className="size-4" />
         {triggerLabel}
       </button>
@@ -40,7 +53,7 @@ export function WhatsAppPreview({
         <div className="flex items-center justify-between gap-3 border-b border-edge bg-wa-head px-5 py-3">
           <div>
             <h2 id={titleId} className="font-sans text-base font-semibold tracking-normal normal-case">
-              Bravus Barbearia
+              {contactName}
             </h2>
             <p className="text-xs text-wa-subtle">Prévia local · contato fictício</p>
           </div>
@@ -61,8 +74,7 @@ export function WhatsAppPreview({
         </div>
 
         <p className="border-t border-edge px-5 py-4 text-sm leading-relaxed text-smoke">
-          <strong className="text-cream">Nenhuma mensagem foi enviada.</strong> Esta é só uma prévia de como o
-          cliente poderia confirmar o horário pelo WhatsApp em um site real. A Bravus é fictícia e não tem número.
+          <strong className="text-cream">Nenhuma mensagem foi enviada.</strong> {note}
         </p>
       </dialog>
     </>

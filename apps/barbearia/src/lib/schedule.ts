@@ -1,6 +1,8 @@
-import { business, getService, professionals, seedCustomerNames, services } from "@/data/business";
+import { business, getService, plans, professionals, services } from "@/data/business";
+import { activeCustomers, subscriberPlan } from "@/lib/history";
+import { createRandom } from "@/lib/random";
 import { addDays, getWeekday } from "@/lib/time";
-import type { Booking, BusinessNow, Service } from "@/types/booking";
+import type { Block, Booking, BusinessNow, PaymentMode, Service } from "@/types/booking";
 
 export interface OpeningWindow {
   openMin: number;
@@ -40,14 +42,30 @@ function conflicts(
   startMin: number,
   endMin: number,
   ignoreId?: string,
+  blocks: readonly Block[] = [],
 ): boolean {
-  return bookings.some(
+  const busy = bookings.some(
     (booking) =>
       booking.id !== ignoreId &&
       booking.status !== "cancelado" &&
       booking.professionalId === professionalId &&
       booking.date === date &&
       overlaps(startMin, endMin, booking.startMin, booking.endMin),
+  );
+  return busy || isBlocked(blocks, professionalId, date, startMin, endMin);
+}
+
+/** O horário cai num bloqueio feito pelo dono? */
+export function isBlocked(
+  blocks: readonly Block[],
+  professionalId: string,
+  date: string,
+  startMin: number,
+  endMin: number,
+): boolean {
+  return blocks.some(
+    (block) =>
+      block.professionalId === professionalId && block.date === date && overlaps(startMin, endMin, block.startMin, block.endMin),
   );
 }
 
@@ -57,10 +75,21 @@ export interface SlotQuery {
   professionalId: string;
   bookings: readonly Booking[];
   now: BusinessNow;
+  blocks?: readonly Block[];
+  /** Ignora este agendamento (usado ao remarcar). */
+  ignoreId?: string;
 }
 
 /** Inícios livres (minutos) para o serviço e profissional na data. */
-export function listAvailableStarts({ date, service, professionalId, bookings, now }: SlotQuery): number[] {
+export function listAvailableStarts({
+  date,
+  service,
+  professionalId,
+  bookings,
+  now,
+  blocks = [],
+  ignoreId,
+}: SlotQuery): number[] {
   const window = getOpeningWindow(date);
   if (!window || !service.professionalIds.includes(professionalId)) return [];
 
@@ -69,7 +98,7 @@ export function listAvailableStarts({ date, service, professionalId, bookings, n
     const end = start + service.durationMin;
     if (!fitsOpeningHours(date, start, end)) continue;
     if (isInPast(date, start, now)) continue;
-    if (conflicts(bookings, professionalId, date, start, end)) continue;
+    if (conflicts(bookings, professionalId, date, start, end, ignoreId, blocks)) continue;
     starts.push(start);
   }
   return starts;
@@ -80,6 +109,8 @@ export interface NewBookingInput {
   professionalId: string;
   date: string;
   startMin: number;
+  /** Observação opcional para o barbeiro. */
+  note?: string;
 }
 
 /** Revalida tudo no momento de confirmar. Retorna a mensagem de erro ou `null`. */
@@ -88,6 +119,7 @@ export function validateNewBooking(
   bookings: readonly Booking[],
   now: BusinessNow,
   ignoreId?: string,
+  blocks: readonly Block[] = [],
 ): string | null {
   const service = getService(input.serviceId);
   if (!service) return "Serviço inválido.";
@@ -100,22 +132,13 @@ export function validateNewBooking(
   const endMin = input.startMin + service.durationMin;
   if (!fitsOpeningHours(input.date, input.startMin, endMin)) return "Horário fora do funcionamento.";
   if (isInPast(input.date, input.startMin, now)) return "Este horário já passou. Escolha outro.";
+  if (isBlocked(blocks, input.professionalId, input.date, input.startMin, endMin)) {
+    return "Este horário foi bloqueado pela barbearia. Escolha outro.";
+  }
   if (conflicts(bookings, input.professionalId, input.date, input.startMin, endMin, ignoreId)) {
     return "Este horário acabou de ser ocupado. Escolha outro.";
   }
   return null;
-}
-
-/** Gerador pseudoaleatório determinístico (mulberry32) para a agenda de exemplo. */
-function createRandom(seedText: string): () => number {
-  let seed = 0;
-  for (const char of seedText) seed = (Math.imul(seed, 31) + char.charCodeAt(0)) | 0;
-  return () => {
-    seed = (seed + 0x6d2b79f5) | 0;
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
 }
 
 /** Existe algum início livre (ignorando o relógio) para a duração, no dia do profissional? */
@@ -124,12 +147,15 @@ export function hasFreeWindow(
   professionalId: string,
   durationMin: number,
   bookings: readonly Booking[],
+  blocks: readonly Block[] = [],
 ): boolean {
   const window = getOpeningWindow(date);
   if (!window) return false;
   for (let start = window.openMin; start + durationMin <= window.closeMin; start += business.slotStepMin) {
     const end = start + durationMin;
-    if (fitsOpeningHours(date, start, end) && !conflicts(bookings, professionalId, date, start, end)) return true;
+    if (fitsOpeningHours(date, start, end) && !conflicts(bookings, professionalId, date, start, end, undefined, blocks)) {
+      return true;
+    }
   }
   return false;
 }
@@ -140,15 +166,17 @@ export function hasFreeWindow(
  * cheia nos primeiros dias e com garantia de vaga: em todo dia futuro, cada
  * profissional mantém ao menos uma janela para o seu serviço mais longo.
  */
-export function generateSeedBookings(now: BusinessNow): Booking[] {
+export function generateSeedBookings(now: BusinessNow, blocks: readonly Block[] = []): Booking[] {
   const bookings: Booking[] = [];
+  const customers = activeCustomers();
   let counter = 0;
 
   for (let offset = 0; offset < 7; offset += 1) {
     const date = addDays(now.date, offset);
     const window = getOpeningWindow(date);
     if (!window) continue;
-    const busyChance = Math.max(0.12, 0.34 - offset * 0.035);
+    const busyChance = Math.max(0.2, 0.55 - offset * 0.05);
+    const namesOfDay = new Set<string>();
 
     for (const professional of professionals) {
       const random = createRandom(`${date}:${professional.id}`);
@@ -163,8 +191,17 @@ export function generateSeedBookings(now: BusinessNow): Booking[] {
         const end = start + service.durationMin;
         const busy = random() < busyChance;
 
-        if (busy && fitsOpeningHours(date, start, end) && !conflicts(bookings, professional.id, date, start, end)) {
+        if (
+          busy &&
+          fitsOpeningHours(date, start, end) &&
+          !conflicts(bookings, professional.id, date, start, end, undefined, blocks)
+        ) {
           const finished = date === now.date && end <= now.minutes;
+          // Cada cliente aparece no máximo uma vez por dia.
+          const free = customers.filter((name) => !namesOfDay.has(name));
+          const pool = free.length > 0 ? free : customers;
+          const customerName = pool[Math.floor(random() * pool.length)] ?? "Cliente";
+          namesOfDay.add(customerName);
           counter += 1;
           bookings.push({
             id: `EX-${String(counter).padStart(3, "0")}`,
@@ -174,9 +211,11 @@ export function generateSeedBookings(now: BusinessNow): Booking[] {
             startMin: start,
             endMin: end,
             priceCents: service.priceCents,
-            customerName: seedCustomerNames[Math.floor(random() * seedCustomerNames.length)] ?? "Cliente",
+            customerName,
             status: finished ? "concluido" : random() < 0.06 ? "cancelado" : "confirmado",
             origin: "seed",
+            ...seedPayment(service, customerName, random()),
+            presence: offset === 0 || (offset === 1 && random() < 0.6) ? "confirmada" : "pendente",
           });
           start = end;
           // Mantém o encaixe na grade de horários.
@@ -189,7 +228,7 @@ export function generateSeedBookings(now: BusinessNow): Booking[] {
 
       // Garantia de vaga nos dias futuros: remove os últimos exemplos até sobrar uma janela.
       if (offset > 0) {
-        while (bookings.length > dayStartIndex && !hasFreeWindow(date, professional.id, longest, bookings)) {
+        while (bookings.length > dayStartIndex && !hasFreeWindow(date, professional.id, longest, bookings, blocks)) {
           bookings.pop();
         }
       }
@@ -197,4 +236,30 @@ export function generateSeedBookings(now: BusinessNow): Booking[] {
   }
 
   return bookings.sort((a, b) => a.date.localeCompare(b.date) || a.startMin - b.startMin);
+}
+
+/** Forma de pagamento da agenda de exemplo: mistura de sinal, Pix total, plano e pagamento no local. */
+function seedPayment(
+  service: Service,
+  customerName: string,
+  roll: number,
+): { payment: PaymentMode; pixCents: number; pixStatus: Booking["pixStatus"] } {
+  const plan = plans.find((item) => item.id === subscriberPlan(customerName));
+  if (plan && (plan.serviceIds as readonly string[]).includes(service.id)) {
+    return { payment: "plano", pixCents: 0, pixStatus: null };
+  }
+  if (roll < 0.4) return { payment: "sinal", pixCents: business.depositCents, pixStatus: "pago" };
+  if (roll < 0.6) return { payment: "total", pixCents: service.priceCents, pixStatus: "pago" };
+  return { payment: "local", pixCents: 0, pixStatus: null };
+}
+
+/** Bloqueio de exemplo: o Davi tem um compromisso num dos próximos dias. */
+export function generateSeedBlocks(now: BusinessNow): Block[] {
+  for (let offset = 2; offset < 7; offset += 1) {
+    const date = addDays(now.date, offset);
+    const window = getOpeningWindow(date);
+    if (!window || window.closeMin < 17 * 60) continue;
+    return [{ id: "BLQ-1", professionalId: "davi", date, startMin: 15 * 60, endMin: 17 * 60, reason: "Consulta médica" }];
+  }
+  return [];
 }

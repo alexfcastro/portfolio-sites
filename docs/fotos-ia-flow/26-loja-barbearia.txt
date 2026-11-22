@@ -1,0 +1,65 @@
+Gere as 14 imagens abaixo com o Nano Banana para a loja de uma barbearia (produtos masculinos de cabelo e barba). Uma imagem por item, na ordem, sem pular nenhum.
+
+NOME DOS ARQUIVOS — MUITO IMPORTANTE
+- Cada imagem deve ter EXATAMENTE o nome indicado em "NOME:" e mais nada. Sem números, datas, prefixos, sufixos ou palavras extras; sem espaços nem acentos; minúsculas e hífens como estão.
+
+ESTILO (vale para todas): Fotografia de produto profissional, clima de barbearia clássica: bancada de madeira escura ou pedra grafite, fundo escuro desfocado, luz quente lateral, detalhes em dourado envelhecido. Embalagens elegantes em preto fosco, âmbar ou vidro, com tampas pretas ou douradas. Produto centralizado, nítido, ocupando boa parte do quadro.
+
+REGRAS (valem para todas): Fotografia realista. Embalagens SEM rótulo escrito: sem nenhum texto, letra, número, logotipo, marca ou marca d'água em lugar nenhum. Nada de marcas reais. Sem pessoas.
+Se aparecer qualquer texto, logotipo ou marca d'água, gere de novo antes de seguir.
+
+1. NOME: loja-pomada-matte
+   PROPORÇÃO: 1:1 (quadrada)
+   Pote redondo e baixo de metal preto fosco, aberto, com a tampa encostada ao lado, mostrando uma pomada cinza-clara de textura seca e fosca, marcada por uma passada de dedo.
+
+2. NOME: loja-pomada-brilho
+   PROPORÇÃO: 1:1 (quadrada)
+   Pote redondo de vidro âmbar com tampa preta, aberto, com pomada brilhante cor de mel de textura lisa e espelhada.
+
+3. NOME: loja-gel-forte
+   PROPORÇÃO: 1:1 (quadrada)
+   Pote largo de plástico transparente com tampa preta, cheio de gel fixador incolor com pequenas bolhas de ar, uma porção de gel sobre a bancada ao lado.
+
+4. NOME: loja-po-texturizador
+   PROPORÇÃO: 1:1 (quadrada)
+   Frasco pequeno preto fosco com tampa de furinhos, um pouco de pó branco fino espalhado na bancada escura ao lado.
+
+5. NOME: loja-shampoo-hidratante
+   PROPORÇÃO: 1:1 (quadrada)
+   Frasco alto preto fosco com válvula pump dourada, algumas gotas de água na superfície, uma toalha dobrada desfocada ao fundo.
+
+6. NOME: loja-condicionador
+   PROPORÇÃO: 1:1 (quadrada)
+   Frasco cor creme com tampa flip preta, ao lado de um pouco de creme condicionador branco espalhado na bancada.
+
+7. NOME: loja-shampoo-barba
+   PROPORÇÃO: 1:1 (quadrada)
+   Frasco pequeno verde-garrafa fosco com tampa preta, espuma branca densa sobre a bancada ao lado.
+
+8. NOME: loja-oleo-barba
+   PROPORÇÃO: 1:1 (quadrada)
+   Frasco de vidro âmbar com conta-gotas preto, uma gota de óleo dourado caindo da ponta do conta-gotas, reflexos de luz no vidro.
+
+9. NOME: loja-balm-barba
+   PROPORÇÃO: 1:1 (quadrada)
+   Lata pequena e redonda de metal dourado envelhecido, aberta, com balm cor de manteiga de textura cremosa.
+
+10. NOME: loja-pos-barba
+    PROPORÇÃO: 1:1 (quadrada)
+    Frasco de vidro transparente quadrado com loção levemente azulada e tampa preta, ao lado de uma navalha clássica fechada com cabo de madeira.
+
+11. NOME: loja-pente-madeira
+    PROPORÇÃO: 1:1 (quadrada)
+    Pente de madeira clara com dois lados (dentes largos e finos), na diagonal, sobre a bancada escura.
+
+12. NOME: loja-kit-barba
+    PROPORÇÃO: 1:1 (quadrada)
+    Caixa de presente preta aberta, forrada com papel de seda, com três itens: frasco pequeno verde-garrafa, frasco âmbar com conta-gotas e lata dourada de balm.
+
+13. NOME: loja-kit-cabelo
+    PROPORÇÃO: 1:1 (quadrada)
+    Caixa de presente preta aberta, forrada com papel de seda, com três itens: frasco preto com pump dourado, frasco cor creme com tampa preta e pote baixo preto de pomada.
+
+14. NOME: loja-hero
+    PROPORÇÃO: 16:9 (horizontal)
+    Prateleira de madeira escura numa barbearia, com frascos, potes e caixas de presente sem rótulo bem organizados, luz quente. Os produtos ficam no lado DIREITO; o lado esquerdo é escuro e vazio (espaço para texto).

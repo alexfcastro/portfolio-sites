@@ -14,6 +14,16 @@ export const business = {
   minLeadMin: 30,
   /** Quantos dias à frente a agenda mostra (incluindo hoje). */
   bookingWindowDays: 14,
+  /** Sinal cobrado por Pix para garantir o horário, descontado no dia. */
+  depositCents: 1000,
+  /** Até quantos minutos antes o próprio cliente pode remarcar ou cancelar. */
+  changeDeadlineMin: 120,
+  /** Prazo para pagar o Pix antes de o horário ser liberado, em minutos. */
+  pixExpiresMin: 10,
+  /** Comissão dos barbeiros sobre o que atenderam, em porcentagem. */
+  commissionPct: 40,
+  /** Dias sem voltar para o cliente entrar na lista de "sumidos". */
+  missingAfterDays: 30,
   /** Pausa de almoço (minutos desde a meia-noite). */
   lunch: { startMin: 12 * 60, endMin: 13 * 60 },
   /** Horário por dia da semana (0 = domingo). `null` = fechado. */
@@ -103,6 +113,50 @@ export const services: Service[] = [
   },
 ];
 
+/** Planos de assinatura mensal (valores fictícios). */
+export const plans = [
+  {
+    id: "clube-corte",
+    name: "Clube Corte",
+    priceCents: 12990,
+    usesPerMonth: 4,
+    serviceIds: ["corte", "degrade", "acabamento"],
+    summary: "Até 4 cortes por mês (clássico ou degradê) e acabamentos.",
+  },
+  {
+    id: "clube-completo",
+    name: "Clube Completo",
+    priceCents: 21990,
+    usesPerMonth: 4,
+    serviceIds: ["combo", "corte", "degrade", "barba", "acabamento"],
+    summary: "Até 4 atendimentos por mês, incluindo corte + barba.",
+  },
+] as const;
+
+export type Plan = (typeof plans)[number];
+
+export function getPlan(id: string): Plan | undefined {
+  return plans.find((plan) => plan.id === id);
+}
+
+/** Cartão fidelidade: a cada 10 cortes, uma barba completa de presente. */
+export const loyalty = {
+  stampsForReward: 10,
+  /** Serviços que contam selo. */
+  stampServiceIds: ["corte", "degrade", "combo"],
+  /** Serviço que a recompensa cobre. */
+  rewardServiceId: "barba",
+  /** Selos que o cliente de demonstração já tem de visitas anteriores. */
+  demoStartingStamps: 8,
+} as const;
+
+/** Faixas de horário usadas na lista de espera (minutos desde a meia-noite). */
+export const periods = {
+  manha: { label: "Manhã", startMin: 9 * 60, endMin: 12 * 60 },
+  tarde: { label: "Tarde", startMin: 13 * 60, endMin: 17 * 60 },
+  noite: { label: "Fim de tarde", startMin: 17 * 60, endMin: 19 * 60 },
+} as const;
+
 /** Identidade fictícia usada nos agendamentos de quem visita a demo. */
 export const demoCustomerName = "Cliente de demonstração";
 
@@ -120,6 +174,18 @@ export const seedCustomerNames = [
   "Marcos F.",
   "Otávio C.",
   "Pedro H.",
+  "Rodrigo B.",
+  "Samuel D.",
+  "Tiago G.",
+  "Vitor E.",
+  "Wesley O.",
+  "André Q.",
+  "Breno J.",
+  "Danilo U.",
+  "Fábio Z.",
+  "Hugo W.",
+  "Leandro I.",
+  "Murilo K.",
 ];
 
 /** Avaliações de exemplo: todas fictícias e identificadas individualmente. */

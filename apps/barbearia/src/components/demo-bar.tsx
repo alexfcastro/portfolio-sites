@@ -6,7 +6,7 @@ export function DemoBar() {
   const { home, caseUrl } = siteConfig.portfolio;
 
   return (
-    <div className="bg-demo-bg text-demo-ink">
+    <aside aria-label="Aviso de demonstração" className="bg-demo-bg text-demo-ink">
       <div className="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2 text-[0.8125rem]">
         <p className="font-semibold">
           Projeto demonstrativo — dados fictícios
@@ -29,6 +29,6 @@ export function DemoBar() {
           </nav>
         )}
       </div>
-    </div>
+    </aside>
   );
 }

@@ -118,3 +118,65 @@ Registro curto das escolhas feitas na Fase 1 (26/09/2026) e o porquê.
 - Seção "Beleza e estética" (`/#beleza`) na página inicial, logo depois dos destaques: os sete sites do segmento e a landing page do curso, com botão para `/projetos?segmento=beleza` (o link único das abordagens). No celular, os cartões deslizam na horizontal.
 - Cada landing page ganhou um segmento (`categoryId` em `data/landing-pages.ts`). No catálogo, com um segmento filtrado e sem tipo de solução, as landing pages daquele segmento aparecem junto dos sites, com a etiqueta "Landing page" e o contador "X projetos e Y landing pages". Sem filtro, continuam só na seção própria, para não repetir.
 - O cartão de landing page virou um componente único (`components/projects/landing-card.tsx`), usado na seção, no catálogo e na página inicial.
+
+## Bravus Barbearia: Pix, área do cliente e painel do dono (21/11/2026)
+
+Pensado a partir de um possível cliente real, que hoje marca tudo pelo WhatsApp e acompanha a agenda num aplicativo de terceiros.
+
+- **Pix antecipado ilustrativo** (`lib/pix.ts`, `components/pix-checkout.tsx`): sinal de R$ 10,00 (padrão), valor total, plano, fidelidade ou pagar no balcão. O QR Code é só um desenho com cara de QR (não é lido por bancos) e o copia e cola diz "NAO-E-UM-PAGAMENTO-REAL", para ninguém pagar por engano. O Pix segura o horário por 10 minutos; vencido, o horário volta sozinho para a agenda.
+- **Meus horários** (`/meus-horarios`): remarcar e cancelar só até 2 horas antes (depois disso, "fale com a barbearia"); cancelar no prazo devolve o Pix. O lembrete automático aparece como prévia, com "Confirmo" e "Preciso remarcar".
+- **Repetir o último corte**: o cliente de demonstração tem duas visitas fictícias no histórico, então o atalho aparece logo na primeira visita.
+- **Lista de espera**: o cliente escolhe dia e período (manhã, tarde, fim de tarde). A vaga é calculada na hora: quando alguém cancela ou um bloqueio sai, o painel mostra quem cabe e encaixa com um toque.
+- **Painel em abas** (Hoje, Agenda, Equipe, Clientes): resumo do dia (previsto, recebido por Pix, a receber no balcão), bloqueio de horários (recusa horário passado ou com agendamento), comissão de 40% por barbeiro, assinantes e clientes sumidos há mais de 30 dias com mensagem pronta.
+- **Histórico fictício** (`lib/history.ts`) calculado a partir da data de hoje e não salvo: clientes frequentes, sumidos, assinantes e atendimentos avulsos, para o mês ter números de uma barbearia de verdade.
+- **Plano mensal** (`/planos`) e **cartão fidelidade** (10 cortes = uma barba). Os selos entram quando o dono conclui o atendimento no painel.
+- **Painel instalável**: só `/admin` aponta para `public/painel.webmanifest`, então o atalho na tela inicial abre direto no painel.
+- O estado da demo passou para a versão 2 (`ax-bravus-demo`); estados salvos da versão anterior são descartados e a agenda de exemplo é recriada.
+
+## Loja da Bravus com retirada na barbearia (21/11/2026)
+
+- Loja dentro da própria demo (`/loja`, `/loja/[id]`, `/loja/sacola`), com 13 produtos de uma linha própria fictícia: pomadas, gel, pó texturizador, shampoo, condicionador, cuidados com a barba, pente e dois kits. Preços, estoque e modos de uso são exemplos (`data/loja.ts`).
+- Sem frete: o cliente retira **no próprio horário** (o barbeiro deixa separado na bancada) ou **no balcão**, num dia aberto escolhido. Se o horário for cancelado, a compra passa para o balcão no mesmo dia, em vez de sumir.
+- Pagamento por Pix ilustrativo com 5% de desconto ou na retirada. Pix não pago em 10 minutos cancela o pedido e devolve o estoque.
+- Depois de agendar, o bloco "Leve junto" sugere os mais vendidos que combinam com o serviço e leva à sacola já com a retirada marcada naquele horário (`?horario=`).
+- Painel: aba Loja (para separar → pronto → entregue, vendido, Pix recebido e estoque com alerta de 3 unidades ou menos); na agenda, o horário mostra "Leva N produtos"; na aba Hoje, quantos pedidos entregar.
+- Estoque calculado (inicial menos pedidos não cancelados), não guardado. Estado da demo na versão 3.
+- Fotos dos produtos geradas no Flow (`docs/fotos-ia-flow/26-loja-barbearia.txt`), sem rótulo escrito; enquanto uma foto não existe, aparece um desenho da embalagem.
+- No cabeçalho, "Equipe" saiu do menu (continua na página inicial) para caber "Loja" e o ícone da sacola; abaixo de 360px o botão Agendar mostra só o ícone.
+
+## Painel visual: horários reservados e faturamento (21/11/2026)
+
+- **Horários reservados** (topo da aba Agenda): grade do dia com uma coluna por barbeiro, blocos na altura da duração de cada atendimento (azul = confirmado, dourado = concluído), almoço e bloqueios em listras, linha do horário atual e ocupação de cada barbeiro em %. Mostra também atendimentos, valor do dia, já atendido e o que falta atender.
+- **Aba Faturamento**: estimativa do mês em destaque, com o "garantido até agora" (sem projeção); já faturado, agendado e projeção; gráfico de barras empilhadas por dia (atendido, agendado e projeção em listras), com dica ao passar o mouse e versão em tabela; composição da estimativa (serviços, loja e assinaturas) e divisão por barbeiro.
+- **Como a projeção é calculada** (`lib/finance.ts`): para cada dia que falta no mês, a média do mesmo dia da semana nas últimas 4 semanas, por barbeiro, menos o que já está agendado (nunca negativa). Hoje conta só a parte do expediente que falta. Atendimentos de plano e de fidelidade não entram como serviço: o plano entra uma vez, nas assinaturas.
+- Cores dos gráficos validadas para o fundo escuro (dourado `#b38a35` e azul `#4a8fd6`); a projeção usa listras, além da cor.
+- A agenda de exemplo ficou mais cheia (chance de horário ocupado de 55% hoje, caindo até 20%), para os dias da agenda ficarem parecidos com os do histórico.
+- No celular, as seis abas do painel ficam em duas linhas de três.
+
+## Menu da Bravus em telas menores (21/11/2026)
+
+- Abaixo de 1024px os links do topo (Serviços, Planos, Loja, Visite, Meus horários, Painel) não cabiam e simplesmente sumiam, sem botão para abrir: a Loja e os Planos ficavam inalcançáveis pelo topo. Agora há um botão Menu (`components/mobile-menu.tsx`) que abre a lista; fecha ao escolher um link, com Esc ou clicando fora, e marca a página atual.
+- Abaixo de 420px, o botão Agendar do topo mostra só o ícone, para caber junto com a sacola e o menu sem invadir a margem.
+
+## Estimativa de faturamento estável (21/11/2026)
+
+- Bug: a projeção de hoje era proporcional à "parte do expediente que ainda falta", calculada com o relógio. Durante o horário de funcionamento, a projeção e a estimativa do mês mudavam a cada minuto, a cada vez que o painel era aberto, sem ninguém mexer na agenda.
+- Correção: a projeção de cada dia (hoje incluído) é a média do mesmo dia da semana menos o que já foi atendido e agendado, sem relógio. Os números só mudam quando a agenda muda ou quando o dia vira. Teste em `finance.test.ts` garante a mesma estimativa às 9:00 e às 18:45.
+- Mudança esperada, agora explicada na aba Hoje: reserva ou pedido com Pix não pago em 10 minutos é liberado sozinho, e o valor sai dos totais.
+
+## Revisão da Bravus e três funcionalidades simples (21/11/2026)
+
+- Auditoria com axe-core em todas as páginas e abas do painel (desktop e celular): sem erros no console.
+  - Estrelas das avaliações ganharam `role="img"` (o `aria-label` num `<p>` era ignorado).
+  - A faixa "Projeto demonstrativo" virou `<aside>` com nome, para não ficar fora das regiões da página.
+  - O alerta de contraste nos cartões da loja é falso positivo: o axe mede no meio da animação de entrada; visível, a etiqueta tem contraste de cerca de 8:1.
+- **Recado para o barbeiro**: campo opcional (até 140 caracteres) na revisão do agendamento; aparece na confirmação, na mensagem, na agenda do painel e na grade.
+- **Salvar na agenda do celular**: botão na confirmação e em Meus horários que baixa um `.ics` com lembrete 1 hora antes (`lib/calendar.ts`; horário de Brasília convertido para UTC−3 fixo).
+- **Busca na agenda do painel**: por nome do cliente ou código, sem diferenciar maiúsculas nem acentos.
+
+## Agenda do dia em destaque no painel (21/11/2026)
+
+- A aba Hoje (a primeira do painel) abre com a agenda do dia: uma faixa com atendimentos, previsto, recebido, a receber e o próximo cliente; avisos curtos (sem confirmar presença, pedidos da loja, Pix pendente) e a grade de horários de cada barbeiro. Num dia fechado, mostra o próximo dia aberto.
+- Clicar num horário da grade leva à linha daquele atendimento na "Lista do dia", com as ações (concluir, cancelar, reativar).
+- Lembretes e lista de espera ficaram abaixo da agenda. O cabeçalho do painel ficou mais baixo (título e aviso de "área pública" numa linha), para a agenda aparecer sem rolar.
+- Grades dentro de grid CSS precisam de `min-w-0` nos filhos; sem isso, a rolagem horizontal da grade alargava a página no celular.

@@ -21,6 +21,21 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/meus-horarios" className="inline-flex min-h-11 items-center text-cream underline-offset-4 hover:underline">
+                Meus horários
+              </Link>
+            </li>
+            <li>
+              <Link href="/loja" className="inline-flex min-h-11 items-center text-cream underline-offset-4 hover:underline">
+                Loja
+              </Link>
+            </li>
+            <li>
+              <Link href="/planos" className="inline-flex min-h-11 items-center text-cream underline-offset-4 hover:underline">
+                Planos
+              </Link>
+            </li>
+            <li>
               <Link href="/admin" className="inline-flex min-h-11 items-center text-cream underline-offset-4 hover:underline">
                 Painel demonstrativo
               </Link>

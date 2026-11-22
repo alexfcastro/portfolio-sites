@@ -1,6 +1,6 @@
 # Status do projeto
 
-Atualizado em 18/11/2026.
+Atualizado em 21/11/2026.
 
 ## Fases concluídas
 
@@ -86,3 +86,7 @@ Links por segmento para as abordagens: `docs/links-por-segmento.md`.
 Em 18/11/2026 os projetos de beleza ganharam uma seção própria na página inicial (`/#beleza`), e as landing pages passaram a aparecer no catálogo quando um segmento está filtrado (cada uma tem `categoryId`).
 
 Pendências do proprietário (somam-se às de cima): números de registro profissional reais (Clínica Núcleo), depoimentos reais (hoje são exemplos marcados) e, se quiser, publicar as novas demos junto com as antigas.
+
+## Bravus Barbearia ampliada (21/11/2026)
+
+A demo da barbearia ganhou loja com retirada no horário (`/loja`), Pix antecipado ilustrativo, área do cliente (`/meus-horarios`), lista de espera, plano mensal (`/planos`), cartão fidelidade e um painel do dono em abas (Hoje, Agenda, Equipe, Clientes), instalável no celular. Detalhes em `decisions.md`. Para um cliente real, faltariam: login no painel, banco de dados, Pix de verdade (conta num banco ou serviço de pagamento) e envio real das mensagens.

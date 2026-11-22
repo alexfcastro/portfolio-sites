@@ -9,28 +9,37 @@
       "scale": 1
     },
     {
-      "name": "desktop-agendamento",
-      "path": "/agendar?servico=combo",
+      "name": "desktop-loja",
+      "path": "/loja",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": ["document.querySelector('main fieldset').scrollIntoView(); window.scrollBy(0, -100);"]
+    },
+    {
+      "name": "desktop-pix",
+      "path": "/agendar",
       "width": 1440,
       "height": 900,
       "scale": 1,
       "steps": [
-        "document.querySelector('input[name=professional][value=leo]').click();",
-        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
-        "document.querySelectorAll('input[name=time]')[2].click(); window.scrollTo(0, 330);"
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Repetir')).click();",
+        "document.querySelectorAll('input[name=time]')[2].click(); [...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Confirmar')).click();",
+        "document.querySelector('main section').scrollIntoView(); window.scrollBy(0, -90);"
       ]
     },
     {
-      "name": "mobile-agendamento",
-      "path": "/agendar?servico=degrade",
+      "name": "mobile-meus-horarios",
+      "path": "/meus-horarios",
       "width": 390,
       "height": 844,
       "scale": 2,
       "mobile": true,
       "steps": [
-        "document.querySelector('input[name=professional][value=davi]').click();",
-        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Continuar')).click();",
-        "document.querySelectorAll('input[name=time]')[0].click(); document.querySelector('main h2').scrollIntoView();"
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('agora')).click();",
+        "[...document.querySelectorAll('main button')].find(b => b.textContent.includes('Simular pagamento')).click();",
+        "document.querySelector('#proximos-title').scrollIntoView(); window.scrollBy(0, -80);"
       ]
     },
     {
@@ -39,7 +48,30 @@
       "width": 1440,
       "height": 900,
       "scale": 1,
-      "steps": ["window.scrollTo(0, 420);"]
+      "steps": ["document.querySelector('#dia-title').scrollIntoView(); window.scrollBy(0, -90);"]
+    },
+    {
+      "name": "desktop-faturamento",
+      "path": "/admin",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('[role=tab]')].find(b => b.textContent.includes('Faturamento')).click();",
+        "document.querySelector('#estimativa-title').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
+    },
+    {
+      "name": "desktop-grade",
+      "path": "/admin",
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "steps": [
+        "[...document.querySelectorAll('[role=tab]')].find(b => b.textContent.includes('Agenda')).click();",
+        "document.querySelectorAll('input[name=grade-dia]')[1].click();",
+        "document.querySelector('#grade-title').scrollIntoView(); window.scrollBy(0, -90);"
+      ]
     }
   ]
 }

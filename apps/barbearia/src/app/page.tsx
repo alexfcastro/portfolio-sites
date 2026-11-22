@@ -1,10 +1,12 @@
-import { CalendarPlus, Clock, MapPin, Star } from "lucide-react";
+import { BellRing, CalendarClock, CalendarPlus, Clock, Crown, Gift, MapPin, QrCode, Star } from "lucide-react";
 import Link from "next/link";
 import { Faixa } from "@/components/faixa";
 import { Foto, Retrato } from "@/components/foto";
 import { IllustrativeMap, StyleIllustration, galleryItems } from "@/components/illustrations";
+import { ProductCard } from "@/components/loja/storefront";
 import { WhatsAppPreview } from "@/components/whatsapp-preview";
-import { business, professionals, sampleReviews, services } from "@/data/business";
+import { business, loyalty, plans, professionals, sampleReviews, services } from "@/data/business";
+import { products } from "@/data/loja";
 import { genericGreeting } from "@/lib/messages";
 import { formatBRL } from "@/lib/money";
 import { formatTime } from "@/lib/time";
@@ -117,6 +119,98 @@ export default function HomePage() {
         </ul>
       </section>
 
+      <section id="online" aria-labelledby="online-title" className="border-y border-edge bg-coal-2 py-20">
+        <div className="wrap">
+          <p className="kicker">Tudo pelo site</p>
+          <h2 id="online-title" className="mt-3 text-4xl font-bold sm:text-5xl">
+            Sem trocar mensagem para marcar
+          </h2>
+          <p className="mt-3 max-w-2xl text-smoke">
+            Agende, pague, remarque e acompanhe seus horários sozinho, a qualquer hora. Tudo fictício nesta demonstração.
+          </p>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: QrCode,
+                title: "Pix antecipado",
+                text: `Pague um sinal de ${formatBRL(business.depositCents)} ou o valor inteiro na hora de agendar, com QR Code.`,
+              },
+              {
+                icon: CalendarClock,
+                title: "Remarque sozinho",
+                text: `Mudou o plano? Remarque ou cancele em Meus horários até ${business.changeDeadlineMin / 60} horas antes.`,
+              },
+              {
+                icon: BellRing,
+                title: "Lembrete automático",
+                text: "Na véspera e 1 hora antes, com um toque para confirmar a presença.",
+              },
+              {
+                icon: Clock,
+                title: "Lista de espera",
+                text: "Dia cheio? Entre na fila do período que prefere e seja avisado se abrir vaga.",
+              },
+              {
+                icon: Gift,
+                title: "Cartão fidelidade",
+                text: `A cada ${loyalty.stampsForReward} cortes, a barba sai de presente. Os selos ficam no site.`,
+              },
+              {
+                icon: Crown,
+                title: "Planos mensais",
+                text: `A partir de ${formatBRL(Math.min(...plans.map((plan) => plan.priceCents)))} por mês, com cortes inclusos.`,
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <li key={title} className="rounded-card border border-edge bg-coal p-5">
+                <Icon aria-hidden className="size-6 text-gold" />
+                <h3 className="mt-3 text-2xl font-semibold">{title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-smoke">{text}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/agendar" className="btn btn-gold">
+              <CalendarPlus aria-hidden className="size-5" />
+              Agendar e pagar por Pix
+            </Link>
+            <Link href="/meus-horarios" className="btn btn-line">
+              Meus horários
+            </Link>
+            <Link href="/planos" className="btn btn-line">
+              Ver os planos
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="loja" aria-labelledby="loja-home-title" className="wrap py-20">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="kicker">Loja Bravus</p>
+            <h2 id="loja-home-title" className="mt-3 text-4xl font-bold sm:text-5xl">
+              Compre e retire no seu horário
+            </h2>
+            <p className="mt-3 max-w-xl text-smoke">
+              Pomada, shampoo, óleo para barba e kits. Você escolhe pelo site e o barbeiro deixa separado para quando você
+              vier cortar. Produtos fictícios.
+            </p>
+          </div>
+          <Link href="/loja" className="btn btn-line shrink-0 self-start md:self-auto">
+            Ver todos os produtos
+          </Link>
+        </div>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {products
+            .filter((product) => product.bestseller || product.id === "kit-barba")
+            .slice(0, 4)
+            .map((product) => (
+              <li key={product.id}>
+                <ProductCard product={product} />
+              </li>
+            ))}
+        </ul>
+      </section>
+
       <section id="equipe" aria-labelledby="equipe-title" className="border-y border-edge bg-coal-2 py-20">
         <div className="wrap">
           <p className="kicker">Equipe</p>
@@ -184,7 +278,7 @@ export default function HomePage() {
                 <span className="self-start rounded-full border border-warn/40 px-2.5 py-0.5 text-xs font-semibold text-warn">
                   Avaliação fictícia
                 </span>
-                <p className="mt-4 flex gap-0.5 text-gold" aria-label={`${review.rating} de 5 estrelas`}>
+                <p role="img" className="mt-4 flex gap-0.5 text-gold" aria-label={`${review.rating} de 5 estrelas`}>
                   {Array.from({ length: 5 }, (_, index) => (
                     <Star key={index} aria-hidden className={`size-4 ${index < review.rating ? "fill-gold" : "opacity-30"}`} />
                   ))}

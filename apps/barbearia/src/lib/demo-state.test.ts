@@ -13,7 +13,18 @@ import type { BusinessNow } from "@/types/booking";
 
 const now: BusinessNow = { date: "2026-09-30", minutes: 10 * 60 };
 // Estado sem agenda de exemplo, para testes previsíveis.
-const empty: DemoState = { version: STATE_VERSION, seedDate: now.date, nextNumber: 1001, bookings: [] };
+const empty: DemoState = {
+  version: STATE_VERSION,
+  seedDate: now.date,
+  nextNumber: 1001,
+  bookings: [],
+  blocks: [],
+  waitlist: [],
+  contacted: [],
+  subscription: null,
+  cart: [],
+  orders: [],
+};
 const input = { serviceId: "combo", professionalId: "leo", date: addDays(now.date, 1), startMin: 14 * 60 };
 
 describe("agendamento do visitante", () => {

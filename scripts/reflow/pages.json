@@ -2,7 +2,7 @@
   "widths": [320, 360, 375, 390, 412, 768, 1024, 1280, 1440],
   "apps": [
     { "base": "http://localhost:3100", "paths": ["/", "/projetos", "/projetos/floricultura", "/sobre", "/contato", "/privacidade", "/nao-existe"] },
-    { "base": "http://localhost:3101", "paths": ["/", "/agendar", "/admin"] },
+    { "base": "http://localhost:3101", "paths": ["/", "/agendar", "/admin", "/meus-horarios", "/planos", "/loja", "/loja/kit-barba", "/loja/sacola"] },
     { "base": "http://localhost:3102", "paths": ["/", "/especialidades/dermatologia", "/solicitar", "/minhas-solicitacoes"] },
     { "base": "http://localhost:3103", "paths": ["/", "/carrinho"] },
     { "base": "http://localhost:3104", "paths": ["/", "/orcamento", "/acompanhamento"] },

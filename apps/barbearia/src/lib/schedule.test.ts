@@ -31,6 +31,10 @@ function booking(partial: Partial<Booking>): Booking {
     customerName: "Teste",
     status: "confirmado",
     origin: "seed",
+    payment: "local",
+    pixCents: 0,
+    pixStatus: null,
+    presence: "pendente",
     ...partial,
   };
 }

@@ -38,5 +38,61 @@ export const fotos: Readonly<Record<string, { width: number; height: number }>> 
   "equipe-davi": {
     "width": 1024,
     "height": 1024
+  },
+  "loja-pomada-matte": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-pomada-brilho": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-gel-forte": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-po-texturizador": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-shampoo-hidratante": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-condicionador": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-shampoo-barba": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-oleo-barba": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-balm-barba": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-pos-barba": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-pente-madeira": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-kit-barba": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-kit-cabelo": {
+    "width": 1024,
+    "height": 1024
+  },
+  "loja-hero": {
+    "width": 1200,
+    "height": 670
   }
 };
